@@ -80,7 +80,7 @@ footer a:hover{color:var(--teal-light);}
 @media(max-width:600px){h1{font-size:26px;}h2{font-size:19px;}}
 </style>
 <script>
-  if (location.hostname.includes('github.io')) {
+  if ((location.hostname.includes('github.io')||location.hostname.includes('vercel.app'))) {
     var m = document.createElement('meta');
     m.name = 'robots'; m.content = 'noindex, nofollow';
     document.head.appendChild(m);

@@ -89,7 +89,7 @@ footer a:hover{color:var(--teal-light);}
 </style>
 <script>
   // Prevent GitHub Pages subdomain from being indexed — canonical is labcompara.com
-  if (location.hostname.includes('github.io')) {
+  if ((location.hostname.includes('github.io')||location.hostname.includes('vercel.app'))) {
     var m = document.createElement('meta');
     m.name = 'robots'; m.content = 'noindex, nofollow';
     document.head.appendChild(m);

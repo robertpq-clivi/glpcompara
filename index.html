@@ -291,7 +291,7 @@ th.cmp-clivi{background:linear-gradient(180deg,rgba(0,180,216,.18),rgba(0,180,21
 </style>
 <script>
   // Staging guard: don't index the temporary github.io URL — canonical is glpcompara.com.mx
-  if (location.hostname.includes('github.io')) {
+  if ((location.hostname.includes('github.io')||location.hostname.includes('vercel.app'))) {
     var m = document.createElement('meta');
     m.name = 'robots'; m.content = 'noindex, nofollow';
     document.head.appendChild(m);
