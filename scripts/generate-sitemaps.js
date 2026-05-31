@@ -51,6 +51,27 @@ const BLOG_PAGES = [
   'historias-de-exito-antes-y-despues-glp1',
   'mitos-sobre-ozempic-y-wegovy',
   'los-glp1-son-para-toda-la-vida',
+  // — 2º lote —
+  'quien-es-candidato-glp1',
+  'beneficios-y-riesgos-glp1',
+  'que-pasa-al-dejar-glp1',
+  'mounjaro-para-bajar-de-peso',
+  'cuanto-peso-se-pierde-con-mounjaro',
+  'efectos-secundarios-mounjaro',
+  'que-comer-con-mounjaro',
+  'cuanto-peso-se-pierde-con-wegovy',
+  'efectos-secundarios-wegovy',
+  'quien-puede-usar-wegovy',
+  'ozempic-sin-diabetes',
+  'efectos-secundarios-ozempic',
+  'alimentos-evitar-con-ozempic',
+  'cuanto-tarda-ozempic-en-hacer-efecto',
+  'ozempic-vs-saxenda',
+  'cambiar-de-ozempic-a-mounjaro',
+  'plan-de-alimentacion-glp1',
+  'proteina-y-glp1',
+  'nausea-glp1-como-manejarla',
+  'evitar-molestias-gastrointestinales-glp1',
 ].map(slug => ({ path: `/blog/${slug}.html`, priority: '0.8', changefreq: 'monthly' }));
 
 // ── HELPERS ───────────────────────────────────────────────────────────────────
