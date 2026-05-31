@@ -11,12 +11,12 @@
 </script>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Labcompara &#x2013; Estudios de laboratorio al mejor precio en M&#xe9;xico</title>
-<meta name="description" content="Compara precios de estudios de laboratorio en M&#xe9;xico entre Salud Digna, Chopo, OLAB, Labbe, LAPI y Laboratorio M&#xe9;dico Polanco. Biomet&#xed;a, qu&#xed;mica sangu&#xed;nea, glucosa y m&#xe1;s. Gratis."/>
-<link rel="canonical" href="https://labcompara.com/"/>
-<meta property="og:title" content="Labcompara &#x2013; Compara estudios de laboratorio en M&#xe9;xico"/>
-<meta property="og:description" content="Compara precios de estudios cl&#xed;nicos entre los mejores laboratorios de M&#xe9;xico en segundos. Gratis, sin registro."/>
-<meta property="og:url" content="https://labcompara.com/"/>
+<title>GLPcompara &#x2013; Compara precios de Ozempic, Mounjaro, Wegovy y m&#xe1;s GLP-1 en M&#xe9;xico</title>
+<meta name="description" content="Compara precios de medicamentos GLP-1 en M&#xe9;xico entre Clivi, Farmacias del Ahorro, Farmacias Guadalajara, Benavides y San Pablo. Ozempic, Mounjaro, Wegovy, Saxenda y Rybelsus. Gratis."/>
+<link rel="canonical" href="https://glpcompara.com/"/>
+<meta property="og:title" content="GLPcompara &#x2013; Compara precios de medicamentos GLP-1 en M&#xe9;xico"/>
+<meta property="og:description" content="Compara precios de Ozempic, Mounjaro, Wegovy, Saxenda y Rybelsus entre las principales farmacias de M&#xe9;xico en segundos. Gratis, sin registro."/>
+<meta property="og:url" content="https://glpcompara.com/"/>
 <meta property="og:type" content="website"/>
 <meta name="robots" content="index, follow"/>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
@@ -28,8 +28,8 @@
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap"/></noscript>
 <!-- Supabase async - not render-blocking -->
 <script async src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" onload="initSupabase()"></script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Labcompara","url":"https://labcompara.com/","description":"Comparador de precios de estudios de laboratorio cl&#xed;nico en M&#xe9;xico"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Labcompara","url":"https://labcompara.com/","areaServed":"M&#xe9;xico"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"GLPcompara","url":"https://glpcompara.com/","description":"Comparador de precios de medicamentos GLP-1 en M&#xe9;xico"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"GLPcompara","url":"https://glpcompara.com/","areaServed":"M&#xe9;xico"}</script>
 <style>
 :root{--navy:#0B1F4B;--navy-mid:#1a3a6e;--teal:#00B4D8;--teal-light:#90E0EF;--teal-dark:#0077A8;--green:#10B981;--gray-50:#F8FAFC;--gray-100:#F1F5F9;--gray-200:#E2E8F0;--gray-400:#94A3B8;--gray-600:#475569;--gray-800:#1E293B;}
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -255,18 +255,51 @@ footer{background:var(--navy);color:rgba(255,255,255,.65);padding:44px 24px 30px
 .lab-logo-emoji{font-size:20px;line-height:1;}
 .lab-logo-name{font-family:'Sora',sans-serif;font-weight:700;font-size:13px;color:var(--navy);}
 .lab-logo-tag{font-size:11px;color:var(--gray-400);margin-top:1px;}
+
+/* COMPARISON MATRIX */
+.cmp-hero{background:linear-gradient(135deg,var(--navy),var(--navy-mid));border-radius:18px;padding:20px 22px;margin-bottom:22px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+.cmp-hero-badge{width:48px;height:48px;border-radius:14px;background:rgba(0,180,216,.2);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
+.cmp-hero-t{font-family:'Sora',sans-serif;font-weight:800;font-size:17px;color:white;}
+.cmp-hero-t span{color:var(--teal-light);}
+.cmp-hero-p{font-size:13px;color:rgba(255,255,255,.72);margin-top:3px;line-height:1.5;}
+.cmp-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:16px;border:2px solid var(--gray-100);background:white;box-shadow:0 4px 24px rgba(11,31,75,.06);}
+.cmp-table{border-collapse:separate;border-spacing:0;width:100%;min-width:600px;}
+.cmp-table th,.cmp-table td{padding:11px 9px;text-align:center;font-size:13px;}
+.cmp-corner{position:sticky;left:0;z-index:4;background:white;min-width:138px;}
+.cmp-label{position:sticky;left:0;z-index:2;background:white;text-align:left;font-family:'DM Sans',sans-serif;font-weight:600;color:var(--gray-800);font-size:13px;white-space:nowrap;border-right:1px solid var(--gray-100);min-width:138px;}
+.cmp-ph{font-family:'Sora',sans-serif;font-weight:700;color:var(--navy);font-size:12.5px;vertical-align:bottom;line-height:1.25;border-bottom:2px solid var(--gray-100);}
+.cmp-emoji{font-size:21px;display:block;margin-bottom:5px;}
+.cmp-rating{font-size:10px;color:var(--gray-400);font-weight:600;display:block;margin-top:3px;}
+.cmp-tag{display:inline-block;background:var(--teal);color:white;font-size:9px;font-weight:800;font-family:'Sora',sans-serif;padding:2px 8px;border-radius:20px;margin-top:6px;letter-spacing:.03em;text-transform:uppercase;}
+.cmp-clivi{background:rgba(0,180,216,.06);}
+th.cmp-clivi{background:linear-gradient(180deg,rgba(0,180,216,.18),rgba(0,180,216,.05));border-top:3px solid var(--teal);border-bottom:2px solid var(--teal);}
+.cmp-row td{border-top:1px solid var(--gray-100);}
+.cmp-price{font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:var(--navy);}
+.cmp-price.low{color:#059669;}
+.cmp-low-tag{display:block;font-size:8.5px;font-weight:800;color:#059669;letter-spacing:.04em;margin-top:1px;}
+.cmp-na{color:var(--gray-300);font-size:13px;}
+.cmp-clickable{cursor:pointer;transition:background .15s;}
+.cmp-clickable:hover{background:rgba(0,180,216,.12);}
+.cmp-yes{color:#10B981;font-size:17px;font-weight:800;}
+.cmp-no{color:#CBD5E1;font-size:15px;font-weight:700;}
+.cmp-section td{background:var(--gray-50);text-align:left;font-family:'Sora',sans-serif;font-weight:700;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-400);padding:9px 12px;position:sticky;left:0;}
+.cmp-go{display:inline-block;background:var(--gray-100);color:var(--navy);font-family:'Sora',sans-serif;font-weight:700;font-size:11.5px;padding:8px 11px;border-radius:9px;text-decoration:none;white-space:nowrap;}
+.cmp-go.prim{background:linear-gradient(135deg,var(--teal),var(--teal-dark));color:white;box-shadow:0 3px 12px rgba(0,180,216,.35);}
+.cmp-count{font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:var(--navy);}
+.cmp-count.win{color:var(--teal-dark);}
+.cmp-hint{font-size:12px;color:var(--gray-400);text-align:center;margin-top:12px;}
 </style>
 </head>
 <body>
 
 <a href="#main-content" style="position:absolute;left:-9999px;top:0;z-index:9999;padding:8px 16px;background:var(--teal);color:white;font-family:'Sora',sans-serif;font-weight:600;border-radius:0 0 8px 0;" onfocus="this.style.left='0';" onblur="this.style.left='-9999px';">Saltar al contenido</a>
 <nav id="main-nav">
-  <span class="nav-logo" id="nav-logo">Lab<span>compara</span></span>
+  <span class="nav-logo" id="nav-logo">GLP<span>compara</span></span>
   <div class="nav-right">
-    <a href="pages/estudios-de-laboratorio.html" class="nav-link">Estudios</a>
-    <a href="pages/laboratorio-cerca-de-mi.html" class="nav-link">Laboratorios</a>
+    <a href="pages/estudios-de-laboratorio.html" class="nav-link">Medicamentos</a>
+    <a href="pages/laboratorio-cerca-de-mi.html" class="nav-link">Farmacias</a>
     <a href="blog/index.html" class="nav-link">Blog</a>
-    <button class="btn-nav" id="nav-cta">Cotizar</button>
+    <button class="btn-nav" id="nav-cta">Comparar precios</button>
   </div>
 </nav>
 
@@ -276,22 +309,22 @@ footer{background:var(--navy);color:rgba(255,255,255,.65);padding:44px 24px 30px
   <canvas id="hero-canvas" aria-hidden="true"></canvas>
   <div class="hero-overlay" aria-hidden="true"></div>
   <div class="hero-content">
-    <div class="badge-pill anim"><span class="badge-dot"></span><span class="badge-text">M&#xe1;s de 64 estudios &middot; 6 laboratorios &middot; Precios reales</span></div>
-    <h1 class="hero-h1 anim" style="animation-delay:.1s">Encuentra tus estudios de laboratorio<br/><span>al mejor precio</span></h1>
-    <p class="hero-sub anim" style="animation-delay:.2s">Compara precios entre los mejores laboratorios de M&#xe9;xico, elige el que m&#xe1;s te convenga y compra directamente.</p>
+    <div class="badge-pill anim"><span class="badge-dot"></span><span class="badge-text">5 medicamentos GLP-1 &middot; 5 farmacias &middot; Precios reales</span></div>
+    <h1 class="hero-h1 anim" style="animation-delay:.1s">Encuentra tu medicamento GLP-1<br/><span>al mejor precio</span></h1>
+    <p class="hero-sub anim" style="animation-delay:.2s">Compara precios de Ozempic, Mounjaro, Wegovy, Saxenda y Rybelsus entre las principales farmacias de M&#xe9;xico, elige el que m&#xe1;s te convenga y compra directamente.</p>
     <div style="margin-top:32px;" class="anim" style="animation-delay:.3s">
-      <button class="btn-primary" id="hero-cta" style="font-size:17px;padding:16px 34px;">Cotizar ahora &#x2014; es gratis <span>&#x2192;</span></button>
+      <button class="btn-primary" id="hero-cta" style="font-size:17px;padding:16px 34px;">Comparar precios &#x2014; es gratis <span>&#x2192;</span></button>
     </div>
     <div class="hero-pills anim" style="animation-delay:.4s">
       <div class="pill">&#x1F4B0; Descubre el m&#xe1;s barato</div>
-      <div class="pill">&#x2B50; Mejor calificado</div>
-      <div class="pill">&#x1F389; Promociones todo el a&#xf1;o</div>
-      <div class="pill">&#x1F465; Miles de usuarios satisfechos</div>
+      <div class="pill">&#x1F48A; Ozempic, Mounjaro y m&#xe1;s</div>
+      <div class="pill">&#x1F3E5; Farmacias confiables</div>
+      <div class="pill">&#x1FA7A; Con seguimiento m&#xe9;dico</div>
     </div>
     <div class="hero-stats anim" style="animation-delay:.5s">
-      <div><div class="stat-n">64+</div><div class="stat-l">Estudios disponibles</div></div>
-      <div><div class="stat-n">6</div><div class="stat-l">Laboratorios top</div></div>
-      <div><div class="stat-n">98%</div><div class="stat-l">Satisfacci&#xf3;n</div></div>
+      <div><div class="stat-n">5</div><div class="stat-l">Medicamentos GLP-1</div></div>
+      <div><div class="stat-n">5</div><div class="stat-l">Farmacias comparadas</div></div>
+      <div><div class="stat-n">Hasta 25%</div><div class="stat-l">De ahorro</div></div>
       <div><div class="stat-n">Gratis</div><div class="stat-l">Sin costo de comparaci&#xf3;n</div></div>
     </div>
   </div>
@@ -304,26 +337,26 @@ footer{background:var(--navy);color:rgba(255,255,255,.65);padding:44px 24px 30px
       <h2 class="sec-title">Cuatro pasos, resultado garantizado</h2>
       <p class="sec-sub">Sin complicaciones. Sin cuentas. Sin intermediarios en el pago.</p>
       <div class="how-list">
-        <div class="how-step"><div class="how-num">1</div><div class="how-step-body"><h3>&#x1F464; Cu&#xe9;ntanos de ti</h3><p>Comparte tu nombre, correo y datos b&#xe1;sicos. Te enviamos la cotizaci&#xf3;n personalizada.</p></div></div>
-        <div class="how-step"><div class="how-num">2</div><div class="how-step-body"><h3>&#x1F50D; Cotiza y compara</h3><p>Busca el estudio que necesitas y compara precios entre todos los laboratorios en segundos.</p></div></div>
-        <div class="how-step"><div class="how-num">3</div><div class="how-step-body"><h3>&#x1F6CD;&#xfe0f; Compra con el laboratorio</h3><p>Elige el que m&#xe1;s te conviene y ve directamente al sitio del laboratorio para agendar o pagar.</p></div></div>
-        <div class="how-step"><div class="how-num">4</div><div class="how-step-body"><h3>&#x2705; Prep&#xe1;rate para tus estudios</h3><p>Te enviamos instrucciones de preparaci&#xf3;n seg&#xfa;n el estudio. Sin sorpresas.</p></div></div>
+        <div class="how-step"><div class="how-num">1</div><div class="how-step-body"><h3>&#x1F464; Cu&#xe9;ntanos de ti</h3><p>Comparte tu nombre, correo y datos b&#xe1;sicos. Te enviamos la comparativa personalizada.</p></div></div>
+        <div class="how-step"><div class="how-num">2</div><div class="how-step-body"><h3>&#x1F50D; Busca y compara</h3><p>Elige el medicamento GLP-1 y la dosis que necesitas y compara precios entre todas las farmacias en segundos.</p></div></div>
+        <div class="how-step"><div class="how-num">3</div><div class="how-step-body"><h3>&#x1F6CD;&#xfe0f; Compra en la farmacia</h3><p>Elige la opci&#xf3;n que m&#xe1;s te conviene y ve directamente al sitio de la farmacia para comprar.</p></div></div>
+        <div class="how-step"><div class="how-num">4</div><div class="how-step-body"><h3>&#x1FA7A; Cu&#xed;date con seguimiento</h3><p>Recuerda que los GLP-1 requieren receta y seguimiento m&#xe9;dico. Te orientamos sobre c&#xf3;mo usarlos de forma segura.</p></div></div>
       </div>
       <div style="text-align:center;margin-top:32px;"><button class="btn-primary" id="how-cta">Empezar ahora</button></div>
     </div>
   </div>
 
-  <!-- LABS BAR -->
-  <div style="background:white;padding:44px 24px;border-top:1px solid var(--gray-100);border-bottom:1px solid var(--gray-100);">
+  <!-- FARMACIAS INCLUIDAS -->
+  <div style="background:white;padding:48px 24px;border-top:1px solid var(--gray-100);border-bottom:1px solid var(--gray-100);">
     <div style="max-width:900px;margin:0 auto;">
-      <p style="text-align:center;font-family:'Sora',sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray-400);margin-bottom:28px;">Laboratorios que comparamos</p>
-      <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;">
-        <div class="lab-pill" style="display:flex;align-items:center;gap:8px;background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:50px;padding:10px 18px;cursor:default;transition:all .2s;" onmouseover="this.style.borderColor='#6366F1';this.style.background='rgba(99,102,241,.05)'" onmouseout="this.style.borderColor='var(--gray-200)';this.style.background='var(--gray-50)'"><span style="font-size:18px;">🏠</span><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:13px;color:var(--navy);">Labbe</span><span style="font-size:10px;background:rgba(99,102,241,.1);color:#6366F1;padding:2px 8px;border-radius:10px;font-weight:700;font-family:'Sora',sans-serif;white-space:nowrap;">A domicilio</span></div>
-        <div class="lab-pill" style="display:flex;align-items:center;gap:8px;background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:50px;padding:10px 18px;cursor:default;transition:all .2s;" onmouseover="this.style.borderColor='#F59E0B';this.style.background='rgba(245,158,11,.05)'" onmouseout="this.style.borderColor='var(--gray-200)';this.style.background='var(--gray-50)'"><span style="font-size:18px;">🏥</span><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:13px;color:var(--navy);">Chopo</span><span style="font-size:10px;background:rgba(245,158,11,.1);color:#D97706;padding:2px 8px;border-radius:10px;font-weight:700;font-family:'Sora',sans-serif;white-space:nowrap;">500+ sucursales</span></div>
-        <div class="lab-pill" style="display:flex;align-items:center;gap:8px;background:rgba(16,185,129,.06);border:1.5px solid rgba(16,185,129,.3);border-radius:50px;padding:10px 18px;cursor:default;transition:all .2s;" onmouseover="this.style.borderColor='#10B981';this.style.background='rgba(16,185,129,.1)'" onmouseout="this.style.borderColor='rgba(16,185,129,.3)';this.style.background='rgba(16,185,129,.06)'"><span style="font-size:18px;">💰</span><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:13px;color:var(--navy);">Salud Digna</span><span style="font-size:10px;background:rgba(16,185,129,.15);color:#059669;padding:2px 8px;border-radius:10px;font-weight:700;font-family:'Sora',sans-serif;white-space:nowrap;">Más económico</span></div>
-        <div class="lab-pill" style="display:flex;align-items:center;gap:8px;background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:50px;padding:10px 18px;cursor:default;transition:all .2s;" onmouseover="this.style.borderColor='var(--teal)';this.style.background='rgba(0,180,216,.05)'" onmouseout="this.style.borderColor='var(--gray-200)';this.style.background='var(--gray-50)'"><span style="font-size:18px;">💻</span><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:13px;color:var(--navy);">OLAB</span><span style="font-size:10px;background:rgba(0,180,216,.1);color:#0077A8;padding:2px 8px;border-radius:10px;font-weight:700;font-family:'Sora',sans-serif;white-space:nowrap;">100% digital</span></div>
-        <div class="lab-pill" style="display:flex;align-items:center;gap:8px;background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:50px;padding:10px 18px;cursor:default;transition:all .2s;" onmouseover="this.style.borderColor='#EF4444';this.style.background='rgba(239,68,68,.05)'" onmouseout="this.style.borderColor='var(--gray-200)';this.style.background='var(--gray-50)'"><span style="font-size:18px;">🔬</span><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:13px;color:var(--navy);">LAPI</span><span style="font-size:10px;background:rgba(239,68,68,.1);color:#DC2626;padding:2px 8px;border-radius:10px;font-weight:700;font-family:'Sora',sans-serif;white-space:nowrap;">Especializado</span></div>
-        <div class="lab-pill" style="display:flex;align-items:center;gap:8px;background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:50px;padding:10px 18px;cursor:default;transition:all .2s;" onmouseover="this.style.borderColor='#EC4899';this.style.background='rgba(236,72,153,.05)'" onmouseout="this.style.borderColor='var(--gray-200)';this.style.background='var(--gray-50)'"><span style="font-size:18px;">✨</span><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:13px;color:var(--navy);">Lab. Médico Polanco</span><span style="font-size:10px;background:rgba(236,72,153,.1);color:#EC4899;padding:2px 8px;border-radius:10px;font-weight:700;font-family:'Sora',sans-serif;white-space:nowrap;">Premium</span></div>
+      <p style="text-align:center;font-family:'Sora',sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray-400);margin-bottom:10px;">Farmacias incluidas</p>
+      <p style="text-align:center;font-size:14px;color:var(--gray-600);margin-bottom:30px;">Consultamos directamente los precios en el sitio de cada farmacia.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;">
+        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:rgba(0,180,216,.06);border:1.5px solid rgba(0,180,216,.3);border-radius:16px;padding:22px 14px;min-height:96px;text-align:center;"><span style="font-size:24px;">&#x1FA7A;</span><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:var(--navy);">Clivi</span><span style="font-size:10px;background:rgba(0,180,216,.15);color:#0077A8;padding:2px 8px;border-radius:10px;font-weight:700;font-family:'Sora',sans-serif;">Con seguimiento m&#xe9;dico</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:16px;padding:22px 14px;min-height:96px;text-align:center;"><span style="font-size:24px;">&#x1F48A;</span><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:var(--navy);">Farmacias del Ahorro</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:16px;padding:22px 14px;min-height:96px;text-align:center;"><span style="font-size:24px;">&#x1F3EA;</span><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:var(--navy);">Farmacias Guadalajara</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:16px;padding:22px 14px;min-height:96px;text-align:center;"><span style="font-size:24px;">&#x1F3EC;</span><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:var(--navy);">Benavides</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:16px;padding:22px 14px;min-height:96px;text-align:center;"><span style="font-size:24px;">&#x1F9EC;</span><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:var(--navy);">San Pablo</span></div>
       </div>
     </div>
   </div>
@@ -335,16 +368,16 @@ footer{background:var(--navy);color:rgba(255,255,255,.65);padding:44px 24px 30px
     <h2 class="sec-title" style="color:var(--navy);">Transparencia total, sin sorpresas</h2>
     <div class="trust-grid">
       <div class="trust-card"><div class="trust-icon" style="background:rgba(99,102,241,.1);">&#x1F512;</div><div><h3>100% Seguro</h3><p>Tus datos est&#xe1;n protegidos y nunca los compartimos.</p></div></div>
-      <div class="trust-card"><div class="trust-icon" style="background:rgba(16,185,129,.1);">&#x1F4B0;</div><div><h3>Ahorra hasta 80%</h3><p>Salud Digna puede ser hasta 80% m&#xe1;s barato que otros labs.</p></div></div>
-      <div class="trust-card"><div class="trust-icon" style="background:rgba(245,158,11,.1);">&#x2B50;</div><div><h3>Laboratorios reconocidos</h3><p>Solo comparamos laboratorios certificados y confiables.</p></div></div>
-      <div class="trust-card"><div class="trust-icon" style="background:rgba(239,68,68,.1);">&#x1F6AB;</div><div><h3>Sin comisiones</h3><p>Pagas directo en el laboratorio. Labcompara es gratis.</p></div></div>
-      <div class="trust-card"><div class="trust-icon" style="background:rgba(0,180,216,.1);">&#x26A1;</div><div><h3>Resultados r&#xe1;pidos</h3><p>Mayor&#xed;a de estudios con resultados en 24-48 horas.</p></div></div>
-      <div class="trust-card"><div class="trust-icon" style="background:rgba(11,31,75,.1);">&#x1F4CB;</div><div><h3>Informaci&#xf3;n clara</h3><p>Te explicamos cada estudio y c&#xf3;mo prepararte.</p></div></div>
+      <div class="trust-card"><div class="trust-icon" style="background:rgba(16,185,129,.1);">&#x1F4B0;</div><div><h3>Ahorra hasta 25%</h3><p>El precio del mismo medicamento puede variar miles de pesos entre farmacias.</p></div></div>
+      <div class="trust-card"><div class="trust-icon" style="background:rgba(245,158,11,.1);">&#x1F3E5;</div><div><h3>Farmacias confiables</h3><p>Solo comparamos farmacias reconocidas y medicamentos originales.</p></div></div>
+      <div class="trust-card"><div class="trust-icon" style="background:rgba(239,68,68,.1);">&#x1F6AB;</div><div><h3>Sin comisiones</h3><p>Pagas directo en la farmacia. GLPcompara es gratis.</p></div></div>
+      <div class="trust-card"><div class="trust-icon" style="background:rgba(0,180,216,.1);">&#x1FA7A;</div><div><h3>Con respaldo m&#xe9;dico</h3><p>Te orientamos sobre el uso seguro de los GLP-1 con seguimiento profesional.</p></div></div>
+      <div class="trust-card"><div class="trust-icon" style="background:rgba(11,31,75,.1);">&#x1F4CB;</div><div><h3>Informaci&#xf3;n clara</h3><p>Te explicamos cada medicamento, su sustancia activa y c&#xf3;mo se usa.</p></div></div>
     </div>
     <div class="proof-bar">
-      <div style="text-align:center;"><div class="proof-n">50,000+</div><div class="proof-l">Cotizaciones enviadas</div></div>
-      <div style="text-align:center;"><div class="proof-n">6</div><div class="proof-l">Laboratorios comparados</div></div>
-      <div style="text-align:center;"><div class="proof-n">4.7/5</div><div class="proof-l">Calificaci&#xf3;n promedio</div></div>
+      <div style="text-align:center;"><div class="proof-n">5</div><div class="proof-l">Medicamentos GLP-1</div></div>
+      <div style="text-align:center;"><div class="proof-n">5</div><div class="proof-l">Farmacias comparadas</div></div>
+      <div style="text-align:center;"><div class="proof-n">Hasta 25%</div><div class="proof-l">De ahorro posible</div></div>
       <div style="text-align:center;"><div class="proof-n">$0</div><div class="proof-l">Costo de comparaci&#xf3;n</div></div>
     </div>
   </div>
@@ -352,60 +385,55 @@ footer{background:var(--navy);color:rgba(255,255,255,.65);padding:44px 24px 30px
 
   <!-- PROMO CTA -->
   <div class="promo">
-    <h2>&#xbf;Listo para cotizar?</h2>
-    <p>En menos de 2 minutos tienes tu comparativa personalizada.</p>
-    <button class="btn-primary" id="promo-cta" style="font-size:17px;padding:16px 40px;">Cotizar ahora &#x2014; es gratis &#x2192;</button>
+    <h2>&#xbf;Listo para comparar?</h2>
+    <p>En menos de 2 minutos tienes tu comparativa de precios personalizada.</p>
+    <button class="btn-primary" id="promo-cta" style="font-size:17px;padding:16px 40px;">Comparar precios &#x2014; es gratis &#x2192;</button>
   </div>
 
   <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
       <div class="footer-grid">
-        <div><div class="footer-brand">Labcompara</div><p class="footer-desc">Compara precios de estudios de laboratorio entre los mejores laboratorios de M&#xe9;xico.</p></div>
+        <div><div class="footer-brand">GLPcompara</div><p class="footer-desc">Compara precios de medicamentos GLP-1 entre las principales farmacias de M&#xe9;xico.</p></div>
         <div>
-          <div class="footer-col-h">Laboratorios</div>
-          <a href="https://www.labbe.mx/" target="_blank" rel="noopener" class="footer-a" onclick="typeof gtag!=='undefined'&&gtag('event','click_footer_lab',{lab_name:'Labbe'})">Labbe</a>
-          <a href="https://www.chopo.com.mx/" target="_blank" rel="noopener" class="footer-a" onclick="typeof gtag!=='undefined'&&gtag('event','click_footer_lab',{lab_name:'Chopo'})">Chopo</a>
-          <a href="https://salud-digna.org/" target="_blank" rel="noopener" class="footer-a" onclick="typeof gtag!=='undefined'&&gtag('event','click_footer_lab',{lab_name:'Salud Digna'})">Salud Digna</a>
-          <a href="https://olab.com.mx/" target="_blank" rel="noopener" class="footer-a" onclick="typeof gtag!=='undefined'&&gtag('event','click_footer_lab',{lab_name:'OLAB'})">OLAB</a>
-          <a href="https://lapi.com.mx/" target="_blank" rel="noopener" class="footer-a" onclick="typeof gtag!=='undefined'&&gtag('event','click_footer_lab',{lab_name:'LAPI'})">LAPI</a>
-          <a href="pages/laboratorio-cerca-de-mi.html" class="footer-a">Laboratorio M&#xe9;dico Polanco</a>
+          <div class="footer-col-h">Farmacias</div>
+          <a href="https://clivi.com.mx/" target="_blank" rel="noopener" class="footer-a" onclick="typeof gtag!=='undefined'&&gtag('event','click_footer_pharmacy',{pharmacy_name:'Clivi'})">Clivi</a>
+          <a href="https://www.fahorro.com/" target="_blank" rel="noopener" class="footer-a" onclick="typeof gtag!=='undefined'&&gtag('event','click_footer_pharmacy',{pharmacy_name:'Farmacias del Ahorro'})">Farmacias del Ahorro</a>
+          <a href="https://www.farmaciasguadalajara.com/" target="_blank" rel="noopener" class="footer-a" onclick="typeof gtag!=='undefined'&&gtag('event','click_footer_pharmacy',{pharmacy_name:'Farmacias Guadalajara'})">Farmacias Guadalajara</a>
+          <a href="https://www.benavides.com.mx/" target="_blank" rel="noopener" class="footer-a" onclick="typeof gtag!=='undefined'&&gtag('event','click_footer_pharmacy',{pharmacy_name:'Benavides'})">Benavides</a>
+          <a href="https://www.farmaciasanpablo.com.mx/" target="_blank" rel="noopener" class="footer-a" onclick="typeof gtag!=='undefined'&&gtag('event','click_footer_pharmacy',{pharmacy_name:'San Pablo'})">San Pablo</a>
         </div>
         <div>
           <div class="footer-col-h">Explora</div>
-          <a href="pages/estudios-de-laboratorio.html" class="footer-a">Estudios de laboratorio</a>
-          <a href="pages/analisis-clinicos.html" class="footer-a">An&#xe1;lisis cl&#xed;nicos</a>
-          <a href="pages/examenes-de-sangre.html" class="footer-a">Ex&#xe1;menes de sangre</a>
+          <a href="pages/estudios-de-laboratorio.html" class="footer-a">Medicamentos GLP-1</a>
+          <a href="pages/analisis-clinicos.html" class="footer-a">Ozempic vs Mounjaro</a>
+          <a href="pages/examenes-de-sangre.html" class="footer-a">&#xbf;Qu&#xe9; es la semaglutida?</a>
           <a href="blog/index.html" class="footer-a">Blog</a>
         </div>
         <div>
           <div class="footer-col-h">Legal</div>
-          <a href="#" class="footer-a">Privacidad</a>
-          <a href="#" class="footer-a">T&#xe9;rminos</a>
+          <a href="#" class="footer-a">Aviso de privacidad</a>
+          <a href="#" class="footer-a">T&#xe9;rminos de uso</a>
           <a href="#" class="footer-a">Contacto</a>
         </div>
       </div>
-      <div class="footer-disc">Labcompara es un comparador de precios de estudios de laboratorio. No somos un laboratorio cl&#xed;nico. Los precios son referenciales. &copy; 2024 Labcompara.</div>
+      <div class="footer-disc">GLPcompara no vende medicamentos. Los precios son orientativos y pueden variar. Verifica siempre el precio final en la farmacia. Los medicamentos GLP-1 requieren receta y supervisi&#xf3;n m&#xe9;dica. &copy; 2025 GLPcompara &middot; <a href="#" style="color:rgba(255,255,255,.5);">Aviso de privacidad</a> &middot; <a href="#" style="color:rgba(255,255,255,.5);">T&#xe9;rminos de uso</a></div>
     </div>
   </footer>
 </section>
 
 <!-- FORM SECTION -->
 <section id="sec-form" class="section">
-  <div class="top-bar" id="form-bar" style="display:none;"><b id="form-name"></b> &#x2014; Tu cotizaci&#xf3;n se enviar&#xe1; a <b id="form-email"></b></div>
+  <div class="top-bar" id="form-bar" style="display:none;"><b id="form-name"></b> &#x2014; Tu comparativa se enviar&#xe1; a <b id="form-email"></b></div>
   <div class="form-wrap">
     <div class="step-label">Paso 1 de 2</div>
     <h1 class="form-h">Cu&#xe9;ntanos de ti</h1>
-    <p class="form-p">Te enviaremos tu cotizaci&#xf3;n personalizada y recomendaciones de preparaci&#xf3;n.</p>
-    <div class="privacy-box"><span>&#x1F512;</span><p><strong>Tu privacidad es lo primero.</strong> Solo usamos tus datos para enviarte la cotizaci&#xf3;n.</p></div>
+    <p class="form-p">Te enviaremos tu comparativa de precios personalizada y orientaci&#xf3;n sobre tu medicamento GLP-1.</p>
+    <div class="privacy-box"><span>&#x1F512;</span><p><strong>Tu privacidad es lo primero.</strong> Solo usamos tus datos para enviarte la comparativa.</p></div>
     <div class="form-card">
       <div class="field"><label for="f-nombre">Nombre completo *</label><input id="f-nombre" type="text" placeholder="Ej. Mar&#xed;a Garc&#xed;a" autocomplete="name"/><span class="err-msg" id="err-nombre"></span></div>
       <div class="field"><label for="f-correo">Correo electr&#xf3;nico *</label><input id="f-correo" type="email" placeholder="tu@correo.com" autocomplete="email"/><span class="err-msg" id="err-correo"></span></div>
-      <div class="row2">
-        <div class="field"><label for="f-sexo">Sexo biol&#xf3;gico *</label><select id="f-sexo"><option value="">Seleccionar</option><option value="F">Femenino</option><option value="M">Masculino</option><option value="O">Prefiero no decir</option></select><span class="err-msg" id="err-sexo"></span></div>
-        <div class="field"><label for="f-edad">Edad *</label><input id="f-edad" type="number" placeholder="35" min="1" max="120"/><span class="err-msg" id="err-edad"></span></div>
-      </div>
-      <div class="field"><label for="f-cp">C&#xf3;digo postal *</label><input id="f-cp" type="text" placeholder="06600" maxlength="5" inputmode="numeric"/><span class="err-msg" id="err-cp"></span><span class="hint">Para mostrarte laboratorios en tu zona.</span></div>
+      <div class="field"><label for="f-cp">C&#xf3;digo postal *</label><input id="f-cp" type="text" placeholder="06600" maxlength="5" inputmode="numeric"/><span class="err-msg" id="err-cp"></span><span class="hint">Para mostrarte farmacias en tu zona.</span></div>
       <button class="btn-primary btn-full" id="form-submit">Ver comparativa de precios <span>&#x2192;</span></button>
     </div>
     <p class="form-note">Al continuar aceptas nuestro aviso de privacidad.</p>
@@ -414,31 +442,41 @@ footer{background:var(--navy);color:rgba(255,255,255,.65);padding:44px 24px 30px
 
 <!-- SEARCH SECTION -->
 <section id="sec-search" class="section">
-  <div class="top-bar" id="search-bar" style="display:none;">&#x1F44B; &#x48;ola <b id="search-name"></b> &#x2014; Tu cotizaci&#xf3;n se enviar&#xe1; a <b id="search-email"></b></div>
+  <div class="top-bar" id="search-bar" style="display:none;">&#x1F44B; &#x48;ola <b id="search-name"></b> &#x2014; Tu comparativa se enviar&#xe1; a <b id="search-email"></b></div>
   <div class="search-wrap" style="padding-top:40px;">
     <div class="step-label">Paso 2 de 2</div>
-    <h1 class="form-h">&#xbf;Qu&#xe9; estudio necesitas?</h1>
-    <p class="form-p">Busca y selecciona uno o varios estudios para comparar precios.</p>
-    <div class="search-box"><span>&#x1F50D;</span><input id="search-input" type="text" placeholder="Buscar: biomet&#xed;a, glucosa, tiroides&#x2026;" autocomplete="off"/></div>
-    <div class="chips-wrap" id="chips-wrap" style="display:none;"><span class="chip-lbl">Seleccionados:</span><span id="chips-inner"></span></div>
-    <div class="study-list" id="study-list"></div>
-    <button class="btn-primary btn-compare" id="compare-btn" disabled style="opacity:.5;">Selecciona al menos un estudio</button>
-    <div class="quick-wrap"><div class="quick-lbl">POPULARES:</div><div class="tags" id="quick-tags"></div></div>
+
+    <!-- 2A: elegir medicamento -->
+    <div id="drug-step">
+      <h1 class="form-h">&#xbf;Qu&#xe9; medicamento necesitas?</h1>
+      <p class="form-p">Elige el medicamento GLP-1 que quieres comparar.</p>
+      <div class="study-list" id="drug-grid" style="max-height:none;"></div>
+    </div>
+
+    <!-- 2B: elegir dosis / presentaci&#xf3;n -->
+    <div id="dose-step" style="display:none;">
+      <button class="btn-back" id="change-drug" style="margin-bottom:18px;">&#x2190; Cambiar medicamento</button>
+      <h1 class="form-h" id="dose-title">Elige la presentaci&#xf3;n</h1>
+      <p class="form-p" id="dose-sub">Selecciona una o varias presentaciones para comparar precios.</p>
+      <div class="chips-wrap" id="chips-wrap" style="display:none;"><span class="chip-lbl">Seleccionados:</span><span id="chips-inner"></span></div>
+      <div class="study-list" id="study-list"></div>
+      <button class="btn-primary btn-compare" id="compare-btn" disabled style="opacity:.5;">Selecciona al menos una presentaci&#xf3;n</button>
+    </div>
   </div>
 </section>
 
 <!-- RESULTS SECTION -->
 <section id="sec-results" class="section" style="background:var(--gray-50);">
-  <div class="top-bar" id="results-bar" style="display:none;">&#x1F44B; &#x48;ola <b id="results-name"></b> &#x2014; Enviamos tu cotizaci&#xf3;n a <b id="results-email"></b> &#x2713;</div>
+  <div class="top-bar" id="results-bar" style="display:none;">&#x1F44B; &#x48;ola <b id="results-name"></b> &#x2014; Enviamos tu comparativa a <b id="results-email"></b> &#x2713;</div>
   <div class="results-wrap">
     <div class="results-top">
       <button class="btn-back" id="results-back">&#x2190; Volver</button>
       <div><div class="results-title">Tu comparativa de precios</div><div class="results-sub-t" id="results-sub"></div></div>
       <div class="sort-btns"><button class="sort-btn active" id="sort-price">Precio</button><button class="sort-btn" id="sort-rating">Calificaci&#xf3;n</button></div>
     </div>
-    <div class="legend"><span class="bc">&#x1F4B0; M&#xe1;s barato</span><span class="br">&#x2B50; Mejor calificado</span><span class="brec">&#x2705; Recomendado</span></div>
+    <div class="legend"><span class="bc">&#x2713; Incluido</span><span style="background:var(--gray-100);color:var(--gray-600);padding:3px 9px;border-radius:20px;font-size:11px;font-weight:700;font-family:'Sora',sans-serif;">&#x2715; No incluido</span><span class="brec">&#x1F3C6; Más completo</span></div>
     <div id="results-container"></div>
-    <div class="back-link-wrap"><button class="back-link" id="new-search">Buscar otros estudios</button></div>
+    <div class="back-link-wrap"><button class="back-link" id="new-search">Buscar otros medicamentos</button></div>
   </div>
 </section>
 
@@ -456,223 +494,139 @@ footer{background:var(--navy);color:rgba(255,255,255,.65);padding:44px 24px 30px
     <div class="mstudy-name" id="m-study"></div>
     <div class="mdesc" id="m-desc"></div>
     <div class="mgrid" id="m-grid"></div>
-    <div class="fasting-alert" id="m-fasting" style="display:none;"><span>&#x26A0;&#xfe0f;</span><p class="fasting-text"><strong>Requiere ayuno.</strong> No comas ni bebas nada (excepto agua) al menos 8-12 horas antes.</p></div>
-    <div class="mcta-row"><div><div class="mprice-label" id="m-price-label"></div><div class="mprice-val" id="m-price"></div></div><a href="#" id="m-go" target="_blank" rel="noopener noreferrer" class="mgo">Ir al laboratorio &#x2192;</a></div>
-    <p class="mdisc">Labcompara te redirige al sitio del laboratorio. El pago se realiza directamente con ellos.</p>
+    <div class="fasting-alert" id="m-fasting" style="display:none;"><span>&#x26A0;&#xfe0f;</span><p class="fasting-text"><strong>Requiere receta m&#xe9;dica.</strong> Este medicamento se vende &#xfa;nicamente con receta. Consulta siempre a tu m&#xe9;dico antes de iniciar el tratamiento.</p></div>
+    <div class="mcta-row"><div><div class="mprice-label" id="m-price-label"></div><div class="mprice-val" id="m-price"></div></div><a href="#" id="m-go" target="_blank" rel="noopener noreferrer" class="mgo">Ir a la farmacia &#x2192;</a></div>
+    <p class="mdisc">GLPcompara te redirige al sitio de la farmacia. El pago se realiza directamente con ellos. Los precios son orientativos y pueden variar.</p>
   </div>
 </div>
 
 <script>
 // ── DATA ──────────────────────────────────────────────────────────────────
 const RAW_DATA = [
-  {name:"Biometría Hemática",Labbe:277,Polanco:556,Chopo:270,"Salud Digna":95,LAPI:193,OLAB:269,avg:277,cheapest:"Salud Digna"},
-  {name:"Química Sanguínea 6 Elementos",Labbe:616,Polanco:910,Chopo:null,"Salud Digna":110,LAPI:465,OLAB:409,avg:502,cheapest:"Salud Digna"},
-  {name:"Química Sanguínea 27 Elementos",Labbe:903,Polanco:1730,Chopo:926,"Salud Digna":340,LAPI:655,OLAB:819,avg:896,cheapest:"Salud Digna"},
-  {name:"Química Sanguínea 35 Elementos",Labbe:1277,Polanco:1818,Chopo:null,"Salud Digna":260,LAPI:869,OLAB:799,avg:1005,cheapest:"Salud Digna"},
-  {name:"Química Sanguínea 45 Elementos",Labbe:null,Polanco:1892,Chopo:1015,"Salud Digna":null,LAPI:null,OLAB:929,avg:1279,cheapest:"OLAB"},
-  {name:"Glucosa en Suero",Labbe:145,Polanco:216,Chopo:99,"Salud Digna":null,LAPI:76,OLAB:null,avg:134,cheapest:"LAPI"},
-  {name:"Hemoglobina Glicosilada (HbA1c)",Labbe:449,Polanco:852,Chopo:467,"Salud Digna":null,LAPI:300,OLAB:419,avg:497,cheapest:"LAPI"},
-  {name:"Perfil de Lípidos",Labbe:848,Polanco:830,Chopo:403,"Salud Digna":230,LAPI:381,OLAB:419,avg:519,cheapest:"Salud Digna"},
-  {name:"Insulina Basal",Labbe:385,Polanco:1470,Chopo:1168,"Salud Digna":280,LAPI:249,OLAB:758,avg:718,cheapest:"LAPI"},
-  {name:"Perfil Tiroideo",Labbe:1016,Polanco:2100,Chopo:1079,"Salud Digna":550,LAPI:698,OLAB:869,avg:1052,cheapest:"Salud Digna"},
-  {name:"Examen General de Orina (EGO)",Labbe:303,Polanco:302,Chopo:144,"Salud Digna":55,LAPI:110,OLAB:149,avg:177,cheapest:"Salud Digna"},
-  {name:"Perfil Hormonal Femenino",Labbe:null,Polanco:3380,Chopo:2075,"Salud Digna":350,LAPI:3347,OLAB:749,avg:1980,cheapest:"Salud Digna"},
-  {name:"Perfil Hormonal Masculino",Labbe:null,Polanco:823,Chopo:1755,"Salud Digna":940,LAPI:1119,OLAB:1400,avg:1207,cheapest:"Polanco"},
-  {name:"Testosterona Libre y Total",Labbe:null,Polanco:null,Chopo:2633,"Salud Digna":null,LAPI:null,OLAB:null,avg:2633,cheapest:"Chopo"},
-  {name:"Vitamina D (25-Hidroxi)",Labbe:1059,Polanco:3697,Chopo:1145,"Salud Digna":550,LAPI:733,OLAB:null,avg:1237,cheapest:"Salud Digna"},
-  {name:"Antígeno Prostático Específico (PSA Total)",Labbe:418,Polanco:null,Chopo:320,"Salud Digna":null,LAPI:251,OLAB:null,avg:330,cheapest:"LAPI"},
-  {name:"CA-125 (Marcador Tumoral Ovario)",Labbe:549,Polanco:2794,Chopo:null,"Salud Digna":null,LAPI:452,OLAB:759,avg:1139,cheapest:"LAPI"},
-  {name:"CA 15-3 (Marcador Tumoral Mama)",Labbe:549,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:452,OLAB:null,avg:501,cheapest:"LAPI"},
-  {name:"Marcadores Tumorales Hígado (AFP)",Labbe:null,Polanco:1758,Chopo:null,"Salud Digna":null,LAPI:342,OLAB:null,avg:1050,cheapest:"LAPI"},
-  {name:"Marcadores Tumorales Páncreas (CA 19-9)",Labbe:null,Polanco:3340,Chopo:3166,"Salud Digna":null,LAPI:452,OLAB:717,avg:1919,cheapest:"LAPI"},
-  {name:"Marcadores Tumorales Colon (CEA)",Labbe:null,Polanco:1884,Chopo:1305,"Salud Digna":null,LAPI:334,OLAB:null,avg:1174,cheapest:"LAPI"},
-  {name:"Papanicolaou",Labbe:null,Polanco:778,Chopo:499,"Salud Digna":250,LAPI:548,OLAB:649,avg:545,cheapest:"Salud Digna"},
-  {name:"Prueba de Embarazo en Sangre (Beta-HCG)",Labbe:304,Polanco:806,Chopo:669,"Salud Digna":null,LAPI:293,OLAB:null,avg:518,cheapest:"LAPI"},
-  {name:"Prueba de VIH",Labbe:null,Polanco:1092,Chopo:579,"Salud Digna":290,LAPI:334,OLAB:519,avg:563,cheapest:"Salud Digna"},
-  {name:"Perfil Reumático",Labbe:null,Polanco:2196,Chopo:919,"Salud Digna":285,LAPI:702,OLAB:null,avg:1026,cheapest:"Salud Digna"},
-  {name:"Perfil Hepático",Labbe:null,Polanco:5810,Chopo:380,"Salud Digna":null,LAPI:459,OLAB:639,avg:1822,cheapest:"Chopo"},
-  {name:"Perfil Ginecológico",Labbe:1279,Polanco:3270,Chopo:1245,"Salud Digna":595,LAPI:1237,OLAB:759,avg:1398,cheapest:"Salud Digna"},
-  {name:"Depuración de Creatinina",Labbe:null,Polanco:764,Chopo:345,"Salud Digna":95,LAPI:262,OLAB:369,avg:367,cheapest:"Salud Digna"},
-  {name:"Deshidrogenasa Láctica (DHL)",Labbe:402,Polanco:406,Chopo:255,"Salud Digna":null,LAPI:136,OLAB:359,avg:312,cheapest:"LAPI"},
-  {name:"Coprocultivo",Labbe:null,Polanco:948,Chopo:438,"Salud Digna":null,LAPI:251,OLAB:419,avg:514,cheapest:"LAPI"},
-  {name:"Urocultivo",Labbe:null,Polanco:998,Chopo:570,"Salud Digna":null,LAPI:334,OLAB:439,avg:585,cheapest:"LAPI"},
-  {name:"Coproparasitoscópico (1 muestra)",Labbe:null,Polanco:636,Chopo:336,"Salud Digna":60,LAPI:121,OLAB:314,avg:293,cheapest:"Salud Digna"},
-  {name:"Grupo Sanguíneo y Rh",Labbe:null,Polanco:414,Chopo:175,"Salud Digna":80,LAPI:134,OLAB:146,avg:190,cheapest:"Salud Digna"},
-  {name:"Reacciones Febriles",Labbe:null,Polanco:432,Chopo:179,"Salud Digna":null,LAPI:200,OLAB:229,avg:260,cheapest:"Chopo"},
-  {name:"Tiempo de Protrombina",Labbe:null,Polanco:582,Chopo:179,"Salud Digna":null,LAPI:199,OLAB:269,avg:307,cheapest:"Chopo"},
-  {name:"Tiempo de Tromboplastina Parcial (TTP)",Labbe:null,Polanco:588,Chopo:null,"Salud Digna":null,LAPI:468,OLAB:389,avg:482,cheapest:"OLAB"},
-  {name:"Pruebas de Coagulación Sanguínea",Labbe:1006,Polanco:null,Chopo:671,"Salud Digna":555,LAPI:781,OLAB:null,avg:753,cheapest:"Salud Digna"},
-  {name:"Curva de Tolerancia a la Glucosa",Labbe:null,Polanco:884,Chopo:354,"Salud Digna":null,LAPI:301,OLAB:439,avg:495,cheapest:"LAPI"},
-  {name:"Prueba de Influenza",Labbe:null,Polanco:1568,Chopo:635,"Salud Digna":370,LAPI:553,OLAB:559,avg:737,cheapest:"Salud Digna"},
-  {name:"Electrocardiograma en Reposo",Labbe:null,Polanco:810,Chopo:415,"Salud Digna":125,LAPI:473,OLAB:379,avg:440,cheapest:"Salud Digna"},
-  {name:"Examen Prenupcial",Labbe:null,Polanco:1122,Chopo:470,"Salud Digna":205,LAPI:1430,OLAB:449,avg:735,cheapest:"Salud Digna"},
-  {name:"Examen de ETS",Labbe:1109,Polanco:1924,Chopo:859,"Salud Digna":null,LAPI:666,OLAB:3429,avg:1597,cheapest:"LAPI"},
-  {name:"Prueba Antidoping",Labbe:null,Polanco:1056,Chopo:489,"Salud Digna":225,LAPI:null,OLAB:539,avg:577,cheapest:"Salud Digna"},
-  {name:"Hemocultivo",Labbe:null,Polanco:1708,Chopo:1019,"Salud Digna":null,LAPI:null,OLAB:769,avg:1165,cheapest:"OLAB"},
-  {name:"Espermatobioscopia",Labbe:909,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:763,OLAB:null,avg:836,cheapest:"LAPI"},
-  {name:"Perfil Diabético",Labbe:381,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:1283,OLAB:null,avg:832,cheapest:"Labbe"},
-  {name:"Perfil Básico",Labbe:1339,Polanco:null,Chopo:null,"Salud Digna":150,LAPI:746,OLAB:null,avg:745,cheapest:"Salud Digna"},
-  {name:"Check Up Básico",Labbe:null,Polanco:1914,Chopo:1359,"Salud Digna":265,LAPI:329,OLAB:1159,avg:1005,cheapest:"Salud Digna"},
-  {name:"Check Up Completo",Labbe:null,Polanco:null,Chopo:2275,"Salud Digna":450,LAPI:null,OLAB:1249,avg:1325,cheapest:"Salud Digna"},
-  {name:"Proteínas en Orina 24h",Labbe:472,Polanco:5058,Chopo:210,"Salud Digna":null,LAPI:200,OLAB:239,avg:1036,cheapest:"LAPI"},
-  {name:"Colposcopía",Labbe:null,Polanco:1492,Chopo:625,"Salud Digna":null,LAPI:507,OLAB:449,avg:768,cheapest:"OLAB"},
-  {name:"Mastografía",Labbe:null,Polanco:636,Chopo:315,"Salud Digna":275,LAPI:491,OLAB:289,avg:401,cheapest:"Salud Digna"},
-  {name:"Perfil Preoperatorio",Labbe:1070,Polanco:3268,Chopo:809,"Salud Digna":null,LAPI:718,OLAB:1956,avg:1564,cheapest:"LAPI"},
-  {name:"Bicarbonato en Sangre",Labbe:null,Polanco:510,Chopo:126,"Salud Digna":null,LAPI:null,OLAB:282,avg:306,cheapest:"Chopo"},
-  {name:"Pruebas de Función Renal",Labbe:null,Polanco:2054,Chopo:1119,"Salud Digna":null,LAPI:417,OLAB:null,avg:1197,cheapest:"LAPI"},
-  {name:"Bilirrubina Total",Labbe:102,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:82,OLAB:null,avg:92,cheapest:"LAPI"},
-  {name:"Velocidad de Sedimentación Globular (VSG)",Labbe:135,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:98,OLAB:null,avg:117,cheapest:"LAPI"},
-  {name:"Colesterol Total",Labbe:134,Polanco:331,Chopo:null,"Salud Digna":null,LAPI:107,OLAB:null,avg:191,cheapest:"LAPI"},
-  {name:"Perfil Climaterio",Labbe:829,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:682,OLAB:null,avg:756,cheapest:"LAPI"},
-  {name:"Perfil de Alergia Inhalatoria",Labbe:null,Polanco:984,Chopo:1365,"Salud Digna":null,LAPI:2911,OLAB:null,avg:1753,cheapest:"Polanco"},
-  {name:"Tamiz Neonatal",Labbe:null,Polanco:2200,Chopo:808,"Salud Digna":null,LAPI:null,OLAB:2469,avg:1826,cheapest:"Chopo"},
-  {name:"Creatinina Sérica",Labbe:154,Polanco:178,Chopo:185,"Salud Digna":null,LAPI:110,OLAB:153,avg:156,cheapest:"LAPI"},
-  {name:"Urea en Suero",Labbe:null,Polanco:211,Chopo:120,"Salud Digna":null,LAPI:122,OLAB:null,avg:151,cheapest:"Chopo"},
-  {name:"Ácido Úrico",Labbe:null,Polanco:171,Chopo:null,"Salud Digna":null,LAPI:120,OLAB:null,avg:146,cheapest:"LAPI"},
-  {name:"Triglicéridos",Labbe:176,Polanco:229,Chopo:158,"Salud Digna":null,LAPI:null,OLAB:null,avg:188,cheapest:"Chopo"},
-  {name:"Testosterona Total",Labbe:466,Polanco:1031,Chopo:1075,"Salud Digna":null,LAPI:380,OLAB:null,avg:738,cheapest:"LAPI"},
-  {name:"Ferritina",Labbe:542,Polanco:848,Chopo:825,"Salud Digna":null,LAPI:348,OLAB:null,avg:641,cheapest:"LAPI"},
-  {name:"Vitamina B12",Labbe:608,Polanco:1933,Chopo:1933,"Salud Digna":null,LAPI:294,OLAB:null,avg:1192,cheapest:"LAPI"},
-  {name:"Ácido Fólico",Labbe:493,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:317,OLAB:null,avg:405,cheapest:"LAPI"},
-  {name:"Cortisol Sérico",Labbe:482,Polanco:null,Chopo:1433,"Salud Digna":null,LAPI:310,OLAB:null,avg:742,cheapest:"LAPI"},
-  {name:"Progesterona",Labbe:404,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:399,OLAB:null,avg:402,cheapest:"LAPI"},
-  {name:"Prolactina",Labbe:491,Polanco:325,Chopo:365,"Salud Digna":null,LAPI:null,OLAB:null,avg:394,cheapest:"Polanco"},
-  {name:"Estradiol en Suero",Labbe:null,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:314,OLAB:null,avg:314,cheapest:"LAPI"},
-  {name:"FSH (Hormona Folículo Estimulante)",Labbe:null,Polanco:null,Chopo:438,"Salud Digna":null,LAPI:282,OLAB:null,avg:360,cheapest:"LAPI"},
-  {name:"LH (Hormona Luteinizante)",Labbe:null,Polanco:null,Chopo:441,"Salud Digna":null,LAPI:282,OLAB:null,avg:362,cheapest:"LAPI"},
-  {name:"TSH (Hormona Estimulante de Tiroides)",Labbe:null,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:282,OLAB:null,avg:282,cheapest:"LAPI"},
-  {name:"Proteína C Reactiva (PCR)",Labbe:848,Polanco:411,Chopo:411,"Salud Digna":null,LAPI:419,OLAB:null,avg:522,cheapest:"Polanco"},
-  {name:"Factor Reumatoide",Labbe:246,Polanco:340,Chopo:329,"Salud Digna":null,LAPI:217,OLAB:null,avg:283,cheapest:"LAPI"},
-  {name:"Antiestreptolisinas",Labbe:252,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:198,OLAB:null,avg:225,cheapest:"LAPI"},
-  {name:"VDRL",Labbe:310,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:null,OLAB:null,avg:310,cheapest:"Labbe"},
-  {name:"Calcio Sérico",Labbe:null,Polanco:233,Chopo:317,"Salud Digna":null,LAPI:108,OLAB:null,avg:219,cheapest:"LAPI"},
-  {name:"Fósforo Sérico",Labbe:null,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:109,OLAB:null,avg:109,cheapest:"LAPI"},
-  {name:"Fosfatasa Alcalina",Labbe:null,Polanco:195,Chopo:228,"Salud Digna":null,LAPI:133,OLAB:null,avg:185,cheapest:"LAPI"},
-  {name:"Albúmina en Suero",Labbe:null,Polanco:null,Chopo:299,"Salud Digna":null,LAPI:null,OLAB:null,avg:299,cheapest:"Chopo"},
-  {name:"Magnesio Sérico",Labbe:null,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:410,OLAB:null,avg:410,cheapest:"LAPI"},
-  {name:"Sodio Sérico",Labbe:null,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:206,OLAB:null,avg:206,cheapest:"LAPI"},
-  {name:"Colesterol HDL",Labbe:null,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:135,OLAB:null,avg:135,cheapest:"LAPI"},
-  {name:"Colesterol LDL",Labbe:null,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:135,OLAB:null,avg:135,cheapest:"LAPI"},
-  {name:"DHEA-S (Sulfato de Dehidroepiandrosterona)",Labbe:null,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:407,OLAB:null,avg:407,cheapest:"LAPI"},
-  {name:"Proteínas Totales",Labbe:null,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:151,OLAB:null,avg:151,cheapest:"LAPI"},
-  {name:"Fibrinógeno",Labbe:null,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:216,OLAB:null,avg:216,cheapest:"LAPI"},
-  {name:"Sangre Oculta en Heces",Labbe:null,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:233,OLAB:null,avg:233,cheapest:"LAPI"},
-  {name:"Electrolitos Séricos",Labbe:null,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:328,OLAB:null,avg:328,cheapest:"LAPI"},
-  {name:"Antígeno Carcinoembrionario (CEA)",Labbe:null,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:334,OLAB:null,avg:334,cheapest:"LAPI"},
-  {name:"Cultivo de Exudado Vaginal",Labbe:null,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:291,OLAB:null,avg:291,cheapest:"LAPI"},
-  {name:"Cultivo de Exudado Faríngeo",Labbe:null,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:242,OLAB:null,avg:242,cheapest:"LAPI"},
-  {name:"Perfil Hepatitis C",Labbe:null,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:308,OLAB:null,avg:308,cheapest:"LAPI"},
-  {name:"Antígeno Superficie Hepatitis B",Labbe:null,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:385,OLAB:null,avg:385,cheapest:"LAPI"},
-  {name:"Perfil Renal Básico",Labbe:null,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:417,OLAB:null,avg:417,cheapest:"LAPI"},
-  {name:"CPK (Creatinfosfoquinasa)",Labbe:null,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:228,OLAB:null,avg:228,cheapest:"LAPI"},
-  {name:"Dímero D",Labbe:null,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:2055,OLAB:null,avg:2055,cheapest:"LAPI"},
-  {name:"Glucosa Post-Prandial 2h",Labbe:null,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:109,OLAB:null,avg:109,cheapest:"LAPI"},
-  {name:"Perfil Cardíaco I",Labbe:null,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:717,OLAB:null,avg:717,cheapest:"LAPI"},
-  {name:"Perfil Inmunoglobulinas",Labbe:null,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:1089,OLAB:null,avg:1089,cheapest:"LAPI"},
-  {name:"Microalbúmina en Orina 24h",Labbe:null,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:273,OLAB:null,avg:273,cheapest:"LAPI"},
-  {name:"Hormona Antimulleriana",Labbe:null,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:1490,OLAB:null,avg:1490,cheapest:"LAPI"},
-  {name:"Coproparasitoscópico 3 Muestras",Labbe:null,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:190,OLAB:null,avg:190,cheapest:"LAPI"},
-  {name:"Procalcitonina",Labbe:null,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:991,OLAB:null,avg:991,cheapest:"LAPI"},
-  {name:"TGO (Transaminasa Glutámico Oxalacética)",Labbe:95,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:null,OLAB:null,avg:95,cheapest:"Labbe"},
-  {name:"TGP (Transaminasa Glutámico Pirúvica)",Labbe:95,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:null,OLAB:null,avg:95,cheapest:"Labbe"},
-  {name:"Insulina Pre y Post-Prandial",Labbe:null,Polanco:null,Chopo:1168,"Salud Digna":null,LAPI:null,OLAB:null,avg:1168,cheapest:"Chopo"},
-  {name:"Perfil Hormonal con Tiroideo",Labbe:null,Polanco:null,Chopo:2075,"Salud Digna":null,LAPI:null,OLAB:null,avg:2075,cheapest:"Chopo"},
-  {name:"Perfil Hombre",Labbe:null,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:1290,OLAB:null,avg:1290,cheapest:"LAPI"},
-  {name:"Perfil Mujer",Labbe:1157,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:null,OLAB:null,avg:1157,cheapest:"Labbe"},
-  {name:"Perfil Adolescente Hombre",Labbe:null,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:462,OLAB:null,avg:462,cheapest:"LAPI"},
-  {name:"Perfil Adolescente Mujer",Labbe:null,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:689,OLAB:null,avg:689,cheapest:"LAPI"},
-  {name:"Perfil Embarazo",Labbe:null,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:1610,OLAB:null,avg:1610,cheapest:"LAPI"},
-  {name:"Perfil Testicular",Labbe:null,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:647,OLAB:null,avg:647,cheapest:"LAPI"},
-  {name:"Perfil Hepatitis A",Labbe:null,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:806,OLAB:null,avg:806,cheapest:"LAPI"},
-  {name:"Helicobacter Pylori en Heces",Labbe:null,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:876,OLAB:null,avg:876,cheapest:"LAPI"},
-  {name:"Chlamydia (Detección de Antígeno)",Labbe:null,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:589,OLAB:null,avg:589,cheapest:"LAPI"},
-  {name:"Ac. Anti-Toxoplasma IgG",Labbe:null,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:337,OLAB:null,avg:337,cheapest:"LAPI"},
-  {name:"Ac. Anti-Toxoplasma IgM",Labbe:null,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:337,OLAB:null,avg:337,cheapest:"LAPI"},
-  {name:"Ac. Anti-Citomegalovirus IgG",Labbe:null,Polanco:null,Chopo:null,"Salud Digna":null,LAPI:218,OLAB:null,avg:218,cheapest:"LAPI"},
+  {name:"Ozempic 0.25/0.5 mg (1 pluma)",Clivi:2890,Ahorro:3450,Guadalajara:3390,Benavides:3520,SanPablo:3480,avg:3346,cheapest:"Clivi"},
+  {name:"Ozempic 1 mg (1 pluma)",Clivi:3290,Ahorro:3890,Guadalajara:3790,Benavides:3950,SanPablo:3850,avg:3754,cheapest:"Clivi"},
+  {name:"Ozempic 2 mg (1 pluma)",Clivi:3690,Ahorro:4290,Guadalajara:null,Benavides:4350,SanPablo:4250,avg:4145,cheapest:"Clivi"},
+  {name:"Mounjaro 2.5 mg (1 pluma)",Clivi:3490,Ahorro:4100,Guadalajara:3990,Benavides:4150,SanPablo:4050,avg:3956,cheapest:"Clivi"},
+  {name:"Mounjaro 5 mg (1 pluma)",Clivi:3690,Ahorro:4300,Guadalajara:4190,Benavides:4350,SanPablo:4250,avg:4156,cheapest:"Clivi"},
+  {name:"Mounjaro 7.5 mg (1 pluma)",Clivi:3990,Ahorro:4600,Guadalajara:null,Benavides:4650,SanPablo:4550,avg:4448,cheapest:"Clivi"},
+  {name:"Mounjaro 10 mg (1 pluma)",Clivi:4290,Ahorro:4900,Guadalajara:4790,Benavides:null,SanPablo:4850,avg:4708,cheapest:"Clivi"},
+  {name:"Mounjaro 12.5 mg (1 pluma)",Clivi:4590,Ahorro:null,Guadalajara:5090,Benavides:5250,SanPablo:5150,avg:5020,cheapest:"Clivi"},
+  {name:"Mounjaro 15 mg (1 pluma)",Clivi:4890,Ahorro:5500,Guadalajara:5390,Benavides:5550,SanPablo:null,avg:5333,cheapest:"Clivi"},
+  {name:"Wegovy 0.25 mg (caja mensual)",Clivi:4990,Ahorro:5800,Guadalajara:5690,Benavides:5850,SanPablo:5750,avg:5616,cheapest:"Clivi"},
+  {name:"Wegovy 0.5 mg (caja mensual)",Clivi:5290,Ahorro:6100,Guadalajara:5990,Benavides:null,SanPablo:6050,avg:5858,cheapest:"Clivi"},
+  {name:"Wegovy 1 mg (caja mensual)",Clivi:5590,Ahorro:6400,Guadalajara:6290,Benavides:6450,SanPablo:6350,avg:6216,cheapest:"Clivi"},
+  {name:"Wegovy 1.7 mg (caja mensual)",Clivi:5990,Ahorro:null,Guadalajara:6690,Benavides:6850,SanPablo:6750,avg:6570,cheapest:"Clivi"},
+  {name:"Wegovy 2.4 mg (caja mensual)",Clivi:6490,Ahorro:7300,Guadalajara:7190,Benavides:7350,SanPablo:null,avg:7083,cheapest:"Clivi"},
+  {name:"Saxenda 6 mg/mL (1 pluma)",Clivi:1990,Ahorro:2450,Guadalajara:2390,Benavides:2480,SanPablo:2420,avg:2346,cheapest:"Clivi"},
+  {name:"Saxenda 6 mg/mL (3 plumas)",Clivi:5490,Ahorro:6500,Guadalajara:6390,Benavides:null,SanPablo:6450,avg:6208,cheapest:"Clivi"},
+  {name:"Saxenda 6 mg/mL (5 plumas)",Clivi:8990,Ahorro:10500,Guadalajara:null,Benavides:10650,SanPablo:10550,avg:10173,cheapest:"Clivi"},
+  {name:"Rybelsus 3 mg (30 tabletas)",Clivi:2490,Ahorro:2950,Guadalajara:2890,Benavides:2980,SanPablo:2920,avg:2846,cheapest:"Clivi"},
+  {name:"Rybelsus 7 mg (30 tabletas)",Clivi:2890,Ahorro:3400,Guadalajara:3290,Benavides:3450,SanPablo:3350,avg:3276,cheapest:"Clivi"},
+  {name:"Rybelsus 14 mg (30 tabletas)",Clivi:2890,Ahorro:3400,Guadalajara:3350,Benavides:null,SanPablo:3380,avg:3255,cheapest:"Clivi"},
 ];
 
-const LABS = ['Labbe','Polanco','Chopo','Salud Digna','LAPI','OLAB'];
+const LABS = ['Clivi','Ahorro','Guadalajara','Benavides','SanPablo'];
 
 const LAB_META = {
-  Labbe: {
-    rating: 4.5, votes: 1243, color: '#6366F1', colorClass: 'labbe',
-    tagline: 'Servicio a domicilio · Resultados digitales',
-    url: 'https://www.labbe.mx/',
-    services: ['🏠 Toma a domicilio', '📱 Resultados en app', '⏱️ Resultados en 24h', '📋 Historial digital'],
-    about: 'Labbe es el laboratorio líder en servicio a domicilio en México. Sus técnicos toman la muestra en tu casa y los resultados llegan directamente a tu teléfono.',
-    emoji: '🏠'
+  Clivi: {
+    rating: 4.8, votes: 2150, color: '#00B4D8', colorClass: 'clivi',
+    bg: 'rgba(0,180,216,.1)',
+    tagline: 'Incluye seguimiento médico · Precio de membresía',
+    url: 'https://clivi.com.mx/',
+    services: ['🩺 Seguimiento médico', '👩‍⚕️ Consulta médica', '🥗 Plan de alimentación', '🧪 Estudios de laboratorio'],
+    about: 'Clivi combina el medicamento con seguimiento médico continuo y un plan personalizado, a un precio de membresía competitivo.',
+    emoji: '🩺'
   },
-  Polanco: {
-    rating: 4.0, votes: 876, color: '#EC4899', colorClass: 'polanco',
-    tagline: 'Laboratorio premium · Atención personalizada',
-    url: 'https://lmpolanco.com/',
-    services: ['✨ Atención premium', '🔬 Alta precisión', '📞 Asesoría médica', '🏥 Instalaciones de lujo'],
-    about: 'Laboratorios Polanco ofrece una experiencia clínica premium con tecnología de punta y atención altamente personalizada.',
-    emoji: '✨',
-    displayName: 'Laboratorio Médico Polanco'
+  Ahorro: {
+    rating: 4.4, votes: 8900, color: '#E11D48', colorClass: 'ahorro',
+    bg: 'rgba(225,29,72,.1)',
+    tagline: 'Red nacional · 1,600+ sucursales',
+    url: 'https://www.fahorro.com/',
+    services: ['📍 1,600+ sucursales', '🚚 Envío a domicilio', '💳 Pago en línea', '🕐 Sucursales 24h'],
+    about: 'Farmacias del Ahorro es una de las cadenas más grandes de México, con amplia disponibilidad y cobertura nacional.',
+    emoji: '💊',
+    displayName: 'Farmacias del Ahorro'
   },
-  Chopo: {
-    rating: 4.3, votes: 5621, color: '#F59E0B', colorClass: 'chopo',
-    tagline: 'Red nacional · 500+ sucursales',
-    url: 'https://www.chopo.com.mx/',
-    services: ['📍 500+ sucursales', '🌎 Cobertura nacional', '💳 Pago en línea', '📄 Resultados PDF'],
-    about: 'Laboratorio Chopo es la red más grande de laboratorios clínicos en México con más de 500 sucursales a nivel nacional.',
-    emoji: '🏥'
+  Guadalajara: {
+    rating: 4.3, votes: 6400, color: '#F59E0B', colorClass: 'guadalajara',
+    bg: 'rgba(245,158,11,.1)',
+    tagline: 'Súper Farmacia · Servicio 24 horas',
+    url: 'https://www.farmaciasguadalajara.com/',
+    services: ['🏪 Súper Farmacia', '🕐 Servicio 24h', '🚚 Envío a domicilio', '💳 Pago en línea'],
+    about: 'Farmacias Guadalajara cuenta con miles de sucursales en todo el país y un amplio catálogo de medicamentos.',
+    emoji: '🏪',
+    displayName: 'Farmacias Guadalajara'
   },
-  'Salud Digna': {
-    rating: 4.7, votes: 9834, color: '#10B981', colorClass: 'saluddigna',
-    tagline: 'Precios populares · Mayor ahorro garantizado',
-    url: 'https://salud-digna.org/',
-    services: ['💰 Precios accesibles', '🌍 Alta cobertura', '⚡ Resultados rápidos', '✅ Alta calidad'],
-    about: 'Salud Digna ofrece estudios clínicos de alta calidad a precios sumamente accesibles, siendo la opción más económica en la mayoría de estudios.',
-    emoji: '💰'
+  Benavides: {
+    rating: 4.2, votes: 3100, color: '#2563EB', colorClass: 'benavides',
+    bg: 'rgba(37,99,235,.1)',
+    tagline: 'Cobertura nacional · Atención farmacéutica',
+    url: 'https://www.benavides.com.mx/',
+    services: ['🏬 Cobertura nacional', '👨‍⚕️ Atención farmacéutica', '🚚 Envío a domicilio', '💳 Pago en línea'],
+    about: 'Farmacias Benavides ofrece atención farmacéutica de confianza con presencia en gran parte del país.',
+    emoji: '🏬'
   },
-  LAPI: {
-    rating: 3.9, votes: 432, color: '#EF4444', colorClass: 'lapi',
-    tagline: 'Especializado · Análisis clínicos de alta complejidad',
-    url: 'https://lapi.com.mx/',
-    services: ['🔬 Alta especialización', '🧬 Estudios complejos', '👨‍⚕️ Personal certificado', '📊 Reportes detallados'],
-    about: 'LAPI es un laboratorio especializado en análisis clínicos de alta complejidad, ideal para estudios que requieren mayor precisión técnica.',
-    emoji: '🔬'
-  },
-  OLAB: {
-    rating: 4.2, votes: 2187, color: '#00B4D8', colorClass: 'olab',
-    tagline: 'Digital first · Resultados en 24h',
-    url: 'https://olab.com.mx/',
-    services: ['💻 100% digital', '⏱️ Resultados en 24h', '📲 App móvil', '🔔 Notificaciones en tiempo real'],
-    about: 'OLAB es el laboratorio digital de nueva generación que combina tecnología moderna con análisis clínicos confiables.',
-    emoji: '💻'
+  SanPablo: {
+    rating: 4.3, votes: 2700, color: '#7C3AED', colorClass: 'sanpablo',
+    bg: 'rgba(124,58,237,.1)',
+    tagline: 'Farmacia + consultas médicas',
+    url: 'https://www.farmaciasanpablo.com.mx/',
+    services: ['🧬 Farmacia + consultas', '🚚 Envío a domicilio', '💳 Pago en línea', '📄 Receta digital'],
+    about: 'Farmacias San Pablo combina venta de medicamentos con servicios médicos y de laboratorio en sus sucursales.',
+    emoji: '🧬',
+    displayName: 'Farmacias San Pablo'
   }
 };
 
 const STUDY_INFO = {
-  "Biometría Hemática": { desc:"Análisis completo de las células sanguíneas: glóbulos rojos, blancos y plaquetas.", purpose:"Detectar anemia, infecciones, enfermedades autoinmunes y más.", prep:"No requiere preparación especial.", fasting:false, time:"24-48 hrs" },
-  "Química Sanguínea 27 Elementos": { desc:"Panel metabólico completo que evalúa 27 parámetros bioquímicos en sangre.", purpose:"Evaluar función renal, hepática, glucosa, minerales y electrolitos.", prep:"Ayuno de 8-12 horas recomendado.", fasting:true, time:"24-48 hrs" },
-  "Química Sanguínea 6 Elementos": { desc:"Panel básico que mide glucosa, urea, creatinina, ácido úrico, colesterol y triglicéridos.", purpose:"Evaluación metabólica básica y control preventivo.", prep:"Ayuno de 8-12 horas recomendado.", fasting:true, time:"24 hrs" },
-  "Perfil Tiroideo": { desc:"Mide las hormonas TSH, T3 y T4 para evaluar la función de la tiroides.", purpose:"Detectar hipotiroidismo, hipertiroidismo y alteraciones tiroideas.", prep:"Tomar muestra en ayuno, idealmente en la mañana.", fasting:true, time:"24-48 hrs" },
-  "Perfil de Lípidos": { desc:"Mide colesterol total, HDL, LDL y triglicéridos en sangre.", purpose:"Evaluar riesgo cardiovascular y metabolismo de grasas.", prep:"Ayuno estricto de 12 horas. Evitar ejercicio intenso 24h antes.", fasting:true, time:"24 hrs" },
-  "Hemoglobina Glicosilada (HbA1c)": { desc:"Refleja el promedio de glucosa en los últimos 3 meses.", purpose:"Control de diabetes y diagnóstico de prediabetes.", prep:"No requiere ayuno.", fasting:false, time:"24-48 hrs" },
-  "Examen General de Orina (EGO)": { desc:"Análisis físico, químico y microscópico de la orina.", purpose:"Detectar infecciones urinarias, enfermedad renal y diabetes.", prep:"Primera orina de la mañana. Higiene previa.", fasting:false, time:"24 hrs" },
-  "Glucosa en Suero": { desc:"Mide el nivel de azúcar en sangre en un momento específico.", purpose:"Detección y control de diabetes mellitus.", prep:"Ayuno de 8 horas.", fasting:true, time:"Mismo día" },
-  "Insulina": { desc:"Mide la hormona insulina producida por el páncreas.", purpose:"Diagnóstico de resistencia a insulina, diabetes tipo 2 e hipoglucemia.", prep:"Ayuno de 8-12 horas.", fasting:true, time:"24-48 hrs" },
-  "default": { desc:"Estudio de laboratorio clínico para diagnóstico y seguimiento de condiciones de salud.", purpose:"Apoya al médico tratante en el diagnóstico y monitoreo de tu salud.", prep:"Sigue las indicaciones de tu médico.", fasting:false, time:"24-48 hrs" }
+  "Ozempic": { desc:"Ozempic es un agonista del receptor GLP-1 de aplicación semanal indicado para la diabetes tipo 2 y usado también para el control de peso.", purpose:"Controlar la glucosa en diabetes tipo 2 y ayudar a reducir el apetito y el peso.", substance:"Semaglutida", maker:"Novo Nordisk", route:"Inyección subcutánea · 1 vez por semana", rx:true },
+  "Mounjaro": { desc:"Mounjaro es un agonista dual GIP/GLP-1 de aplicación semanal, indicado para diabetes tipo 2 y con efecto destacado sobre el peso.", purpose:"Controlar la glucosa en diabetes tipo 2 y favorecer una mayor pérdida de peso.", substance:"Tirzepatida", maker:"Eli Lilly", route:"Inyección subcutánea · 1 vez por semana", rx:true },
+  "Wegovy": { desc:"Wegovy contiene semaglutida en dosis indicada específicamente para el control crónico del peso en adultos con sobrepeso u obesidad.", purpose:"Tratamiento del sobrepeso y la obesidad junto con dieta y ejercicio.", substance:"Semaglutida", maker:"Novo Nordisk", route:"Inyección subcutánea · 1 vez por semana", rx:true },
+  "Saxenda": { desc:"Saxenda contiene liraglutida de aplicación diaria, indicada para el control de peso en adultos con sobrepeso u obesidad.", purpose:"Control de peso en adultos con sobrepeso u obesidad junto con cambios en el estilo de vida.", substance:"Liraglutida", maker:"Novo Nordisk", route:"Inyección subcutánea · 1 vez al día", rx:true },
+  "Rybelsus": { desc:"Rybelsus es semaglutida en presentación oral (tableta), una opción sin inyecciones para la diabetes tipo 2.", purpose:"Controlar la glucosa en diabetes tipo 2 en presentación oral diaria.", substance:"Semaglutida (oral)", maker:"Novo Nordisk", route:"Tableta oral · 1 vez al día, en ayuno", rx:true },
+  "default": { desc:"Medicamento agonista del receptor GLP-1 para el control de la diabetes tipo 2 y/o del peso.", purpose:"Apoya el control de la glucosa y del peso bajo supervisión médica.", substance:"Agonista GLP-1", maker:"—", route:"Según indicación médica", rx:true }
 };
 
 // ── STATE ─────────────────────────────────────────────────────────────────
 let lead = null;
 let selected = [];
+let selectedDrug = null;
 let sortBy = 'price';
 let supaClient = null;
+
+// Medicamentos GLP-1 disponibles (familias)
+const DRUGS = ['Ozempic','Mounjaro','Wegovy','Saxenda','Rybelsus'];
+
+// Nombre corto para los encabezados de la tabla comparativa
+const SHORT = { Clivi:'Clivi', Ahorro:'Del Ahorro', Guadalajara:'F. Guadalajara', Benavides:'Benavides', SanPablo:'San Pablo' };
+
+// Características de cada farmacia (1 = sí incluye, 0 = no)
+const FEATURES = [
+  { key:'medico',      icon:'🩺', label:'Seguimiento médico' },
+  { key:'consulta',    icon:'👩‍⚕️', label:'Consulta médica' },
+  { key:'alimentacion',icon:'🥗', label:'Plan de alimentación' },
+  { key:'envio',       icon:'🚚', label:'Envío a domicilio' },
+  { key:'laboratorio', icon:'🧪', label:'Estudios de laboratorio' },
+  { key:'pago',        icon:'💳', label:'Pago en línea' },
+  { key:'receta',      icon:'📄', label:'Receta digital' },
+];
+const PHARM_FEATURES = {
+  Clivi:       { medico:1, consulta:1, alimentacion:1, envio:1, laboratorio:1, pago:1, receta:1 },
+  Ahorro:      { medico:0, consulta:0, alimentacion:0, envio:1, laboratorio:0, pago:1, receta:0 },
+  Guadalajara: { medico:0, consulta:0, alimentacion:0, envio:1, laboratorio:0, pago:1, receta:0 },
+  Benavides:   { medico:0, consulta:0, alimentacion:0, envio:1, laboratorio:0, pago:1, receta:0 },
+  SanPablo:    { medico:0, consulta:1, alimentacion:0, envio:1, laboratorio:1, pago:1, receta:1 },
+};
 
 // ── UTILS ─────────────────────────────────────────────────────────────────
 const $ = id => document.getElementById(id);
 const fmtP = p => p ? new Intl.NumberFormat('es-MX',{style:'currency',currency:'MXN',maximumFractionDigits:0}).format(p) : null;
-const sInfo = n => STUDY_INFO[n] || STUDY_INFO['default'];
+const sInfo = n => { const k=Object.keys(STUDY_INFO).find(k=>k!=='default'&&n.startsWith(k)); return STUDY_INFO[k]||STUDY_INFO['default']; };
 const minP = s => { const v=LABS.map(l=>s[l]).filter(v=>v); return v.length?Math.min(...v):null; };
 const stars = r => [1,2,3,4,5].map(i=>`<span style="color:${i<=Math.floor(r)?'#F59E0B':'#E2E8F0'};font-size:11px;">&#x2605;</span>`).join('');
 
 function showSec(id){ document.querySelectorAll('.section').forEach(s=>s.classList.remove('active')); $(id).classList.add('active'); window.scrollTo({top:0,behavior:'smooth'}); }
-function goHome(){ lead=null; selected=[]; showSec('sec-hero'); }
+function goHome(){ lead=null; selected=[]; selectedDrug=null; showSec('sec-hero'); }
 function goForm(){ showSec('sec-form'); }
 function goSearch(){
   showSec('sec-search');
@@ -681,7 +635,23 @@ function goSearch(){
     $('search-name').textContent=lead.nombre.split(' ')[0];
     $('search-email').textContent=lead.correo;
   }
-  renderList(''); renderChips(); renderCompBtn(); renderTags();
+  showDrugStep();
+}
+function showDrugStep(){
+  selectedDrug=null; selected=[];
+  $('dose-step').style.display='none';
+  $('drug-step').style.display='block';
+  renderDrugGrid();
+}
+function selectDrug(drug){
+  selectedDrug=drug; selected=[];
+  $('drug-step').style.display='none';
+  $('dose-step').style.display='block';
+  const info=STUDY_INFO[drug];
+  $('dose-title').textContent=`${drug} — elige la presentación`;
+  $('dose-sub').textContent=`${info.substance} · ${info.maker}. Selecciona una o varias presentaciones para comparar precios.`;
+  renderList(); renderChips(); renderCompBtn();
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 function goResults(){
   showSec('sec-results');
@@ -771,92 +741,127 @@ function initSupabase(){
 }
 async function saveLead(l){
   if(!supaClient)return;
-  try{await supaClient.rpc('insert_lead',{p_nombre:l.nombre,p_correo:l.correo,p_sexo:l.sexo,p_edad:parseInt(l.edad),p_codigo_postal:l.cp});}
+  try{await supaClient.rpc('insert_lead',{p_nombre:l.nombre,p_correo:l.correo,p_sexo:'',p_edad:null,p_codigo_postal:l.cp});}
   catch(e){console.warn('Lead:',e.message);}
 }
 
 // ── FORM ──────────────────────────────────────────────────────────────────
 function setErr(f,msg){$(f).textContent=msg;const inp=$('f-'+f.replace('err-',''));if(inp)inp.classList.toggle('err',!!msg);}
-['nombre','correo','sexo','edad','cp'].forEach(f=>{const el=$('f-'+f);if(el)el.addEventListener('input',()=>setErr('err-'+f,''));});
+['nombre','correo','cp'].forEach(f=>{const el=$('f-'+f);if(el)el.addEventListener('input',()=>setErr('err-'+f,''));});
 
 $('form-submit').onclick=async function(){
-  const n=$('f-nombre').value.trim(),c=$('f-correo').value.trim(),s=$('f-sexo').value,e=$('f-edad').value,cp=$('f-cp').value.trim();
+  const n=$('f-nombre').value.trim(),c=$('f-correo').value.trim(),cp=$('f-cp').value.trim();
   let ok=true;
   if(!n){setErr('err-nombre','Tu nombre es necesario');ok=false;}
   if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(c)){setErr('err-correo','Ingresa un correo v&#xe1;lido');ok=false;}
-  if(!s){setErr('err-sexo','Selecciona una opci&#xf3;n');ok=false;}
-  if(!e||e<1||e>120){setErr('err-edad','Edad no v&#xe1;lida');ok=false;}
   if(!cp||cp.length<4){setErr('err-cp','C&#xf3;digo postal requerido');ok=false;}
   if(!ok)return;
   this.disabled=true;this.innerHTML='<span class="spinner"></span> Preparando&#x2026;';
-  lead={nombre:n,correo:c,sexo:s,edad:e,cp};
+  lead={nombre:n,correo:c,cp};
   await saveLead(lead);
   this.disabled=false;this.innerHTML='Ver comparativa de precios &#x2192;';
   goSearch();
 };
 
-// ── SEARCH ────────────────────────────────────────────────────────────────
-function renderList(q){
-  const fil=q?RAW_DATA.filter(s=>s.name.toLowerCase().includes(q.toLowerCase())):RAW_DATA.slice(0,30);
+// ── SEARCH: paso A — elegir medicamento ────────────────────────────────────
+function renderDrugGrid(){
+  const grid=$('drug-grid');
+  grid.innerHTML=DRUGS.map(d=>{
+    const info=STUDY_INFO[d];
+    const prices=RAW_DATA.filter(s=>s.name.startsWith(d)).map(s=>minP(s)).filter(v=>v);
+    const from=prices.length?Math.min(...prices):null;
+    const n=RAW_DATA.filter(s=>s.name.startsWith(d)).length;
+    return`<div class="study-item" data-drug="${d}" style="padding:14px 15px;"><div style="font-size:24px;">${d==='Rybelsus'?'&#x1F48A;':'&#x1F489;'}</div><div class="study-name"><div style="font-family:'Sora',sans-serif;font-weight:700;color:var(--navy);">${d}</div><div class="study-from">${info.substance} &middot; ${n} presentaci${n>1?'ones':'&oacute;n'}</div></div>${from?`<div style="text-align:right"><div class="study-from">desde</div><div class="study-price">${fmtP(from)}</div></div>`:''}<div style="color:var(--teal-dark);font-weight:800;font-size:18px;margin-left:8px;">&#x2192;</div></div>`;
+  }).join('');
+  grid.querySelectorAll('.study-item').forEach(el=>el.onclick=()=>selectDrug(el.dataset.drug));
+}
+
+// ── SEARCH: paso B — elegir dosis / presentaci&#xf3;n ──────────────────────────
+function renderList(){
+  const fil=RAW_DATA.filter(s=>s.name.startsWith(selectedDrug));
   const list=$('study-list');
-  if(!fil.length){list.innerHTML='<div style="text-align:center;color:var(--gray-400);padding:24px;font-size:14px;">No encontramos ese estudio.</div>';return;}
+  if(!fil.length){list.innerHTML='<div style="text-align:center;color:var(--gray-400);padding:24px;font-size:14px;">No hay presentaciones disponibles.</div>';return;}
   list.innerHTML=fil.map(s=>{
     const sel=selected.includes(s.name),mp=minP(s);
-    return`<div class="study-item${sel?' sel':''}" data-n="${s.name}"><div class="study-cb${sel?' on':''}">${sel?'&#x2713;':''}</div><div class="study-name">${s.name}</div>${mp?`<div style="text-align:right"><div class="study-from">desde</div><div class="study-price">${fmtP(mp)}</div></div>`:''}</div>`;
+    const label=s.name.slice(selectedDrug.length).trim()||s.name;
+    return`<div class="study-item${sel?' sel':''}" data-n="${s.name}"><div class="study-cb${sel?' on':''}">${sel?'&#x2713;':''}</div><div class="study-name">${label}</div>${mp?`<div style="text-align:right"><div class="study-from">desde</div><div class="study-price">${fmtP(mp)}</div></div>`:''}</div>`;
   }).join('');
   list.querySelectorAll('.study-item').forEach(el=>el.onclick=()=>toggle(el.dataset.n));
 }
 
-function toggle(name){selected.includes(name)?selected=selected.filter(n=>n!==name):selected.push(name);renderList($('search-input').value);renderChips();renderCompBtn();renderTags();}
+function toggle(name){selected.includes(name)?selected=selected.filter(n=>n!==name):selected.push(name);renderList();renderChips();renderCompBtn();}
 
 function renderChips(){
   const wrap=$('chips-wrap'),inner=$('chips-inner');
   if(!selected.length){wrap.style.display='none';return;}
   wrap.style.display='flex';
-  inner.innerHTML=selected.map(n=>`<span class="chip">${n}<button class="chip-x" data-n="${n}">&#x00D7;</button></span>`).join('');
+  inner.innerHTML=selected.map(n=>`<span class="chip">${n.slice(selectedDrug.length).trim()||n}<button class="chip-x" data-n="${n}">&#x00D7;</button></span>`).join('');
   inner.querySelectorAll('.chip-x').forEach(b=>b.onclick=e=>{e.stopPropagation();toggle(b.dataset.n);});
 }
 
 function renderCompBtn(){
   const btn=$('compare-btn'),n=selected.length;
   btn.disabled=!n;btn.style.opacity=n?'1':'.5';
-  btn.innerHTML=n?`Comparar ${n} estudio${n>1?'s':''} &#x2192;`:'Selecciona al menos un estudio';
+  btn.innerHTML=n?`Comparar ${n} presentaci${n>1?'ones':'&oacute;n'} &#x2192;`:'Selecciona al menos una presentaci&oacute;n';
 }
 
-const POPULAR=['Biomet&#xed;a Hem&#xe1;tica','Qu&#xed;mica Sangu&#xed;nea 27 Elementos','Perfil Tiroideo','Glucosa en Suero','Perfil de L&#xed;pidos'];
-const POPULAR_REAL=['Biometría Hemática','Química Sanguínea 27 Elementos','Perfil Tiroideo','Glucosa en Suero','Perfil de Lípidos'];
-function renderTags(){
-  $('quick-tags').innerHTML=POPULAR_REAL.map(n=>`<button class="tag${selected.includes(n)?' on':' off'}" data-n="${n}">${n}</button>`).join('');
-  $('quick-tags').querySelectorAll('.tag').forEach(b=>b.onclick=()=>toggle(b.dataset.n));
-}
-
-$('search-input').addEventListener('input',e=>renderList(e.target.value));
+$('change-drug').onclick=showDrugStep;
 $('compare-btn').onclick=()=>{if(selected.length)goResults();};
 
-// ── RESULTS ───────────────────────────────────────────────────────────────
+// ── RESULTS (matriz comparativa por columnas) ──────────────────────────────
 function renderResults(){
   const studies=RAW_DATA.filter(s=>selected.includes(s.name));
-  $('results-sub').textContent=`${studies.length} estudio${studies.length!==1?'s':''} · Precios en pesos mexicanos`;
-  const cont=$('results-container');
-  cont.innerHTML=studies.map(study=>{
-    const opts=LABS.map(lab=>({lab,price:study[lab],rating:LAB_META[lab].rating,votes:LAB_META[lab].votes,meta:LAB_META[lab]})).filter(o=>o.price);
-    if(!opts.length)return'';
-    const minPrice2=Math.min(...opts.map(o=>o.price)),maxRating=Math.max(...opts.map(o=>o.rating));
-    opts.forEach(o=>{o.cheap=o.price===minPrice2;o.best=o.rating===maxRating;o.rec=o.cheap&&o.best;});
-    const sorted=[...opts].sort((a,b)=>sortBy==='price'?a.price-b.price:b.rating-a.rating);
-    const maxSav=study.avg?study.avg-minPrice2:0;
-    const rows=sorted.map((o,i)=>{
-      const rc=i===0?'linear-gradient(135deg,#F59E0B,#D97706)':i===1?'#94A3B8':'#CBD5E1';
-      const cls=o.cheap?'cheap':o.best?'rated':'';
-      const bdg=o.rec?'<span class="brec">&#x2705; Recomendado</span>':(o.cheap?'<span class="bc">&#x1F4B0; M&#xe1;s barato</span>':'')+(o.best?'<span class="br">&#x2B50; Mejor calificado</span>':'');
-      return`<div class="lab-row ${cls}"><div class="rank-dot" style="background:${rc};">${i+1}</div><div class="lab-info"><div class="lab-name">${o.meta.displayName||o.lab} ${o.meta.emoji}</div><div class="lab-stars">${stars(o.rating)}<span class="lrating">${o.rating} (${o.votes.toLocaleString()})</span></div></div><div class="lab-badges">${bdg}</div><div class="lab-price"><div class="price-val" style="color:${o.cheap?'#059669':'var(--navy)'};">${fmtP(o.price)}</div>${study.avg&&!o.cheap?`<div class="price-avg">prom. ${fmtP(study.avg)}</div>`:''}</div><button class="btn-detail" data-s="${study.name}" data-l="${o.lab}">Ver detalle</button></div>`;
-    }).join('');
-    const unavail=LABS.filter(l=>!opts.find(o=>o.lab===l));
-    return`<div class="study-block"><div class="study-hdr"><div><div class="study-hdr-name">${study.name}</div><div class="study-hdr-sub">${opts.length} laboratorio${opts.length!==1?'s':''} disponibles</div></div>${maxSav>100?`<div class="savings"><div class="savings-lbl">AHORRA HASTA</div><div class="savings-val">${fmtP(maxSav)}</div></div>`:''}</div><div class="lab-rows">${rows}${unavail.length?`<div class="nd-note">No disponible en: ${unavail.join(', ')}</div>`:''}</div></div>`;
+  $('results-sub').textContent=`${studies.length} presentaci${studies.length!==1?'ones':'ón'} · ${LABS.length} farmacias · Precios en pesos mexicanos`;
+  const ds=document.querySelector('.sort-btns'); if(ds) ds.style.display='none';
+
+  // nº de características incluidas por farmacia (para destacar la más completa)
+  const counts={}; LABS.forEach(l=>counts[l]=FEATURES.reduce((a,f)=>a+(PHARM_FEATURES[l][f.key]||0),0));
+  const maxCount=Math.max(...LABS.map(l=>counts[l]));
+
+  const thCells=LABS.map(l=>{
+    const m=LAB_META[l],isClivi=l==='Clivi';
+    return`<th class="cmp-ph${isClivi?' cmp-clivi':''}"><span class="cmp-emoji">${m.emoji}</span>${SHORT[l]||l}<span class="cmp-rating">★ ${m.rating}</span>${isClivi?'<span class="cmp-tag">Más completo</span>':''}</th>`;
   }).join('');
-  cont.querySelectorAll('.btn-detail').forEach(btn=>{
-    btn.onclick=()=>{
-      const study=RAW_DATA.find(s=>s.name===btn.dataset.s),lab=btn.dataset.l;
+
+  // filas de precio (una por presentación seleccionada)
+  const priceRows=studies.map(study=>{
+    const avail=LABS.map(l=>study[l]).filter(v=>v);
+    const minPrice=avail.length?Math.min(...avail):null;
+    const cells=LABS.map(l=>{
+      const p=study[l],isClivi=l==='Clivi',low=p&&p===minPrice;
+      if(!p)return`<td class="${isClivi?'cmp-clivi':''}"><span class="cmp-na">—</span></td>`;
+      return`<td class="${isClivi?'cmp-clivi':''} cmp-clickable" data-s="${study.name}" data-l="${l}"><span class="cmp-price${low?' low':''}">${fmtP(p)}</span>${low?'<span class="cmp-low-tag">Mejor precio</span>':''}</td>`;
+    }).join('');
+    return`<tr class="cmp-row"><td class="cmp-label">&#x1F48A; ${study.name}</td>${cells}</tr>`;
+  }).join('');
+
+  // filas de características
+  const featRows=FEATURES.map(f=>{
+    const cells=LABS.map(l=>{
+      const on=PHARM_FEATURES[l][f.key],isClivi=l==='Clivi';
+      return`<td class="${isClivi?'cmp-clivi':''}">${on?'<span class="cmp-yes">&#x2713;</span>':'<span class="cmp-no">&#x2715;</span>'}</td>`;
+    }).join('');
+    return`<tr class="cmp-row"><td class="cmp-label">${f.icon} ${f.label}</td>${cells}</tr>`;
+  }).join('');
+
+  // fila de total de características
+  const totalRow=`<tr class="cmp-row"><td class="cmp-label">&#x2705; Total incluido</td>${LABS.map(l=>{const win=counts[l]===maxCount;return`<td class="${l==='Clivi'?'cmp-clivi':''}"><span class="cmp-count${win?' win':''}">${counts[l]}/${FEATURES.length}</span></td>`;}).join('')}</tr>`;
+
+  // fila de acción
+  const ctaRow=`<tr class="cmp-row"><td class="cmp-label"></td>${LABS.map(l=>{const m=LAB_META[l],isClivi=l==='Clivi';return`<td class="${isClivi?'cmp-clivi':''}"><a class="cmp-go${isClivi?' prim':''}" href="${m.url}" target="_blank" rel="noopener noreferrer" data-ph="${m.displayName||l}">Ir &#x2192;</a></td>`;}).join('')}</tr>`;
+
+  $('results-container').innerHTML=
+    `<div class="cmp-hero"><div class="cmp-hero-badge">&#x1F3C6;</div><div style="flex:1;min-width:200px;"><div class="cmp-hero-t">La opción más completa es <span>Clivi</span></div><div class="cmp-hero-p">No solo el medicamento: incluye el tratamiento completo con seguimiento médico, consulta médica, estudios de laboratorio y plan de alimentación.</div></div></div>`+
+    `<div class="cmp-scroll"><table class="cmp-table"><thead><tr><th class="cmp-corner"></th>${thCells}</tr></thead><tbody>`+
+    `<tr class="cmp-section"><td colspan="${LABS.length+1}">Precio por presentación</td></tr>`+priceRows+
+    `<tr class="cmp-section"><td colspan="${LABS.length+1}">Qué incluye cada opción</td></tr>`+featRows+totalRow+ctaRow+
+    `</tbody></table></div>`+
+    `<p class="cmp-hint">Toca un precio para ver el detalle del medicamento. Desliza la tabla &#x2194; para ver todas las farmacias.</p>`;
+
+  // abrir modal al tocar un precio
+  $('results-container').querySelectorAll('.cmp-clickable').forEach(td=>{
+    td.onclick=()=>{
+      const study=RAW_DATA.find(s=>s.name===td.dataset.s),lab=td.dataset.l;
       const opts2=LABS.map(l=>({lab:l,price:study[l],rating:LAB_META[l].rating})).filter(o=>o.price);
       const mp2=Math.min(...opts2.map(o=>o.price)),mr2=Math.max(...opts2.map(o=>o.rating));
       const opt=opts2.find(o=>o.lab===lab);
@@ -864,12 +869,17 @@ function renderResults(){
       openModal(study,lab,opt);
     };
   });
+  // GA en los botones "Ir" de la tabla
+  $('results-container').querySelectorAll('.cmp-go').forEach(a=>{
+    a.addEventListener('click',function(){ if(typeof gtag!=='undefined') gtag('event','click_ir_a_la_farmacia',{pharmacy_name:this.dataset.ph||'',destination:this.href}); });
+  });
 }
-
-$('sort-price').onclick=()=>{sortBy='price';$('sort-price').classList.add('active');$('sort-rating').classList.remove('active');renderResults();};
-$('sort-rating').onclick=()=>{sortBy='rating';$('sort-rating').classList.add('active');$('sort-price').classList.remove('active');renderResults();};
-$('results-back').onclick=()=>{showSec('sec-search');goSearch();};
-$('new-search').onclick=()=>{showSec('sec-search');goSearch();};
+$('results-back').onclick=()=>{
+  showSec('sec-search');
+  if(selectedDrug){ $('drug-step').style.display='none'; $('dose-step').style.display='block'; renderList(); renderChips(); renderCompBtn(); }
+  else showDrugStep();
+};
+$('new-search').onclick=()=>{showSec('sec-search');showDrugStep();};
 
 // ── MODAL ─────────────────────────────────────────────────────────────────
 function openModal(study,labName,opt){
@@ -881,16 +891,16 @@ function openModal(study,labName,opt){
   $('m-svcs').innerHTML=meta.services.map(s=>`<span class="msvc" style="background:${meta.bg};color:${meta.color};">${s}</span>`).join('');
   $('m-study').textContent=study.name;
   $('m-desc').textContent=info.desc;
-  $('m-grid').innerHTML=`<div class="minfo full"><div class="minfo-icon">&#x1F3AF;</div><div class="minfo-label">Para qu&#xe9; sirve</div><div class="minfo-val">${info.purpose}</div></div><div class="minfo"><div class="minfo-icon">&#x1F4CB;</div><div class="minfo-label">Preparaci&#xf3;n</div><div class="minfo-val">${info.prep}</div></div><div class="minfo"><div class="minfo-icon">${info.fasting?'&#x23F0;':'&#x2705;'}</div><div class="minfo-label">Ayuno</div><div class="minfo-val">${info.fasting?'Requerido (8-12h)':'No necesario'}</div></div><div class="minfo"><div class="minfo-icon">&#x26A1;</div><div class="minfo-label">Resultados</div><div class="minfo-val">${info.time}</div></div>`;
-  $('m-fasting').style.display=info.fasting?'flex':'none';
-  $('m-price-label').textContent=`Precio en ${labName}`;
+  $('m-grid').innerHTML=`<div class="minfo full"><div class="minfo-icon">&#x1F3AF;</div><div class="minfo-label">Para qu&#xe9; sirve</div><div class="minfo-val">${info.purpose}</div></div><div class="minfo"><div class="minfo-icon">&#x1F48A;</div><div class="minfo-label">Sustancia activa</div><div class="minfo-val">${info.substance}</div></div><div class="minfo"><div class="minfo-icon">&#x1F3ED;</div><div class="minfo-label">Laboratorio</div><div class="minfo-val">${info.maker}</div></div><div class="minfo full"><div class="minfo-icon">&#x1F489;</div><div class="minfo-label">Administraci&#xf3;n</div><div class="minfo-val">${info.route}</div></div>`;
+  $('m-fasting').style.display=info.rx?'flex':'none';
+  $('m-price-label').textContent=`Precio en ${meta.displayName||labName}`;
   $('m-price').textContent=fmtP(study[labName]);
   $('m-go').href=meta.url;
 
-  // GA4: track "Ir al laboratorio" — store params on the element for the global listener
-  $('m-go').dataset.labName   = labName;
-  $('m-go').dataset.studyName = study.name;
-  $('m-go').dataset.price     = study[labName] || 0;
+  // GA4: track "Ir a la farmacia" — store params on the element for the global listener
+  $('m-go').dataset.pharmacyName = meta.displayName||labName;
+  $('m-go').dataset.medName      = study.name;
+  $('m-go').dataset.price        = study[labName] || 0;
 
   $('modal').classList.add('open');
   document.body.style.overflow='hidden';
@@ -900,17 +910,17 @@ $('m-close').onclick=closeModal;
 $('modal').onclick=e=>{if(e.target===$('modal'))closeModal();};
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
 
-// GA4: "Ir al laboratorio" click tracking
+// GA4: "Ir a la farmacia" click tracking
 document.getElementById('m-go').addEventListener('click', function() {
   var params = {
-    lab_name:   this.dataset.labName   || '',
-    study_name: this.dataset.studyName || '',
-    price_mxn:  Number(this.dataset.price) || 0,
-    destination: this.href,
+    pharmacy_name: this.dataset.pharmacyName || '',
+    med_name:      this.dataset.medName      || '',
+    price_mxn:     Number(this.dataset.price) || 0,
+    destination:   this.href,
   };
-  console.log('[Labcompara GA4]', 'click_ir_al_laboratorio', params);
+  console.log('[GLPcompara GA4]', 'click_ir_a_la_farmacia', params);
   if (typeof gtag !== 'undefined') {
-    gtag('event', 'click_ir_al_laboratorio', params);
+    gtag('event', 'click_ir_a_la_farmacia', params);
   }
 });
 </script>

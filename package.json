@@ -1,7 +1,7 @@
 {
-  "name": "labcompara",
+  "name": "glpcompara",
   "version": "1.0.0",
-  "description": "Comparador de precios de estudios de laboratorio en México",
+  "description": "Comparador de precios de medicamentos GLP-1 en México",
   "scripts": {
     "generate:sitemaps": "node scripts/generate-sitemaps.js",
     "predeploy": "npm run generate:sitemaps"

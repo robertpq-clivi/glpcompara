@@ -1,5 +1,6 @@
-# labcompara.com — robots.txt
+# glpcompara.com — robots.txt
 User-agent: *
 Allow: /
 
-Sitemap: https://labcompara.com/sitemap-index.xml
+Sitemap: https://glpcompara.com/sitemap-index.xml
+Sitemap: https://glpcompara.com/sitemap.xml

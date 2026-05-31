@@ -1,62 +1,57 @@
 #!/usr/bin/env node
 /**
- * Labcompara — Sitemap Generator
- * Generates: public/sitemap-core.xml, public/sitemap-estudios.xml, public/sitemap-index.xml
+ * GLPcompara — Sitemap Generator
+ * Generates at repo root:
+ *   sitemap-core.xml, sitemap-blog.xml, sitemap-index.xml, sitemap.xml (flat)
  *
  * Usage:
  *   node scripts/generate-sitemaps.js
  *   npm run generate:sitemaps
  *
- * To add pages: edit CORE_PAGES or ESTUDIOS_PAGES arrays below.
+ * To add pages: edit CORE_PAGES or BLOG_PAGES arrays below.
  */
 
 const fs   = require('fs');
 const path = require('path');
 
 // ── CONFIG ───────────────────────────────────────────────────────────────────
-const BASE_URL  = 'https://labcompara.com';
+const BASE_URL  = 'https://glpcompara.com';
 const TODAY     = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
 const PUBLIC_DIR = path.join(__dirname, '..'); // Sitemaps at repo root → served at domain root
 
 // ── CORE PAGES ────────────────────────────────────────────────────────────────
-// changefreq: weekly | priority: 1.0 homepage / 0.9 core
 const CORE_PAGES = [
-  { path: '/',                                  priority: '1.0', changefreq: 'weekly'  },
-  { path: '/laboratorio-cerca-de-mi',           priority: '0.9', changefreq: 'weekly'  },
-  { path: '/laboratorio-clinico',               priority: '0.9', changefreq: 'weekly'  },
-  { path: '/estudios-de-laboratorio',           priority: '0.9', changefreq: 'weekly'  },
-  { path: '/laboratorio-medico',                priority: '0.9', changefreq: 'weekly'  },
-  { path: '/analisis-clinicos',                 priority: '0.9', changefreq: 'weekly'  },
-  { path: '/laboratorio-de-analisis-clinicos',  priority: '0.9', changefreq: 'weekly'  },
-  { path: '/examenes-de-sangre',                priority: '0.9', changefreq: 'weekly'  },
-  { path: '/pruebas-de-laboratorio',            priority: '0.9', changefreq: 'weekly'  },
-  { path: '/estudios-clinicos',                 priority: '0.9', changefreq: 'weekly'  },
+  { path: '/',                                   priority: '1.0', changefreq: 'weekly' },
+  { path: '/pages/estudios-de-laboratorio.html', priority: '0.9', changefreq: 'weekly' },
+  { path: '/blog/',                              priority: '0.7', changefreq: 'weekly' },
 ];
 
-// ── ESTUDIOS PAGES ────────────────────────────────────────────────────────────
+// ── BLOG PAGES (artículos GLP-1) ────────────────────────────────────────────────
 // changefreq: monthly | priority: 0.8
-const ESTUDIOS_PAGES = [
-  { path: '/blog/precio-biometria-hematica-mexico'           },
-  { path: '/blog/precio-quimica-sanguinea-mexico'            },
-  { path: '/blog/examen-de-glucosa-precio-mexico'            },
-  { path: '/blog/colesterol-total-precio-mexico'             },
-  { path: '/blog/perfil-tiroideo-precio-mexico'              },
-  { path: '/blog/prueba-de-embarazo-en-sangre-precio-mexico' },
-  { path: '/blog/check-up-completo-precio-mexico'            },
-  { path: '/blog/examen-general-de-orina-precio-mexico'      },
-  { path: '/blog/acido-urico-precio-mexico'                  },
-  { path: '/blog/creatinina-precio-mexico'                   },
-  { path: '/blog/pruebas-de-funcion-hepatica-precio-mexico'  },
-  { path: '/blog/perfil-lipidico-precio-mexico'              },
-  { path: '/blog/examen-de-insulina-precio-mexico'           },
-  { path: '/blog/hemoglobina-glucosilada-precio-mexico'      },
-  { path: '/blog/vitamina-d-precio-mexico'                   },
-  { path: '/blog/prueba-de-vih-precio-mexico'                },
-  { path: '/blog/testosterona-precio-mexico'                 },
-  { path: '/blog/perfil-hormonal-femenino-precio-mexico'     },
-  { path: '/blog/examen-de-sangre-completo-precio-mexico'    },
-  { path: '/blog/cuanto-cuesta-un-check-up-en-mexico'        },
-].map(p => ({ ...p, priority: '0.8', changefreq: 'monthly' }));
+const BLOG_PAGES = [
+  'que-son-los-medicamentos-glp1',
+  'cuanto-peso-se-puede-perder-con-glp1',
+  'que-es-mounjaro-como-funciona',
+  'mounjaro-precio-mexico',
+  'que-es-wegovy-como-ayuda-bajar-de-peso',
+  'wegovy-precio-mexico',
+  'que-es-ozempic-para-que-sirve',
+  'ozempic-sirve-para-bajar-de-peso',
+  'ozempic-precio-mexico',
+  'mounjaro-vs-wegovy',
+  'mounjaro-vs-ozempic',
+  'wegovy-vs-ozempic',
+  'semaglutida-vs-tirzepatida',
+  'glp1-vs-cirugia-bariatrica',
+  'cuanto-cuesta-bajar-de-peso-con-glp1-mexico',
+  'como-obtener-receta-glp1',
+  'mejor-medicamento-para-controlar-el-apetito',
+  'mejor-medicamento-para-bajar-de-peso-2026',
+  'por-que-no-bajo-de-peso-con-ozempic',
+  'historias-de-exito-antes-y-despues-glp1',
+  'mitos-sobre-ozempic-y-wegovy',
+  'los-glp1-son-para-toda-la-vida',
+].map(slug => ({ path: `/blog/${slug}.html`, priority: '0.8', changefreq: 'monthly' }));
 
 // ── HELPERS ───────────────────────────────────────────────────────────────────
 function urlEntry({ path: p, priority, changefreq }) {
@@ -80,7 +75,7 @@ function buildSitemap(pages) {
 }
 
 function buildSitemapIndex() {
-  const sitemaps = ['sitemap-core.xml', 'sitemap-estudios.xml'];
+  const sitemaps = ['sitemap-core.xml', 'sitemap-blog.xml'];
   const entries  = sitemaps.map(name => [
     '  <sitemap>',
     `    <loc>${BASE_URL}/${name}</loc>`,
@@ -100,19 +95,25 @@ function write(filename, content) {
   const filepath = path.join(PUBLIC_DIR, filename);
   fs.writeFileSync(filepath, content, 'utf8');
   const lines = content.split('\n').length;
-  console.log(`  ✓ public/${filename} (${lines} lines)`);
+  console.log(`  ✓ ${filename} (${lines} lines)`);
 }
 
 // ── GENERATE ──────────────────────────────────────────────────────────────────
-console.log('\n🗺️  Labcompara Sitemap Generator');
+console.log('\n🗺️  GLPcompara Sitemap Generator');
 console.log(`   BASE_URL : ${BASE_URL}`);
 console.log(`   lastmod  : ${TODAY}`);
 console.log(`   Output   : repo root/\n`);
 
 if (!fs.existsSync(PUBLIC_DIR)) fs.mkdirSync(PUBLIC_DIR, { recursive: true });
 
-write('sitemap-core.xml',     buildSitemap(CORE_PAGES));
-write('sitemap-estudios.xml', buildSitemap(ESTUDIOS_PAGES));
-write('sitemap-index.xml',    buildSitemapIndex());
+write('sitemap-core.xml',  buildSitemap(CORE_PAGES));
+write('sitemap-blog.xml',  buildSitemap(BLOG_PAGES));
+write('sitemap-index.xml', buildSitemapIndex());
+// Flat sitemap (for crawlers that fetch /sitemap.xml directly)
+write('sitemap.xml',       buildSitemap([...CORE_PAGES, ...BLOG_PAGES]));
 
-console.log(`\n✅ Done — ${CORE_PAGES.length} core pages, ${ESTUDIOS_PAGES.length} estudio pages\n`);
+// Remove the legacy lab sitemap if present
+const legacy = path.join(PUBLIC_DIR, 'sitemap-estudios.xml');
+if (fs.existsSync(legacy)) { fs.unlinkSync(legacy); console.log('  ✗ removed legacy sitemap-estudios.xml'); }
+
+console.log(`\n✅ Done — ${CORE_PAGES.length} core pages, ${BLOG_PAGES.length} blog articles\n`);
