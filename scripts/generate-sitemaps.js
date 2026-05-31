@@ -123,6 +123,25 @@ const BLOG_PAGES = [
   'mounjaro-estrenimiento',
   'cuanta-proteina-con-mounjaro',
   'mejor-desayuno-mounjaro',
+  // — Mounjaro (lote 2) —
+  'por-que-algunos-bajan-mas-rapido-con-mounjaro',
+  'perdida-de-peso-promedio-con-mounjaro',
+  'como-evitar-estancarte-con-mounjaro',
+  'cuanto-tiempo-usar-mounjaro',
+  'que-pasa-si-dejas-mounjaro-tras-meta',
+  'como-mantener-peso-tras-mounjaro',
+  'que-sucede-al-aumentar-dosis-mounjaro',
+  'olvidar-dosis-mounjaro',
+  'como-aplicar-mounjaro-correctamente',
+  'errores-comunes-al-usar-mounjaro',
+  'mas-efectos-secundarios-al-subir-dosis-mounjaro',
+  'cuanto-tarda-cada-dosis-mounjaro',
+  'por-que-mounjaro-malestar-estomacal',
+  'fatiga-al-iniciar-mounjaro',
+  'cuando-consultar-medico-efectos-mounjaro',
+  'alimentos-reducir-efectos-mounjaro',
+  'mejores-ejercicios-con-mounjaro',
+  'menu-semanal-mounjaro',
 ].map(slug => ({ path: `/blog/${slug}.html`, priority: '0.8', changefreq: 'monthly' }));
 
 // ── HELPERS ───────────────────────────────────────────────────────────────────
