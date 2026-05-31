@@ -144,6 +144,29 @@ const BLOG_PAGES = [
   'menu-semanal-mounjaro',
 ].map(slug => ({ path: `/blog/${slug}.html`, priority: '0.8', changefreq: 'monthly' }));
 
+// ── LABORATORIO (contenido heredado, ahora en glpcompara.com.mx) ────────────────
+// Páginas de aterrizaje de laboratorio
+const LAB_PAGES = [
+  '/pages/analisis-clinicos.html',
+  '/pages/examenes-de-sangre.html',
+  '/pages/laboratorio-clinico.html',
+  '/pages/laboratorio-de-analisis-clinicos.html',
+  '/pages/laboratorio-medico.html',
+  '/pages/pruebas-de-laboratorio.html',
+  '/pages/estudios-clinicos.html',
+].map(p => ({ path: p, priority: '0.6', changefreq: 'monthly' }));
+
+// Posts de blog de laboratorio: TODO blog/*.html que no sea index ni esté en BLOG_PAGES (GLP-1)
+const glpSet = new Set(BLOG_PAGES.map(b => b.path));
+const LAB_BLOG = fs.readdirSync(path.join(PUBLIC_DIR, 'blog'))
+  .filter(f => f.endsWith('.html') && f !== 'index.html')
+  .map(f => `/blog/${f}`)
+  .filter(p => !glpSet.has(p))
+  .sort()
+  .map(p => ({ path: p, priority: '0.6', changefreq: 'monthly' }));
+
+const LAB_ALL = [...LAB_PAGES, ...LAB_BLOG];
+
 // ── HELPERS ───────────────────────────────────────────────────────────────────
 function urlEntry({ path: p, priority, changefreq }) {
   return [
@@ -166,7 +189,7 @@ function buildSitemap(pages) {
 }
 
 function buildSitemapIndex() {
-  const sitemaps = ['sitemap-core.xml', 'sitemap-blog.xml'];
+  const sitemaps = ['sitemap-core.xml', 'sitemap-blog.xml', 'sitemap-lab.xml'];
   const entries  = sitemaps.map(name => [
     '  <sitemap>',
     `    <loc>${BASE_URL}/${name}</loc>`,
@@ -199,12 +222,13 @@ if (!fs.existsSync(PUBLIC_DIR)) fs.mkdirSync(PUBLIC_DIR, { recursive: true });
 
 write('sitemap-core.xml',  buildSitemap(CORE_PAGES));
 write('sitemap-blog.xml',  buildSitemap(BLOG_PAGES));
+write('sitemap-lab.xml',   buildSitemap(LAB_ALL));
 write('sitemap-index.xml', buildSitemapIndex());
 // Flat sitemap (for crawlers that fetch /sitemap.xml directly)
-write('sitemap.xml',       buildSitemap([...CORE_PAGES, ...BLOG_PAGES]));
+write('sitemap.xml',       buildSitemap([...CORE_PAGES, ...BLOG_PAGES, ...LAB_ALL]));
 
 // Remove the legacy lab sitemap if present
 const legacy = path.join(PUBLIC_DIR, 'sitemap-estudios.xml');
 if (fs.existsSync(legacy)) { fs.unlinkSync(legacy); console.log('  ✗ removed legacy sitemap-estudios.xml'); }
 
-console.log(`\n✅ Done — ${CORE_PAGES.length} core pages, ${BLOG_PAGES.length} blog articles\n`);
+console.log(`\n✅ Done — ${CORE_PAGES.length} core, ${BLOG_PAGES.length} GLP-1 blog, ${LAB_ALL.length} lab URLs\n`);
