@@ -104,6 +104,25 @@ const BLOG_PAGES = [
   'efectos-secundarios-que-requieren-atencion-medica',
   'por-que-deje-de-perder-peso-con-mounjaro',
   'como-romper-un-estancamiento-de-peso-glp1',
+  // — Mounjaro (lote 1) —
+  'mounjaro-resultados-semana-a-semana',
+  'mounjaro-semana-1',
+  'mounjaro-semana-2',
+  'mounjaro-semana-4',
+  'mounjaro-mes-2',
+  'mounjaro-mes-3',
+  'mounjaro-mes-6',
+  'mounjaro-perdida-peso-primeros-30-dias',
+  'mounjaro-antes-y-despues',
+  'cuando-se-notan-cambios-con-mounjaro',
+  'guia-dosis-mounjaro',
+  'mejor-dosis-mounjaro-para-bajar-de-peso',
+  'cada-cuanto-se-aplica-mounjaro',
+  'calendario-escalamiento-dosis-mounjaro',
+  'reducir-nauseas-mounjaro',
+  'mounjaro-estrenimiento',
+  'cuanta-proteina-con-mounjaro',
+  'mejor-desayuno-mounjaro',
 ].map(slug => ({ path: `/blog/${slug}.html`, priority: '0.8', changefreq: 'monthly' }));
 
 // ── HELPERS ───────────────────────────────────────────────────────────────────
