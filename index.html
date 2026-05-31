@@ -13,10 +13,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>GLPcompara &#x2013; Compara precios de Ozempic, Mounjaro, Wegovy y m&#xe1;s GLP-1 en M&#xe9;xico</title>
 <meta name="description" content="Compara precios de medicamentos GLP-1 en M&#xe9;xico entre Clivi, Farmacias del Ahorro, Farmacias Guadalajara, Benavides y San Pablo. Ozempic, Mounjaro, Wegovy, Saxenda y Rybelsus. Gratis."/>
-<link rel="canonical" href="https://glpcompara.com/"/>
+<link rel="canonical" href="https://glpcompara.com.mx/"/>
 <meta property="og:title" content="GLPcompara &#x2013; Compara precios de medicamentos GLP-1 en M&#xe9;xico"/>
 <meta property="og:description" content="Compara precios de Ozempic, Mounjaro, Wegovy, Saxenda y Rybelsus entre las principales farmacias de M&#xe9;xico en segundos. Gratis, sin registro."/>
-<meta property="og:url" content="https://glpcompara.com/"/>
+<meta property="og:url" content="https://glpcompara.com.mx/"/>
 <meta property="og:type" content="website"/>
 <meta name="robots" content="index, follow"/>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
@@ -28,8 +28,8 @@
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap"/></noscript>
 <!-- Supabase async - not render-blocking -->
 <script async src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" onload="initSupabase()"></script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"GLPcompara","url":"https://glpcompara.com/","description":"Comparador de precios de medicamentos GLP-1 en M&#xe9;xico"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"GLPcompara","url":"https://glpcompara.com/","areaServed":"M&#xe9;xico"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"GLPcompara","url":"https://glpcompara.com.mx/","description":"Comparador de precios de medicamentos GLP-1 en M&#xe9;xico"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"GLPcompara","url":"https://glpcompara.com.mx/","areaServed":"M&#xe9;xico"}</script>
 <style>
 :root{--navy:#0B1F4B;--navy-mid:#1a3a6e;--teal:#00B4D8;--teal-light:#90E0EF;--teal-dark:#0077A8;--green:#10B981;--gray-50:#F8FAFC;--gray-100:#F1F5F9;--gray-200:#E2E8F0;--gray-400:#94A3B8;--gray-600:#475569;--gray-800:#1E293B;}
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -289,6 +289,14 @@ th.cmp-clivi{background:linear-gradient(180deg,rgba(0,180,216,.18),rgba(0,180,21
 .cmp-count.win{color:var(--teal-dark);}
 .cmp-hint{font-size:12px;color:var(--gray-400);text-align:center;margin-top:12px;}
 </style>
+<script>
+  // Staging guard: don't index the temporary github.io URL — canonical is glpcompara.com.mx
+  if (location.hostname.includes('github.io')) {
+    var m = document.createElement('meta');
+    m.name = 'robots'; m.content = 'noindex, nofollow';
+    document.head.appendChild(m);
+  }
+</script>
 </head>
 <body>
 

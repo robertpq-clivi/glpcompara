@@ -1,6 +1,6 @@
-# glpcompara.com — robots.txt
+# glpcompara.com.mx — robots.txt
 User-agent: *
 Allow: /
 
-Sitemap: https://glpcompara.com/sitemap-index.xml
-Sitemap: https://glpcompara.com/sitemap.xml
+Sitemap: https://glpcompara.com.mx/sitemap-index.xml
+Sitemap: https://glpcompara.com.mx/sitemap.xml

@@ -15,7 +15,7 @@ const fs   = require('fs');
 const path = require('path');
 
 // ── CONFIG ───────────────────────────────────────────────────────────────────
-const BASE_URL  = 'https://glpcompara.com';
+const BASE_URL  = 'https://glpcompara.com.mx';
 const TODAY     = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
 const PUBLIC_DIR = path.join(__dirname, '..'); // Sitemaps at repo root → served at domain root
 

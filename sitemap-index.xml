@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
-    <loc>https://glpcompara.com/sitemap-core.xml</loc>
+    <loc>https://glpcompara.com.mx/sitemap-core.xml</loc>
     <lastmod>2026-05-31</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://glpcompara.com/sitemap-blog.xml</loc>
+    <loc>https://glpcompara.com.mx/sitemap-blog.xml</loc>
     <lastmod>2026-05-31</lastmod>
   </sitemap>
 </sitemapindex>
