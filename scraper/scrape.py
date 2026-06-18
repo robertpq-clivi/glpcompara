@@ -180,6 +180,13 @@ def scrape_sanpablo(query):
 # Clivi has no per-dose public pages (membership pricing), so prices are curated
 # manually in scraper/clivi_prices.json (keyed by canonical product name).
 CLIVI = json.loads((ROOT / "scraper" / "clivi_prices.json").read_text(encoding="utf-8"))
+_ov_path = ROOT / "scraper" / "overrides.json"
+OVERRIDES = json.loads(_ov_path.read_text(encoding="utf-8")) if _ov_path.exists() else {}
+SOURCE_URL = {
+    "Clivi": "https://www.clivi.com.mx/", "Ahorro": "https://www.fahorro.com/",
+    "Guadalajara": "https://www.farmaciasguadalajara.com/", "Benavides": "https://www.benavides.com.mx/",
+    "SanPablo": "https://www.farmaciasanpablo.com.mx/",
+}
 
 SCRAPERS = {
     "Benavides": scrape_benavides,
@@ -289,6 +296,13 @@ def main():
             row["Clivi"] = CLIVI["prices"][name]
             row["sources"]["Clivi"] = {"price": CLIVI["prices"][name], "url": CLIVI["url"], "title": CLIVI["note"]}
             matched_count += 1
+        # Manual overrides (authoritative; fill cells the scraper can't reach)
+        for src in SOURCE_ORDER:
+            ov = OVERRIDES.get(src, {}).get(name)
+            if isinstance(ov, (int, float)):
+                row[src] = round(ov)
+                row["sources"][src] = {"price": round(ov), "url": SOURCE_URL.get(src, ""), "title": "Precio verificado manualmente"}
+                matched_count += 1
         prices[name] = row
 
     out = {"generated_at": now, "currency": "MXN", "prices": prices}

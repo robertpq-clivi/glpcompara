@@ -1,0 +1,7 @@
+{
+  "_comment": "Manual price fills, applied after scraping and taking precedence. Use for cells the scraper can't reach (e.g. San Pablo's titles drop 'mg'). Shape: source → {canonical product name: price MXN}.",
+  "SanPablo": {
+    "Ozempic 0.25/0.5 mg (1 pluma)": 3096,
+    "Ozempic 1 mg (1 pluma)": 4198
+  }
+}
