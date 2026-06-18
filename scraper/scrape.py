@@ -92,7 +92,10 @@ def scrape_ahorro(query):
 # These sites block datacenter IPs (Akamai / WAF), so we route requests through
 # an anti-bot scraping API with residential proxies. Set SCRAPER_API_KEY (and
 # optionally SCRAPER_PROVIDER=zenrows|scraperapi) as an env var / GitHub secret.
-SCRAPER_KEY = os.environ.get("SCRAPER_API_KEY", "").strip()
+# Take the last whitespace-delimited token, so a key pasted with stray labels
+# or newlines (e.g. "SCRAPER_PROVIDER = zenrows\n<key>") still resolves cleanly.
+_raw_key = os.environ.get("SCRAPER_API_KEY", "")
+SCRAPER_KEY = _raw_key.split()[-1] if _raw_key.split() else ""
 SCRAPER_PROVIDER = os.environ.get("SCRAPER_PROVIDER", "zenrows").strip().lower()
 
 def via_proxy(target_url):
