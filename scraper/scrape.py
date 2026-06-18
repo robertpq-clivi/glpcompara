@@ -98,17 +98,19 @@ _raw_key = os.environ.get("SCRAPER_API_KEY", "")
 SCRAPER_KEY = _raw_key.split()[-1] if _raw_key.split() else ""
 SCRAPER_PROVIDER = os.environ.get("SCRAPER_PROVIDER", "zenrows").strip().lower()
 
-def via_proxy(target_url):
+def via_proxy(target_url, headers=None):
     if not SCRAPER_KEY:
         raise RuntimeError("SCRAPER_API_KEY not set")
     if SCRAPER_PROVIDER == "scraperapi":
-        r = requests.get("https://api.scraperapi.com/", params={
-            "api_key": SCRAPER_KEY, "url": target_url, "premium": "true", "country_code": "mx"},
-            timeout=70)
+        params = {"api_key": SCRAPER_KEY, "url": target_url, "premium": "true", "country_code": "mx"}
+        if headers:
+            params["keep_headers"] = "true"
+        r = requests.get("https://api.scraperapi.com/", params=params, headers=headers or {}, timeout=70)
     else:  # zenrows
-        r = requests.get("https://api.zenrows.com/v1/", params={
-            "apikey": SCRAPER_KEY, "url": target_url, "premium_proxy": "true", "proxy_country": "mx"},
-            timeout=70)
+        params = {"apikey": SCRAPER_KEY, "url": target_url, "premium_proxy": "true", "proxy_country": "mx"}
+        if headers:
+            params["custom_headers"] = "true"   # forward our headers to the target
+        r = requests.get("https://api.zenrows.com/v1/", params=params, headers=headers or {}, timeout=70)
     r.raise_for_status()
     return r.text
 
@@ -162,8 +164,8 @@ SP_SITE = os.environ.get("SP_SITE", "fsp")  # SAP Commerce baseSite (from main b
 def scrape_sanpablo(query):
     if not SP_SITE:
         return []  # baseSite not yet resolved
-    url = f"{SP_OCC}/occ/v2/{SP_SITE}/products/search?query={query}&fields=FULL&pageSize=24&lang=es_MX&curr=MXN"
-    data = json.loads(via_proxy(url))
+    url = f"{SP_OCC}/rest/v2/{SP_SITE}/products/search?query={query}&fields=FULL&pageSize=24&lang=es_MX&curr=MXN"
+    data = json.loads(via_proxy(url, headers={"Accept": "application/json"}))
     out = []
     for p in data.get("products", []):
         pr = p.get("price") or {}
@@ -231,18 +233,13 @@ def recon():
         for pat in [r'products/search[^"\']{0,45}', r'productSearch["\']?\s*:\s*["\']([^"\']+)',
                     r'prefix["\']?\s*:\s*["\']([^"\']+)["\']', r'baseUrl["\']?\s*:\s*["\']([^"\']+)["\']']:
             print(f"  {pat[:22]:22}: {list(dict.fromkeys(re.findall(pat, js)))[:6]}")
-        for variant in [f"{SP_OCC}/occ/v2/fsp/products/search?query=ozempic&fields=FULL",
-                        f"{SP_OCC}/rest/v2/fsp/products/search?query=ozempic&fields=FULL",
-                        f"{SP_OCC}/occ/v2/fsp/products/search?query=ozempic:relevance&fields=FULL"]:
-            try:
-                d = json.loads(via_proxy(variant))
-                ps = d.get("products", [])
-                print(f"  OK [{variant.split('model-t.cc.commerce.ondemand.com')[1][:40]}] → {len(ps)} products")
-                for p in ps[:5]:
-                    print(f"     {p.get('name','')[:50]!r} | {(p.get('price') or {}).get('value')} | {p.get('url','')[:45]}")
-                if ps: break
-            except Exception as e:
-                print(f"  404? [{variant.split('.com')[-1][:46]}] {str(e)[:40]}")
+        raw = via_proxy(f"{SP_OCC}/rest/v2/fsp/products/search?query=ozempic&fields=FULL", headers={"Accept": "application/json"})
+        print("  /rest/v2 + Accept:json → first 120:", raw[:120].replace("\n", " "))
+        d = json.loads(raw)
+        ps = d.get("products", [])
+        print(f"  products: {len(ps)}")
+        for p in ps[:6]:
+            print(f"     {p.get('name','')[:50]!r} | {(p.get('price') or {}).get('value')} | {p.get('url','')[:45]}")
     except Exception as e:
         print(f"  err {type(e).__name__}: {e}")
 
