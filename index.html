@@ -288,6 +288,9 @@ th.cmp-clivi{background:linear-gradient(180deg,rgba(0,180,216,.18),rgba(0,180,21
 .cmp-count{font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:var(--navy);}
 .cmp-count.win{color:var(--teal-dark);}
 .cmp-hint{font-size:12px;color:var(--gray-400);text-align:center;margin-top:12px;}
+.cmp-est{display:block;font-size:8.5px;font-weight:700;color:var(--gray-400);letter-spacing:.03em;margin-top:1px;text-transform:uppercase;}
+.cmp-note{font-size:12px;color:var(--gray-600);background:var(--gray-50);border:1px solid var(--gray-200);border-radius:10px;padding:11px 14px;margin-top:14px;line-height:1.6;}
+.cmp-note b{color:var(--navy);}
 </style>
 <script>
   // Staging guard: don't index the temporary github.io URL — canonical is glpcompara.com.mx
@@ -601,6 +604,33 @@ let selected = [];
 let selectedDrug = null;
 let sortBy = 'price';
 let supaClient = null;
+let PRICE_META = null;          // { generated_at } de data/prices.json
+const LIVE = {};                // LIVE[name] = Set de fuentes con precio real verificado
+
+// Carga precios reales (data/prices.json) y los fusiona en RAW_DATA.
+// Las fuentes sin dato real conservan su estimado y se marcan como tal.
+async function loadLivePrices(){
+  try{
+    const r = await fetch('data/prices.json', {cache:'no-store'});
+    if(!r.ok) return;
+    const data = await r.json();
+    PRICE_META = { generated_at: data.generated_at };
+    RAW_DATA.forEach(s=>{
+      const p = data.prices && data.prices[s.name];
+      LIVE[s.name] = new Set();
+      // Solo mostramos precios verificados. Las fuentes sin dato real se ponen
+      // en null (se muestran como "pendiente"), nunca con un precio inventado.
+      LABS.forEach(src=>{
+        if(p && typeof p[src] === 'number'){ s[src] = p[src]; LIVE[s.name].add(src); }
+        else { s[src] = null; }
+      });
+      const vals = LABS.map(l=>s[l]).filter(v=>v);
+      s.avg = vals.length ? Math.round(vals.reduce((a,b)=>a+b,0)/vals.length) : null;
+      s.cheapest = vals.length ? LABS.filter(l=>s[l]).sort((a,b)=>s[a]-s[b])[0] : null;
+    });
+  }catch(e){ console.warn('live prices:', e.message); }
+}
+const livePromise = loadLivePrices();
 
 // Medicamentos GLP-1 disponibles (familias)
 const DRUGS = ['Ozempic','Mounjaro','Wegovy','Saxenda','Rybelsus'];
@@ -661,13 +691,14 @@ function selectDrug(drug){
   renderList(); renderChips(); renderCompBtn();
   window.scrollTo({top:0,behavior:'smooth'});
 }
-function goResults(){
+async function goResults(){
   showSec('sec-results');
   if(lead){
     $('results-bar').style.display='block';
     $('results-name').textContent=lead.nombre.split(' ')[0];
     $('results-email').textContent=lead.correo;
   }
+  try{ await livePromise; }catch(e){}
   renderResults();
 }
 
@@ -831,13 +862,15 @@ function renderResults(){
     return`<th class="cmp-ph${isClivi?' cmp-clivi':''}"><span class="cmp-emoji">${m.emoji}</span>${SHORT[l]||l}<span class="cmp-rating">★ ${m.rating}</span>${isClivi?'<span class="cmp-tag">Más completo</span>':''}</th>`;
   }).join('');
 
-  // filas de precio (una por presentación seleccionada)
+  // filas de precio (una por presentación seleccionada). Solo precios verificados;
+  // las fuentes sin dato real se muestran como "pendiente".
   const priceRows=studies.map(study=>{
     const avail=LABS.map(l=>study[l]).filter(v=>v);
-    const minPrice=avail.length?Math.min(...avail):null;
+    const minLive=avail.length?Math.min(...avail):null;
     const cells=LABS.map(l=>{
-      const p=study[l],isClivi=l==='Clivi',low=p&&p===minPrice;
-      if(!p)return`<td class="${isClivi?'cmp-clivi':''}"><span class="cmp-na">—</span></td>`;
+      const p=study[l],isClivi=l==='Clivi';
+      if(!p)return`<td class="${isClivi?'cmp-clivi':''}"><span class="cmp-na">—</span><span class="cmp-est">pendiente</span></td>`;
+      const low=p===minLive;
       return`<td class="${isClivi?'cmp-clivi':''} cmp-clickable" data-s="${study.name}" data-l="${l}"><span class="cmp-price${low?' low':''}">${fmtP(p)}</span>${low?'<span class="cmp-low-tag">Mejor precio</span>':''}</td>`;
     }).join('');
     return`<tr class="cmp-row"><td class="cmp-label">&#x1F48A; ${study.name}</td>${cells}</tr>`;
@@ -859,11 +892,12 @@ function renderResults(){
   const ctaRow=`<tr class="cmp-row"><td class="cmp-label"></td>${LABS.map(l=>{const m=LAB_META[l],isClivi=l==='Clivi';return`<td class="${isClivi?'cmp-clivi':''}"><a class="cmp-go${isClivi?' prim':''}" href="${m.url}" target="_blank" rel="noopener noreferrer" data-ph="${m.displayName||l}">Ir &#x2192;</a></td>`;}).join('')}</tr>`;
 
   $('results-container').innerHTML=
-    `<div class="cmp-hero"><div class="cmp-hero-badge">&#x1F3C6;</div><div style="flex:1;min-width:200px;"><div class="cmp-hero-t">La opción más completa es <span>Clivi</span></div><div class="cmp-hero-p">No solo el medicamento: incluye el tratamiento completo con seguimiento médico, consulta médica, estudios de laboratorio y plan de alimentación.</div></div></div>`+
+    `<div class="cmp-hero"><div class="cmp-hero-badge">&#x1F3C6;</div><div style="flex:1;min-width:200px;"><div class="cmp-hero-t">La opción más completa es <span>Clivi</span></div><div class="cmp-hero-p">El precio de Clivi es un <strong>plan integral</strong>: incluye el medicamento más consulta, seguimiento médico, estudios de laboratorio y plan de alimentación. Las farmacias muestran solo el precio del medicamento.</div></div></div>`+
     `<div class="cmp-scroll"><table class="cmp-table"><thead><tr><th class="cmp-corner"></th>${thCells}</tr></thead><tbody>`+
     `<tr class="cmp-section"><td colspan="${LABS.length+1}">Precio por presentación</td></tr>`+priceRows+
     `<tr class="cmp-section"><td colspan="${LABS.length+1}">Qué incluye cada opción</td></tr>`+featRows+totalRow+ctaRow+
     `</tbody></table></div>`+
+    `<div class="cmp-note"><b>&#x1F4A1; Cómo leer esta tabla:</b> el precio de <b>Clivi</b> es un plan integral (medicamento + consulta + seguimiento médico + estudios de laboratorio + plan de alimentación). Las demás columnas son el precio del medicamento solo. <b>"pendiente"</b> = aún estamos verificando ese precio en línea (no mostramos precios sin confirmar).${PRICE_META?` &middot; Precios actualizados: ${new Date(PRICE_META.generated_at).toLocaleDateString('es-MX',{day:'numeric',month:'long',year:'numeric'})}.`:''}</div>`+
     `<p class="cmp-hint">Toca un precio para ver el detalle del medicamento. Desliza la tabla &#x2194; para ver todas las farmacias.</p>`;
 
   // abrir modal al tocar un precio
