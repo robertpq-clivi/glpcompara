@@ -181,26 +181,24 @@ def pick(products, prod):
 
 # ── RECON (diagnose Guadalajara / San Pablo through the proxy; never prints key) ──
 def recon():
-    import textwrap
     for base in ["https://www.farmaciasguadalajara.com", "https://www.farmaciasanpablo.com.mx"]:
         print(f"\n===== RECON {base} =====")
         try:
-            txt = via_proxy(f"{base}/api/catalog_system/pub/products/search?ft=ozempic&_from=0&_to=5")
-            print(f"  VTEX API response: {len(txt)} chars")
-            try:
-                d = json.loads(txt)
-                n = len(d) if isinstance(d, list) else "n/a"
-                print(f"  JSON OK · type={type(d).__name__} · items={n}")
-                if isinstance(d, list) and d:
-                    p = d[0]
-                    co = (p.get("items", [{}])[0].get("sellers", [{}])[0].get("commertialOffer", {}))
-                    print(f"  sample → name={p.get('productName','')[:55]!r} price={co.get('Price')} link={p.get('link') or p.get('linkText')}")
-            except Exception as e:
-                sig = {k: (k.lower() in txt.lower()) for k in ['vtex', '__NEXT_DATA__', 'magento', 'algolia', 'graphql', 'window.__']}
-                print(f"  not JSON ({e}); platform signals: {sig}")
-                print("  snippet:", textwrap.shorten(txt.replace('\n', ' '), 320))
+            h = via_proxy(base + "/")
+            print(f"  home: {len(h)} chars")
+            sig = {k: (k.lower() in h.lower()) for k in ['vtex', '__NEXT_DATA__', 'magento', 'algolia', 'graphql', 'ng-version', 'data-beasties', 'shopify', 'salesforce', 'demandware']}
+            print(f"  signals: {sig}")
+            scripts = sorted(set(re.findall(r'<script[^>]+src="([^"]+)"', h)))
+            print(f"  scripts ({len(scripts)}):")
+            for s in scripts[:18]:
+                print("    ", s)
+            apis = sorted(set(re.findall(r'https?://[a-z0-9.\-]*(?:api|graphql|search)[a-z0-9.\-]*', h, re.I)
+                              + re.findall(r'/(?:api|graphql|rest|search|buscar|busqueda)[a-z0-9/_\-]*', h, re.I)))
+            print(f"  api/search hints ({len(apis)}): {apis[:25]}")
+            forms = re.findall(r'<form[^>]+action="([^"]+)"', h)
+            print(f"  form actions: {forms[:6]}")
         except Exception as e:
-            print(f"  VTEX API error: {type(e).__name__}: {e}")
+            print(f"  home error: {type(e).__name__}: {e}")
 
 # ── ORCHESTRATION ──────────────────────────────────────────────────────────
 def main():
