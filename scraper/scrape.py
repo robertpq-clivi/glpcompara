@@ -226,11 +226,23 @@ def recon():
         for kw in ["model-t", "occ", "baseSite", "commerce.ondemand", "ondemand.com"]:
             i = home.find(kw)
             print(f"  [{kw}] @ {i}: {home[max(0,i-70):i+170]!r}" if i >= 0 else f"  [{kw}] not found")
-        d = json.loads(via_proxy(f"{SP_OCC}/occ/v2/fsp/products/search?query=ozempic&fields=FULL&pageSize=6&lang=es_MX&curr=MXN"))
-        ps = d.get("products", [])
-        print(f"  fsp products/search → {len(ps)} products")
-        for p in ps[:6]:
-            print(f"     {p.get('name','')[:55]!r} | {(p.get('price') or {}).get('value')} | code={p.get('code')} | url={p.get('url','')[:50]}")
+        mains = re.findall(r'/main[A-Za-z0-9.\-]*\.js', home)
+        js = via_proxy(SP + mains[0]) if mains else ""
+        for pat in [r'products/search[^"\']{0,45}', r'productSearch["\']?\s*:\s*["\']([^"\']+)',
+                    r'prefix["\']?\s*:\s*["\']([^"\']+)["\']', r'baseUrl["\']?\s*:\s*["\']([^"\']+)["\']']:
+            print(f"  {pat[:22]:22}: {list(dict.fromkeys(re.findall(pat, js)))[:6]}")
+        for variant in [f"{SP_OCC}/occ/v2/fsp/products/search?query=ozempic&fields=FULL",
+                        f"{SP_OCC}/rest/v2/fsp/products/search?query=ozempic&fields=FULL",
+                        f"{SP_OCC}/occ/v2/fsp/products/search?query=ozempic:relevance&fields=FULL"]:
+            try:
+                d = json.loads(via_proxy(variant))
+                ps = d.get("products", [])
+                print(f"  OK [{variant.split('model-t.cc.commerce.ondemand.com')[1][:40]}] → {len(ps)} products")
+                for p in ps[:5]:
+                    print(f"     {p.get('name','')[:50]!r} | {(p.get('price') or {}).get('value')} | {p.get('url','')[:45]}")
+                if ps: break
+            except Exception as e:
+                print(f"  404? [{variant.split('.com')[-1][:46]}] {str(e)[:40]}")
     except Exception as e:
         print(f"  err {type(e).__name__}: {e}")
 
