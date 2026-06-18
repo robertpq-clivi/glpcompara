@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-18T18:31:35Z",
+  "generated_at": "2026-06-18T18:34:20Z",
   "currency": "MXN",
   "prices": {
     "Ozempic 0.25/0.5 mg (1 pluma)": {
@@ -56,17 +56,11 @@
       "SanPablo": null
     },
     "Ozempic 2 mg (1 pluma)": {
-      "sources": {
-        "Guadalajara": {
-          "price": 4900,
-          "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-2.4mg-dosis-3.2mg-ml-solucion-inyectable--1-pluma-precargada.-1448528.html",
-          "title": "Wegovy 2.4mg/Dosis 3.2mg/ml Solución Inyectable, 1 Pluma Precargada."
-        }
-      },
+      "sources": {},
       "Clivi": null,
       "Ahorro": null,
       "Benavides": null,
-      "Guadalajara": 4900,
+      "Guadalajara": null,
       "SanPablo": null
     },
     "Mounjaro 2.5 mg (1 pluma)": {
@@ -463,18 +457,13 @@
           "price": 2975,
           "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/rybelsus-7-mg--30-tabletas.-1377655.html",
           "title": "Rybelsus 7 mg, 30 Tabletas."
-        },
-        "SanPablo": {
-          "price": 6643,
-          "url": "https://www.farmaciasanpablo.com.mx/medicamentos/supervision-medica/v---w--x/wegovy-1-7-mg-3-ml-solucion-pluma-prellenada/p/000000000070008426",
-          "title": "Wegovy 1.7 MG 3 ML Solución Pluma Prellenada"
         }
       },
       "Clivi": null,
       "Ahorro": 2992,
       "Benavides": 3906,
       "Guadalajara": 2975,
-      "SanPablo": 6643
+      "SanPablo": null
     },
     "Rybelsus 14 mg (30 tabletas)": {
       "sources": {
