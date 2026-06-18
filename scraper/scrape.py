@@ -215,6 +215,12 @@ def pick(products, prod):
     mn = prod.get("min_price")
     if mn:
         cands = [p for p in cands if p["price"] >= mn]  # filter wrong-pack outliers
+    # Prefer products whose title actually names the brand (kills cross-drug
+    # mismatches from fuzzy search). Fall back to substance-titled results
+    # (e.g. Benavides lists "1 mg Semaglutida" with no brand) when none match.
+    fam = norm(prod.get("family", ""))
+    branded = [p for p in cands if fam and fam in norm(p["title"])]
+    cands = branded if branded else cands
     if not cands:
         return None
     return min(cands, key=lambda p: p["price"])  # cheapest matching variant
