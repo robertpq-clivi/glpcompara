@@ -210,17 +210,20 @@ def matches(title, prod):
         return False
     return True
 
-def pick(products, prod):
+def pick(products, prod, source=""):
     cands = [p for p in products if matches(p["title"], prod)]
     mn = prod.get("min_price")
     if mn:
         cands = [p for p in cands if p["price"] >= mn]  # filter wrong-pack outliers
-    # Prefer products whose title actually names the brand (kills cross-drug
-    # mismatches from fuzzy search). Fall back to substance-titled results
-    # (e.g. Benavides lists "1 mg Semaglutida" with no brand) when none match.
+    # Require the brand name in the title to avoid cross-drug mismatches from
+    # fuzzy search. Benavides is the exception: it lists "1 mg Semaglutida"
+    # (no brand), but its search is already scoped per drug, so trust it.
     fam = norm(prod.get("family", ""))
     branded = [p for p in cands if fam and fam in norm(p["title"])]
-    cands = branded if branded else cands
+    if branded:
+        cands = branded
+    elif source != "Benavides":
+        return None  # brand-titled source with no brand match → don't guess
     if not cands:
         return None
     return min(cands, key=lambda p: p["price"])  # cheapest matching variant
@@ -276,7 +279,7 @@ def main():
             row[src] = None
         # scraped sources
         for src in SCRAPERS:
-            hit = pick(raw[src].get(fam, []), prod)
+            hit = pick(raw[src].get(fam, []), prod, src)
             if hit:
                 row[src] = hit["price"]
                 row["sources"][src] = {"price": hit["price"], "url": hit["url"], "title": hit["title"]}
