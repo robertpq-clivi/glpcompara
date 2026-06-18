@@ -532,7 +532,7 @@ const RAW_DATA = [
   {name:"Rybelsus 14 mg (30 tabletas)",Clivi:2890,Ahorro:3400,Guadalajara:3350,Benavides:null,SanPablo:3380,avg:3255,cheapest:"Clivi"},
 ];
 
-const LABS = ['Clivi','Ahorro','Guadalajara','Benavides','SanPablo'];
+const LABS = ['Clivi','Ahorro','Guadalajara','Benavides','SanPablo','Revert'];
 
 const LAB_META = {
   Clivi: {
@@ -582,6 +582,16 @@ const LAB_META = {
     about: 'Farmacias San Pablo combina venta de medicamentos con servicios médicos y de laboratorio en sus sucursales.',
     emoji: '🧬',
     displayName: 'Farmacias San Pablo'
+  },
+  Revert: {
+    rating: 4.6, votes: 640, color: '#0EA5A0', colorClass: 'revert',
+    bg: 'rgba(14,165,160,.1)',
+    tagline: 'Programa de pérdida de peso con seguimiento médico',
+    url: 'https://revert.com.mx/perdida-de-peso/',
+    services: ['🩺 Seguimiento médico', '🥗 Plan de alimentación', '🚚 Envío a domicilio', '💳 Pago en línea'],
+    about: 'Revert es un programa especializado en pérdida de peso que combina el medicamento con seguimiento médico y plan de alimentación.',
+    emoji: '⚕️',
+    displayName: 'Revert'
   }
 };
 
@@ -631,7 +641,7 @@ const livePromise = loadLivePrices();
 const DRUGS = ['Ozempic','Mounjaro','Wegovy','Rybelsus'];
 
 // Nombre corto para los encabezados de la tabla comparativa
-const SHORT = { Clivi:'Clivi', Ahorro:'Del Ahorro', Guadalajara:'F. Guadalajara', Benavides:'Benavides', SanPablo:'San Pablo' };
+const SHORT = { Clivi:'Clivi', Ahorro:'Del Ahorro', Guadalajara:'F. Guadalajara', Benavides:'Benavides', SanPablo:'San Pablo', Revert:'Revert' };
 
 // Características de cada farmacia (1 = sí incluye, 0 = no)
 const FEATURES = [
@@ -649,6 +659,7 @@ const PHARM_FEATURES = {
   Guadalajara: { medico:0, consulta:0, alimentacion:0, envio:1, laboratorio:0, pago:1, receta:0 },
   Benavides:   { medico:0, consulta:0, alimentacion:0, envio:1, laboratorio:0, pago:1, receta:0 },
   SanPablo:    { medico:0, consulta:1, alimentacion:0, envio:1, laboratorio:1, pago:1, receta:1 },
+  Revert:      { medico:1, consulta:0, alimentacion:1, envio:1, laboratorio:0, pago:1, receta:0 },
 };
 
 // ── UTILS ─────────────────────────────────────────────────────────────────

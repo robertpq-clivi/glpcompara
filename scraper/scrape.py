@@ -186,6 +186,7 @@ SOURCE_URL = {
     "Clivi": "https://www.clivi.com.mx/", "Ahorro": "https://www.fahorro.com/",
     "Guadalajara": "https://www.farmaciasguadalajara.com/", "Benavides": "https://www.benavides.com.mx/",
     "SanPablo": "https://www.farmaciasanpablo.com.mx/",
+    "Revert": "https://revert.com.mx/perdida-de-peso/",
 }
 
 SCRAPERS = {
@@ -198,7 +199,7 @@ if SCRAPER_KEY:
     SCRAPERS["SanPablo"]    = scrape_sanpablo
 
 # Column order shown in data/prices.json
-SOURCE_ORDER = ["Clivi", "Ahorro", "Benavides", "Guadalajara", "SanPablo"]
+SOURCE_ORDER = ["Clivi", "Ahorro", "Benavides", "Guadalajara", "SanPablo", "Revert"]
 
 # ── MATCHING ───────────────────────────────────────────────────────────────
 def norm(s):

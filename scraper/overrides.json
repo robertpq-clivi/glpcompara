@@ -11,5 +11,12 @@
   },
   "Guadalajara": {
     "Ozempic 1 mg (1 pluma)": 4280
+  },
+  "Revert": {
+    "Wegovy 0.25 mg (caja mensual)": 2299,
+    "Wegovy 0.5 mg (caja mensual)": 2899,
+    "Wegovy 1 mg (caja mensual)": 3899,
+    "Wegovy 1.7 mg (caja mensual)": 4599,
+    "Wegovy 2.4 mg (caja mensual)": 4899
   }
 }
