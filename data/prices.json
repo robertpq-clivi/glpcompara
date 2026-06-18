@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-18T18:34:20Z",
+  "generated_at": "2026-06-18T18:43:36Z",
   "currency": "MXN",
   "prices": {
     "Ozempic 0.25/0.5 mg (1 pluma)": {
@@ -23,13 +23,18 @@
           "price": 5499,
           "url": "https://www.clivi.com.mx/",
           "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
+        },
+        "SanPablo": {
+          "price": 3096,
+          "url": "https://www.farmaciasanpablo.com.mx/",
+          "title": "Precio verificado manualmente"
         }
       },
       "Clivi": 5499,
       "Ahorro": 3096,
       "Benavides": 4274,
       "Guadalajara": 3149,
-      "SanPablo": null
+      "SanPablo": 3096
     },
     "Ozempic 1 mg (1 pluma)": {
       "sources": {
@@ -47,13 +52,18 @@
           "price": 5499,
           "url": "https://www.clivi.com.mx/",
           "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
+        },
+        "SanPablo": {
+          "price": 4198,
+          "url": "https://www.farmaciasanpablo.com.mx/",
+          "title": "Precio verificado manualmente"
         }
       },
       "Clivi": 5499,
       "Ahorro": 4198,
       "Benavides": 5789,
       "Guadalajara": null,
-      "SanPablo": null
+      "SanPablo": 4198
     },
     "Ozempic 2 mg (1 pluma)": {
       "sources": {},
