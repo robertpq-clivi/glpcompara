@@ -2,6 +2,14 @@
   "_comment": "Manual price fills, applied after scraping and taking precedence. Use for cells the scraper can't reach (e.g. San Pablo's titles drop 'mg'). Shape: source → {canonical product name: price MXN}.",
   "SanPablo": {
     "Ozempic 0.25/0.5 mg (1 pluma)": 3096,
-    "Ozempic 1 mg (1 pluma)": 4198
+    "Ozempic 1 mg (1 pluma)": 4198,
+    "Mounjaro 5 mg (1 pluma)": 5983,
+    "Mounjaro 15 mg (1 pluma)": 8608,
+    "Rybelsus 3 mg (30 tabletas)": 2153,
+    "Rybelsus 7 mg (30 tabletas)": 2808,
+    "Rybelsus 14 mg (30 tabletas)": 3148
+  },
+  "Guadalajara": {
+    "Ozempic 1 mg (1 pluma)": 4280
   }
 }
