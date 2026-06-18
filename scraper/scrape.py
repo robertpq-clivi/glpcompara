@@ -226,30 +226,18 @@ def recon():
         for kw in ["model-t", "occ", "baseSite", "commerce.ondemand", "ondemand.com"]:
             i = home.find(kw)
             print(f"  [{kw}] @ {i}: {home[max(0,i-70):i+170]!r}" if i >= 0 else f"  [{kw}] not found")
-        js_all = list(dict.fromkeys(re.findall(r'(?:src|href)="([^"]+\.js)"', home)))
-        print("  js files:", js_all)
-        # also scan the main bundle(s) for occ/baseSite
-        for j in [u for u in js_all if u.startswith("/") and "script" not in u][:3]:
-            try:
-                js = via_proxy(SP + j)
-                hits = list(dict.fromkeys(re.findall(r'occ/v2/[A-Za-z0-9_\-]+|baseSites?["\']?\s*[:=]\s*["\'][^"\']+|model-t[a-z0-9.\-]*', js)))
-                print(f"  {j} ({len(js)}b): {hits[:6]}")
-            except Exception as e:
-                print(f"  {j}: {type(e).__name__}")
+        mains = re.findall(r'/main[A-Za-z0-9.\-]*\.js', home)
+        print("  main bundles:", mains)
+        js = via_proxy(SP + mains[0]) if mains else ""
+        print("  main len:", len(js))
+        for pat in [r'baseSite["\']?\s*:\s*\[?\s*["\']([^"\']+)["\']',
+                    r'context\s*:\s*\{[^}]{0,120}',
+                    r'prefix["\']?\s*:\s*["\']([^"\']+)["\']',
+                    r'["\']([A-Za-z0-9_\-]*[Ss]ite[A-Za-z0-9_\-]*)["\']',
+                    r'/occ/v2']:
+            print(f"  {pat[:24]:24}: {list(dict.fromkeys(re.findall(pat, js)))[:8]}")
     except Exception as e:
-        print(f"  home err {type(e).__name__}: {e}")
-    # brute-force a few likely baseSites against products/search
-    occ = SP_OCC + "/occ/v2"
-    print("  --- baseSite probes ---")
-    for site in ["unifarsadSite", "unifarsad", "sanpablo", "sanPablo", "sanPabloSite", "spaSite", "spa", "main", "electronics-spa"]:
-        try:
-            d = json.loads(via_proxy(f"{occ}/{site}/products/search?query=ozempic&fields=FULL&pageSize=3"))
-            ps = d.get("products", [])
-            print(f"  [{site}] products={len(ps)} " + str([(p.get('name','')[:28], (p.get('price') or {}).get('value')) for p in ps[:3]]))
-            if ps:
-                print("  *** baseSite FOUND:", site); break
-        except Exception as e:
-            print(f"  [{site}] {type(e).__name__}: {str(e)[:45]}")
+        print(f"  err {type(e).__name__}: {e}")
 
 # ── ORCHESTRATION ──────────────────────────────────────────────────────────
 def main():
