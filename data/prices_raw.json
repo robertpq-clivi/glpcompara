@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-17T16:42:06Z",
+  "generated_at": "2026-06-18T16:39:41Z",
   "raw": {
     "Benavides": {
       "Ozempic": [
@@ -15,16 +15,6 @@
         }
       ],
       "Mounjaro": [
-        {
-          "title": "5 mg Tirzepatida/0.6 ml Solución",
-          "price": 5973,
-          "url": "https://www.benavides.com.mx/mounjaro-5-mg-tirzepatida-0-6-ml-solucion-1-jeringa-prellenada"
-        },
-        {
-          "title": "12.5 mg Tirzepatida/0.6 ml Solución Inyectable",
-          "price": 10730,
-          "url": "https://www.benavides.com.mx/mounjaro-12-5-mg-tirzepatida-0-6-ml-solucion-inyectable-1-jeringa-prellenada"
-        },
         {
           "title": "10 mg Tirzepatida/0.6 ml Solución Inyectable",
           "price": 7819,
@@ -44,6 +34,16 @@
           "title": "2.5 mg Tirzepatida/0.6 ml Solución",
           "price": 6300,
           "url": "https://www.benavides.com.mx/mounjaro-2-5-mg-tirzepatida-0-6-ml-solucion-1-jeringa-prellenada"
+        },
+        {
+          "title": "5 mg Tirzepatida/0.6 ml Solución",
+          "price": 5973,
+          "url": "https://www.benavides.com.mx/mounjaro-5-mg-tirzepatida-0-6-ml-solucion-1-jeringa-prellenada"
+        },
+        {
+          "title": "12.5 mg Tirzepatida/0.6 ml Solución Inyectable",
+          "price": 10730,
+          "url": "https://www.benavides.com.mx/mounjaro-12-5-mg-tirzepatida-0-6-ml-solucion-inyectable-1-jeringa-prellenada"
         },
         {
           "title": "Aguja para Dispositivo de Inyección tipo Pluma 32G x 4mm",
