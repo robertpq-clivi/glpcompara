@@ -334,7 +334,7 @@ th.cmp-clivi{background:linear-gradient(180deg,rgba(0,180,216,.18),rgba(0,180,21
     </div>
     <div class="hero-stats anim" style="animation-delay:.5s">
       <div><div class="stat-n">4</div><div class="stat-l">Medicamentos GLP-1</div></div>
-      <div><div class="stat-n">5</div><div class="stat-l">Farmacias comparadas</div></div>
+      <div><div class="stat-n">6</div><div class="stat-l">Farmacias comparadas</div></div>
       <div><div class="stat-n">Hasta 25%</div><div class="stat-l">De ahorro</div></div>
       <div><div class="stat-n">Gratis</div><div class="stat-l">Sin costo de comparaci&#xf3;n</div></div>
     </div>
@@ -368,6 +368,7 @@ th.cmp-clivi{background:linear-gradient(180deg,rgba(0,180,216,.18),rgba(0,180,21
         <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:16px;padding:22px 14px;min-height:96px;text-align:center;"><span style="font-size:24px;">&#x1F3EA;</span><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:var(--navy);">Farmacias Guadalajara</span></div>
         <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:16px;padding:22px 14px;min-height:96px;text-align:center;"><span style="font-size:24px;">&#x1F3EC;</span><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:var(--navy);">Benavides</span></div>
         <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:16px;padding:22px 14px;min-height:96px;text-align:center;"><span style="font-size:24px;">&#x1F9EC;</span><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:var(--navy);">San Pablo</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:16px;padding:22px 14px;min-height:96px;text-align:center;"><span style="font-size:24px;">&#x2695;&#xfe0f;</span><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:var(--navy);">Revert</span><span style="font-size:10px;background:rgba(14,165,160,.15);color:#0E7490;padding:2px 8px;border-radius:10px;font-weight:700;font-family:'Sora',sans-serif;">Solo Wegovy</span></div>
       </div>
     </div>
   </div>
@@ -387,7 +388,7 @@ th.cmp-clivi{background:linear-gradient(180deg,rgba(0,180,216,.18),rgba(0,180,21
     </div>
     <div class="proof-bar">
       <div style="text-align:center;"><div class="proof-n">4</div><div class="proof-l">Medicamentos GLP-1</div></div>
-      <div style="text-align:center;"><div class="proof-n">5</div><div class="proof-l">Farmacias comparadas</div></div>
+      <div style="text-align:center;"><div class="proof-n">6</div><div class="proof-l">Farmacias comparadas</div></div>
       <div style="text-align:center;"><div class="proof-n">Hasta 25%</div><div class="proof-l">De ahorro posible</div></div>
       <div style="text-align:center;"><div class="proof-n">$0</div><div class="proof-l">Costo de comparaci&#xf3;n</div></div>
     </div>
@@ -856,14 +857,17 @@ $('compare-btn').onclick=()=>{if(selected.length)goResults();};
 // ── RESULTS (matriz comparativa por columnas) ──────────────────────────────
 function renderResults(){
   const studies=RAW_DATA.filter(s=>selected.includes(s.name));
-  $('results-sub').textContent=`${studies.length} presentaci${studies.length!==1?'ones':'ón'} · ${LABS.length} farmacias · Precios en pesos mexicanos`;
+  // Solo mostramos columnas con al menos un precio para lo seleccionado
+  // (p. ej. Revert solo aparece en Wegovy).
+  const cols=LABS.filter(l=>['Clivi','Ahorro','Guadalajara','Benavides','SanPablo'].includes(l) || studies.some(s=>s[l]));
+  $('results-sub').textContent=`${studies.length} presentaci${studies.length!==1?'ones':'ón'} · ${cols.length} farmacias · Precios en pesos mexicanos`;
   const ds=document.querySelector('.sort-btns'); if(ds) ds.style.display='none';
 
   // nº de características incluidas por farmacia (para destacar la más completa)
-  const counts={}; LABS.forEach(l=>counts[l]=FEATURES.reduce((a,f)=>a+(PHARM_FEATURES[l][f.key]||0),0));
-  const maxCount=Math.max(...LABS.map(l=>counts[l]));
+  const counts={}; cols.forEach(l=>counts[l]=FEATURES.reduce((a,f)=>a+(PHARM_FEATURES[l][f.key]||0),0));
+  const maxCount=Math.max(...cols.map(l=>counts[l]));
 
-  const thCells=LABS.map(l=>{
+  const thCells=cols.map(l=>{
     const m=LAB_META[l],isClivi=l==='Clivi';
     return`<th class="cmp-ph${isClivi?' cmp-clivi':''}"><span class="cmp-emoji">${m.emoji}</span>${SHORT[l]||l}<span class="cmp-rating">★ ${m.rating}</span>${isClivi?'<span class="cmp-tag">Más completo</span>':''}</th>`;
   }).join('');
@@ -871,9 +875,9 @@ function renderResults(){
   // filas de precio (una por presentación seleccionada). Solo precios verificados;
   // las fuentes sin dato real se muestran como "pendiente".
   const priceRows=studies.map(study=>{
-    const avail=LABS.map(l=>study[l]).filter(v=>v);
+    const avail=cols.map(l=>study[l]).filter(v=>v);
     const minLive=avail.length?Math.min(...avail):null;
-    const cells=LABS.map(l=>{
+    const cells=cols.map(l=>{
       const p=study[l],isClivi=l==='Clivi';
       if(!p)return`<td class="${isClivi?'cmp-clivi':''}"><span class="cmp-na">—</span><span class="cmp-est">pendiente</span></td>`;
       const low=p===minLive;
@@ -884,7 +888,7 @@ function renderResults(){
 
   // filas de características
   const featRows=FEATURES.map(f=>{
-    const cells=LABS.map(l=>{
+    const cells=cols.map(l=>{
       const on=PHARM_FEATURES[l][f.key],isClivi=l==='Clivi';
       return`<td class="${isClivi?'cmp-clivi':''}">${on?'<span class="cmp-yes">&#x2713;</span>':'<span class="cmp-no">&#x2715;</span>'}</td>`;
     }).join('');
@@ -892,16 +896,16 @@ function renderResults(){
   }).join('');
 
   // fila de total de características
-  const totalRow=`<tr class="cmp-row"><td class="cmp-label">&#x2705; Total incluido</td>${LABS.map(l=>{const win=counts[l]===maxCount;return`<td class="${l==='Clivi'?'cmp-clivi':''}"><span class="cmp-count${win?' win':''}">${counts[l]}/${FEATURES.length}</span></td>`;}).join('')}</tr>`;
+  const totalRow=`<tr class="cmp-row"><td class="cmp-label">&#x2705; Total incluido</td>${cols.map(l=>{const win=counts[l]===maxCount;return`<td class="${l==='Clivi'?'cmp-clivi':''}"><span class="cmp-count${win?' win':''}">${counts[l]}/${FEATURES.length}</span></td>`;}).join('')}</tr>`;
 
   // fila de acción
-  const ctaRow=`<tr class="cmp-row"><td class="cmp-label"></td>${LABS.map(l=>{const m=LAB_META[l],isClivi=l==='Clivi';return`<td class="${isClivi?'cmp-clivi':''}"><a class="cmp-go${isClivi?' prim':''}" href="${m.url}" target="_blank" rel="noopener noreferrer" data-ph="${m.displayName||l}">Ir &#x2192;</a></td>`;}).join('')}</tr>`;
+  const ctaRow=`<tr class="cmp-row"><td class="cmp-label"></td>${cols.map(l=>{const m=LAB_META[l],isClivi=l==='Clivi';return`<td class="${isClivi?'cmp-clivi':''}"><a class="cmp-go${isClivi?' prim':''}" href="${m.url}" target="_blank" rel="noopener noreferrer" data-ph="${m.displayName||l}">Ir &#x2192;</a></td>`;}).join('')}</tr>`;
 
   $('results-container').innerHTML=
     `<div class="cmp-hero"><div class="cmp-hero-badge">&#x1F3C6;</div><div style="flex:1;min-width:200px;"><div class="cmp-hero-t">La opción más completa es <span>Clivi</span></div><div class="cmp-hero-p">El precio de Clivi es un <strong>plan integral</strong>: incluye el medicamento más consulta, seguimiento médico, estudios de laboratorio y plan de alimentación. Las farmacias muestran solo el precio del medicamento.</div></div></div>`+
     `<div class="cmp-scroll"><table class="cmp-table"><thead><tr><th class="cmp-corner"></th>${thCells}</tr></thead><tbody>`+
-    `<tr class="cmp-section"><td colspan="${LABS.length+1}">Precio por presentación</td></tr>`+priceRows+
-    `<tr class="cmp-section"><td colspan="${LABS.length+1}">Qué incluye cada opción</td></tr>`+featRows+totalRow+ctaRow+
+    `<tr class="cmp-section"><td colspan="${cols.length+1}">Precio por presentación</td></tr>`+priceRows+
+    `<tr class="cmp-section"><td colspan="${cols.length+1}">Qué incluye cada opción</td></tr>`+featRows+totalRow+ctaRow+
     `</tbody></table></div>`+
     `<div class="cmp-note"><b>&#x1F4A1; Cómo leer esta tabla:</b> el precio de <b>Clivi</b> es un plan integral (medicamento + consulta + seguimiento médico + estudios de laboratorio + plan de alimentación). Las demás columnas son el precio del medicamento solo. <b>"pendiente"</b> = aún estamos verificando ese precio en línea (no mostramos precios sin confirmar).${PRICE_META?` &middot; Precios actualizados: ${new Date(PRICE_META.generated_at).toLocaleDateString('es-MX',{day:'numeric',month:'long',year:'numeric'})}.`:''}</div>`+
     `<p class="cmp-hint">Toca un precio para ver el detalle del medicamento. Desliza la tabla &#x2194; para ver todas las farmacias.</p>`;
