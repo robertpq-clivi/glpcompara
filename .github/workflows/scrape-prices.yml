@@ -3,7 +3,12 @@ name: Scrape GLP-1 prices
 on:
   schedule:
     - cron: "0 13 */3 * *"   # every 3 days ~07:00 America/Mexico_City (days 1,4,7,…)
-  workflow_dispatch: {}      # allow manual runs
+  workflow_dispatch:
+    inputs:
+      recon:
+        description: "Recon mode: diagnose Guadalajara/San Pablo (no commit)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -27,6 +32,7 @@ jobs:
         env:
           SCRAPER_API_KEY: ${{ secrets.SCRAPER_API_KEY }}
           SCRAPER_PROVIDER: ${{ vars.SCRAPER_PROVIDER }}
+          SCRAPER_RECON: ${{ inputs.recon && '1' || '' }}
       - name: Commit refreshed prices
         run: |
           git config user.name  "glpcompara-bot"
