@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-18T19:01:54Z",
+  "generated_at": "2026-06-18T22:06:18Z",
   "currency": "MXN",
   "prices": {
     "Ozempic 0.25/0.5 mg (1 pluma)": {
@@ -34,7 +34,8 @@
       "Ahorro": 3096,
       "Benavides": 4274,
       "Guadalajara": 3149,
-      "SanPablo": 3096
+      "SanPablo": 3096,
+      "Revert": null
     },
     "Ozempic 1 mg (1 pluma)": {
       "sources": {
@@ -68,7 +69,8 @@
       "Ahorro": 4198,
       "Benavides": 5789,
       "Guadalajara": 4280,
-      "SanPablo": 4198
+      "SanPablo": 4198,
+      "Revert": null
     },
     "Mounjaro 2.5 mg (1 pluma)": {
       "sources": {
@@ -102,7 +104,8 @@
       "Ahorro": 6250,
       "Benavides": 6300,
       "Guadalajara": 3770,
-      "SanPablo": 6295
+      "SanPablo": 6295,
+      "Revert": null
     },
     "Mounjaro 5 mg (1 pluma)": {
       "sources": {
@@ -136,7 +139,8 @@
       "Ahorro": 6500,
       "Benavides": 5973,
       "Guadalajara": 4775,
-      "SanPablo": 5983
+      "SanPablo": 5983,
+      "Revert": null
     },
     "Mounjaro 7.5 mg (1 pluma)": {
       "sources": {
@@ -170,7 +174,8 @@
       "Ahorro": 8500,
       "Benavides": 7821,
       "Guadalajara": 6500,
-      "SanPablo": 7880
+      "SanPablo": 7880,
+      "Revert": null
     },
     "Mounjaro 10 mg (1 pluma)": {
       "sources": {
@@ -204,7 +209,8 @@
       "Ahorro": 8500,
       "Benavides": 7819,
       "Guadalajara": 6255,
-      "SanPablo": 7838
+      "SanPablo": 7838,
+      "Revert": null
     },
     "Mounjaro 12.5 mg (1 pluma)": {
       "sources": {
@@ -233,7 +239,8 @@
       "Ahorro": 10500,
       "Benavides": 10730,
       "Guadalajara": 10768,
-      "SanPablo": 10730
+      "SanPablo": 10730,
+      "Revert": null
     },
     "Mounjaro 15 mg (1 pluma)": {
       "sources": {
@@ -262,7 +269,8 @@
       "Ahorro": 10500,
       "Benavides": 10730,
       "Guadalajara": 10768,
-      "SanPablo": 8608
+      "SanPablo": 8608,
+      "Revert": null
     },
     "Wegovy 0.25 mg (caja mensual)": {
       "sources": {
@@ -290,13 +298,19 @@
           "price": 4299,
           "url": "https://www.clivi.com.mx/",
           "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
+        },
+        "Revert": {
+          "price": 2299,
+          "url": "https://revert.com.mx/perdida-de-peso/",
+          "title": "Precio verificado manualmente"
         }
       },
       "Clivi": 4299,
       "Ahorro": 2384,
       "Benavides": 3177,
       "Guadalajara": 2385,
-      "SanPablo": 3178
+      "SanPablo": 3178,
+      "Revert": 2299
     },
     "Wegovy 0.5 mg (caja mensual)": {
       "sources": {
@@ -324,13 +338,19 @@
           "price": 4999,
           "url": "https://www.clivi.com.mx/",
           "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
+        },
+        "Revert": {
+          "price": 2899,
+          "url": "https://revert.com.mx/perdida-de-peso/",
+          "title": "Precio verificado manualmente"
         }
       },
       "Clivi": 4999,
       "Ahorro": 2900,
       "Benavides": 3864,
       "Guadalajara": 2900,
-      "SanPablo": 3864
+      "SanPablo": 3864,
+      "Revert": 2899
     },
     "Wegovy 1 mg (caja mensual)": {
       "sources": {
@@ -358,13 +378,19 @@
           "price": 5499,
           "url": "https://www.clivi.com.mx/",
           "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
+        },
+        "Revert": {
+          "price": 3899,
+          "url": "https://revert.com.mx/perdida-de-peso/",
+          "title": "Precio verificado manualmente"
         }
       },
       "Clivi": 5499,
       "Ahorro": 3934,
       "Benavides": 5244,
       "Guadalajara": 3940,
-      "SanPablo": 5244
+      "SanPablo": 5244,
+      "Revert": 3899
     },
     "Wegovy 1.7 mg (caja mensual)": {
       "sources": {
@@ -392,13 +418,19 @@
           "price": 6999,
           "url": "https://www.clivi.com.mx/",
           "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
+        },
+        "Revert": {
+          "price": 4599,
+          "url": "https://revert.com.mx/perdida-de-peso/",
+          "title": "Precio verificado manualmente"
         }
       },
       "Clivi": 6999,
       "Ahorro": 4650,
       "Benavides": 6643,
       "Guadalajara": 4650,
-      "SanPablo": 6643
+      "SanPablo": 6643,
+      "Revert": 4599
     },
     "Wegovy 2.4 mg (caja mensual)": {
       "sources": {
@@ -426,13 +458,19 @@
           "price": 6999,
           "url": "https://www.clivi.com.mx/",
           "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
+        },
+        "Revert": {
+          "price": 4899,
+          "url": "https://revert.com.mx/perdida-de-peso/",
+          "title": "Precio verificado manualmente"
         }
       },
       "Clivi": 6999,
       "Ahorro": 4900,
       "Benavides": 8163,
       "Guadalajara": 4900,
-      "SanPablo": 8164
+      "SanPablo": 8164,
+      "Revert": 4899
     },
     "Rybelsus 3 mg (30 tabletas)": {
       "sources": {
@@ -466,7 +504,8 @@
       "Ahorro": 2403,
       "Benavides": 2351,
       "Guadalajara": 2172,
-      "SanPablo": 2153
+      "SanPablo": 2153,
+      "Revert": null
     },
     "Rybelsus 7 mg (30 tabletas)": {
       "sources": {
@@ -500,7 +539,8 @@
       "Ahorro": 2992,
       "Benavides": 3906,
       "Guadalajara": 2975,
-      "SanPablo": 2808
+      "SanPablo": 2808,
+      "Revert": null
     },
     "Rybelsus 14 mg (30 tabletas)": {
       "sources": {
@@ -534,7 +574,8 @@
       "Ahorro": 3354,
       "Benavides": 4379,
       "Guadalajara": 3335,
-      "SanPablo": 3148
+      "SanPablo": 3148,
+      "Revert": null
     }
   }
 }
