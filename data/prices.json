@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-18T18:28:12Z",
+  "generated_at": "2026-06-18T18:31:35Z",
   "currency": "MXN",
   "prices": {
     "Ozempic 0.25/0.5 mg (1 pluma)": {
@@ -15,9 +15,9 @@
           "title": "Ozempic 0.25 mg - 0.5 mg/dosis 1 Pluma con 6 Agujas"
         },
         "Guadalajara": {
-          "price": 2385,
-          "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-0.25-mg-dosis-0.68mg-ml-solucion-inyectable--1-pluma-precargada.-1447300.html",
-          "title": "Wegovy 0.25 mg/Dosis 0.68mg/ml Solución Inyectable, 1 Pluma Precargada."
+          "price": 3149,
+          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/ozempic-1.34mg-ml-solucion-inyectable-pluma-precargada--1.5-ml.-1340883.html",
+          "title": "Ozempic 1.34mg/ml Solución Inyectable Pluma Precargada, 1.5 ml."
         },
         "Clivi": {
           "price": 5499,
@@ -28,7 +28,7 @@
       "Clivi": 5499,
       "Ahorro": 3096,
       "Benavides": 4274,
-      "Guadalajara": 2385,
+      "Guadalajara": 3149,
       "SanPablo": null
     },
     "Ozempic 1 mg (1 pluma)": {
@@ -116,9 +116,9 @@
           "title": "Mounjaro Kwikpen 5Mg/0.6Ml 3 ml"
         },
         "Guadalajara": {
-          "price": 2385,
-          "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-0.25-mg-dosis-0.68mg-ml-solucion-inyectable--1-pluma-precargada.-1447300.html",
-          "title": "Wegovy 0.25 mg/Dosis 0.68mg/ml Solución Inyectable, 1 Pluma Precargada."
+          "price": 4775,
+          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/mounjaro-kwikpen-5mg-0.6ml-solucion-inyectable-pluma-precargada--2.4-ml.-1460714.html",
+          "title": "Mounjaro KwikPen 5mg/0.6ml Solución Inyectable Pluma Precargada, 2.4 ml."
         },
         "Clivi": {
           "price": 6999,
@@ -129,7 +129,7 @@
       "Clivi": 6999,
       "Ahorro": 6500,
       "Benavides": 5973,
-      "Guadalajara": 2385,
+      "Guadalajara": 4775,
       "SanPablo": null
     },
     "Mounjaro 7.5 mg (1 pluma)": {
