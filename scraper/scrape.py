@@ -157,12 +157,12 @@ def scrape_guadalajara(query):
 
 # San Pablo: SAP Commerce OCC base + baseSite (discovered via recon)
 SP_OCC = os.environ.get("SP_OCC", "https://api.coxdka37yz-unifarsad1-p2-public.model-t.cc.commerce.ondemand.com")
-SP_SITE = os.environ.get("SP_SITE", "")
+SP_SITE = os.environ.get("SP_SITE", "fsp")  # SAP Commerce baseSite (from main bundle)
 
 def scrape_sanpablo(query):
     if not SP_SITE:
         return []  # baseSite not yet resolved
-    url = f"{SP_OCC}/occ/v2/{SP_SITE}/products/search?query={query}&fields=FULL&pageSize=24"
+    url = f"{SP_OCC}/occ/v2/{SP_SITE}/products/search?query={query}&fields=FULL&pageSize=24&lang=es_MX&curr=MXN"
     data = json.loads(via_proxy(url))
     out = []
     for p in data.get("products", []):
@@ -226,16 +226,11 @@ def recon():
         for kw in ["model-t", "occ", "baseSite", "commerce.ondemand", "ondemand.com"]:
             i = home.find(kw)
             print(f"  [{kw}] @ {i}: {home[max(0,i-70):i+170]!r}" if i >= 0 else f"  [{kw}] not found")
-        mains = re.findall(r'/main[A-Za-z0-9.\-]*\.js', home)
-        print("  main bundles:", mains)
-        js = via_proxy(SP + mains[0]) if mains else ""
-        print("  main len:", len(js))
-        for pat in [r'baseSite["\']?\s*:\s*\[?\s*["\']([^"\']+)["\']',
-                    r'context\s*:\s*\{[^}]{0,120}',
-                    r'prefix["\']?\s*:\s*["\']([^"\']+)["\']',
-                    r'["\']([A-Za-z0-9_\-]*[Ss]ite[A-Za-z0-9_\-]*)["\']',
-                    r'/occ/v2']:
-            print(f"  {pat[:24]:24}: {list(dict.fromkeys(re.findall(pat, js)))[:8]}")
+        d = json.loads(via_proxy(f"{SP_OCC}/occ/v2/fsp/products/search?query=ozempic&fields=FULL&pageSize=6&lang=es_MX&curr=MXN"))
+        ps = d.get("products", [])
+        print(f"  fsp products/search → {len(ps)} products")
+        for p in ps[:6]:
+            print(f"     {p.get('name','')[:55]!r} | {(p.get('price') or {}).get('value')} | code={p.get('code')} | url={p.get('url','')[:50]}")
     except Exception as e:
         print(f"  err {type(e).__name__}: {e}")
 
