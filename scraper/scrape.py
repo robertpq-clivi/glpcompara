@@ -181,24 +181,41 @@ def pick(products, prod):
 
 # ── RECON (diagnose Guadalajara / San Pablo through the proxy; never prints key) ──
 def recon():
-    for base in ["https://www.farmaciasguadalajara.com", "https://www.farmaciasanpablo.com.mx"]:
-        print(f"\n===== RECON {base} =====")
-        try:
-            h = via_proxy(base + "/")
-            print(f"  home: {len(h)} chars")
-            sig = {k: (k.lower() in h.lower()) for k in ['vtex', '__NEXT_DATA__', 'magento', 'algolia', 'graphql', 'ng-version', 'data-beasties', 'shopify', 'salesforce', 'demandware']}
-            print(f"  signals: {sig}")
-            scripts = sorted(set(re.findall(r'<script[^>]+src="([^"]+)"', h)))
-            print(f"  scripts ({len(scripts)}):")
-            for s in scripts[:18]:
-                print("    ", s)
-            apis = sorted(set(re.findall(r'https?://[a-z0-9.\-]*(?:api|graphql|search)[a-z0-9.\-]*', h, re.I)
-                              + re.findall(r'/(?:api|graphql|rest|search|buscar|busqueda)[a-z0-9/_\-]*', h, re.I)))
-            print(f"  api/search hints ({len(apis)}): {apis[:25]}")
-            forms = re.findall(r'<form[^>]+action="([^"]+)"', h)
-            print(f"  form actions: {forms[:6]}")
-        except Exception as e:
-            print(f"  home error: {type(e).__name__}: {e}")
+    # ── Guadalajara: Salesforce Commerce Cloud, server-rendered /buscar/ ──
+    print("\n===== RECON Guadalajara (SFCC /buscar/) =====")
+    try:
+        h = via_proxy("https://www.farmaciasguadalajara.com/buscar/?q=ozempic")
+        print(f"  search HTML: {len(h)} chars")
+        print("  $-prices:", re.findall(r"\$[0-9][0-9,]+", h)[:8])
+        for label, pat in [("product-name", r'product-name[^>]*>\s*([^<]{4,60})'),
+                           ("link title", r'class="link"[^>]*>\s*([^<]{4,60})'),
+                           ("data-pid", r'data-pid="([^"]+)"'),
+                           ("itemprop name", r'itemprop="name"[^>]*content="([^"]+)"'),
+                           ("sales value", r'class="[^"]*\bvalue\b[^"]*"[^>]*content="([0-9.]+)"')]:
+            m = re.findall(pat, h); print(f"  {label:14}: {len(m)} {m[:3]}")
+    except Exception as e:
+        print(f"  GDL error: {type(e).__name__}: {e}")
+    # ── San Pablo: SAP Commerce OCC REST API ──
+    print("\n===== RECON San Pablo (SAP OCC) =====")
+    occ = "https://api.coxdka37yz-unifarsad1-p2-public.model-t.cc.commerce.ondemand.com/occ/v2"
+    try:
+        b = json.loads(via_proxy(occ + "/basesites?fields=FULL"))
+        sites = [s.get("uid") for s in b.get("baseSites", [])]
+        print("  baseSites:", sites)
+        for site in sites[:4]:
+            try:
+                d = json.loads(via_proxy(f"{occ}/{site}/products/search?query=ozempic&fields=FULL&pageSize=5"))
+                prods = d.get("products", [])
+                print(f"  [{site}] {len(prods)} products")
+                for p in prods[:5]:
+                    pr = (p.get("price") or {})
+                    print(f"     {p.get('name','')[:50]!r} | {pr.get('formattedValue') or pr.get('value')} | code={p.get('code')} | url={p.get('url')}")
+                if prods:
+                    break
+            except Exception as e:
+                print(f"  [{site}] err {type(e).__name__}: {e}")
+    except Exception as e:
+        print(f"  SP basesites error: {type(e).__name__}: {e}")
 
 # ── ORCHESTRATION ──────────────────────────────────────────────────────────
 def main():
