@@ -132,10 +132,48 @@ def vtex_search(base, query):
     return out
 
 def scrape_guadalajara(query):
-    return vtex_search("https://www.farmaciasguadalajara.com", query)
+    """Salesforce Commerce Cloud — server-rendered /buscar/ product tiles."""
+    base = "https://www.farmaciasguadalajara.com"
+    html = via_proxy(f"{base}/buscar/?q={query}")
+    soup = BeautifulSoup(html, "lxml")
+    out, seen = [], set()
+    for tile in soup.select("div.product-tile, div.product[data-pid]"):
+        a = tile.select_one("a.link") or tile.select_one(".pdp-link a") or tile.select_one(".image-container a")
+        val = tile.select_one(".sales .value[content]") or tile.select_one(".value[content]")
+        if not a or not val:
+            continue
+        name = a.get_text(" ", strip=True)
+        try:
+            price = round(float(val["content"]))
+        except (ValueError, KeyError):
+            continue
+        href = a.get("href", "")
+        url = base + href if href.startswith("/") else (href or base + "/buscar/")
+        key = (name, price)
+        if name and price and key not in seen:
+            seen.add(key)
+            out.append({"title": name, "price": price, "url": url})
+    return out
+
+# San Pablo: SAP Commerce OCC base + baseSite (discovered via recon)
+SP_OCC = os.environ.get("SP_OCC", "https://api.coxdka37yz-unifarsad1-p2-public.model-t.cc.commerce.ondemand.com")
+SP_SITE = os.environ.get("SP_SITE", "")
 
 def scrape_sanpablo(query):
-    return vtex_search("https://www.farmaciasanpablo.com.mx", query)
+    if not SP_SITE:
+        return []  # baseSite not yet resolved
+    url = f"{SP_OCC}/occ/v2/{SP_SITE}/products/search?query={query}&fields=FULL&pageSize=24"
+    data = json.loads(via_proxy(url))
+    out = []
+    for p in data.get("products", []):
+        pr = p.get("price") or {}
+        price = pr.get("value")
+        if not price:
+            continue
+        u = p.get("url") or ""
+        out.append({"title": p.get("name", ""), "price": round(price),
+                    "url": ("https://www.farmaciasanpablo.com.mx" + u) if u.startswith("/") else (u or "https://www.farmaciasanpablo.com.mx/")})
+    return out
 
 # Clivi has no per-dose public pages (membership pricing), so prices are curated
 # manually in scraper/clivi_prices.json (keyed by canonical product name).
@@ -181,30 +219,37 @@ def pick(products, prod):
 
 # ── RECON (diagnose Guadalajara / San Pablo through the proxy; never prints key) ──
 def recon():
-    # ── Guadalajara: dump one product-tile's HTML to nail the selectors ──
-    print("\n===== RECON Guadalajara tile =====")
+    SP = "https://www.farmaciasanpablo.com.mx"
+    print("\n===== RECON San Pablo =====")
     try:
-        h = via_proxy("https://www.farmaciasguadalajara.com/buscar/?q=ozempic")
-        i = h.find("data-pid")
-        print(h[max(0, i-120):i+700])
+        home = via_proxy(SP + "/")
+        for kw in ["model-t", "occ", "baseSite", "commerce.ondemand", "ondemand.com"]:
+            i = home.find(kw)
+            print(f"  [{kw}] @ {i}: {home[max(0,i-70):i+170]!r}" if i >= 0 else f"  [{kw}] not found")
+        js_all = list(dict.fromkeys(re.findall(r'(?:src|href)="([^"]+\.js)"', home)))
+        print("  js files:", js_all)
+        # also scan the main bundle(s) for occ/baseSite
+        for j in [u for u in js_all if u.startswith("/") and "script" not in u][:3]:
+            try:
+                js = via_proxy(SP + j)
+                hits = list(dict.fromkeys(re.findall(r'occ/v2/[A-Za-z0-9_\-]+|baseSites?["\']?\s*[:=]\s*["\'][^"\']+|model-t[a-z0-9.\-]*', js)))
+                print(f"  {j} ({len(js)}b): {hits[:6]}")
+            except Exception as e:
+                print(f"  {j}: {type(e).__name__}")
     except Exception as e:
-        print(f"  GDL error: {type(e).__name__}: {e}")
-    # ── San Pablo: read the Angular bundle to find the OCC base + baseSite ──
-    print("\n===== RECON San Pablo JS config =====")
-    try:
-        home = via_proxy("https://www.farmaciasanpablo.com.mx/")
-        js_src = re.search(r'src="(/scripts[^"]+\.js)"', home)
-        jsurl = "https://www.farmaciasanpablo.com.mx" + js_src.group(1) if js_src else None
-        print("  bundle:", jsurl)
-        js = via_proxy(jsurl) if jsurl else ""
-        print("  js len:", len(js))
-        for pat in [r'occ/v2/[A-Za-z0-9_\-]+', r'/rest/v2/[A-Za-z0-9_\-]+',
-                    r'baseSite[A-Za-z]*["\']?\s*[:=]\s*["\']([^"\']+)["\']',
-                    r'model-t[a-z0-9.\-]*', r'products/search[^"\']*', r'occ/v2']:
-            found = re.findall(pat, js)
-            print(f"  {pat[:28]:28}: {list(dict.fromkeys(found))[:5]}")
-    except Exception as e:
-        print(f"  SP JS error: {type(e).__name__}: {e}")
+        print(f"  home err {type(e).__name__}: {e}")
+    # brute-force a few likely baseSites against products/search
+    occ = SP_OCC + "/occ/v2"
+    print("  --- baseSite probes ---")
+    for site in ["unifarsadSite", "unifarsad", "sanpablo", "sanPablo", "sanPabloSite", "spaSite", "spa", "main", "electronics-spa"]:
+        try:
+            d = json.loads(via_proxy(f"{occ}/{site}/products/search?query=ozempic&fields=FULL&pageSize=3"))
+            ps = d.get("products", [])
+            print(f"  [{site}] products={len(ps)} " + str([(p.get('name','')[:28], (p.get('price') or {}).get('value')) for p in ps[:3]]))
+            if ps:
+                print("  *** baseSite FOUND:", site); break
+        except Exception as e:
+            print(f"  [{site}] {type(e).__name__}: {str(e)[:45]}")
 
 # ── ORCHESTRATION ──────────────────────────────────────────────────────────
 def main():
