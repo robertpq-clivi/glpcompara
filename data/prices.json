@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-18T18:56:10Z",
+  "generated_at": "2026-06-18T19:01:54Z",
   "currency": "MXN",
   "prices": {
     "Ozempic 0.25/0.5 mg (1 pluma)": {
@@ -69,14 +69,6 @@
       "Benavides": 5789,
       "Guadalajara": 4280,
       "SanPablo": 4198
-    },
-    "Ozempic 2 mg (1 pluma)": {
-      "sources": {},
-      "Clivi": null,
-      "Ahorro": null,
-      "Benavides": null,
-      "Guadalajara": null,
-      "SanPablo": null
     },
     "Mounjaro 2.5 mg (1 pluma)": {
       "sources": {
