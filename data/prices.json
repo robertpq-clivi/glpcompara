@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-18T16:56:58Z",
+  "generated_at": "2026-06-18T17:48:17Z",
   "currency": "MXN",
   "prices": {
     "Ozempic 0.25/0.5 mg (1 pluma)": {
@@ -9,6 +9,11 @@
           "url": "https://www.benavides.com.mx/ozempic-134-mgml-semaglutida-solucion-inyectable-1-pluma-precargada",
           "title": "1.34 mg/ml Semaglutida Solución Inyectable"
         },
+        "Ahorro": {
+          "price": 3096,
+          "url": "https://www.fahorro.com/ozempic-0-25mg-0-5-mg-w-nf-6-pz.html",
+          "title": "Ozempic 0.25 mg - 0.5 mg/dosis 1 Pluma con 6 Agujas"
+        },
         "Clivi": {
           "price": 5499,
           "url": "https://www.clivi.com.mx/",
@@ -16,7 +21,7 @@
         }
       },
       "Clivi": 5499,
-      "Ahorro": null,
+      "Ahorro": 3096,
       "Benavides": 4274,
       "Guadalajara": null,
       "SanPablo": null
@@ -28,6 +33,11 @@
           "url": "https://www.benavides.com.mx/ozempic-1-mg-semaglutida-1-jeringa-prellenada",
           "title": "1 mg Semaglutida"
         },
+        "Ahorro": {
+          "price": 4198,
+          "url": "https://www.fahorro.com/ozempic-1-mg-nf-4-pz.html",
+          "title": "Ozempic 1 mg/dosis 1 Pluma con 4 Agujas"
+        },
         "Clivi": {
           "price": 5499,
           "url": "https://www.clivi.com.mx/",
@@ -35,7 +45,7 @@
         }
       },
       "Clivi": 5499,
-      "Ahorro": null,
+      "Ahorro": 4198,
       "Benavides": 5789,
       "Guadalajara": null,
       "SanPablo": null
@@ -55,6 +65,11 @@
           "url": "https://www.benavides.com.mx/mounjaro-2-5-mg-tirzepatida-0-6-ml-solucion-1-jeringa-prellenada",
           "title": "2.5 mg Tirzepatida/0.6 ml Solución"
         },
+        "Ahorro": {
+          "price": 6250,
+          "url": "https://www.fahorro.com/mounjaro-kwikpen-2-5mg-0-6ml-3-ml.html",
+          "title": "Mounjaro Kwikpen 2.5Mg/0.6Ml 3 ml"
+        },
         "Clivi": {
           "price": 6999,
           "url": "https://www.clivi.com.mx/",
@@ -62,7 +77,7 @@
         }
       },
       "Clivi": 6999,
-      "Ahorro": null,
+      "Ahorro": 6250,
       "Benavides": 6300,
       "Guadalajara": null,
       "SanPablo": null
@@ -74,6 +89,11 @@
           "url": "https://www.benavides.com.mx/mounjaro-5-mg-tirzepatida-0-6-ml-solucion-1-jeringa-prellenada",
           "title": "5 mg Tirzepatida/0.6 ml Solución"
         },
+        "Ahorro": {
+          "price": 6500,
+          "url": "https://www.fahorro.com/mounjaro-kwikpen-5mg-0-6ml-3-ml.html",
+          "title": "Mounjaro Kwikpen 5Mg/0.6Ml 3 ml"
+        },
         "Clivi": {
           "price": 6999,
           "url": "https://www.clivi.com.mx/",
@@ -81,7 +101,7 @@
         }
       },
       "Clivi": 6999,
-      "Ahorro": null,
+      "Ahorro": 6500,
       "Benavides": 5973,
       "Guadalajara": null,
       "SanPablo": null
@@ -93,6 +113,11 @@
           "url": "https://www.benavides.com.mx/mounjaro-7-5-mg-tirzepatida-0-6-ml-solucion-1-jeringa-prellenada",
           "title": "7.5 mg Tirzepatida/0.6 ml Solución"
         },
+        "Ahorro": {
+          "price": 8500,
+          "url": "https://www.fahorro.com/mounjaro-kwikpen-7-5mg-0-6ml-3-ml.html",
+          "title": "Mounjaro Kwikpen 7.5Mg/0.6Ml 3 ml"
+        },
         "Clivi": {
           "price": 9999,
           "url": "https://www.clivi.com.mx/",
@@ -100,7 +125,7 @@
         }
       },
       "Clivi": 9999,
-      "Ahorro": null,
+      "Ahorro": 8500,
       "Benavides": 7821,
       "Guadalajara": null,
       "SanPablo": null
@@ -112,6 +137,11 @@
           "url": "https://www.benavides.com.mx/mounjaro-10-mg-tirzepatida-0-6-ml-solucion-inyectable-1-jeringa-prellenada",
           "title": "10 mg Tirzepatida/0.6 ml Solución Inyectable"
         },
+        "Ahorro": {
+          "price": 8500,
+          "url": "https://www.fahorro.com/mounjaro-kwikpen-10mg-0-6ml-3-ml.html",
+          "title": "Mounjaro Kwikpen 10Mg/0.6Ml 3 ml"
+        },
         "Clivi": {
           "price": 9999,
           "url": "https://www.clivi.com.mx/",
@@ -119,7 +149,7 @@
         }
       },
       "Clivi": 9999,
-      "Ahorro": null,
+      "Ahorro": 8500,
       "Benavides": 7819,
       "Guadalajara": null,
       "SanPablo": null
@@ -130,10 +160,15 @@
           "price": 10730,
           "url": "https://www.benavides.com.mx/mounjaro-12-5-mg-tirzepatida-0-6-ml-solucion-inyectable-1-jeringa-prellenada",
           "title": "12.5 mg Tirzepatida/0.6 ml Solución Inyectable"
+        },
+        "Ahorro": {
+          "price": 10500,
+          "url": "https://www.fahorro.com/mounjaro-kwikpen-12-5mg-0-6ml-3-ml.html",
+          "title": "Mounjaro Kwikpen 12.5Mg/0.6Ml 3 ml"
         }
       },
       "Clivi": null,
-      "Ahorro": null,
+      "Ahorro": 10500,
       "Benavides": 10730,
       "Guadalajara": null,
       "SanPablo": null
@@ -144,10 +179,15 @@
           "price": 10730,
           "url": "https://www.benavides.com.mx/mounjaro-15-mg-tirzepatida-0-6-ml-solucion-inyectable-1-jeringa-prellenada",
           "title": "15 mg Tirzepatida/0.6 ml Solución Inyectable"
+        },
+        "Ahorro": {
+          "price": 10500,
+          "url": "https://www.fahorro.com/mounjaro-15mg-0-6ml.html",
+          "title": "Mounjaro 15mg /0.6ml"
         }
       },
       "Clivi": null,
-      "Ahorro": null,
+      "Ahorro": 10500,
       "Benavides": 10730,
       "Guadalajara": null,
       "SanPablo": null
@@ -159,6 +199,11 @@
           "url": "https://www.benavides.com.mx/wegovy-0-25-mg-semaglutida-solucion-inyectable-1-pluma-precargada",
           "title": "0.25 mg Semaglutida Solución Inyectable"
         },
+        "Ahorro": {
+          "price": 2384,
+          "url": "https://www.fahorro.com/wegovy-flextouch-1-5ml-0-25mg-1-pluma.html",
+          "title": "WEGOVY FlexTouch 1.5ml (0.25mg) 1 Pluma"
+        },
         "Clivi": {
           "price": 4299,
           "url": "https://www.clivi.com.mx/",
@@ -166,7 +211,7 @@
         }
       },
       "Clivi": 4299,
-      "Ahorro": null,
+      "Ahorro": 2384,
       "Benavides": 3177,
       "Guadalajara": null,
       "SanPablo": null
@@ -178,6 +223,11 @@
           "url": "https://www.benavides.com.mx/wegovy-0-5-mg-semaglutida-solucion-inyectable-1-pluma-precargada",
           "title": "0.5 mg Semaglutida Solución Inyectable"
         },
+        "Ahorro": {
+          "price": 2900,
+          "url": "https://www.fahorro.com/wegovy-flextouch-1-5ml-0-5mg-1-pluma.html",
+          "title": "WEGOVY FlexTouch 1.5ml (0.5mg) 1 Pluma"
+        },
         "Clivi": {
           "price": 4999,
           "url": "https://www.clivi.com.mx/",
@@ -185,7 +235,7 @@
         }
       },
       "Clivi": 4999,
-      "Ahorro": null,
+      "Ahorro": 2900,
       "Benavides": 3864,
       "Guadalajara": null,
       "SanPablo": null
@@ -197,6 +247,11 @@
           "url": "https://www.benavides.com.mx/wegovy-1-mg-semaglutida-solucion-inyectable-1-pluma-precargada",
           "title": "1 mg Semaglutida Solución Inyectable"
         },
+        "Ahorro": {
+          "price": 3934,
+          "url": "https://www.fahorro.com/wegovy-flextouch-3ml-1-0mg-1-pluma.html",
+          "title": "WEGOVY FlexTouch 3ml (1.0mg) 1 Pluma"
+        },
         "Clivi": {
           "price": 5499,
           "url": "https://www.clivi.com.mx/",
@@ -204,7 +259,7 @@
         }
       },
       "Clivi": 5499,
-      "Ahorro": null,
+      "Ahorro": 3934,
       "Benavides": 5244,
       "Guadalajara": null,
       "SanPablo": null
@@ -216,6 +271,11 @@
           "url": "https://www.benavides.com.mx/wegovy-1-7-mg-semaglutida-solucion-inyectable-1-pluma-precargada",
           "title": "1.7 mg Semaglutida Solución Inyectable"
         },
+        "Ahorro": {
+          "price": 4650,
+          "url": "https://www.fahorro.com/wegovy-flextouch-3ml-1-7mg-1-pluma.html",
+          "title": "WEGOVY FlexTouch 3ml (1.7mg) 1 Pluma"
+        },
         "Clivi": {
           "price": 6999,
           "url": "https://www.clivi.com.mx/",
@@ -223,7 +283,7 @@
         }
       },
       "Clivi": 6999,
-      "Ahorro": null,
+      "Ahorro": 4650,
       "Benavides": 6643,
       "Guadalajara": null,
       "SanPablo": null
@@ -235,6 +295,11 @@
           "url": "https://www.benavides.com.mx/wegovy-2-4-mg-semaglutida-solucion-inyectable-1-pluma-precargada",
           "title": "2.4 mg Semaglutida Solución Inyectable"
         },
+        "Ahorro": {
+          "price": 4900,
+          "url": "https://www.fahorro.com/wegovy-flextouch-3ml-2-4mg-1-pluma.html",
+          "title": "WEGOVY FlexTouch 3ml (2.4mg) 1 Pluma"
+        },
         "Clivi": {
           "price": 6999,
           "url": "https://www.clivi.com.mx/",
@@ -242,46 +307,27 @@
         }
       },
       "Clivi": 6999,
-      "Ahorro": null,
+      "Ahorro": 4900,
       "Benavides": 8163,
-      "Guadalajara": null,
-      "SanPablo": null
-    },
-    "Saxenda 6 mg/mL (1 pluma)": {
-      "sources": {},
-      "Clivi": null,
-      "Ahorro": null,
-      "Benavides": null,
-      "Guadalajara": null,
-      "SanPablo": null
-    },
-    "Saxenda 6 mg/mL (3 plumas)": {
-      "sources": {},
-      "Clivi": null,
-      "Ahorro": null,
-      "Benavides": null,
-      "Guadalajara": null,
-      "SanPablo": null
-    },
-    "Saxenda 6 mg/mL (5 plumas)": {
-      "sources": {},
-      "Clivi": null,
-      "Ahorro": null,
-      "Benavides": null,
       "Guadalajara": null,
       "SanPablo": null
     },
     "Rybelsus 3 mg (30 tabletas)": {
       "sources": {
         "Benavides": {
-          "price": 956,
-          "url": "https://www.benavides.com.mx/rybelsus-3-mg-semaglutida-10-tabletas",
+          "price": 2351,
+          "url": "https://www.benavides.com.mx/rybelsus-3-mg-semaglutida-30-tabletas",
           "title": "3 mg Semaglutida"
+        },
+        "Ahorro": {
+          "price": 2403,
+          "url": "https://www.fahorro.com/rybelsus-3-mg-30-tabletas.html",
+          "title": "Rybelsus 3 mg 30 tabletas"
         }
       },
       "Clivi": null,
-      "Ahorro": null,
-      "Benavides": 956,
+      "Ahorro": 2403,
+      "Benavides": 2351,
       "Guadalajara": null,
       "SanPablo": null
     },
@@ -291,10 +337,15 @@
           "price": 3906,
           "url": "https://www.benavides.com.mx/rybelsus-7-mg-semaglutida-30-tabletas",
           "title": "7 mg Semaglutida"
+        },
+        "Ahorro": {
+          "price": 2992,
+          "url": "https://www.fahorro.com/rybelsus-7-mg-30-tabletas.html",
+          "title": "Rybelsus 7 mg 30 tabletas"
         }
       },
       "Clivi": null,
-      "Ahorro": null,
+      "Ahorro": 2992,
       "Benavides": 3906,
       "Guadalajara": null,
       "SanPablo": null
@@ -305,10 +356,15 @@
           "price": 4379,
           "url": "https://www.benavides.com.mx/rybelsus-14-mg-semaglutida-30-tabletas",
           "title": "14 mg Semaglutida"
+        },
+        "Ahorro": {
+          "price": 3354,
+          "url": "https://www.fahorro.com/rybelsus-14-mg-30-tabletas.html",
+          "title": "Rybelsus 14 mg 30 Tabs"
         }
       },
       "Clivi": null,
-      "Ahorro": null,
+      "Ahorro": 3354,
       "Benavides": 4379,
       "Guadalajara": null,
       "SanPablo": null

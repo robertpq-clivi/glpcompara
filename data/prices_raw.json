@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-18T16:56:58Z",
+  "generated_at": "2026-06-18T17:48:17Z",
   "raw": {
     "Benavides": {
       "Ozempic": [
@@ -78,7 +78,6 @@
           "url": "https://www.benavides.com.mx/wegovy-0-25-mg-semaglutida-solucion-inyectable-1-pluma-precargada"
         }
       ],
-      "Saxenda": [],
       "Rybelsus": [
         {
           "title": "3 mg Semaglutida",
@@ -103,11 +102,129 @@
       ]
     },
     "Ahorro": {
-      "Ozempic": [],
-      "Mounjaro": [],
-      "Wegovy": [],
-      "Saxenda": [],
-      "Rybelsus": []
+      "Ozempic": [
+        {
+          "title": "Ozempic 1 mg/dosis 1 Pluma con 4 Agujas",
+          "price": 4198,
+          "url": "https://www.fahorro.com/ozempic-1-mg-nf-4-pz.html"
+        },
+        {
+          "title": "Rybelsus 14 mg 30 Tabs",
+          "price": 3354,
+          "url": "https://www.fahorro.com/rybelsus-14-mg-30-tabletas.html"
+        },
+        {
+          "title": "Rybelsus 7 mg 30 tabletas",
+          "price": 2992,
+          "url": "https://www.fahorro.com/rybelsus-7-mg-30-tabletas.html"
+        },
+        {
+          "title": "Rybelsus 3 mg 30 tabletas",
+          "price": 2403,
+          "url": "https://www.fahorro.com/rybelsus-3-mg-30-tabletas.html"
+        },
+        {
+          "title": "Ozempic 0.25 mg - 0.5 mg/dosis 1 Pluma con 6 Agujas",
+          "price": 3096,
+          "url": "https://www.fahorro.com/ozempic-0-25mg-0-5-mg-w-nf-6-pz.html"
+        },
+        {
+          "title": "Rybelsus® 3 mg 10 Tabs",
+          "price": 970,
+          "url": "https://www.fahorro.com/rybelsusr-3-mg-10-tabs.html"
+        }
+      ],
+      "Mounjaro": [
+        {
+          "title": "Mounjaro 15mg /0.6ml",
+          "price": 10500,
+          "url": "https://www.fahorro.com/mounjaro-15mg-0-6ml.html"
+        },
+        {
+          "title": "Mounjaro Kwikpen 10Mg/0.6Ml 3 ml",
+          "price": 8500,
+          "url": "https://www.fahorro.com/mounjaro-kwikpen-10mg-0-6ml-3-ml.html"
+        },
+        {
+          "title": "Mounjaro Kwikpen 12.5Mg/0.6Ml 3 ml",
+          "price": 10500,
+          "url": "https://www.fahorro.com/mounjaro-kwikpen-12-5mg-0-6ml-3-ml.html"
+        },
+        {
+          "title": "Mounjaro Kwikpen 7.5Mg/0.6Ml 3 ml",
+          "price": 8500,
+          "url": "https://www.fahorro.com/mounjaro-kwikpen-7-5mg-0-6ml-3-ml.html"
+        },
+        {
+          "title": "Mounjaro Kwikpen 5Mg/0.6Ml 3 ml",
+          "price": 6500,
+          "url": "https://www.fahorro.com/mounjaro-kwikpen-5mg-0-6ml-3-ml.html"
+        },
+        {
+          "title": "Mounjaro Kwikpen 2.5Mg/0.6Ml 3 ml",
+          "price": 6250,
+          "url": "https://www.fahorro.com/mounjaro-kwikpen-2-5mg-0-6ml-3-ml.html"
+        }
+      ],
+      "Wegovy": [
+        {
+          "title": "WEGOVY FlexTouch 1.5ml (0.5mg) 1 Pluma",
+          "price": 2900,
+          "url": "https://www.fahorro.com/wegovy-flextouch-1-5ml-0-5mg-1-pluma.html"
+        },
+        {
+          "title": "WEGOVY FlexTouch 3ml (2.4mg) 1 Pluma",
+          "price": 4900,
+          "url": "https://www.fahorro.com/wegovy-flextouch-3ml-2-4mg-1-pluma.html"
+        },
+        {
+          "title": "WEGOVY FlexTouch 3ml (1.7mg) 1 Pluma",
+          "price": 4650,
+          "url": "https://www.fahorro.com/wegovy-flextouch-3ml-1-7mg-1-pluma.html"
+        },
+        {
+          "title": "WEGOVY FlexTouch 3ml (1.0mg) 1 Pluma",
+          "price": 3934,
+          "url": "https://www.fahorro.com/wegovy-flextouch-3ml-1-0mg-1-pluma.html"
+        },
+        {
+          "title": "WEGOVY FlexTouch 1.5ml (0.25mg) 1 Pluma",
+          "price": 2384,
+          "url": "https://www.fahorro.com/wegovy-flextouch-1-5ml-0-25mg-1-pluma.html"
+        }
+      ],
+      "Rybelsus": [
+        {
+          "title": "Ozempic 1 mg/dosis 1 Pluma con 4 Agujas",
+          "price": 4198,
+          "url": "https://www.fahorro.com/ozempic-1-mg-nf-4-pz.html"
+        },
+        {
+          "title": "Rybelsus 14 mg 30 Tabs",
+          "price": 3354,
+          "url": "https://www.fahorro.com/rybelsus-14-mg-30-tabletas.html"
+        },
+        {
+          "title": "Rybelsus 7 mg 30 tabletas",
+          "price": 2992,
+          "url": "https://www.fahorro.com/rybelsus-7-mg-30-tabletas.html"
+        },
+        {
+          "title": "Rybelsus 3 mg 30 tabletas",
+          "price": 2403,
+          "url": "https://www.fahorro.com/rybelsus-3-mg-30-tabletas.html"
+        },
+        {
+          "title": "Rybelsus® 3 mg 10 Tabs",
+          "price": 970,
+          "url": "https://www.fahorro.com/rybelsusr-3-mg-10-tabs.html"
+        },
+        {
+          "title": "Ozempic 0.25 mg - 0.5 mg/dosis 1 Pluma con 6 Agujas",
+          "price": 3096,
+          "url": "https://www.fahorro.com/ozempic-0-25mg-0-5-mg-w-nf-6-pz.html"
+        }
+      ]
     }
   }
 }

@@ -4,7 +4,6 @@
     "Ozempic":  { "query": "ozempic" },
     "Mounjaro": { "query": "mounjaro" },
     "Wegovy":   { "query": "wegovy" },
-    "Saxenda":  { "query": "saxenda" },
     "Rybelsus": { "query": "rybelsus" }
   },
   "products": [
@@ -19,14 +18,11 @@
     { "name": "Mounjaro 15 mg (1 pluma)",       "family": "Mounjaro", "match_all": ["15 mg"] },
     { "name": "Wegovy 0.25 mg (caja mensual)",  "family": "Wegovy",   "match_all": ["0.25 mg"] },
     { "name": "Wegovy 0.5 mg (caja mensual)",   "family": "Wegovy",   "match_all": ["0.5 mg"], "exclude": ["0.25"] },
-    { "name": "Wegovy 1 mg (caja mensual)",     "family": "Wegovy",   "match_all": ["1 mg"], "exclude": ["0.", "1.7"] },
+    { "name": "Wegovy 1 mg (caja mensual)",     "family": "Wegovy",   "match_any": ["1.0 mg", "1 mg"], "exclude": ["0.25", "0.5 mg", "1.7", "2.4"] },
     { "name": "Wegovy 1.7 mg (caja mensual)",   "family": "Wegovy",   "match_all": ["1.7 mg"] },
     { "name": "Wegovy 2.4 mg (caja mensual)",   "family": "Wegovy",   "match_all": ["2.4 mg"] },
-    { "name": "Saxenda 6 mg/mL (1 pluma)",      "family": "Saxenda",  "match_any": ["1 pluma", "1 lapicero", "x 1", "1 jeringa"], "exclude": ["3 ", "5 "] },
-    { "name": "Saxenda 6 mg/mL (3 plumas)",     "family": "Saxenda",  "match_any": ["3 pluma", "3 lapicero", "x 3"] },
-    { "name": "Saxenda 6 mg/mL (5 plumas)",     "family": "Saxenda",  "match_any": ["5 pluma", "5 lapicero", "x 5"] },
-    { "name": "Rybelsus 3 mg (30 tabletas)",    "family": "Rybelsus", "match_all": ["3 mg"], "exclude": ["7 mg", "14 mg"] },
-    { "name": "Rybelsus 7 mg (30 tabletas)",    "family": "Rybelsus", "match_all": ["7 mg"] },
-    { "name": "Rybelsus 14 mg (30 tabletas)",   "family": "Rybelsus", "match_all": ["14 mg"] }
+    { "name": "Rybelsus 3 mg (30 tabletas)",    "family": "Rybelsus", "match_all": ["3 mg"], "exclude": ["7 mg", "14 mg", "10 tab"], "min_price": 1500 },
+    { "name": "Rybelsus 7 mg (30 tabletas)",    "family": "Rybelsus", "match_all": ["7 mg"], "exclude": ["10 tab"] },
+    { "name": "Rybelsus 14 mg (30 tabletas)",   "family": "Rybelsus", "match_all": ["14 mg"], "exclude": ["10 tab"] }
   ]
 }

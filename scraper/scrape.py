@@ -57,11 +57,36 @@ def scrape_benavides(query):
     return out
 
 def scrape_ahorro(query):
-    """Farmacias del Ahorro (Magento). robots disallows ?q= for generic bots,
-    so we read the category/product JSON embedded in the page instead. Best-effort."""
-    # TODO(phase-1b): use product/category path URLs (not ?q=) per robots.txt,
-    # and parse the embedded Magento price JSON. Returns [] until wired.
-    return []
+    """Farmacias del Ahorro (Magento). Prices are JS-rendered on category pages,
+    but the Magento GraphQL API is open. We POST (no query string → robots-clean)
+    and read name + final price + url_key."""
+    gql = ('{products(search:"%s",pageSize:30){items{name url_key '
+           'price_range{minimum_price{final_price{value}}}}}}' % query)
+    # fahorro's WAF rejects non-browser User-Agents on /graphql, so use a
+    # browser UA + standard headers for this API call.
+    bh = {
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+                      "(KHTML, like Gecko) Chrome/124.0 Safari/537.36",
+        "Accept": "application/json", "Content-Type": "application/json",
+        "Accept-Language": "es-MX,es;q=0.9", "Store": "default",
+        "Origin": "https://www.fahorro.com", "Referer": "https://www.fahorro.com/control-de-peso.html",
+    }
+    r = requests.post("https://www.fahorro.com/graphql",
+                      data=json.dumps({"query": gql}), headers=bh, timeout=TIMEOUT)
+    r.raise_for_status()
+    items = (r.json().get("data") or {}).get("products", {}).get("items", []) or []
+    out = []
+    for it in items:
+        try:
+            v = it["price_range"]["minimum_price"]["final_price"]["value"]
+        except (KeyError, TypeError):
+            continue
+        if not v:
+            continue
+        uk = it.get("url_key") or ""
+        url = f"https://www.fahorro.com/{uk}.html" if uk else "https://www.fahorro.com/control-de-peso/"
+        out.append({"title": it.get("name", ""), "price": round(v), "url": url})
+    return out
 
 # Clivi has no per-dose public pages (membership pricing), so prices are curated
 # manually in scraper/clivi_prices.json (keyed by canonical product name).
@@ -76,7 +101,9 @@ SOURCE_ORDER = ["Clivi", "Ahorro", "Benavides", "Guadalajara", "SanPablo"]
 
 # ── MATCHING ───────────────────────────────────────────────────────────────
 def norm(s):
-    return re.sub(r"\s+", " ", s.lower())
+    s = s.lower()
+    s = re.sub(r"(\d)\s*mg", r"\1 mg", s)   # "5mg" / "12.5Mg" → "5 mg" / "12.5 mg"
+    return re.sub(r"\s+", " ", s)
 
 def matches(title, prod):
     t = norm(title)
@@ -91,6 +118,9 @@ def matches(title, prod):
 
 def pick(products, prod):
     cands = [p for p in products if matches(p["title"], prod)]
+    mn = prod.get("min_price")
+    if mn:
+        cands = [p for p in cands if p["price"] >= mn]  # filter wrong-pack outliers
     if not cands:
         return None
     return min(cands, key=lambda p: p["price"])  # cheapest matching variant
