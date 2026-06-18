@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-18T18:43:36Z",
+  "generated_at": "2026-06-18T18:56:10Z",
   "currency": "MXN",
   "prices": {
     "Ozempic 0.25/0.5 mg (1 pluma)": {
@@ -53,6 +53,11 @@
           "url": "https://www.clivi.com.mx/",
           "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
         },
+        "Guadalajara": {
+          "price": 4280,
+          "url": "https://www.farmaciasguadalajara.com/",
+          "title": "Precio verificado manualmente"
+        },
         "SanPablo": {
           "price": 4198,
           "url": "https://www.farmaciasanpablo.com.mx/",
@@ -62,7 +67,7 @@
       "Clivi": 5499,
       "Ahorro": 4198,
       "Benavides": 5789,
-      "Guadalajara": null,
+      "Guadalajara": 4280,
       "SanPablo": 4198
     },
     "Ozempic 2 mg (1 pluma)": {
@@ -128,13 +133,18 @@
           "price": 6999,
           "url": "https://www.clivi.com.mx/",
           "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
+        },
+        "SanPablo": {
+          "price": 5983,
+          "url": "https://www.farmaciasanpablo.com.mx/",
+          "title": "Precio verificado manualmente"
         }
       },
       "Clivi": 6999,
       "Ahorro": 6500,
       "Benavides": 5973,
       "Guadalajara": 4775,
-      "SanPablo": null
+      "SanPablo": 5983
     },
     "Mounjaro 7.5 mg (1 pluma)": {
       "sources": {
@@ -249,13 +259,18 @@
           "price": 10768,
           "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/mounjaro-kwikpen-15mg-0.6ml-en-pluma-precargada-solucion-inyectable--2.4-ml.-1460757.html",
           "title": "Mounjaro KwikPen 15mg/0.6ml en Pluma Precargada Solución Inyectable, 2.4 ml."
+        },
+        "SanPablo": {
+          "price": 8608,
+          "url": "https://www.farmaciasanpablo.com.mx/",
+          "title": "Precio verificado manualmente"
         }
       },
       "Clivi": null,
       "Ahorro": 10500,
       "Benavides": 10730,
       "Guadalajara": 10768,
-      "SanPablo": null
+      "SanPablo": 8608
     },
     "Wegovy 0.25 mg (caja mensual)": {
       "sources": {
@@ -443,13 +458,23 @@
           "price": 2172,
           "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/rybelsus-3-mg--30-tabletas.-1377663.html",
           "title": "Rybelsus 3 mg, 30 Tabletas."
+        },
+        "Clivi": {
+          "price": 1999,
+          "url": "https://www.clivi.com.mx/",
+          "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
+        },
+        "SanPablo": {
+          "price": 2153,
+          "url": "https://www.farmaciasanpablo.com.mx/",
+          "title": "Precio verificado manualmente"
         }
       },
-      "Clivi": null,
+      "Clivi": 1999,
       "Ahorro": 2403,
       "Benavides": 2351,
       "Guadalajara": 2172,
-      "SanPablo": null
+      "SanPablo": 2153
     },
     "Rybelsus 7 mg (30 tabletas)": {
       "sources": {
@@ -467,13 +492,23 @@
           "price": 2975,
           "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/rybelsus-7-mg--30-tabletas.-1377655.html",
           "title": "Rybelsus 7 mg, 30 Tabletas."
+        },
+        "Clivi": {
+          "price": 3999,
+          "url": "https://www.clivi.com.mx/",
+          "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
+        },
+        "SanPablo": {
+          "price": 2808,
+          "url": "https://www.farmaciasanpablo.com.mx/",
+          "title": "Precio verificado manualmente"
         }
       },
-      "Clivi": null,
+      "Clivi": 3999,
       "Ahorro": 2992,
       "Benavides": 3906,
       "Guadalajara": 2975,
-      "SanPablo": null
+      "SanPablo": 2808
     },
     "Rybelsus 14 mg (30 tabletas)": {
       "sources": {
@@ -491,13 +526,23 @@
           "price": 3335,
           "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/rybelsus-14-mg--30-tabletas.-1388690.html",
           "title": "Rybelsus 14 mg, 30 Tabletas."
+        },
+        "Clivi": {
+          "price": 3999,
+          "url": "https://www.clivi.com.mx/",
+          "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
+        },
+        "SanPablo": {
+          "price": 3148,
+          "url": "https://www.farmaciasanpablo.com.mx/",
+          "title": "Precio verificado manualmente"
         }
       },
-      "Clivi": null,
+      "Clivi": 3999,
       "Ahorro": 3354,
       "Benavides": 4379,
       "Guadalajara": 3335,
-      "SanPablo": null
+      "SanPablo": 3148
     }
   }
 }
