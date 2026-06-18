@@ -88,6 +88,52 @@ def scrape_ahorro(query):
         out.append({"title": it.get("name", ""), "price": round(v), "url": url})
     return out
 
+# ── ANTI-BOT PROXY (Guadalajara & San Pablo) ────────────────────────────────
+# These sites block datacenter IPs (Akamai / WAF), so we route requests through
+# an anti-bot scraping API with residential proxies. Set SCRAPER_API_KEY (and
+# optionally SCRAPER_PROVIDER=zenrows|scraperapi) as an env var / GitHub secret.
+SCRAPER_KEY = os.environ.get("SCRAPER_API_KEY", "").strip()
+SCRAPER_PROVIDER = os.environ.get("SCRAPER_PROVIDER", "zenrows").strip().lower()
+
+def via_proxy(target_url):
+    if not SCRAPER_KEY:
+        raise RuntimeError("SCRAPER_API_KEY not set")
+    if SCRAPER_PROVIDER == "scraperapi":
+        r = requests.get("https://api.scraperapi.com/", params={
+            "api_key": SCRAPER_KEY, "url": target_url, "premium": "true", "country_code": "mx"},
+            timeout=70)
+    else:  # zenrows
+        r = requests.get("https://api.zenrows.com/v1/", params={
+            "apikey": SCRAPER_KEY, "url": target_url, "premium_proxy": "true", "proxy_country": "mx"},
+            timeout=70)
+    r.raise_for_status()
+    return r.text
+
+def vtex_search(base, query):
+    """VTEX public catalog API (common in MX pharmacies), fetched via the proxy."""
+    url = f"{base}/api/catalog_system/pub/products/search?ft={query}&_from=0&_to=23"
+    data = json.loads(via_proxy(url))
+    out = []
+    for p in data if isinstance(data, list) else []:
+        name = p.get("productName", "")
+        link = p.get("link") or (base + "/" + p.get("linkText", "") + "/p")
+        price = None
+        for it in p.get("items", []):
+            for s in it.get("sellers", []):
+                co = s.get("commertialOffer", {})
+                if co.get("Price"):
+                    price = co["Price"]; break
+            if price: break
+        if name and price:
+            out.append({"title": name, "price": round(price), "url": link})
+    return out
+
+def scrape_guadalajara(query):
+    return vtex_search("https://www.farmaciasguadalajara.com", query)
+
+def scrape_sanpablo(query):
+    return vtex_search("https://www.farmaciasanpablo.com.mx", query)
+
 # Clivi has no per-dose public pages (membership pricing), so prices are curated
 # manually in scraper/clivi_prices.json (keyed by canonical product name).
 CLIVI = json.loads((ROOT / "scraper" / "clivi_prices.json").read_text(encoding="utf-8"))
@@ -96,7 +142,12 @@ SCRAPERS = {
     "Benavides": scrape_benavides,
     "Ahorro":    scrape_ahorro,
 }
-# Column order shown in data/prices.json (Guadalajara & San Pablo = phase 2, null for now)
+# Guadalajara & San Pablo only run when an anti-bot proxy key is configured.
+if SCRAPER_KEY:
+    SCRAPERS["Guadalajara"] = scrape_guadalajara
+    SCRAPERS["SanPablo"]    = scrape_sanpablo
+
+# Column order shown in data/prices.json
 SOURCE_ORDER = ["Clivi", "Ahorro", "Benavides", "Guadalajara", "SanPablo"]
 
 # ── MATCHING ───────────────────────────────────────────────────────────────
