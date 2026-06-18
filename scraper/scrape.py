@@ -181,41 +181,30 @@ def pick(products, prod):
 
 # ── RECON (diagnose Guadalajara / San Pablo through the proxy; never prints key) ──
 def recon():
-    # ── Guadalajara: Salesforce Commerce Cloud, server-rendered /buscar/ ──
-    print("\n===== RECON Guadalajara (SFCC /buscar/) =====")
+    # ── Guadalajara: dump one product-tile's HTML to nail the selectors ──
+    print("\n===== RECON Guadalajara tile =====")
     try:
         h = via_proxy("https://www.farmaciasguadalajara.com/buscar/?q=ozempic")
-        print(f"  search HTML: {len(h)} chars")
-        print("  $-prices:", re.findall(r"\$[0-9][0-9,]+", h)[:8])
-        for label, pat in [("product-name", r'product-name[^>]*>\s*([^<]{4,60})'),
-                           ("link title", r'class="link"[^>]*>\s*([^<]{4,60})'),
-                           ("data-pid", r'data-pid="([^"]+)"'),
-                           ("itemprop name", r'itemprop="name"[^>]*content="([^"]+)"'),
-                           ("sales value", r'class="[^"]*\bvalue\b[^"]*"[^>]*content="([0-9.]+)"')]:
-            m = re.findall(pat, h); print(f"  {label:14}: {len(m)} {m[:3]}")
+        i = h.find("data-pid")
+        print(h[max(0, i-120):i+700])
     except Exception as e:
         print(f"  GDL error: {type(e).__name__}: {e}")
-    # ── San Pablo: SAP Commerce OCC REST API ──
-    print("\n===== RECON San Pablo (SAP OCC) =====")
-    occ = "https://api.coxdka37yz-unifarsad1-p2-public.model-t.cc.commerce.ondemand.com/occ/v2"
+    # ── San Pablo: read the Angular bundle to find the OCC base + baseSite ──
+    print("\n===== RECON San Pablo JS config =====")
     try:
-        b = json.loads(via_proxy(occ + "/basesites?fields=FULL"))
-        sites = [s.get("uid") for s in b.get("baseSites", [])]
-        print("  baseSites:", sites)
-        for site in sites[:4]:
-            try:
-                d = json.loads(via_proxy(f"{occ}/{site}/products/search?query=ozempic&fields=FULL&pageSize=5"))
-                prods = d.get("products", [])
-                print(f"  [{site}] {len(prods)} products")
-                for p in prods[:5]:
-                    pr = (p.get("price") or {})
-                    print(f"     {p.get('name','')[:50]!r} | {pr.get('formattedValue') or pr.get('value')} | code={p.get('code')} | url={p.get('url')}")
-                if prods:
-                    break
-            except Exception as e:
-                print(f"  [{site}] err {type(e).__name__}: {e}")
+        home = via_proxy("https://www.farmaciasanpablo.com.mx/")
+        js_src = re.search(r'src="(/scripts[^"]+\.js)"', home)
+        jsurl = "https://www.farmaciasanpablo.com.mx" + js_src.group(1) if js_src else None
+        print("  bundle:", jsurl)
+        js = via_proxy(jsurl) if jsurl else ""
+        print("  js len:", len(js))
+        for pat in [r'occ/v2/[A-Za-z0-9_\-]+', r'/rest/v2/[A-Za-z0-9_\-]+',
+                    r'baseSite[A-Za-z]*["\']?\s*[:=]\s*["\']([^"\']+)["\']',
+                    r'model-t[a-z0-9.\-]*', r'products/search[^"\']*', r'occ/v2']:
+            found = re.findall(pat, js)
+            print(f"  {pat[:28]:28}: {list(dict.fromkeys(found))[:5]}")
     except Exception as e:
-        print(f"  SP basesites error: {type(e).__name__}: {e}")
+        print(f"  SP JS error: {type(e).__name__}: {e}")
 
 # ── ORCHESTRATION ──────────────────────────────────────────────────────────
 def main():
