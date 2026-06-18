@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-18T16:39:41Z",
+  "generated_at": "2026-06-18T16:54:46Z",
   "currency": "MXN",
   "prices": {
     "Ozempic 0.25/0.5 mg (1 pluma)": {
@@ -8,11 +8,18 @@
           "price": 4274,
           "url": "https://www.benavides.com.mx/ozempic-134-mgml-semaglutida-solucion-inyectable-1-pluma-precargada",
           "title": "1.34 mg/ml Semaglutida Solución Inyectable"
+        },
+        "Clivi": {
+          "price": 5499,
+          "url": "https://www.clivi.com.mx/",
+          "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
         }
       },
-      "Benavides": 4274,
+      "Clivi": 5499,
       "Ahorro": null,
-      "Clivi": null
+      "Benavides": 4274,
+      "Guadalajara": null,
+      "SanPablo": null
     },
     "Ozempic 1 mg (1 pluma)": {
       "sources": {
@@ -20,17 +27,26 @@
           "price": 5789,
           "url": "https://www.benavides.com.mx/ozempic-1-mg-semaglutida-1-jeringa-prellenada",
           "title": "1 mg Semaglutida"
+        },
+        "Clivi": {
+          "price": 5499,
+          "url": "https://www.clivi.com.mx/",
+          "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
         }
       },
-      "Benavides": 5789,
+      "Clivi": 5499,
       "Ahorro": null,
-      "Clivi": null
+      "Benavides": 5789,
+      "Guadalajara": null,
+      "SanPablo": null
     },
     "Ozempic 2 mg (1 pluma)": {
       "sources": {},
-      "Benavides": null,
+      "Clivi": null,
       "Ahorro": null,
-      "Clivi": null
+      "Benavides": null,
+      "Guadalajara": null,
+      "SanPablo": null
     },
     "Mounjaro 2.5 mg (1 pluma)": {
       "sources": {
@@ -38,11 +54,18 @@
           "price": 6300,
           "url": "https://www.benavides.com.mx/mounjaro-2-5-mg-tirzepatida-0-6-ml-solucion-1-jeringa-prellenada",
           "title": "2.5 mg Tirzepatida/0.6 ml Solución"
+        },
+        "Clivi": {
+          "price": 6999,
+          "url": "https://www.clivi.com.mx/",
+          "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
         }
       },
-      "Benavides": 6300,
+      "Clivi": 6999,
       "Ahorro": null,
-      "Clivi": null
+      "Benavides": 6300,
+      "Guadalajara": null,
+      "SanPablo": null
     },
     "Mounjaro 5 mg (1 pluma)": {
       "sources": {
@@ -50,11 +73,18 @@
           "price": 5973,
           "url": "https://www.benavides.com.mx/mounjaro-5-mg-tirzepatida-0-6-ml-solucion-1-jeringa-prellenada",
           "title": "5 mg Tirzepatida/0.6 ml Solución"
+        },
+        "Clivi": {
+          "price": 6999,
+          "url": "https://www.clivi.com.mx/",
+          "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
         }
       },
-      "Benavides": 5973,
+      "Clivi": 6999,
       "Ahorro": null,
-      "Clivi": null
+      "Benavides": 5973,
+      "Guadalajara": null,
+      "SanPablo": null
     },
     "Mounjaro 7.5 mg (1 pluma)": {
       "sources": {
@@ -62,11 +92,18 @@
           "price": 7821,
           "url": "https://www.benavides.com.mx/mounjaro-7-5-mg-tirzepatida-0-6-ml-solucion-1-jeringa-prellenada",
           "title": "7.5 mg Tirzepatida/0.6 ml Solución"
+        },
+        "Clivi": {
+          "price": 9999,
+          "url": "https://www.clivi.com.mx/",
+          "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
         }
       },
-      "Benavides": 7821,
+      "Clivi": 9999,
       "Ahorro": null,
-      "Clivi": null
+      "Benavides": 7821,
+      "Guadalajara": null,
+      "SanPablo": null
     },
     "Mounjaro 10 mg (1 pluma)": {
       "sources": {
@@ -74,11 +111,18 @@
           "price": 7819,
           "url": "https://www.benavides.com.mx/mounjaro-10-mg-tirzepatida-0-6-ml-solucion-inyectable-1-jeringa-prellenada",
           "title": "10 mg Tirzepatida/0.6 ml Solución Inyectable"
+        },
+        "Clivi": {
+          "price": 9999,
+          "url": "https://www.clivi.com.mx/",
+          "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
         }
       },
-      "Benavides": 7819,
+      "Clivi": 9999,
       "Ahorro": null,
-      "Clivi": null
+      "Benavides": 7819,
+      "Guadalajara": null,
+      "SanPablo": null
     },
     "Mounjaro 12.5 mg (1 pluma)": {
       "sources": {
@@ -88,9 +132,11 @@
           "title": "12.5 mg Tirzepatida/0.6 ml Solución Inyectable"
         }
       },
-      "Benavides": 10730,
+      "Clivi": null,
       "Ahorro": null,
-      "Clivi": null
+      "Benavides": 10730,
+      "Guadalajara": null,
+      "SanPablo": null
     },
     "Mounjaro 15 mg (1 pluma)": {
       "sources": {
@@ -100,9 +146,11 @@
           "title": "15 mg Tirzepatida/0.6 ml Solución Inyectable"
         }
       },
-      "Benavides": 10730,
+      "Clivi": null,
       "Ahorro": null,
-      "Clivi": null
+      "Benavides": 10730,
+      "Guadalajara": null,
+      "SanPablo": null
     },
     "Wegovy 0.25 mg (caja mensual)": {
       "sources": {
@@ -110,11 +158,18 @@
           "price": 3177,
           "url": "https://www.benavides.com.mx/wegovy-0-25-mg-semaglutida-solucion-inyectable-1-pluma-precargada",
           "title": "0.25 mg Semaglutida Solución Inyectable"
+        },
+        "Clivi": {
+          "price": 4299,
+          "url": "https://www.clivi.com.mx/",
+          "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
         }
       },
-      "Benavides": 3177,
+      "Clivi": 4299,
       "Ahorro": null,
-      "Clivi": null
+      "Benavides": 3177,
+      "Guadalajara": null,
+      "SanPablo": null
     },
     "Wegovy 0.5 mg (caja mensual)": {
       "sources": {
@@ -122,11 +177,18 @@
           "price": 3864,
           "url": "https://www.benavides.com.mx/wegovy-0-5-mg-semaglutida-solucion-inyectable-1-pluma-precargada",
           "title": "0.5 mg Semaglutida Solución Inyectable"
+        },
+        "Clivi": {
+          "price": 4999,
+          "url": "https://www.clivi.com.mx/",
+          "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
         }
       },
-      "Benavides": 3864,
+      "Clivi": 4999,
       "Ahorro": null,
-      "Clivi": null
+      "Benavides": 3864,
+      "Guadalajara": null,
+      "SanPablo": null
     },
     "Wegovy 1 mg (caja mensual)": {
       "sources": {
@@ -134,11 +196,18 @@
           "price": 5244,
           "url": "https://www.benavides.com.mx/wegovy-1-mg-semaglutida-solucion-inyectable-1-pluma-precargada",
           "title": "1 mg Semaglutida Solución Inyectable"
+        },
+        "Clivi": {
+          "price": 5499,
+          "url": "https://www.clivi.com.mx/",
+          "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
         }
       },
-      "Benavides": 5244,
+      "Clivi": 5499,
       "Ahorro": null,
-      "Clivi": null
+      "Benavides": 5244,
+      "Guadalajara": null,
+      "SanPablo": null
     },
     "Wegovy 1.7 mg (caja mensual)": {
       "sources": {
@@ -146,11 +215,18 @@
           "price": 6643,
           "url": "https://www.benavides.com.mx/wegovy-1-7-mg-semaglutida-solucion-inyectable-1-pluma-precargada",
           "title": "1.7 mg Semaglutida Solución Inyectable"
+        },
+        "Clivi": {
+          "price": 6999,
+          "url": "https://www.clivi.com.mx/",
+          "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
         }
       },
-      "Benavides": 6643,
+      "Clivi": 6999,
       "Ahorro": null,
-      "Clivi": null
+      "Benavides": 6643,
+      "Guadalajara": null,
+      "SanPablo": null
     },
     "Wegovy 2.4 mg (caja mensual)": {
       "sources": {
@@ -158,29 +234,42 @@
           "price": 8163,
           "url": "https://www.benavides.com.mx/wegovy-2-4-mg-semaglutida-solucion-inyectable-1-pluma-precargada",
           "title": "2.4 mg Semaglutida Solución Inyectable"
+        },
+        "Clivi": {
+          "price": 6999,
+          "url": "https://www.clivi.com.mx/",
+          "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
         }
       },
-      "Benavides": 8163,
+      "Clivi": 6999,
       "Ahorro": null,
-      "Clivi": null
+      "Benavides": 8163,
+      "Guadalajara": null,
+      "SanPablo": null
     },
     "Saxenda 6 mg/mL (1 pluma)": {
       "sources": {},
-      "Benavides": null,
+      "Clivi": null,
       "Ahorro": null,
-      "Clivi": null
+      "Benavides": null,
+      "Guadalajara": null,
+      "SanPablo": null
     },
     "Saxenda 6 mg/mL (3 plumas)": {
       "sources": {},
-      "Benavides": null,
+      "Clivi": null,
       "Ahorro": null,
-      "Clivi": null
+      "Benavides": null,
+      "Guadalajara": null,
+      "SanPablo": null
     },
     "Saxenda 6 mg/mL (5 plumas)": {
       "sources": {},
-      "Benavides": null,
+      "Clivi": null,
       "Ahorro": null,
-      "Clivi": null
+      "Benavides": null,
+      "Guadalajara": null,
+      "SanPablo": null
     },
     "Rybelsus 3 mg (30 tabletas)": {
       "sources": {
@@ -190,9 +279,11 @@
           "title": "3 mg Semaglutida"
         }
       },
-      "Benavides": 956,
+      "Clivi": null,
       "Ahorro": null,
-      "Clivi": null
+      "Benavides": 956,
+      "Guadalajara": null,
+      "SanPablo": null
     },
     "Rybelsus 7 mg (30 tabletas)": {
       "sources": {
@@ -202,9 +293,11 @@
           "title": "7 mg Semaglutida"
         }
       },
-      "Benavides": 3906,
+      "Clivi": null,
       "Ahorro": null,
-      "Clivi": null
+      "Benavides": 3906,
+      "Guadalajara": null,
+      "SanPablo": null
     },
     "Rybelsus 14 mg (30 tabletas)": {
       "sources": {
@@ -214,9 +307,11 @@
           "title": "14 mg Semaglutida"
         }
       },
-      "Benavides": 4379,
+      "Clivi": null,
       "Ahorro": null,
-      "Clivi": null
+      "Benavides": 4379,
+      "Guadalajara": null,
+      "SanPablo": null
     }
   }
 }

@@ -63,16 +63,16 @@ def scrape_ahorro(query):
     # and parse the embedded Magento price JSON. Returns [] until wired.
     return []
 
-def scrape_clivi(query):
-    """Clivi is membership-based; no per-dose product pages. Best-effort plan price.
-    TODO: replace with the exact per-presentation prices (internal source)."""
-    return []
+# Clivi has no per-dose public pages (membership pricing), so prices are curated
+# manually in scraper/clivi_prices.json (keyed by canonical product name).
+CLIVI = json.loads((ROOT / "scraper" / "clivi_prices.json").read_text(encoding="utf-8"))
 
-SOURCES = {
+SCRAPERS = {
     "Benavides": scrape_benavides,
     "Ahorro":    scrape_ahorro,
-    "Clivi":     scrape_clivi,
 }
+# Column order shown in data/prices.json (Guadalajara & San Pablo = phase 2, null for now)
+SOURCE_ORDER = ["Clivi", "Ahorro", "Benavides", "Guadalajara", "SanPablo"]
 
 # ── MATCHING ───────────────────────────────────────────────────────────────
 def norm(s):
@@ -97,9 +97,9 @@ def pick(products, prod):
 
 # ── ORCHESTRATION ──────────────────────────────────────────────────────────
 def main():
-    raw = {src: {} for src in SOURCES}
+    raw = {src: {} for src in SCRAPERS}
     # scrape each source once per family, cache results
-    for src, fn in SOURCES.items():
+    for src, fn in SCRAPERS.items():
         for fam, meta in CFG["families"].items():
             try:
                 items = fn(meta["query"])
@@ -116,14 +116,20 @@ def main():
     for prod in CFG["products"]:
         name, fam = prod["name"], prod["family"]
         row = {"sources": {}}
-        for src in SOURCES:
+        for src in SOURCE_ORDER:
+            row[src] = None
+        # scraped sources
+        for src in SCRAPERS:
             hit = pick(raw[src].get(fam, []), prod)
             if hit:
                 row[src] = hit["price"]
                 row["sources"][src] = {"price": hit["price"], "url": hit["url"], "title": hit["title"]}
                 matched_count += 1
-            else:
-                row[src] = None
+        # Clivi (curated)
+        if name in CLIVI["prices"]:
+            row["Clivi"] = CLIVI["prices"][name]
+            row["sources"]["Clivi"] = {"price": CLIVI["prices"][name], "url": CLIVI["url"], "title": CLIVI["note"]}
+            matched_count += 1
         prices[name] = row
 
     out = {"generated_at": now, "currency": "MXN", "prices": prices}
