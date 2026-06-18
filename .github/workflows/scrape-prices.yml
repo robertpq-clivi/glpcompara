@@ -2,7 +2,7 @@ name: Scrape GLP-1 prices
 
 on:
   schedule:
-    - cron: "0 13 * * *"   # daily ~07:00 America/Mexico_City
+    - cron: "0 13 */3 * *"   # every 3 days ~07:00 America/Mexico_City (days 1,4,7,…)
   workflow_dispatch: {}      # allow manual runs
 
 permissions:
