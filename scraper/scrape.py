@@ -15,7 +15,7 @@ Clivi (best-effort / plan price). Guadalajara & San Pablo are phase 2
 Usage:  python scraper/scrape.py
 Respects robots.txt intent, throttles requests, and identifies itself.
 """
-import json, re, time, sys, datetime, pathlib
+import os, json, re, time, sys, datetime, pathlib
 import requests
 from bs4 import BeautifulSoup
 
