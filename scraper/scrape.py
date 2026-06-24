@@ -15,7 +15,7 @@ Clivi (best-effort / plan price). Guadalajara & San Pablo are phase 2
 Usage:  python scraper/scrape.py
 Respects robots.txt intent, throttles requests, and identifies itself.
 """
-import os, json, re, time, sys, datetime, pathlib
+import os, json, re, time, sys, datetime, pathlib, base64
 import requests
 from bs4 import BeautifulSoup
 
@@ -96,11 +96,18 @@ def scrape_ahorro(query):
 # or newlines (e.g. "SCRAPER_PROVIDER = zenrows\n<key>") still resolves cleanly.
 _raw_key = os.environ.get("SCRAPER_API_KEY", "")
 SCRAPER_KEY = _raw_key.split()[-1] if _raw_key.split() else ""
-SCRAPER_PROVIDER = os.environ.get("SCRAPER_PROVIDER", "zenrows").strip().lower()
+SCRAPER_PROVIDER = os.environ.get("SCRAPER_PROVIDER", "zyte").strip().lower()
 
 def via_proxy(target_url, headers=None):
     if not SCRAPER_KEY:
         raise RuntimeError("SCRAPER_API_KEY not set")
+    if SCRAPER_PROVIDER == "zyte":
+        payload = {"url": target_url, "httpResponseBody": True, "geolocation": "MX"}
+        if headers:
+            payload["customHttpRequestHeaders"] = [{"name": k, "value": v} for k, v in headers.items()]
+        r = requests.post("https://api.zyte.com/v1/extract", auth=(SCRAPER_KEY, ""), json=payload, timeout=90)
+        r.raise_for_status()
+        return base64.b64decode(r.json()["httpResponseBody"]).decode("utf-8", "ignore")
     if SCRAPER_PROVIDER == "scraperapi":
         params = {"api_key": SCRAPER_KEY, "url": target_url, "premium": "true", "country_code": "mx"}
         if headers:
@@ -193,10 +200,8 @@ SCRAPERS = {
     "Benavides": scrape_benavides,
     "Ahorro":    scrape_ahorro,
 }
-# Guadalajara & San Pablo are curated in overrides.json (their sites need a paid
-# anti-bot proxy). Set SCRAPER_PROXY_SOURCES=1 to re-enable live scraping of them
-# once a funded proxy key is available.
-if SCRAPER_KEY and os.environ.get("SCRAPER_PROXY_SOURCES"):
+# Guadalajara & San Pablo need an anti-bot proxy (Zyte). Enabled when a key is set.
+if SCRAPER_KEY:
     SCRAPERS["Guadalajara"] = scrape_guadalajara
     SCRAPERS["SanPablo"]    = scrape_sanpablo
 
