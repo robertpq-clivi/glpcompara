@@ -994,7 +994,7 @@ function renderBestTreatments(){
     if(cb!==ca) return cb-ca;
     return LAB_META[b].rating-LAB_META[a].rating;
   });
-  const cards=order.map((l,i)=>{
+  const cards=order.slice(0,3).map((l,i)=>{
     const m=LAB_META[l],win=i===0,name=m.displayName||l,from=priceFrom(l);
     const score=(m.rating*2).toFixed(1);
     const feats=(m.services||[]).slice(0,4).map(s=>`<li>${s}</li>`).join('');
@@ -1025,8 +1025,6 @@ function renderPopularOffers(){
     {emoji:'&#x1F489;',bg:'linear-gradient(135deg,#FEE2E2,#FECACA)',tag:'POPULAR',tagbg:'linear-gradient(135deg,#F97316,#EF4444)',title:'Wegovy al mejor precio',desc:'Compara Wegovy entre 6 opciones y encuentra la m&#xe1;s econ&#xf3;mica para ti.',price:medFrom('Wegovy'),cmp:true},
     {emoji:'&#x1FA7A;',bg:'rgba(0,180,216,.12)',tag:'M&#xc1;S COMPLETO',tagbg:'linear-gradient(135deg,#00B4D8,#0077A8)',title:'Plan integral con Clivi',desc:'Medicamento + seguimiento m&#xe9;dico + consulta + plan de alimentaci&#xf3;n, todo en uno.',price:priceFrom('Clivi'),url:'https://clivi.com.mx/',ph:'Clivi'},
     {emoji:'&#x1F48A;',bg:'linear-gradient(135deg,#DCFCE7,#BBF7D0)',tag:'POPULAR',tagbg:'#10B981',title:'Mounjaro al mejor precio',desc:'Compara Mounjaro (tirzepatida) entre las principales farmacias de M&#xe9;xico.',price:medFrom('Mounjaro'),cmp:true},
-    {emoji:'&#x1F489;',bg:'linear-gradient(135deg,#E0F2FE,#BAE6FD)',tag:'POPULAR',tagbg:'#00B4D8',title:'Ozempic al mejor precio',desc:'Compara Ozempic (semaglutida) y ahorra eligiendo la farmacia m&#xe1;s econ&#xf3;mica.',price:medFrom('Ozempic'),cmp:true},
-    {emoji:'&#x1F48A;',bg:'linear-gradient(135deg,#F3E8FF,#E9D5FF)',tag:'POPULAR',tagbg:'#8B5CF6',title:'Rybelsus en pastilla',desc:'La opci&#xf3;n oral de semaglutida. Compara precios entre farmacias.',price:medFrom('Rybelsus'),cmp:true},
   ];
   el.innerHTML=`<div class="of-scroll">`+offers.map(o=>{
     const cta=o.url
