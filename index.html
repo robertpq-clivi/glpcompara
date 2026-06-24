@@ -291,6 +291,21 @@ th.cmp-clivi{background:linear-gradient(180deg,rgba(0,180,216,.18),rgba(0,180,21
 .cmp-est{display:block;font-size:8.5px;font-weight:700;color:var(--gray-400);letter-spacing:.03em;margin-top:1px;text-transform:uppercase;}
 .cmp-note{font-size:12px;color:var(--gray-600);background:var(--gray-50);border:1px solid var(--gray-200);border-radius:10px;padding:11px 14px;margin-top:14px;line-height:1.6;}
 .cmp-note b{color:var(--navy);}
+/* ── Histórico de precios ── */
+.hist-wrap{margin-top:30px;}
+.hist-title{font-family:'Sora',sans-serif;font-weight:800;font-size:19px;color:var(--navy);margin-bottom:4px;}
+.hist-sub{font-size:12.5px;color:var(--gray-600);line-height:1.6;margin-bottom:16px;}
+.hist-sub b{color:var(--navy);}
+.hist-card{background:white;border:2px solid var(--gray-100);border-radius:16px;box-shadow:0 4px 24px rgba(11,31,75,.06);padding:16px 16px 8px;margin-bottom:14px;}
+.hist-top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:6px;}
+.hist-h{font-family:'Sora',sans-serif;font-weight:700;font-size:14px;color:var(--navy);}
+.hist-trend{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:700;font-family:'Sora',sans-serif;}
+.hist-range{color:var(--gray-400);font-weight:600;}
+.hist-up{color:#DC2626;}
+.hist-down{color:var(--green);}
+.hist-flat{color:var(--gray-400);}
+.hist-svg{display:block;width:100%;height:auto;}
+.hist-empty{font-size:12.5px;color:var(--gray-400);background:var(--gray-50);border:1px dashed var(--gray-200);border-radius:10px;padding:14px;text-align:center;}
 </style>
 <script>
   // Staging guard: don't index the temporary github.io URL — canonical is glpcompara.com.mx
@@ -611,6 +626,7 @@ let selectedDrug = null;
 let sortBy = 'price';
 let supaClient = null;
 let PRICE_META = null;          // { generated_at } de data/prices.json
+let PRICE_HISTORY = null;       // { series: { <presentación>: [{date,avg,n}] } }
 const LIVE = {};                // LIVE[name] = Set de fuentes con precio real verificado
 
 // Carga precios reales (data/prices.json) y los fusiona en RAW_DATA.
@@ -636,7 +652,15 @@ async function loadLivePrices(){
     });
   }catch(e){ console.warn('live prices:', e.message); }
 }
-const livePromise = loadLivePrices();
+// Carga el histórico de precios (data/price-history.json) para la gráfica.
+async function loadPriceHistory(){
+  try{
+    const r = await fetch('data/price-history.json', {cache:'no-store'});
+    if(!r.ok) return;
+    PRICE_HISTORY = await r.json();
+  }catch(e){ console.warn('price history:', e.message); }
+}
+const livePromise = Promise.all([loadLivePrices(), loadPriceHistory()]);
 
 // Medicamentos GLP-1 disponibles (familias)
 const DRUGS = ['Ozempic','Mounjaro','Wegovy','Rybelsus'];
@@ -854,6 +878,47 @@ function renderCompBtn(){
 $('change-drug').onclick=showDrugStep;
 $('compare-btn').onclick=()=>{if(selected.length)goResults();};
 
+// ── HISTÓRICO DE PRECIOS (gráfica) ─────────────────────────────────────────
+const MESES_ABBR=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+function fmtHistDate(iso){const [y,m,d]=iso.split('-').map(Number);return d+' '+MESES_ABBR[m-1];}
+function sparkChart(pts){
+  const W=620,H=240,L=56,R=16,T=18,B=36,pw=W-L-R,ph=H-T-B;
+  const vals=pts.map(p=>p.avg),n=pts.length;
+  const realMn=Math.min(...vals),realMx=Math.max(...vals);
+  let mn=realMn,mx=realMx;
+  if(mn===mx){mn=mn*0.95;mx=mx*1.05;}
+  const pad=(mx-mn)*0.18;mn-=pad;mx+=pad;
+  const X=i=>n===1?L+pw/2:L+pw*i/(n-1);
+  const Y=v=>T+ph*(1-(v-mn)/(mx-mn));
+  const pkt=pts.map((p,i)=>[X(i),Y(p.avg)]);
+  const line=pkt.map((q,i)=>(i?'L':'M')+q[0].toFixed(1)+' '+q[1].toFixed(1)).join(' ');
+  const area=line+` L ${X(n-1).toFixed(1)} ${(T+ph).toFixed(1)} L ${X(0).toFixed(1)} ${(T+ph).toFixed(1)} Z`;
+  const grid=[realMx,Math.round((realMn+realMx)/2),realMn].map(v=>
+    `<line x1="${L}" y1="${Y(v).toFixed(1)}" x2="${W-R}" y2="${Y(v).toFixed(1)}" stroke="#F1F5F9" stroke-width="1"/>`+
+    `<text x="${L-9}" y="${(Y(v)+4).toFixed(1)}" text-anchor="end" font-size="11" fill="#94A3B8" font-family="Sora,sans-serif">${fmtP(v)}</text>`).join('');
+  const dots=pkt.map((q,i)=>{const last=i===n-1;return `<circle cx="${q[0].toFixed(1)}" cy="${q[1].toFixed(1)}" r="${last?4.5:3.2}" fill="${last?'#00B4D8':'#fff'}" stroke="#00B4D8" stroke-width="2"><title>${fmtHistDate(pts[i].date)}: ${fmtP(pts[i].avg)}</title></circle>`;}).join('');
+  const showEvery=n<=6?1:Math.ceil(n/6);
+  const xlab=pts.map((p,i)=>{if(i%showEvery!==0&&i!==n-1)return '';const anchor=i===0?'start':i===n-1?'end':'middle';return `<text x="${X(i).toFixed(1)}" y="${H-12}" text-anchor="${anchor}" font-size="10.5" fill="#94A3B8" font-family="Sora,sans-serif">${fmtHistDate(p.date)}</text>`;}).join('');
+  const lastVal=`<text x="${(X(n-1)).toFixed(1)}" y="${(Y(vals[n-1])-11).toFixed(1)}" text-anchor="end" font-size="12" font-weight="700" fill="#0077A8" font-family="Sora,sans-serif">${fmtP(vals[n-1])}</text>`;
+  return `<svg class="hist-svg" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Gráfica de histórico de precio promedio">`+
+    `<defs><linearGradient id="histfill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#00B4D8" stop-opacity="0.18"/><stop offset="1" stop-color="#00B4D8" stop-opacity="0"/></linearGradient></defs>`+
+    grid+`<path d="${area}" fill="url(#histfill)"/><path d="${line}" fill="none" stroke="#00B4D8" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>`+dots+lastVal+xlab+`</svg>`;
+}
+function historyBlock(studies){
+  if(!PRICE_HISTORY||!PRICE_HISTORY.series)return '';
+  const blocks=studies.map(s=>{
+    const pts=PRICE_HISTORY.series[s.name]||[];
+    if(pts.length<2)
+      return `<div class="hist-card"><div class="hist-h">&#x1F48A; ${s.name}</div><div class="hist-empty" style="margin-top:10px;">Estamos construyendo el histórico de esta presentación. Vuelve pronto para ver la tendencia.</div></div>`;
+    const first=pts[0].avg,last=pts[pts.length-1].avg,diff=last-first,pct=first?Math.round(diff/first*100):0;
+    const trend=diff>0?`<span class="hist-up">&#x25B2; ${fmtP(Math.abs(diff))} (+${pct}%)</span>`
+               :diff<0?`<span class="hist-down">&#x25BC; ${fmtP(Math.abs(diff))} (${pct}%)</span>`
+               :`<span class="hist-flat">Sin cambios</span>`;
+    return `<div class="hist-card"><div class="hist-top"><div class="hist-h">&#x1F48A; ${s.name}</div><div class="hist-trend">${trend}<span class="hist-range">${fmtHistDate(pts[0].date)} &ndash; ${fmtHistDate(pts[pts.length-1].date)}</span></div></div>${sparkChart(pts)}</div>`;
+  }).join('');
+  return `<div class="hist-wrap"><div class="hist-title">&#x1F4C8; Histórico de precios</div><div class="hist-sub">Precio <b>promedio en farmacias</b> de cada presentación a lo largo del tiempo (no incluye el plan integral de Clivi). Se actualiza cada pocos días &mdash; el histórico crece con el tiempo.</div>${blocks}</div>`;
+}
+
 // ── RESULTS (matriz comparativa por columnas) ──────────────────────────────
 function renderResults(){
   const studies=RAW_DATA.filter(s=>selected.includes(s.name));
@@ -908,7 +973,8 @@ function renderResults(){
     `<tr class="cmp-section"><td colspan="${cols.length+1}">Qué incluye cada opción</td></tr>`+featRows+totalRow+ctaRow+
     `</tbody></table></div>`+
     `<div class="cmp-note"><b>&#x1F4A1; Cómo leer esta tabla:</b> el precio de <b>Clivi</b> es un plan integral (medicamento + consulta + seguimiento médico + estudios de laboratorio + plan de alimentación). Las demás columnas son el precio del medicamento solo. <b>"pendiente"</b> = aún estamos verificando ese precio en línea (no mostramos precios sin confirmar).${PRICE_META?` &middot; Precios actualizados: ${new Date(PRICE_META.generated_at).toLocaleDateString('es-MX',{day:'numeric',month:'long',year:'numeric'})}.`:''}</div>`+
-    `<p class="cmp-hint">Toca un precio para ver el detalle del medicamento. Desliza la tabla &#x2194; para ver todas las farmacias.</p>`;
+    `<p class="cmp-hint">Toca un precio para ver el detalle del medicamento. Desliza la tabla &#x2194; para ver todas las farmacias.</p>`+
+    historyBlock(studies);
 
   // abrir modal al tocar un precio
   $('results-container').querySelectorAll('.cmp-clickable').forEach(td=>{

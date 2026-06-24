@@ -318,5 +318,39 @@ def main():
     (ROOT / "data" / "prices_raw.json").write_text(json.dumps({"generated_at": now, "raw": raw}, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"\nWrote data/prices.json — {matched_count} source-prices matched across {len(prices)} products.")
 
+    update_history(prices, now)
+
+# ── Price history (time series of the pharmacy-average price per presentation) ──
+# Appends one point per run/day. Clivi is excluded (it is a bundled plan, not a
+# medicine-only price). Only dates with 3+ verified pharmacy prices are kept so
+# changing coverage never looks like a price swing.
+HIST_PHARM = ["Ahorro", "Guadalajara", "Benavides", "SanPablo", "Revert"]
+HIST_MIN_N = 3
+
+def update_history(prices, now):
+    path = ROOT / "data" / "price-history.json"
+    try:
+        hist = json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        hist = {"currency": "MXN", "series": {}}
+    series = hist.setdefault("series", {})
+    today = now[:10]  # YYYY-MM-DD
+    for name, row in prices.items():
+        vals = [row[k] for k in HIST_PHARM if isinstance(row.get(k), (int, float))]
+        if len(vals) < HIST_MIN_N:
+            continue
+        point = {"date": today, "avg": round(sum(vals) / len(vals)), "n": len(vals)}
+        pts = series.setdefault(name, [])
+        if pts and pts[-1]["date"] == today:
+            pts[-1] = point  # one point per day; replace if re-run same day
+        else:
+            pts.append(point)
+    hist["generated_at"] = now
+    hist["currency"] = "MXN"
+    hist["note"] = ("Precio promedio en farmacias por presentación (excluye Clivi, "
+                    "que es un plan integral). Solo fechas con cobertura de 3+ farmacias.")
+    path.write_text(json.dumps(hist, ensure_ascii=False, indent=0), encoding="utf-8")
+    print(f"Updated data/price-history.json — {len(series)} products tracked.")
+
 if __name__ == "__main__":
     main()
