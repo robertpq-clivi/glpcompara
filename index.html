@@ -306,6 +306,43 @@ th.cmp-clivi{background:linear-gradient(180deg,rgba(0,180,216,.18),rgba(0,180,21
 .hist-flat{color:var(--gray-400);}
 .hist-svg{display:block;width:100%;height:auto;}
 .hist-empty{font-size:12.5px;color:var(--gray-400);background:var(--gray-50);border:1px dashed var(--gray-200);border-radius:10px;padding:14px;text-align:center;}
+/* ── Los mejores tratamientos (ranking) ── */
+.bt-wrap{max-width:920px;margin:0 auto;}
+.bt-card{display:flex;align-items:center;gap:16px;background:white;border:2px solid var(--gray-100);border-radius:18px;padding:18px 20px;margin-bottom:14px;box-shadow:0 4px 20px rgba(11,31,75,.05);position:relative;transition:transform .2s,box-shadow .2s;}
+.bt-card:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(11,31,75,.1);}
+.bt-win{border-color:rgba(0,180,216,.55);box-shadow:0 8px 30px rgba(0,180,216,.16);}
+.bt-rank{flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:var(--gray-100);color:var(--navy);font-family:'Sora',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;}
+.bt-win .bt-rank{background:linear-gradient(135deg,#FFD66B,#F59E0B);color:#fff;}
+.bt-logo{flex:0 0 auto;width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:28px;}
+.bt-main{flex:1;min-width:0;}
+.bt-name{font-family:'Sora',sans-serif;font-weight:800;font-size:16px;color:var(--navy);display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.bt-badge-win{font-size:10px;background:linear-gradient(135deg,#FFD66B,#F59E0B);color:#7a4a00;padding:3px 9px;border-radius:20px;font-weight:800;letter-spacing:.02em;}
+.bt-score{display:flex;align-items:center;gap:9px;margin:5px 0 8px;font-size:12px;color:var(--gray-400);flex-wrap:wrap;}
+.bt-score b{font-family:'Sora',sans-serif;font-size:17px;color:var(--green);font-weight:800;}
+.bt-feats{display:flex;flex-wrap:wrap;gap:5px 14px;list-style:none;padding:0;margin:0;}
+.bt-feats li{font-size:12px;color:var(--gray-600);}
+.bt-cta{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:7px;text-align:center;min-width:128px;}
+.bt-price{font-size:11px;color:var(--gray-400);line-height:1.3;}
+.bt-price b{display:block;font-family:'Sora',sans-serif;font-size:18px;color:var(--navy);font-weight:800;}
+.bt-btn{background:linear-gradient(135deg,var(--teal),var(--teal-dark));color:#fff;border:none;padding:10px 18px;border-radius:10px;font-family:'Sora',sans-serif;font-weight:700;font-size:13px;cursor:pointer;white-space:nowrap;text-decoration:none;}
+.bt-link{font-size:12px;color:var(--teal-dark);font-weight:700;cursor:pointer;background:none;border:none;font-family:'Sora',sans-serif;}
+.bt-sup{color:var(--teal-dark);font-weight:700;font-size:.62em;vertical-align:super;}
+.bt-notes{max-width:920px;margin:20px auto 0;font-size:11px;color:var(--gray-400);line-height:1.8;}
+.bt-notes b{color:var(--gray-600);}
+@media(max-width:640px){.bt-card{flex-wrap:wrap;}.bt-main{flex:1 1 60%;}.bt-cta{flex:1 1 100%;flex-direction:row;justify-content:space-between;border-top:1px solid var(--gray-100);padding-top:12px;margin-top:2px;}}
+/* ── Ofertas populares (carrusel) ── */
+.of-wrap{max-width:1040px;margin:0 auto;}
+.of-scroll{display:flex;gap:16px;overflow-x:auto;padding:6px 2px 16px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;}
+.of-card{flex:0 0 270px;scroll-snap-align:start;background:white;border:2px solid var(--gray-100);border-radius:18px;overflow:hidden;box-shadow:0 4px 20px rgba(11,31,75,.06);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;}
+.of-card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(11,31,75,.12);}
+.of-top{height:118px;display:flex;align-items:center;justify-content:center;font-size:52px;position:relative;}
+.of-tag{position:absolute;top:12px;left:12px;font-size:10px;font-weight:800;padding:4px 10px;border-radius:20px;font-family:'Sora',sans-serif;letter-spacing:.05em;color:#fff;}
+.of-body{padding:15px 16px 17px;display:flex;flex-direction:column;flex:1;}
+.of-title{font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:var(--navy);margin-bottom:6px;}
+.of-desc{font-size:12.5px;color:var(--gray-600);line-height:1.5;margin-bottom:12px;flex:1;}
+.of-price{font-size:11px;color:var(--gray-400);margin-bottom:11px;}
+.of-price b{font-family:'Sora',sans-serif;font-size:17px;color:var(--navy);}
+.of-btn{background:linear-gradient(135deg,var(--teal),var(--teal-dark));color:#fff;border:none;padding:11px 14px;border-radius:10px;font-family:'Sora',sans-serif;font-weight:700;font-size:13px;cursor:pointer;text-align:center;text-decoration:none;display:block;}
 </style>
 <script>
   // Staging guard: don't index the temporary github.io URL — canonical is glpcompara.com.mx
@@ -372,6 +409,16 @@ th.cmp-clivi{background:linear-gradient(180deg,rgba(0,180,216,.18),rgba(0,180,21
     </div>
   </div>
 
+  <!-- LOS MEJORES TRATAMIENTOS -->
+  <div style="background:var(--gray-50);padding:56px 24px;">
+    <div style="max-width:920px;margin:0 auto 26px;text-align:center;">
+      <div class="sec-eyebrow" style="color:var(--teal-dark);">Comparativa</div>
+      <h2 class="sec-title" style="color:var(--navy);">Los mejores tratamientos GLP-1</h2>
+      <p class="sec-sub" style="color:var(--gray-600);">Ordenados por servicios incluidos, calificaci&#xf3;n y precio. T&#xfa; eliges la opci&#xf3;n que m&#xe1;s te conviene.</p>
+    </div>
+    <div id="best-treatments" class="bt-wrap"></div>
+  </div>
+
   <!-- FARMACIAS INCLUIDAS -->
   <div style="background:white;padding:48px 24px;border-top:1px solid var(--gray-100);border-bottom:1px solid var(--gray-100);">
     <div style="max-width:900px;margin:0 auto;">
@@ -409,6 +456,16 @@ th.cmp-clivi{background:linear-gradient(180deg,rgba(0,180,216,.18),rgba(0,180,21
     </div>
   </div>
   </div><!-- /trust white bg -->
+
+  <!-- OFERTAS POPULARES -->
+  <div style="background:var(--gray-50);padding:56px 24px;border-top:1px solid var(--gray-100);">
+    <div style="max-width:1040px;margin:0 auto 22px;text-align:center;">
+      <div class="sec-eyebrow" style="color:var(--teal-dark);">Destacados</div>
+      <h2 class="sec-title" style="color:var(--navy);">Ofertas populares</h2>
+      <p class="sec-sub" style="color:var(--gray-600);">Las b&#xfa;squedas m&#xe1;s populares. Desliza para ver m&#xe1;s &#x2192;</p>
+    </div>
+    <div id="popular-offers" class="of-wrap"></div>
+  </div>
 
   <!-- PROMO CTA -->
   <div class="promo">
@@ -661,6 +718,7 @@ async function loadPriceHistory(){
   }catch(e){ console.warn('price history:', e.message); }
 }
 const livePromise = Promise.all([loadLivePrices(), loadPriceHistory()]);
+livePromise.then(()=>{ try{ renderBestTreatments(); renderPopularOffers(); }catch(e){ console.warn('home sections:', e.message); } });
 
 // Medicamentos GLP-1 disponibles (familias)
 const DRUGS = ['Ozempic','Mounjaro','Wegovy','Rybelsus'];
@@ -917,6 +975,69 @@ function historyBlock(studies){
     return `<div class="hist-card"><div class="hist-top"><div class="hist-h">&#x1F48A; ${s.name}</div><div class="hist-trend">${trend}<span class="hist-range">${fmtHistDate(pts[0].date)} &ndash; ${fmtHistDate(pts[pts.length-1].date)}</span></div></div>${sparkChart(pts)}</div>`;
   }).join('');
   return `<div class="hist-wrap"><div class="hist-title">&#x1F4C8; Histórico de precios</div><div class="hist-sub">Precio <b>promedio</b> de cada presentación entre todas las opciones a lo largo del tiempo. Se actualiza cada pocos días &mdash; el histórico crece con el tiempo.</div>${blocks}</div>`;
+}
+
+// ── LOS MEJORES TRATAMIENTOS (ranking en la home) ──────────────────────────
+function priceFrom(provider){
+  const vals=RAW_DATA.map(s=>s[provider]).filter(v=>typeof v==='number'&&v>0);
+  return vals.length?Math.min(...vals):null;
+}
+function medFrom(prefix){
+  const vals=RAW_DATA.filter(s=>s.name.startsWith(prefix)).flatMap(s=>LABS.map(l=>s[l])).filter(v=>typeof v==='number'&&v>0);
+  return vals.length?Math.min(...vals):null;
+}
+function renderBestTreatments(){
+  const el=$('best-treatments'); if(!el) return;
+  const order=LABS.slice().sort((a,b)=>{
+    const ca=FEATURES.reduce((x,f)=>x+(PHARM_FEATURES[a][f.key]||0),0);
+    const cb=FEATURES.reduce((x,f)=>x+(PHARM_FEATURES[b][f.key]||0),0);
+    if(cb!==ca) return cb-ca;
+    return LAB_META[b].rating-LAB_META[a].rating;
+  });
+  const cards=order.map((l,i)=>{
+    const m=LAB_META[l],win=i===0,name=m.displayName||l,from=priceFrom(l);
+    const score=(m.rating*2).toFixed(1);
+    const feats=(m.services||[]).slice(0,4).map(s=>`<li>${s}</li>`).join('');
+    const pn=l==='Clivi'?'<sup class="bt-sup">2 3</sup>':'<sup class="bt-sup">2</sup>';
+    return `<div class="bt-card${win?' bt-win':''}">`+
+      `<div class="bt-rank">${i+1}</div>`+
+      `<div class="bt-logo" style="background:${m.bg};">${m.emoji}</div>`+
+      `<div class="bt-main"><div class="bt-name">${name}${win?'<span class="bt-badge-win">&#x1F3C6; M&#xe1;s recomendado</span>':''}</div>`+
+      `<div class="bt-score"><b>${score}<span class="bt-sup">*</span></b><span>${stars(m.rating)}</span><span>${m.votes.toLocaleString('es-MX')} rese&ntilde;as<sup class="bt-sup">1</sup></span></div>`+
+      `<ul class="bt-feats">${feats}</ul></div>`+
+      `<div class="bt-cta">${from?`<div class="bt-price">desde<b>${fmtP(from)}${pn}</b></div>`:''}`+
+      `<a class="bt-btn" href="${m.url}" target="_blank" rel="noopener noreferrer" data-ph="${name}">Ver tratamiento &#x2192;</a>`+
+      `<button class="bt-link" data-cmp="1">Comparar precios</button></div></div>`;
+  }).join('');
+  el.innerHTML=cards+
+    `<div class="bt-notes"><b>* C&#xf3;mo clasificamos:</b> combinamos la cobertura de servicios incluidos, la calificaci&#xf3;n de usuarios y el precio de referencia. &nbsp; `+
+    `<b>1.</b> La calificaci&#xf3;n proviene de rese&ntilde;as p&#xfa;blicas de cada farmacia. &nbsp; `+
+    `<b>2.</b> "Desde" es el precio m&#xe1;s bajo encontrado entre las presentaciones disponibles; var&#xed;a por dosis y puede cambiar. &nbsp; `+
+    `<b>3.</b> El precio de Clivi corresponde a un plan integral (medicamento + seguimiento m&#xe9;dico + consulta + plan de alimentaci&#xf3;n), no solo al medicamento.</div>`;
+  el.querySelectorAll('.bt-btn').forEach(a=>a.addEventListener('click',function(){if(typeof gtag!=='undefined')gtag('event','click_ir_a_la_farmacia',{pharmacy_name:this.dataset.ph||'',destination:this.href});}));
+  el.querySelectorAll('[data-cmp]').forEach(b=>b.onclick=goForm);
+}
+
+// ── OFERTAS POPULARES (carrusel en la home) ────────────────────────────────
+function renderPopularOffers(){
+  const el=$('popular-offers'); if(!el) return;
+  const offers=[
+    {emoji:'&#x1F489;',bg:'linear-gradient(135deg,#FEE2E2,#FECACA)',tag:'POPULAR',tagbg:'linear-gradient(135deg,#F97316,#EF4444)',title:'Wegovy al mejor precio',desc:'Compara Wegovy entre 6 opciones y encuentra la m&#xe1;s econ&#xf3;mica para ti.',price:medFrom('Wegovy'),cmp:true},
+    {emoji:'&#x1FA7A;',bg:'rgba(0,180,216,.12)',tag:'M&#xc1;S COMPLETO',tagbg:'linear-gradient(135deg,#00B4D8,#0077A8)',title:'Plan integral con Clivi',desc:'Medicamento + seguimiento m&#xe9;dico + consulta + plan de alimentaci&#xf3;n, todo en uno.',price:priceFrom('Clivi'),url:'https://clivi.com.mx/',ph:'Clivi'},
+    {emoji:'&#x1F48A;',bg:'linear-gradient(135deg,#DCFCE7,#BBF7D0)',tag:'POPULAR',tagbg:'#10B981',title:'Mounjaro al mejor precio',desc:'Compara Mounjaro (tirzepatida) entre las principales farmacias de M&#xe9;xico.',price:medFrom('Mounjaro'),cmp:true},
+    {emoji:'&#x1F489;',bg:'linear-gradient(135deg,#E0F2FE,#BAE6FD)',tag:'POPULAR',tagbg:'#00B4D8',title:'Ozempic al mejor precio',desc:'Compara Ozempic (semaglutida) y ahorra eligiendo la farmacia m&#xe1;s econ&#xf3;mica.',price:medFrom('Ozempic'),cmp:true},
+    {emoji:'&#x1F48A;',bg:'linear-gradient(135deg,#F3E8FF,#E9D5FF)',tag:'POPULAR',tagbg:'#8B5CF6',title:'Rybelsus en pastilla',desc:'La opci&#xf3;n oral de semaglutida. Compara precios entre farmacias.',price:medFrom('Rybelsus'),cmp:true},
+  ];
+  el.innerHTML=`<div class="of-scroll">`+offers.map(o=>{
+    const cta=o.url
+      ?`<a class="of-btn" href="${o.url}" target="_blank" rel="noopener noreferrer" data-ph="${o.ph||''}">Ver oferta &#x2192;</a>`
+      :`<button class="of-btn" data-cmp="1">Comparar &#x2192;</button>`;
+    return `<div class="of-card"><div class="of-top" style="background:${o.bg};"><span class="of-tag" style="background:${o.tagbg};">${o.tag}</span>${o.emoji}</div>`+
+      `<div class="of-body"><div class="of-title">${o.title}</div><div class="of-desc">${o.desc}</div>`+
+      `${o.price?`<div class="of-price">desde <b>${fmtP(o.price)}</b></div>`:''}${cta}</div></div>`;
+  }).join('')+`</div>`;
+  el.querySelectorAll('.of-btn[data-ph]').forEach(a=>a.addEventListener('click',function(){if(typeof gtag!=='undefined')gtag('event','click_ir_a_la_farmacia',{pharmacy_name:this.dataset.ph||'',destination:this.href});}));
+  el.querySelectorAll('[data-cmp]').forEach(b=>b.onclick=goForm);
 }
 
 // ── RESULTS (matriz comparativa por columnas) ──────────────────────────────
