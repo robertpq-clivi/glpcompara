@@ -193,8 +193,10 @@ SCRAPERS = {
     "Benavides": scrape_benavides,
     "Ahorro":    scrape_ahorro,
 }
-# Guadalajara & San Pablo only run when an anti-bot proxy key is configured.
-if SCRAPER_KEY:
+# Guadalajara & San Pablo are curated in overrides.json (their sites need a paid
+# anti-bot proxy). Set SCRAPER_PROXY_SOURCES=1 to re-enable live scraping of them
+# once a funded proxy key is available.
+if SCRAPER_KEY and os.environ.get("SCRAPER_PROXY_SOURCES"):
     SCRAPERS["Guadalajara"] = scrape_guadalajara
     SCRAPERS["SanPablo"]    = scrape_sanpablo
 

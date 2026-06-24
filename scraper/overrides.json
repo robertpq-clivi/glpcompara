@@ -1,16 +1,40 @@
 {
-  "_comment": "Manual price fills, applied after scraping and taking precedence. Use for cells the scraper can't reach (e.g. San Pablo's titles drop 'mg'). Shape: source → {canonical product name: price MXN}.",
+  "_comment": "Manual price fills, applied after scraping and taking precedence. Guadalajara & San Pablo are curated here (their sites block datacenter IPs and need a paid proxy, so we maintain them manually like Clivi/Revert). Del Ahorro & Benavides still auto-scrape. Shape: source → {canonical product name: price MXN}.",
+  "Guadalajara": {
+    "Ozempic 0.25/0.5 mg (1 pluma)": 3149,
+    "Ozempic 1 mg (1 pluma)": 4280,
+    "Mounjaro 2.5 mg (1 pluma)": 3770,
+    "Mounjaro 5 mg (1 pluma)": 4775,
+    "Mounjaro 7.5 mg (1 pluma)": 6500,
+    "Mounjaro 10 mg (1 pluma)": 6255,
+    "Mounjaro 12.5 mg (1 pluma)": 10768,
+    "Mounjaro 15 mg (1 pluma)": 10768,
+    "Wegovy 0.25 mg (caja mensual)": 2385,
+    "Wegovy 0.5 mg (caja mensual)": 2900,
+    "Wegovy 1 mg (caja mensual)": 3940,
+    "Wegovy 1.7 mg (caja mensual)": 4650,
+    "Wegovy 2.4 mg (caja mensual)": 4900,
+    "Rybelsus 3 mg (30 tabletas)": 2172,
+    "Rybelsus 7 mg (30 tabletas)": 2975,
+    "Rybelsus 14 mg (30 tabletas)": 3335
+  },
   "SanPablo": {
     "Ozempic 0.25/0.5 mg (1 pluma)": 3096,
     "Ozempic 1 mg (1 pluma)": 4198,
+    "Mounjaro 2.5 mg (1 pluma)": 6295,
     "Mounjaro 5 mg (1 pluma)": 5983,
+    "Mounjaro 7.5 mg (1 pluma)": 7880,
+    "Mounjaro 10 mg (1 pluma)": 7838,
+    "Mounjaro 12.5 mg (1 pluma)": 10730,
     "Mounjaro 15 mg (1 pluma)": 8608,
+    "Wegovy 0.25 mg (caja mensual)": 3178,
+    "Wegovy 0.5 mg (caja mensual)": 3864,
+    "Wegovy 1 mg (caja mensual)": 5244,
+    "Wegovy 1.7 mg (caja mensual)": 6643,
+    "Wegovy 2.4 mg (caja mensual)": 8164,
     "Rybelsus 3 mg (30 tabletas)": 2153,
     "Rybelsus 7 mg (30 tabletas)": 2808,
     "Rybelsus 14 mg (30 tabletas)": 3148
-  },
-  "Guadalajara": {
-    "Ozempic 1 mg (1 pluma)": 4280
   },
   "Revert": {
     "Wegovy 0.25 mg (caja mensual)": 2299,
