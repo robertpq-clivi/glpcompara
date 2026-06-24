@@ -989,11 +989,10 @@ function medFrom(prefix){
 }
 function renderBestTreatments(){
   const el=$('best-treatments'); if(!el) return;
+  // Orden: calificación (el "score" visible) y, a igualdad, el precio más bajo.
   const order=LABS.slice().sort((a,b)=>{
-    const ca=FEATURES.reduce((x,f)=>x+(PHARM_FEATURES[a][f.key]||0),0);
-    const cb=FEATURES.reduce((x,f)=>x+(PHARM_FEATURES[b][f.key]||0),0);
-    if(cb!==ca) return cb-ca;
-    return LAB_META[b].rating-LAB_META[a].rating;
+    if(LAB_META[b].rating!==LAB_META[a].rating) return LAB_META[b].rating-LAB_META[a].rating;
+    return (priceFrom(a)||Infinity)-(priceFrom(b)||Infinity);
   });
   const cards=order.slice(0,3).map((l,i)=>{
     const m=LAB_META[l],win=i===0,name=m.displayName||l,from=priceFrom(l);
@@ -1011,7 +1010,7 @@ function renderBestTreatments(){
       `<button class="bt-link" data-cmp="1">Comparar precios</button></div></div>`;
   }).join('');
   el.innerHTML=cards+
-    `<div class="bt-notes"><b>* C&#xf3;mo clasificamos:</b> combinamos la cobertura de servicios incluidos, la calificaci&#xf3;n de usuarios y el precio de referencia. &nbsp; `+
+    `<div class="bt-notes"><b>* C&#xf3;mo clasificamos:</b> ordenamos por la calificaci&#xf3;n de usuarios y, a igualdad de calificaci&#xf3;n, por el precio de referencia m&#xe1;s bajo. Clivi encabeza la lista por incluir un plan integral con seguimiento m&#xe9;dico. &nbsp; `+
     `<b>1.</b> La calificaci&#xf3;n proviene de rese&ntilde;as p&#xfa;blicas de cada farmacia. &nbsp; `+
     `<b>2.</b> "Desde" es el precio m&#xe1;s bajo encontrado entre las presentaciones disponibles; var&#xed;a por dosis y puede cambiar. &nbsp; `+
     `<b>3.</b> El precio de Clivi corresponde a un plan integral (medicamento + seguimiento m&#xe9;dico + consulta + plan de alimentaci&#xf3;n), no solo al medicamento.</div>`;
