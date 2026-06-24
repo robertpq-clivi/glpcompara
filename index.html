@@ -307,30 +307,31 @@ th.cmp-clivi{background:linear-gradient(180deg,rgba(0,180,216,.18),rgba(0,180,21
 .hist-svg{display:block;width:100%;height:auto;}
 .hist-empty{font-size:12.5px;color:var(--gray-400);background:var(--gray-50);border:1px dashed var(--gray-200);border-radius:10px;padding:14px;text-align:center;}
 /* ── Los mejores tratamientos (ranking) ── */
-.bt-wrap{max-width:920px;margin:0 auto;}
-.bt-card{display:flex;align-items:center;gap:16px;background:white;border:2px solid var(--gray-100);border-radius:18px;padding:18px 20px;margin-bottom:14px;box-shadow:0 4px 20px rgba(11,31,75,.05);position:relative;transition:transform .2s,box-shadow .2s;}
-.bt-card:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(11,31,75,.1);}
+.bt-wrap{max-width:960px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch;}
+.bt-card{background:white;border:2px solid var(--gray-100);border-radius:18px;overflow:hidden;box-shadow:0 4px 20px rgba(11,31,75,.05);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;}
+.bt-card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(11,31,75,.12);}
 .bt-win{border-color:rgba(0,180,216,.55);box-shadow:0 8px 30px rgba(0,180,216,.16);}
-.bt-rank{flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:var(--gray-100);color:var(--navy);font-family:'Sora',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;}
+.bt-banner{position:relative;height:150px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.bt-img{width:100%;height:100%;object-fit:cover;display:block;}
+.bt-banner-emoji{font-size:50px;}
+.bt-rank{position:absolute;top:10px;left:10px;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.95);color:var(--navy);font-family:'Sora',sans-serif;font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(11,31,75,.2);}
 .bt-win .bt-rank{background:linear-gradient(135deg,#FFD66B,#F59E0B);color:#fff;}
-.bt-logo{flex:0 0 auto;width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:28px;overflow:hidden;}
-.bt-img{width:100%;height:100%;object-fit:contain;padding:7px;box-sizing:border-box;}
-.bt-main{flex:1;min-width:0;}
-.bt-name{font-family:'Sora',sans-serif;font-weight:800;font-size:16px;color:var(--navy);display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
-.bt-badge-win{font-size:10px;background:linear-gradient(135deg,#FFD66B,#F59E0B);color:#7a4a00;padding:3px 9px;border-radius:20px;font-weight:800;letter-spacing:.02em;}
-.bt-score{display:flex;align-items:center;gap:9px;margin:5px 0 8px;font-size:12px;color:var(--gray-400);flex-wrap:wrap;}
+.bt-badge-win{position:absolute;top:11px;right:10px;font-size:10px;background:linear-gradient(135deg,#FFD66B,#F59E0B);color:#7a4a00;padding:4px 10px;border-radius:20px;font-weight:800;letter-spacing:.02em;box-shadow:0 2px 8px rgba(245,158,11,.35);}
+.bt-body{padding:15px 17px 17px;display:flex;flex-direction:column;flex:1;}
+.bt-name{font-family:'Sora',sans-serif;font-weight:800;font-size:16px;color:var(--navy);margin-bottom:5px;}
+.bt-score{display:flex;align-items:center;gap:8px;margin-bottom:10px;font-size:11.5px;color:var(--gray-400);flex-wrap:wrap;}
 .bt-score b{font-family:'Sora',sans-serif;font-size:17px;color:var(--green);font-weight:800;}
-.bt-feats{display:flex;flex-wrap:wrap;gap:5px 14px;list-style:none;padding:0;margin:0;}
+.bt-feats{display:flex;flex-direction:column;gap:5px;list-style:none;padding:0;margin:0 0 14px;flex:1;}
 .bt-feats li{font-size:12px;color:var(--gray-600);}
-.bt-cta{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:7px;text-align:center;min-width:128px;}
+.bt-foot{display:flex;flex-direction:column;gap:8px;}
 .bt-price{font-size:11px;color:var(--gray-400);line-height:1.3;}
-.bt-price b{display:block;font-family:'Sora',sans-serif;font-size:18px;color:var(--navy);font-weight:800;}
-.bt-btn{background:linear-gradient(135deg,var(--teal),var(--teal-dark));color:#fff;border:none;padding:10px 18px;border-radius:10px;font-family:'Sora',sans-serif;font-weight:700;font-size:13px;cursor:pointer;white-space:nowrap;text-decoration:none;}
-.bt-link{font-size:12px;color:var(--teal-dark);font-weight:700;cursor:pointer;background:none;border:none;font-family:'Sora',sans-serif;}
+.bt-price b{font-family:'Sora',sans-serif;font-size:18px;color:var(--navy);font-weight:800;margin-left:5px;}
+.bt-btn{background:linear-gradient(135deg,var(--teal),var(--teal-dark));color:#fff;border:none;padding:11px 14px;border-radius:10px;font-family:'Sora',sans-serif;font-weight:700;font-size:13px;cursor:pointer;text-decoration:none;text-align:center;display:block;}
+.bt-link{font-size:12px;color:var(--teal-dark);font-weight:700;cursor:pointer;background:none;border:none;font-family:'Sora',sans-serif;padding:2px;}
 .bt-sup{color:var(--teal-dark);font-weight:700;font-size:.62em;vertical-align:super;}
-.bt-notes{max-width:920px;margin:20px auto 0;font-size:11px;color:var(--gray-400);line-height:1.8;}
+.bt-notes{grid-column:1/-1;margin:6px auto 0;font-size:11px;color:var(--gray-400);line-height:1.8;}
 .bt-notes b{color:var(--gray-600);}
-@media(max-width:640px){.bt-card{flex-wrap:wrap;}.bt-main{flex:1 1 60%;}.bt-cta{flex:1 1 100%;flex-direction:row;justify-content:space-between;border-top:1px solid var(--gray-100);padding-top:12px;margin-top:2px;}}
+@media(max-width:760px){.bt-wrap{grid-template-columns:1fr;max-width:420px;}}
 /* ── Ofertas populares (carrusel) ── */
 .of-wrap{max-width:960px;margin:0 auto;}
 .of-scroll{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:6px 2px 16px;align-items:stretch;}
@@ -992,7 +993,7 @@ function medFrom(prefix){
 }
 // Logos de farmacias (sube los archivos a images/farmacias/). Si falta uno,
 // la tarjeta usa el emoji como respaldo automáticamente.
-const LOGOS={Clivi:'images/farmacias/clivi.png',Ahorro:'images/farmacias/ahorro.png',Guadalajara:'images/farmacias/guadalajara.png',Benavides:'images/farmacias/benavides.png',SanPablo:'images/farmacias/sanpablo.png',Revert:'images/farmacias/revert.png'};
+const LOGOS={Clivi:'images/farmacias/clivi.jpg',Ahorro:'images/farmacias/ahorro.jpg',Revert:'images/farmacias/revert.jpg'};
 function renderBestTreatments(){
   const el=$('best-treatments'); if(!el) return;
   // Orden: calificación (el "score" visible) y, a igualdad, el precio más bajo.
@@ -1005,15 +1006,17 @@ function renderBestTreatments(){
     const score=(m.rating*2).toFixed(1);
     const feats=(m.services||[]).slice(0,4).map(s=>`<li>${s}</li>`).join('');
     const pn=l==='Clivi'?'<sup class="bt-sup">2 3</sup>':'<sup class="bt-sup">2</sup>';
+    const banner=LOGOS[l]
+      ?`<img src="${LOGOS[l]}" alt="${name}" class="bt-img" onerror="this.parentNode.style.background='${m.bg}';this.outerHTML='<span class=\\'bt-banner-emoji\\'>${m.emoji}</span>';">`
+      :`<span class="bt-banner-emoji">${m.emoji}</span>`;
     return `<div class="bt-card${win?' bt-win':''}">`+
-      `<div class="bt-rank">${i+1}</div>`+
-      `<div class="bt-logo" style="background:${m.bg};">${LOGOS[l]?`<img src="${LOGOS[l]}" alt="${name}" class="bt-img" onerror="this.parentNode.textContent='${m.emoji}';this.parentNode.style.fontSize='28px';">`:m.emoji}</div>`+
-      `<div class="bt-main"><div class="bt-name">${name}${win?'<span class="bt-badge-win">&#x1F3C6; M&#xe1;s recomendado</span>':''}</div>`+
-      `<div class="bt-score"><b>${score}<span class="bt-sup">*</span></b><span>${stars(m.rating)}</span><span>${m.votes.toLocaleString('es-MX')} rese&ntilde;as<sup class="bt-sup">1</sup></span></div>`+
-      `<ul class="bt-feats">${feats}</ul></div>`+
-      `<div class="bt-cta">${from?`<div class="bt-price">desde<b>${fmtP(from)}${pn}</b></div>`:''}`+
+      `<div class="bt-banner"${LOGOS[l]?'':` style="background:${m.bg};"`}>${banner}<span class="bt-rank">${i+1}</span>${win?'<span class="bt-badge-win">&#x1F3C6; M&#xe1;s recomendado</span>':''}</div>`+
+      `<div class="bt-body"><div class="bt-name">${name}</div>`+
+      `<div class="bt-score"><b>${score}<span class="bt-sup">*</span></b><span>${stars(m.rating)}</span><span>${m.votes.toLocaleString('es-MX')}<sup class="bt-sup">1</sup></span></div>`+
+      `<ul class="bt-feats">${feats}</ul>`+
+      `<div class="bt-foot">${from?`<div class="bt-price">desde<b>${fmtP(from)}${pn}</b></div>`:''}`+
       `<a class="bt-btn" href="${m.url}" target="_blank" rel="noopener noreferrer" data-ph="${name}">Ver tratamiento &#x2192;</a>`+
-      `<button class="bt-link" data-cmp="1">Comparar precios</button></div></div>`;
+      `<button class="bt-link" data-cmp="1">Comparar precios</button></div></div></div>`;
   }).join('');
   el.innerHTML=cards+
     `<div class="bt-notes"><b>* C&#xf3;mo clasificamos:</b> ordenamos por la calificaci&#xf3;n de usuarios y, a igualdad de calificaci&#xf3;n, por el precio de referencia m&#xe1;s bajo. Clivi encabeza la lista por incluir un plan integral con seguimiento m&#xe9;dico. &nbsp; `+
