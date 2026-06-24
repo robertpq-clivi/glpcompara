@@ -313,7 +313,8 @@ th.cmp-clivi{background:linear-gradient(180deg,rgba(0,180,216,.18),rgba(0,180,21
 .bt-win{border-color:rgba(0,180,216,.55);box-shadow:0 8px 30px rgba(0,180,216,.16);}
 .bt-rank{flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:var(--gray-100);color:var(--navy);font-family:'Sora',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;}
 .bt-win .bt-rank{background:linear-gradient(135deg,#FFD66B,#F59E0B);color:#fff;}
-.bt-logo{flex:0 0 auto;width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:28px;}
+.bt-logo{flex:0 0 auto;width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:28px;overflow:hidden;}
+.bt-img{width:100%;height:100%;object-fit:contain;padding:7px;box-sizing:border-box;}
 .bt-main{flex:1;min-width:0;}
 .bt-name{font-family:'Sora',sans-serif;font-weight:800;font-size:16px;color:var(--navy);display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
 .bt-badge-win{font-size:10px;background:linear-gradient(135deg,#FFD66B,#F59E0B);color:#7a4a00;padding:3px 9px;border-radius:20px;font-weight:800;letter-spacing:.02em;}
@@ -989,6 +990,9 @@ function medFrom(prefix){
   const vals=RAW_DATA.filter(s=>s.name.startsWith(prefix)).flatMap(s=>LABS.map(l=>s[l])).filter(v=>typeof v==='number'&&v>0);
   return vals.length?Math.min(...vals):null;
 }
+// Logos de farmacias (sube los archivos a images/farmacias/). Si falta uno,
+// la tarjeta usa el emoji como respaldo automáticamente.
+const LOGOS={Clivi:'images/farmacias/clivi.png',Ahorro:'images/farmacias/ahorro.png',Guadalajara:'images/farmacias/guadalajara.png',Benavides:'images/farmacias/benavides.png',SanPablo:'images/farmacias/sanpablo.png',Revert:'images/farmacias/revert.png'};
 function renderBestTreatments(){
   const el=$('best-treatments'); if(!el) return;
   // Orden: calificación (el "score" visible) y, a igualdad, el precio más bajo.
@@ -1003,7 +1007,7 @@ function renderBestTreatments(){
     const pn=l==='Clivi'?'<sup class="bt-sup">2 3</sup>':'<sup class="bt-sup">2</sup>';
     return `<div class="bt-card${win?' bt-win':''}">`+
       `<div class="bt-rank">${i+1}</div>`+
-      `<div class="bt-logo" style="background:${m.bg};">${m.emoji}</div>`+
+      `<div class="bt-logo" style="background:${m.bg};">${LOGOS[l]?`<img src="${LOGOS[l]}" alt="${name}" class="bt-img" onerror="this.parentNode.textContent='${m.emoji}';this.parentNode.style.fontSize='28px';">`:m.emoji}</div>`+
       `<div class="bt-main"><div class="bt-name">${name}${win?'<span class="bt-badge-win">&#x1F3C6; M&#xe1;s recomendado</span>':''}</div>`+
       `<div class="bt-score"><b>${score}<span class="bt-sup">*</span></b><span>${stars(m.rating)}</span><span>${m.votes.toLocaleString('es-MX')} rese&ntilde;as<sup class="bt-sup">1</sup></span></div>`+
       `<ul class="bt-feats">${feats}</ul></div>`+
