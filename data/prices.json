@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-24T18:27:45Z",
+  "generated_at": "2026-06-24T18:32:24Z",
   "currency": "MXN",
   "prices": {
     "Ozempic 0.25/0.5 mg (1 pluma)": {
@@ -14,15 +14,15 @@
           "url": "https://www.fahorro.com/ozempic-0-25mg-0-5-mg-w-nf-6-pz.html",
           "title": "Ozempic 0.25 mg - 0.5 mg/dosis 1 Pluma con 6 Agujas"
         },
-        "Clivi": {
-          "price": 5499,
-          "url": "https://www.clivi.com.mx/",
-          "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
-        },
         "Guadalajara": {
           "price": 3149,
           "url": "https://www.farmaciasguadalajara.com/",
           "title": "Precio verificado manualmente"
+        },
+        "Clivi": {
+          "price": 5499,
+          "url": "https://www.clivi.com.mx/",
+          "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
         },
         "SanPablo": {
           "price": 3096,
@@ -84,11 +84,6 @@
           "url": "https://www.fahorro.com/mounjaro-kwikpen-2-5mg-0-6ml-3-ml.html",
           "title": "Mounjaro Kwikpen 2.5Mg/0.6Ml 3 ml"
         },
-        "Clivi": {
-          "price": 6999,
-          "url": "https://www.clivi.com.mx/",
-          "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
-        },
         "Guadalajara": {
           "price": 3770,
           "url": "https://www.farmaciasguadalajara.com/",
@@ -98,6 +93,11 @@
           "price": 6295,
           "url": "https://www.farmaciasanpablo.com.mx/",
           "title": "Precio verificado manualmente"
+        },
+        "Clivi": {
+          "price": 6999,
+          "url": "https://www.clivi.com.mx/",
+          "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
         }
       },
       "Clivi": 6999,
@@ -119,15 +119,15 @@
           "url": "https://www.fahorro.com/mounjaro-kwikpen-5mg-0-6ml-3-ml.html",
           "title": "Mounjaro Kwikpen 5Mg/0.6Ml 3 ml"
         },
-        "Clivi": {
-          "price": 6999,
-          "url": "https://www.clivi.com.mx/",
-          "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
-        },
         "Guadalajara": {
           "price": 4775,
           "url": "https://www.farmaciasguadalajara.com/",
           "title": "Precio verificado manualmente"
+        },
+        "Clivi": {
+          "price": 6999,
+          "url": "https://www.clivi.com.mx/",
+          "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
         },
         "SanPablo": {
           "price": 5983,
@@ -154,11 +154,6 @@
           "url": "https://www.fahorro.com/mounjaro-kwikpen-7-5mg-0-6ml-3-ml.html",
           "title": "Mounjaro Kwikpen 7.5Mg/0.6Ml 3 ml"
         },
-        "Clivi": {
-          "price": 9999,
-          "url": "https://www.clivi.com.mx/",
-          "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
-        },
         "Guadalajara": {
           "price": 6500,
           "url": "https://www.farmaciasguadalajara.com/",
@@ -168,6 +163,11 @@
           "price": 7880,
           "url": "https://www.farmaciasanpablo.com.mx/",
           "title": "Precio verificado manualmente"
+        },
+        "Clivi": {
+          "price": 9999,
+          "url": "https://www.clivi.com.mx/",
+          "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
         }
       },
       "Clivi": 9999,
@@ -189,11 +189,6 @@
           "url": "https://www.fahorro.com/mounjaro-kwikpen-10mg-0-6ml-3-ml.html",
           "title": "Mounjaro Kwikpen 10Mg/0.6Ml 3 ml"
         },
-        "Clivi": {
-          "price": 9999,
-          "url": "https://www.clivi.com.mx/",
-          "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
-        },
         "Guadalajara": {
           "price": 6255,
           "url": "https://www.farmaciasguadalajara.com/",
@@ -203,6 +198,11 @@
           "price": 7838,
           "url": "https://www.farmaciasanpablo.com.mx/",
           "title": "Precio verificado manualmente"
+        },
+        "Clivi": {
+          "price": 9999,
+          "url": "https://www.clivi.com.mx/",
+          "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
         }
       },
       "Clivi": 9999,
@@ -284,11 +284,6 @@
           "url": "https://www.fahorro.com/wegovy-flextouch-1-5ml-0-25mg-1-pluma.html",
           "title": "WEGOVY FlexTouch 1.5ml (0.25mg) 1 Pluma"
         },
-        "Clivi": {
-          "price": 4299,
-          "url": "https://www.clivi.com.mx/",
-          "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
-        },
         "Guadalajara": {
           "price": 2385,
           "url": "https://www.farmaciasguadalajara.com/",
@@ -298,6 +293,11 @@
           "price": 3178,
           "url": "https://www.farmaciasanpablo.com.mx/",
           "title": "Precio verificado manualmente"
+        },
+        "Clivi": {
+          "price": 4299,
+          "url": "https://www.clivi.com.mx/",
+          "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
         },
         "Revert": {
           "price": 2299,
@@ -324,11 +324,6 @@
           "url": "https://www.fahorro.com/wegovy-flextouch-1-5ml-0-5mg-1-pluma.html",
           "title": "WEGOVY FlexTouch 1.5ml (0.5mg) 1 Pluma"
         },
-        "Clivi": {
-          "price": 4999,
-          "url": "https://www.clivi.com.mx/",
-          "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
-        },
         "Guadalajara": {
           "price": 2900,
           "url": "https://www.farmaciasguadalajara.com/",
@@ -338,6 +333,11 @@
           "price": 3864,
           "url": "https://www.farmaciasanpablo.com.mx/",
           "title": "Precio verificado manualmente"
+        },
+        "Clivi": {
+          "price": 4999,
+          "url": "https://www.clivi.com.mx/",
+          "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
         },
         "Revert": {
           "price": 2899,
@@ -364,11 +364,6 @@
           "url": "https://www.fahorro.com/wegovy-flextouch-3ml-1-0mg-1-pluma.html",
           "title": "WEGOVY FlexTouch 3ml (1.0mg) 1 Pluma"
         },
-        "Clivi": {
-          "price": 5499,
-          "url": "https://www.clivi.com.mx/",
-          "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
-        },
         "Guadalajara": {
           "price": 3940,
           "url": "https://www.farmaciasguadalajara.com/",
@@ -378,6 +373,11 @@
           "price": 5244,
           "url": "https://www.farmaciasanpablo.com.mx/",
           "title": "Precio verificado manualmente"
+        },
+        "Clivi": {
+          "price": 5499,
+          "url": "https://www.clivi.com.mx/",
+          "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
         },
         "Revert": {
           "price": 3899,
@@ -404,11 +404,6 @@
           "url": "https://www.fahorro.com/wegovy-flextouch-3ml-1-7mg-1-pluma.html",
           "title": "WEGOVY FlexTouch 3ml (1.7mg) 1 Pluma"
         },
-        "Clivi": {
-          "price": 6999,
-          "url": "https://www.clivi.com.mx/",
-          "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
-        },
         "Guadalajara": {
           "price": 4650,
           "url": "https://www.farmaciasguadalajara.com/",
@@ -418,6 +413,11 @@
           "price": 6643,
           "url": "https://www.farmaciasanpablo.com.mx/",
           "title": "Precio verificado manualmente"
+        },
+        "Clivi": {
+          "price": 6999,
+          "url": "https://www.clivi.com.mx/",
+          "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
         },
         "Revert": {
           "price": 4599,
@@ -444,11 +444,6 @@
           "url": "https://www.fahorro.com/wegovy-flextouch-3ml-2-4mg-1-pluma.html",
           "title": "WEGOVY FlexTouch 3ml (2.4mg) 1 Pluma"
         },
-        "Clivi": {
-          "price": 6999,
-          "url": "https://www.clivi.com.mx/",
-          "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
-        },
         "Guadalajara": {
           "price": 4900,
           "url": "https://www.farmaciasguadalajara.com/",
@@ -458,6 +453,11 @@
           "price": 8164,
           "url": "https://www.farmaciasanpablo.com.mx/",
           "title": "Precio verificado manualmente"
+        },
+        "Clivi": {
+          "price": 6999,
+          "url": "https://www.clivi.com.mx/",
+          "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
         },
         "Revert": {
           "price": 4899,
@@ -484,15 +484,15 @@
           "url": "https://www.fahorro.com/rybelsus-3-mg-30-tabletas.html",
           "title": "Rybelsus 3 mg 30 tabletas"
         },
-        "Clivi": {
-          "price": 1999,
-          "url": "https://www.clivi.com.mx/",
-          "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
-        },
         "Guadalajara": {
           "price": 2172,
           "url": "https://www.farmaciasguadalajara.com/",
           "title": "Precio verificado manualmente"
+        },
+        "Clivi": {
+          "price": 1999,
+          "url": "https://www.clivi.com.mx/",
+          "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
         },
         "SanPablo": {
           "price": 2153,
@@ -519,15 +519,15 @@
           "url": "https://www.fahorro.com/rybelsus-7-mg-30-tabletas.html",
           "title": "Rybelsus 7 mg 30 tabletas"
         },
-        "Clivi": {
-          "price": 3999,
-          "url": "https://www.clivi.com.mx/",
-          "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
-        },
         "Guadalajara": {
           "price": 2975,
           "url": "https://www.farmaciasguadalajara.com/",
           "title": "Precio verificado manualmente"
+        },
+        "Clivi": {
+          "price": 3999,
+          "url": "https://www.clivi.com.mx/",
+          "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
         },
         "SanPablo": {
           "price": 2808,
@@ -554,15 +554,15 @@
           "url": "https://www.fahorro.com/rybelsus-14-mg-30-tabletas.html",
           "title": "Rybelsus 14 mg 30 Tabs"
         },
-        "Clivi": {
-          "price": 3999,
-          "url": "https://www.clivi.com.mx/",
-          "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
-        },
         "Guadalajara": {
           "price": 3335,
           "url": "https://www.farmaciasguadalajara.com/",
           "title": "Precio verificado manualmente"
+        },
+        "Clivi": {
+          "price": 3999,
+          "url": "https://www.clivi.com.mx/",
+          "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
         },
         "SanPablo": {
           "price": 3148,
