@@ -979,7 +979,8 @@ function historyBlock(studies){
 
 // ── LOS MEJORES TRATAMIENTOS (ranking en la home) ──────────────────────────
 function priceFrom(provider){
-  const vals=RAW_DATA.map(s=>s[provider]).filter(v=>typeof v==='number'&&v>0);
+  // Rybelsus (tableta) no se cuenta en el "desde" de estas secciones.
+  const vals=RAW_DATA.filter(s=>!s.name.startsWith('Rybelsus')).map(s=>s[provider]).filter(v=>typeof v==='number'&&v>0);
   return vals.length?Math.min(...vals):null;
 }
 function medFrom(prefix){
