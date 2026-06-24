@@ -320,11 +320,11 @@ def main():
 
     update_history(prices, now)
 
-# ── Price history (time series of the pharmacy-average price per presentation) ──
-# Appends one point per run/day. Clivi is excluded (it is a bundled plan, not a
-# medicine-only price). Only dates with 3+ verified pharmacy prices are kept so
-# changing coverage never looks like a price swing.
-HIST_PHARM = ["Ahorro", "Guadalajara", "Benavides", "SanPablo", "Revert"]
+# ── Price history (time series of the average price per presentation) ──
+# Appends one point per run/day. Averages all sources with a verified price
+# (Clivi included). Only dates with 3+ verified prices are kept so changing
+# coverage never looks like a price swing.
+HIST_PHARM = ["Clivi", "Ahorro", "Guadalajara", "Benavides", "SanPablo", "Revert"]
 HIST_MIN_N = 3
 
 def update_history(prices, now):
@@ -347,8 +347,8 @@ def update_history(prices, now):
             pts.append(point)
     hist["generated_at"] = now
     hist["currency"] = "MXN"
-    hist["note"] = ("Precio promedio en farmacias por presentación (excluye Clivi, "
-                    "que es un plan integral). Solo fechas con cobertura de 3+ farmacias.")
+    hist["note"] = ("Precio promedio por presentación entre todas las opciones con "
+                    "precio verificado. Solo fechas con cobertura de 3+ opciones.")
     path.write_text(json.dumps(hist, ensure_ascii=False, indent=0), encoding="utf-8")
     print(f"Updated data/price-history.json — {len(series)} products tracked.")
 

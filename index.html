@@ -916,7 +916,7 @@ function historyBlock(studies){
                :`<span class="hist-flat">Sin cambios</span>`;
     return `<div class="hist-card"><div class="hist-top"><div class="hist-h">&#x1F48A; ${s.name}</div><div class="hist-trend">${trend}<span class="hist-range">${fmtHistDate(pts[0].date)} &ndash; ${fmtHistDate(pts[pts.length-1].date)}</span></div></div>${sparkChart(pts)}</div>`;
   }).join('');
-  return `<div class="hist-wrap"><div class="hist-title">&#x1F4C8; Histórico de precios</div><div class="hist-sub">Precio <b>promedio en farmacias</b> de cada presentación a lo largo del tiempo (no incluye el plan integral de Clivi). Se actualiza cada pocos días &mdash; el histórico crece con el tiempo.</div>${blocks}</div>`;
+  return `<div class="hist-wrap"><div class="hist-title">&#x1F4C8; Histórico de precios</div><div class="hist-sub">Precio <b>promedio</b> de cada presentación entre todas las opciones a lo largo del tiempo. Se actualiza cada pocos días &mdash; el histórico crece con el tiempo.</div>${blocks}</div>`;
 }
 
 // ── RESULTS (matriz comparativa por columnas) ──────────────────────────────
