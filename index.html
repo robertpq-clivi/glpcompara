@@ -331,9 +331,9 @@ th.cmp-clivi{background:linear-gradient(180deg,rgba(0,180,216,.18),rgba(0,180,21
 .bt-notes b{color:var(--gray-600);}
 @media(max-width:640px){.bt-card{flex-wrap:wrap;}.bt-main{flex:1 1 60%;}.bt-cta{flex:1 1 100%;flex-direction:row;justify-content:space-between;border-top:1px solid var(--gray-100);padding-top:12px;margin-top:2px;}}
 /* ── Ofertas populares (carrusel) ── */
-.of-wrap{max-width:1040px;margin:0 auto;}
-.of-scroll{display:flex;gap:16px;overflow-x:auto;padding:6px 2px 16px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;}
-.of-card{flex:0 0 270px;scroll-snap-align:start;background:white;border:2px solid var(--gray-100);border-radius:18px;overflow:hidden;box-shadow:0 4px 20px rgba(11,31,75,.06);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;}
+.of-wrap{max-width:960px;margin:0 auto;}
+.of-scroll{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:6px 2px 16px;align-items:stretch;}
+.of-card{background:white;border:2px solid var(--gray-100);border-radius:18px;overflow:hidden;box-shadow:0 4px 20px rgba(11,31,75,.06);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;}
 .of-card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(11,31,75,.12);}
 .of-top{height:118px;display:flex;align-items:center;justify-content:center;font-size:52px;position:relative;}
 .of-tag{position:absolute;top:12px;left:12px;font-size:10px;font-weight:800;padding:4px 10px;border-radius:20px;font-family:'Sora',sans-serif;letter-spacing:.05em;color:#fff;}
@@ -342,7 +342,9 @@ th.cmp-clivi{background:linear-gradient(180deg,rgba(0,180,216,.18),rgba(0,180,21
 .of-desc{font-size:12.5px;color:var(--gray-600);line-height:1.5;margin-bottom:12px;flex:1;}
 .of-price{font-size:11px;color:var(--gray-400);margin-bottom:11px;}
 .of-price b{font-family:'Sora',sans-serif;font-size:17px;color:var(--navy);}
-.of-btn{background:linear-gradient(135deg,var(--teal),var(--teal-dark));color:#fff;border:none;padding:11px 14px;border-radius:10px;font-family:'Sora',sans-serif;font-weight:700;font-size:13px;cursor:pointer;text-align:center;text-decoration:none;display:block;}
+.of-btn{background:linear-gradient(135deg,var(--teal),var(--teal-dark));color:#fff;border:none;padding:11px 14px;border-radius:10px;font-family:'Sora',sans-serif;font-weight:700;font-size:13px;cursor:pointer;text-align:center;text-decoration:none;display:block;width:100%;}
+@media(max-width:760px){.of-scroll{grid-template-columns:1fr 1fr;}}
+@media(max-width:520px){.of-scroll{grid-template-columns:1fr;}}
 </style>
 <script>
   // Staging guard: don't index the temporary github.io URL — canonical is glpcompara.com.mx
@@ -462,7 +464,7 @@ th.cmp-clivi{background:linear-gradient(180deg,rgba(0,180,216,.18),rgba(0,180,21
     <div style="max-width:1040px;margin:0 auto 22px;text-align:center;">
       <div class="sec-eyebrow" style="color:var(--teal-dark);">Destacados</div>
       <h2 class="sec-title" style="color:var(--navy);">Ofertas populares</h2>
-      <p class="sec-sub" style="color:var(--gray-600);">Las b&#xfa;squedas m&#xe1;s populares. Desliza para ver m&#xe1;s &#x2192;</p>
+      <p class="sec-sub" style="color:var(--gray-600);">Las b&#xfa;squedas m&#xe1;s populares en medicamentos GLP-1.</p>
     </div>
     <div id="popular-offers" class="of-wrap"></div>
   </div>
