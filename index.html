@@ -54,11 +54,11 @@ nav.scrolled{background:rgba(11,31,75,.96);backdrop-filter:blur(16px);border-bot
 #hero-canvas{position:absolute;top:0;left:0;width:100%;height:100vh;pointer-events:none;filter:blur(28px);will-change:transform;}
 .hero-overlay{position:absolute;top:0;left:0;width:100%;height:100vh;background:linear-gradient(180deg,rgba(11,31,75,.55) 0%,rgba(11,31,75,.3) 60%,rgba(11,31,75,.75) 100%);pointer-events:none;}
 .hero-content{position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:80px 24px 60px;text-align:left;min-height:100vh;display:flex;flex-direction:column;justify-content:center;}
-.hero-text{max-width:620px;}
+.hero-text{max-width:820px;}
 .badge-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(0,180,216,.15);border:1px solid rgba(0,180,216,.4);border-radius:50px;padding:6px 16px;margin-bottom:24px;}
 .badge-dot{width:8px;height:8px;background:#10B981;border-radius:50%;display:inline-block;}
 .badge-text{color:#90E0EF;font-size:13px;font-family:'Sora',sans-serif;font-weight:600;}
-.hero-h1{color:white;font-size:clamp(26px,4vw,40px);font-weight:800;line-height:1.15;letter-spacing:-.02em;}
+.hero-h1{color:white;font-size:clamp(28px,4.3vw,46px);font-weight:800;line-height:1.15;letter-spacing:-.02em;}
 .hero-h1 span{color:#90E0EF;}
 .hero-sub{color:rgba(255,255,255,.76);font-size:clamp(16px,2.5vw,19px);max-width:560px;margin:18px auto 0;line-height:1.65;}
 .hero-pills{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:10px;margin-top:36px;}
@@ -349,15 +349,15 @@ th.cmp-clivi{background:linear-gradient(180deg,rgba(0,180,216,.18),rgba(0,180,21
 @media(max-width:760px){.of-scroll{grid-template-columns:1fr 1fr;}}
 @media(max-width:520px){.of-scroll{grid-template-columns:1fr;}}
 /* ── Hero: órbita de logos (media circunferencia recortada a la derecha) ── */
-.hero-orbit{position:absolute;top:50vh;right:0;transform:translate(30%,-50%);width:560px;height:560px;z-index:1;pointer-events:none;}
-.orbit-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:3;background:#fff;border-radius:50px;padding:12px 20px;box-shadow:0 12px 38px rgba(0,0,0,.32);font-family:'Sora',sans-serif;font-weight:800;font-size:19px;color:#0B1F4B;white-space:nowrap;line-height:1;}
+.hero-orbit{position:absolute;top:50vh;right:0;transform:translate(30%,-50%);width:700px;height:700px;z-index:1;pointer-events:none;}
+.orbit-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:3;background:#fff;border-radius:50px;padding:15px 24px;box-shadow:0 12px 38px rgba(0,0,0,.32);font-family:'Sora',sans-serif;font-weight:800;font-size:23px;color:#0B1F4B;white-space:nowrap;line-height:1;}
 .orbit-center span{color:#00B4D8;}
 .orbit-ring{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);border:2px dotted rgba(144,224,239,.4);border-radius:50%;}
-.ring1{width:240px;height:240px;animation:orbit-spin 30s linear infinite;}
-.ring2{width:480px;height:480px;animation:orbit-spin 46s linear infinite;}
-.ring3{width:560px;height:560px;animation:orbit-spin 60s linear infinite;border-color:rgba(144,224,239,.2);}
+.ring1{width:300px;height:300px;animation:orbit-spin 30s linear infinite;}
+.ring2{width:600px;height:600px;animation:orbit-spin 46s linear infinite;}
+.ring3{width:700px;height:700px;animation:orbit-spin 60s linear infinite;border-color:rgba(144,224,239,.2);}
 .orbit-item{position:absolute;transform:translate(-50%,-50%);}
-.orbit-badge{width:54px;height:54px;border-radius:50%;background:#fff;border:1px solid rgba(11,31,75,.06);display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 6px 18px rgba(11,31,75,.3);overflow:hidden;}
+.orbit-badge{width:68px;height:68px;border-radius:50%;background:#fff;border:1px solid rgba(11,31,75,.06);display:flex;align-items:center;justify-content:center;font-size:30px;box-shadow:0 6px 18px rgba(11,31,75,.3);overflow:hidden;}
 .orbit-logo{width:78%;height:78%;object-fit:contain;}
 .ring1 .orbit-badge{animation:orbit-spin-rev 30s linear infinite;}
 .ring2 .orbit-badge{animation:orbit-spin-rev 46s linear infinite;}
