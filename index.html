@@ -53,12 +53,12 @@ nav.scrolled{background:rgba(11,31,75,.96);backdrop-filter:blur(16px);border-bot
 #sec-hero{min-height:100vh;background:#0B1F4B;position:relative;overflow:hidden;}
 #hero-canvas{position:absolute;top:0;left:0;width:100%;height:100vh;pointer-events:none;filter:blur(28px);will-change:transform;}
 .hero-overlay{position:absolute;top:0;left:0;width:100%;height:100vh;background:linear-gradient(180deg,rgba(11,31,75,.55) 0%,rgba(11,31,75,.3) 60%,rgba(11,31,75,.75) 100%);pointer-events:none;}
-.hero-content{position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:130px 24px 60px;text-align:left;}
-.hero-text{max-width:560px;}
+.hero-content{position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:80px 24px 60px;text-align:left;min-height:100vh;display:flex;flex-direction:column;justify-content:center;}
+.hero-text{max-width:620px;}
 .badge-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(0,180,216,.15);border:1px solid rgba(0,180,216,.4);border-radius:50px;padding:6px 16px;margin-bottom:24px;}
 .badge-dot{width:8px;height:8px;background:#10B981;border-radius:50%;display:inline-block;}
 .badge-text{color:#90E0EF;font-size:13px;font-family:'Sora',sans-serif;font-weight:600;}
-.hero-h1{color:white;font-size:clamp(30px,5.5vw,56px);font-weight:800;line-height:1.15;letter-spacing:-.02em;}
+.hero-h1{color:white;font-size:clamp(26px,4vw,40px);font-weight:800;line-height:1.15;letter-spacing:-.02em;}
 .hero-h1 span{color:#90E0EF;}
 .hero-sub{color:rgba(255,255,255,.76);font-size:clamp(16px,2.5vw,19px);max-width:560px;margin:18px auto 0;line-height:1.65;}
 .hero-pills{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:10px;margin-top:36px;}
@@ -411,8 +411,7 @@ th.cmp-clivi{background:linear-gradient(180deg,rgba(0,180,216,.18),rgba(0,180,21
 
   <div class="hero-content">
     <div class="hero-text">
-    <div class="badge-pill anim"><span class="badge-dot"></span><span class="badge-text">Compara el precio de las farmacias m&#xe1;s grandes de M&#xe9;xico</span></div>
-    <h1 class="hero-h1 anim" style="animation-delay:.1s">Encuentra tu medicamento GLP-1<br/><span>al mejor precio</span></h1>
+    <h1 class="hero-h1 anim" style="animation-delay:.1s">Encuentra tu medicamento GLP&#8209;1<br/><span>al mejor precio</span></h1>
     <p class="hero-sub anim" style="animation-delay:.2s">GLPcompara es el comparador de precios de medicamentos GLP-1 en M&#xe9;xico: compara el precio de Ozempic, Mounjaro, Wegovy y Rybelsus entre las principales farmacias, elige el que m&#xe1;s te convenga y compra directamente.</p>
     <div style="margin-top:32px;" class="anim" style="animation-delay:.3s">
       <button class="btn-primary" id="hero-cta" style="font-size:17px;padding:16px 34px;">Comparar precios &#x2014; es gratis <span>&#x2192;</span></button>
