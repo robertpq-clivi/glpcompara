@@ -347,6 +347,21 @@ th.cmp-clivi{background:linear-gradient(180deg,rgba(0,180,216,.18),rgba(0,180,21
 .of-btn{background:linear-gradient(135deg,var(--teal),var(--teal-dark));color:#fff;border:none;padding:11px 14px;border-radius:10px;font-family:'Sora',sans-serif;font-weight:700;font-size:13px;cursor:pointer;text-align:center;text-decoration:none;display:block;width:100%;}
 @media(max-width:760px){.of-scroll{grid-template-columns:1fr 1fr;}}
 @media(max-width:520px){.of-scroll{grid-template-columns:1fr;}}
+/* ── Hero: animación de órbita (logo GLPcompara + farmacias orbitando) ── */
+.hero-orbit{position:relative;width:340px;height:340px;margin:46px auto 6px;}
+.orbit-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:3;background:#fff;border-radius:50px;padding:11px 18px;box-shadow:0 10px 34px rgba(0,0,0,.3);font-family:'Sora',sans-serif;font-weight:800;font-size:17px;color:#0B1F4B;white-space:nowrap;line-height:1;}
+.orbit-center span{color:#00B4D8;}
+.orbit-ring{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);border:2px dotted rgba(144,224,239,.45);border-radius:50%;}
+.ring1{width:200px;height:200px;animation:orbit-spin 26s linear infinite;}
+.ring2{width:340px;height:340px;animation:orbit-spin 42s linear infinite;}
+.orbit-item{position:absolute;transform:translate(-50%,-50%);}
+.orbit-badge{width:46px;height:46px;border-radius:50%;background:#fff;border:2px solid #00B4D8;display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 6px 16px rgba(11,31,75,.28);}
+.ring1 .orbit-badge{animation:orbit-spin-rev 26s linear infinite;}
+.ring2 .orbit-badge{animation:orbit-spin-rev 42s linear infinite;}
+@keyframes orbit-spin{from{transform:translate(-50%,-50%) rotate(0)}to{transform:translate(-50%,-50%) rotate(360deg)}}
+@keyframes orbit-spin-rev{from{transform:rotate(0)}to{transform:rotate(-360deg)}}
+@media(max-width:600px){.hero-orbit{width:250px;height:250px;margin:34px auto 2px;}.ring1{width:150px;height:150px;}.ring2{width:250px;height:250px;}.orbit-badge{width:38px;height:38px;font-size:18px;}.orbit-center{font-size:14px;padding:9px 14px;}}
+@media(prefers-reduced-motion:reduce){.ring1,.ring2,.ring1 .orbit-badge,.ring2 .orbit-badge{animation:none;}}
 </style>
 <script>
   // Staging guard: don't index the temporary github.io URL — canonical is glpcompara.com.mx
@@ -381,6 +396,20 @@ th.cmp-clivi{background:linear-gradient(180deg,rgba(0,180,216,.18),rgba(0,180,21
     <p class="hero-sub anim" style="animation-delay:.2s">GLPcompara es el comparador de precios de medicamentos GLP-1 en M&#xe9;xico: compara el precio de Ozempic, Mounjaro, Wegovy y Rybelsus entre las principales farmacias, elige el que m&#xe1;s te convenga y compra directamente.</p>
     <div style="margin-top:32px;" class="anim" style="animation-delay:.3s">
       <button class="btn-primary" id="hero-cta" style="font-size:17px;padding:16px 34px;">Comparar precios &#x2014; es gratis <span>&#x2192;</span></button>
+    </div>
+
+    <div class="hero-orbit anim" style="animation-delay:.35s" aria-hidden="true">
+      <div class="orbit-center">GLP<span>compara</span></div>
+      <div class="orbit-ring ring1">
+        <div class="orbit-item" style="left:100%;top:50%;"><div class="orbit-badge" style="border-color:#00B4D8;">&#x1FA7A;</div></div>
+        <div class="orbit-item" style="left:25%;top:93.3%;"><div class="orbit-badge" style="border-color:#E11D48;">&#x1F48A;</div></div>
+        <div class="orbit-item" style="left:25%;top:6.7%;"><div class="orbit-badge" style="border-color:#F59E0B;">&#x1F3EA;</div></div>
+      </div>
+      <div class="orbit-ring ring2">
+        <div class="orbit-item" style="left:75%;top:93.3%;"><div class="orbit-badge" style="border-color:#2563EB;">&#x1F3EC;</div></div>
+        <div class="orbit-item" style="left:0%;top:50%;"><div class="orbit-badge" style="border-color:#8B5CF6;">&#x1F9EC;</div></div>
+        <div class="orbit-item" style="left:75%;top:6.7%;"><div class="orbit-badge" style="border-color:#0EA5A0;">&#x2695;&#xFE0F;</div></div>
+      </div>
     </div>
     <div class="hero-pills anim" style="animation-delay:.4s">
       <div class="pill">&#x1F4B0; Descubre el m&#xe1;s barato</div>
