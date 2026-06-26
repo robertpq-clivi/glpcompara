@@ -53,16 +53,17 @@ nav.scrolled{background:rgba(11,31,75,.96);backdrop-filter:blur(16px);border-bot
 #sec-hero{min-height:100vh;background:#0B1F4B;position:relative;overflow:hidden;}
 #hero-canvas{position:absolute;top:0;left:0;width:100%;height:100vh;pointer-events:none;filter:blur(28px);will-change:transform;}
 .hero-overlay{position:absolute;top:0;left:0;width:100%;height:100vh;background:linear-gradient(180deg,rgba(11,31,75,.55) 0%,rgba(11,31,75,.3) 60%,rgba(11,31,75,.75) 100%);pointer-events:none;}
-.hero-content{position:relative;z-index:2;max-width:900px;margin:0 auto;padding:130px 24px 60px;text-align:center;}
+.hero-content{position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:130px 24px 60px;text-align:left;}
+.hero-text{max-width:560px;}
 .badge-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(0,180,216,.15);border:1px solid rgba(0,180,216,.4);border-radius:50px;padding:6px 16px;margin-bottom:24px;}
 .badge-dot{width:8px;height:8px;background:#10B981;border-radius:50%;display:inline-block;}
 .badge-text{color:#90E0EF;font-size:13px;font-family:'Sora',sans-serif;font-weight:600;}
 .hero-h1{color:white;font-size:clamp(30px,5.5vw,56px);font-weight:800;line-height:1.15;letter-spacing:-.02em;}
 .hero-h1 span{color:#90E0EF;}
 .hero-sub{color:rgba(255,255,255,.76);font-size:clamp(16px,2.5vw,19px);max-width:560px;margin:18px auto 0;line-height:1.65;}
-.hero-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:36px;}
+.hero-pills{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:10px;margin-top:36px;}
 .pill{display:flex;align-items:center;gap:7px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:50px;padding:8px 16px;color:rgba(255,255,255,.85);font-size:13px;}
-.hero-stats{display:flex;justify-content:center;gap:44px;flex-wrap:wrap;margin-top:44px;padding-top:28px;border-top:1px solid rgba(255,255,255,.1);}
+.hero-stats{display:flex;justify-content:flex-start;gap:44px;flex-wrap:wrap;margin-top:44px;padding-top:28px;border-top:1px solid rgba(255,255,255,.1);}
 .stat-n{font-family:'Sora',sans-serif;font-size:28px;font-weight:800;color:#90E0EF;}
 .stat-l{font-size:13px;color:rgba(255,255,255,.6);margin-top:3px;}
 /* BUTTONS */
@@ -347,21 +348,23 @@ th.cmp-clivi{background:linear-gradient(180deg,rgba(0,180,216,.18),rgba(0,180,21
 .of-btn{background:linear-gradient(135deg,var(--teal),var(--teal-dark));color:#fff;border:none;padding:11px 14px;border-radius:10px;font-family:'Sora',sans-serif;font-weight:700;font-size:13px;cursor:pointer;text-align:center;text-decoration:none;display:block;width:100%;}
 @media(max-width:760px){.of-scroll{grid-template-columns:1fr 1fr;}}
 @media(max-width:520px){.of-scroll{grid-template-columns:1fr;}}
-/* ── Hero: animación de órbita (logo GLPcompara + farmacias orbitando) ── */
-.hero-orbit{position:relative;width:340px;height:340px;margin:46px auto 6px;}
-.orbit-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:3;background:#fff;border-radius:50px;padding:11px 18px;box-shadow:0 10px 34px rgba(0,0,0,.3);font-family:'Sora',sans-serif;font-weight:800;font-size:17px;color:#0B1F4B;white-space:nowrap;line-height:1;}
+/* ── Hero: órbita de logos (media circunferencia recortada a la derecha) ── */
+.hero-orbit{position:absolute;top:50%;right:0;transform:translate(30%,-50%);width:560px;height:560px;z-index:1;pointer-events:none;}
+.orbit-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:3;background:#fff;border-radius:50px;padding:12px 20px;box-shadow:0 12px 38px rgba(0,0,0,.32);font-family:'Sora',sans-serif;font-weight:800;font-size:19px;color:#0B1F4B;white-space:nowrap;line-height:1;}
 .orbit-center span{color:#00B4D8;}
-.orbit-ring{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);border:2px dotted rgba(144,224,239,.45);border-radius:50%;}
-.ring1{width:200px;height:200px;animation:orbit-spin 26s linear infinite;}
-.ring2{width:340px;height:340px;animation:orbit-spin 42s linear infinite;}
+.orbit-ring{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);border:2px dotted rgba(144,224,239,.4);border-radius:50%;}
+.ring1{width:240px;height:240px;animation:orbit-spin 30s linear infinite;}
+.ring2{width:480px;height:480px;animation:orbit-spin 46s linear infinite;}
+.ring3{width:560px;height:560px;animation:orbit-spin 60s linear infinite;border-color:rgba(144,224,239,.2);}
 .orbit-item{position:absolute;transform:translate(-50%,-50%);}
-.orbit-badge{width:46px;height:46px;border-radius:50%;background:#fff;border:2px solid #00B4D8;display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 6px 16px rgba(11,31,75,.28);}
-.ring1 .orbit-badge{animation:orbit-spin-rev 26s linear infinite;}
-.ring2 .orbit-badge{animation:orbit-spin-rev 42s linear infinite;}
+.orbit-badge{width:54px;height:54px;border-radius:50%;background:#fff;border:1px solid rgba(11,31,75,.06);display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 6px 18px rgba(11,31,75,.3);overflow:hidden;}
+.orbit-logo{width:78%;height:78%;object-fit:contain;}
+.ring1 .orbit-badge{animation:orbit-spin-rev 30s linear infinite;}
+.ring2 .orbit-badge{animation:orbit-spin-rev 46s linear infinite;}
 @keyframes orbit-spin{from{transform:translate(-50%,-50%) rotate(0)}to{transform:translate(-50%,-50%) rotate(360deg)}}
 @keyframes orbit-spin-rev{from{transform:rotate(0)}to{transform:rotate(-360deg)}}
-@media(max-width:600px){.hero-orbit{width:250px;height:250px;margin:34px auto 2px;}.ring1{width:150px;height:150px;}.ring2{width:250px;height:250px;}.orbit-badge{width:38px;height:38px;font-size:18px;}.orbit-center{font-size:14px;padding:9px 14px;}}
-@media(prefers-reduced-motion:reduce){.ring1,.ring2,.ring1 .orbit-badge,.ring2 .orbit-badge{animation:none;}}
+@media(max-width:900px){.hero-orbit{display:none;}}
+@media(prefers-reduced-motion:reduce){.ring1,.ring2,.ring3,.ring1 .orbit-badge,.ring2 .orbit-badge{animation:none;}}
 </style>
 <script>
   // Staging guard: don't index the temporary github.io URL — canonical is glpcompara.com.mx
@@ -390,26 +393,29 @@ th.cmp-clivi{background:linear-gradient(180deg,rgba(0,180,216,.18),rgba(0,180,21
 <section id="sec-hero" class="section active">
   <canvas id="hero-canvas" aria-hidden="true"></canvas>
   <div class="hero-overlay" aria-hidden="true"></div>
+
+  <div class="hero-orbit" aria-hidden="true">
+    <div class="orbit-center">GLP<span>compara</span></div>
+    <div class="orbit-ring ring3"></div>
+    <div class="orbit-ring ring1">
+      <div class="orbit-item" style="left:100%;top:50%;"><div class="orbit-badge"><img class="orbit-logo" src="images/farmacias/clivi-logo.png" alt="Clivi" onerror="this.parentNode.textContent='&#x1FA7A;'"></div></div>
+      <div class="orbit-item" style="left:25%;top:93.3%;"><div class="orbit-badge"><img class="orbit-logo" src="images/farmacias/ahorro-logo.png" alt="Farmacias del Ahorro" onerror="this.parentNode.textContent='&#x1F48A;'"></div></div>
+      <div class="orbit-item" style="left:25%;top:6.7%;"><div class="orbit-badge"><img class="orbit-logo" src="images/farmacias/guadalajara-logo.png" alt="Farmacias Guadalajara" onerror="this.parentNode.textContent='&#x1F3EA;'"></div></div>
+    </div>
+    <div class="orbit-ring ring2">
+      <div class="orbit-item" style="left:75%;top:93.3%;"><div class="orbit-badge"><img class="orbit-logo" src="images/farmacias/benavides-logo.png" alt="Benavides" onerror="this.parentNode.textContent='&#x1F3EC;'"></div></div>
+      <div class="orbit-item" style="left:0%;top:50%;"><div class="orbit-badge"><img class="orbit-logo" src="images/farmacias/sanpablo-logo.png" alt="San Pablo" onerror="this.parentNode.textContent='&#x1F9EC;'"></div></div>
+      <div class="orbit-item" style="left:75%;top:6.7%;"><div class="orbit-badge"><img class="orbit-logo" src="images/farmacias/revert-logo.png" alt="Revert" onerror="this.parentNode.textContent='&#x2695;&#xFE0F;'"></div></div>
+    </div>
+  </div>
+
   <div class="hero-content">
+    <div class="hero-text">
     <div class="badge-pill anim"><span class="badge-dot"></span><span class="badge-text">Compara el precio de las farmacias m&#xe1;s grandes de M&#xe9;xico</span></div>
     <h1 class="hero-h1 anim" style="animation-delay:.1s">Encuentra tu medicamento GLP-1<br/><span>al mejor precio</span></h1>
     <p class="hero-sub anim" style="animation-delay:.2s">GLPcompara es el comparador de precios de medicamentos GLP-1 en M&#xe9;xico: compara el precio de Ozempic, Mounjaro, Wegovy y Rybelsus entre las principales farmacias, elige el que m&#xe1;s te convenga y compra directamente.</p>
     <div style="margin-top:32px;" class="anim" style="animation-delay:.3s">
       <button class="btn-primary" id="hero-cta" style="font-size:17px;padding:16px 34px;">Comparar precios &#x2014; es gratis <span>&#x2192;</span></button>
-    </div>
-
-    <div class="hero-orbit anim" style="animation-delay:.35s" aria-hidden="true">
-      <div class="orbit-center">GLP<span>compara</span></div>
-      <div class="orbit-ring ring1">
-        <div class="orbit-item" style="left:100%;top:50%;"><div class="orbit-badge" style="border-color:#00B4D8;">&#x1FA7A;</div></div>
-        <div class="orbit-item" style="left:25%;top:93.3%;"><div class="orbit-badge" style="border-color:#E11D48;">&#x1F48A;</div></div>
-        <div class="orbit-item" style="left:25%;top:6.7%;"><div class="orbit-badge" style="border-color:#F59E0B;">&#x1F3EA;</div></div>
-      </div>
-      <div class="orbit-ring ring2">
-        <div class="orbit-item" style="left:75%;top:93.3%;"><div class="orbit-badge" style="border-color:#2563EB;">&#x1F3EC;</div></div>
-        <div class="orbit-item" style="left:0%;top:50%;"><div class="orbit-badge" style="border-color:#8B5CF6;">&#x1F9EC;</div></div>
-        <div class="orbit-item" style="left:75%;top:6.7%;"><div class="orbit-badge" style="border-color:#0EA5A0;">&#x2695;&#xFE0F;</div></div>
-      </div>
     </div>
     <div class="hero-pills anim" style="animation-delay:.4s">
       <div class="pill">&#x1F4B0; Descubre el m&#xe1;s barato</div>
@@ -422,6 +428,7 @@ th.cmp-clivi{background:linear-gradient(180deg,rgba(0,180,216,.18),rgba(0,180,21
       <div><div class="stat-n">6</div><div class="stat-l">Farmacias comparadas</div></div>
       <div><div class="stat-n">Hasta 25%</div><div class="stat-l">De ahorro</div></div>
       <div><div class="stat-n">Gratis</div><div class="stat-l">Sin costo de comparaci&#xf3;n</div></div>
+    </div>
     </div>
   </div>
   <div class="wave"><svg viewBox="0 0 1440 50" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="50"><path d="M0,50 C360,0 1080,0 1440,50 L1440,50 L0,50 Z" fill="white"/></svg></div>
