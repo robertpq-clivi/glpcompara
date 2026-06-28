@@ -1,7 +1,8 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "rewrites": [
-    { "source": "/farmacias", "destination": "/pages/farmacias.html" }
+    { "source": "/farmacias", "destination": "/pages/farmacias.html" },
+    { "source": "/aviso-de-privacidad", "destination": "/pages/aviso-de-privacidad.html" }
   ],
   "redirects": [
     { "source": "/pages/laboratorio-cerca-de-mi.html", "destination": "/farmacias", "permanent": true }
