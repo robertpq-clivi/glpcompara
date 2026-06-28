@@ -27,7 +27,6 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" media="print" onload="this.media='all'"/>
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap"/></noscript>
 <!-- Supabase async - not render-blocking -->
-<script async src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" onload="initSupabase()"></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"GLPcompara","url":"https://glpcompara.com.mx/","description":"Comparador de precios de medicamentos GLP-1 en M&#xe9;xico"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"GLPcompara","url":"https://glpcompara.com.mx/","areaServed":"M&#xe9;xico"}</script>
 <style>
@@ -720,7 +719,6 @@ let lead = null;
 let selected = [];
 let selectedDrug = null;
 let sortBy = 'price';
-let supaClient = null;
 let PRICE_META = null;          // { generated_at } de data/prices.json
 let PRICE_HISTORY = null;       // { series: { <presentación>: [{date,avg,n}] } }
 const LIVE = {};                // LIVE[name] = Set de fuentes con precio real verificado
@@ -905,14 +903,18 @@ $('hero-cta').onclick=goForm;
 $('how-cta').onclick=goForm;
 $('promo-cta').onclick=goForm;
 
-// ── SUPABASE ──────────────────────────────────────────────────────────────
-function initSupabase(){
-  if(window.supabase) supaClient=window.supabase.createClient('https://tgpoilgjqudfjlzfxbwp.supabase.co','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRncG9pbGdqcXVkZmpsemZ4YndwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM4MDAzNjcsImV4cCI6MjA4OTM3NjM2N30.TBt-DxunQCYysUBg5JORju7T_J0HW9Fd1qPYCKlm4yQ');
-}
+// ── GUARDAR LEADS (Google Sheets vía Apps Script) ──────────────────────────
+// Pega aquí la URL del Web App de Apps Script (Implementar → Aplicación web).
+const SHEET_WEBHOOK = '';
 async function saveLead(l){
-  if(!supaClient)return;
-  try{await supaClient.rpc('insert_lead',{p_nombre:l.nombre,p_correo:l.correo,p_sexo:'',p_edad:null,p_codigo_postal:l.cp});}
-  catch(e){console.warn('Lead:',e.message);}
+  if(!SHEET_WEBHOOK) return;
+  try{
+    await fetch(SHEET_WEBHOOK, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' }, // text/plain evita el preflight CORS
+      body: JSON.stringify({ nombre: l.nombre, correo: l.correo, cp: l.cp, origen: 'glpcompara.com.mx' })
+    });
+  }catch(e){ console.warn('Lead:', e.message); }
 }
 
 // ── FORM ──────────────────────────────────────────────────────────────────
