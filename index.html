@@ -940,7 +940,7 @@ async function saveLead(l){
 // Click "Ir a la farmacia": GA4 + hoja (pestaña Clicks).
 function trackPharmaClick(p){
   if(typeof gtag!=='undefined') gtag('event','click_ir_a_la_farmacia', p);
-  sheetLog('click', { farmacia: p.pharmacy_name||'', medicamento: p.med_name||'', precio: p.price_mxn||'' });
+  sheetLog('click', { farmacia: p.pharmacy_name||'', medicamento: p.medicamento||'', precio: p.price_mxn||'' });
 }
 // Ver comparativa: GA4 + hoja (pestaña Comparaciones).
 function trackCompare(medicamento, dosis){
@@ -1231,7 +1231,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
 document.getElementById('m-go').addEventListener('click', function() {
   var params = {
     pharmacy_name: this.dataset.pharmacyName || '',
-    med_name:      this.dataset.medName      || '',
+    medicamento:   this.dataset.medName      || '',
     price_mxn:     Number(this.dataset.price) || 0,
     destination:   this.href,
   };
