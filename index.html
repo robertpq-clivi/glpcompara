@@ -827,6 +827,11 @@ async function goResults(){
   }
   try{ await livePromise; }catch(e){}
   renderResults();
+  // Registrar qué está comparando el usuario.
+  if(selectedDrug && selected.length){
+    const dosis = selected.map(n=>n.slice(selectedDrug.length).trim()||n).join(', ');
+    trackCompare(selectedDrug, dosis);
+  }
 }
 
 // ── BEAMS CANVAS ──────────────────────────────────────────────────────────
@@ -905,15 +910,29 @@ $('promo-cta').onclick=goForm;
 // ── GUARDAR LEADS (Google Sheets vía Apps Script) ──────────────────────────
 // Pega aquí la URL del Web App de Apps Script (Implementar → Aplicación web).
 const SHEET_WEBHOOK = 'https://script.google.com/macros/s/AKfycbxKB4HJnpIxH2e-CLvr74ZsC1YSDon_It_khHS70Ha_P2QqSvo7Ul3Fj9S19MRsxstn/exec';
-async function saveLead(l){
+// Envía un registro a la hoja (enruta por "tipo": lead | comparacion | click).
+function sheetLog(tipo, data){
   if(!SHEET_WEBHOOK) return;
   try{
-    await fetch(SHEET_WEBHOOK, {
+    fetch(SHEET_WEBHOOK, {
       method: 'POST',
       headers: { 'Content-Type': 'text/plain;charset=utf-8' }, // text/plain evita el preflight CORS
-      body: JSON.stringify({ nombre: l.nombre, correo: l.correo, cp: l.cp, origen: 'glpcompara.com.mx' })
+      body: JSON.stringify(Object.assign({ tipo: tipo, origen: 'glpcompara.com.mx' }, data))
     });
-  }catch(e){ console.warn('Lead:', e.message); }
+  }catch(e){ console.warn('sheetLog:', e.message); }
+}
+async function saveLead(l){
+  sheetLog('lead', { nombre: l.nombre, correo: l.correo, cp: l.cp });
+}
+// Click "Ir a la farmacia": GA4 + hoja (pestaña Clicks).
+function trackPharmaClick(p){
+  if(typeof gtag!=='undefined') gtag('event','click_ir_a_la_farmacia', p);
+  sheetLog('click', { farmacia: p.pharmacy_name||'', medicamento: p.med_name||'', precio: p.price_mxn||'' });
+}
+// Ver comparativa: GA4 + hoja (pestaña Comparaciones).
+function trackCompare(medicamento, dosis){
+  if(typeof gtag!=='undefined') gtag('event','ver_comparativa', { medicamento: medicamento, dosis: dosis });
+  sheetLog('comparacion', { medicamento: medicamento, dosis: dosis });
 }
 
 // ── FORM ──────────────────────────────────────────────────────────────────
@@ -1062,7 +1081,7 @@ function renderBestTreatments(){
     `<b>1.</b> La calificaci&#xf3;n proviene de rese&ntilde;as p&#xfa;blicas de cada farmacia. &nbsp; `+
     `<b>2.</b> "Desde" es el precio m&#xe1;s bajo encontrado entre las presentaciones disponibles; var&#xed;a por dosis y puede cambiar. &nbsp; `+
     `<b>3.</b> El precio de Clivi corresponde a un plan integral (medicamento + seguimiento m&#xe9;dico + consulta + plan de alimentaci&#xf3;n), no solo al medicamento.</div>`;
-  el.querySelectorAll('.bt-btn').forEach(a=>a.addEventListener('click',function(){if(typeof gtag!=='undefined')gtag('event','click_ir_a_la_farmacia',{pharmacy_name:this.dataset.ph||'',destination:this.href});}));
+  el.querySelectorAll('.bt-btn').forEach(a=>a.addEventListener('click',function(){trackPharmaClick({pharmacy_name:this.dataset.ph||'',destination:this.href});}));
   el.querySelectorAll('[data-cmp]').forEach(b=>b.onclick=goForm);
 }
 
@@ -1082,7 +1101,7 @@ function renderPopularOffers(){
       `<div class="of-body"><div class="of-title">${o.title}</div><div class="of-desc">${o.desc}</div>`+
       `${o.price?`<div class="of-price">desde <b>${fmtP(o.price)}</b></div>`:''}${cta}</div></div>`;
   }).join('')+`</div>`;
-  el.querySelectorAll('.of-btn[data-ph]').forEach(a=>a.addEventListener('click',function(){if(typeof gtag!=='undefined')gtag('event','click_ir_a_la_farmacia',{pharmacy_name:this.dataset.ph||'',destination:this.href});}));
+  el.querySelectorAll('.of-btn[data-ph]').forEach(a=>a.addEventListener('click',function(){trackPharmaClick({pharmacy_name:this.dataset.ph||'',destination:this.href});}));
   el.querySelectorAll('[data-cmp]').forEach(b=>b.onclick=goForm);
 }
 
@@ -1156,7 +1175,7 @@ function renderResults(){
   });
   // GA en los botones "Ir" de la tabla
   $('results-container').querySelectorAll('.cmp-go').forEach(a=>{
-    a.addEventListener('click',function(){ if(typeof gtag!=='undefined') gtag('event','click_ir_a_la_farmacia',{pharmacy_name:this.dataset.ph||'',destination:this.href}); });
+    a.addEventListener('click',function(){ trackPharmaClick({pharmacy_name:this.dataset.ph||'',destination:this.href}); });
   });
 }
 $('results-back').onclick=()=>{
@@ -1203,10 +1222,7 @@ document.getElementById('m-go').addEventListener('click', function() {
     price_mxn:     Number(this.dataset.price) || 0,
     destination:   this.href,
   };
-  console.log('[GLPcompara GA4]', 'click_ir_a_la_farmacia', params);
-  if (typeof gtag !== 'undefined') {
-    gtag('event', 'click_ir_a_la_farmacia', params);
-  }
+  trackPharmaClick(params);
 });
 </script>
 </main>
