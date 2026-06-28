@@ -313,6 +313,13 @@ th.cmp-clivi{background:linear-gradient(180deg,rgba(0,180,216,.18),rgba(0,180,21
 .hist-flat{color:var(--gray-400);}
 .hist-svg{display:block;width:100%;height:auto;}
 .hist-empty{font-size:12.5px;color:var(--gray-400);background:var(--gray-50);border:1px dashed var(--gray-200);border-radius:10px;padding:14px;text-align:center;}
+.hist-toggle{display:inline-flex;border:1.5px solid var(--gray-200);border-radius:10px;overflow:hidden;margin:2px 0 18px;}
+.hist-toggle button{background:#fff;border:none;padding:8px 18px;font-family:'Sora',sans-serif;font-weight:700;font-size:12.5px;color:var(--gray-600);cursor:pointer;transition:background .15s,color .15s;}
+.hist-toggle button+button{border-left:1.5px solid var(--gray-200);}
+.hist-toggle button.on{background:var(--teal);color:#fff;}
+.hist-legend{display:flex;flex-wrap:wrap;gap:7px 14px;margin-top:10px;padding-left:4px;}
+.hist-leg{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;color:var(--gray-600);font-family:'Sora',sans-serif;font-weight:600;}
+.hist-leg i{width:13px;height:3px;border-radius:2px;display:inline-block;flex-shrink:0;}
 /* ── Los mejores tratamientos (ranking) ── */
 .bt-wrap{max-width:960px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch;}
 .bt-card{background:white;border:2px solid var(--gray-100);border-radius:18px;overflow:hidden;box-shadow:0 4px 20px rgba(11,31,75,.05);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;}
@@ -732,7 +739,8 @@ let selected = [];
 let selectedDrug = null;
 let sortBy = 'price';
 let PRICE_META = null;          // { generated_at } de data/prices.json
-let PRICE_HISTORY = null;       // { series: { <presentación>: [{date,avg,n}] } }
+let PRICE_HISTORY = null;       // { series: { <presentación>: [{date,avg,n,prices:{}}] } }
+let histMode = 'avg';           // 'avg' = promedio | 'pharm' = por farmacia
 const LIVE = {};                // LIVE[name] = Set de fuentes con precio real verificado
 
 // Carga precios reales (data/prices.json) y los fusiona en RAW_DATA.
@@ -1037,19 +1045,58 @@ function sparkChart(pts){
     `<defs><linearGradient id="histfill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#00B4D8" stop-opacity="0.18"/><stop offset="1" stop-color="#00B4D8" stop-opacity="0"/></linearGradient></defs>`+
     grid+`<path d="${area}" fill="url(#histfill)"/><path d="${line}" fill="none" stroke="#00B4D8" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>`+dots+lastVal+xlab+`</svg>`;
 }
+// Gráfica con una línea por farmacia (modo "Por farmacia").
+function multiChart(pts){
+  const PH=(PRICE_HISTORY&&PRICE_HISTORY.pharmacies)||['Clivi','Ahorro','Guadalajara','Benavides','SanPablo','Revert'];
+  const active=PH.filter(p=>pts.some(pt=>pt.prices&&typeof pt.prices[p]==='number'));
+  const W=620,H=250,L=56,R=16,T=14,B=34,pw=W-L-R,ph=H-T-B,n=pts.length;
+  const all=[]; pts.forEach(pt=>active.forEach(p=>{const v=pt.prices&&pt.prices[p];if(typeof v==='number')all.push(v);}));
+  if(!all.length) return sparkChart(pts);
+  let mn=Math.min(...all),mx=Math.max(...all); if(mn===mx){mn*=0.95;mx*=1.05;} const pad=(mx-mn)*0.12;mn-=pad;mx+=pad;
+  const X=i=>n===1?L+pw/2:L+pw*i/(n-1);
+  const Y=v=>T+ph*(1-(v-mn)/(mx-mn));
+  const grid=[mx,(mn+mx)/2,mn].map(v=>`<line x1="${L}" y1="${Y(v).toFixed(1)}" x2="${W-R}" y2="${Y(v).toFixed(1)}" stroke="#F1F5F9" stroke-width="1"/><text x="${L-9}" y="${(Y(v)+4).toFixed(1)}" text-anchor="end" font-size="11" fill="#94A3B8" font-family="Sora,sans-serif">${fmtP(Math.round(v))}</text>`).join('');
+  const lines=active.map(p=>{
+    const col=(LAB_META[p]&&LAB_META[p].color)||'#888';let seg='',prev=false;
+    pts.forEach((pt,i)=>{const v=pt.prices&&pt.prices[p];if(typeof v==='number'){seg+=(prev?'L':'M')+X(i).toFixed(1)+' '+Y(v).toFixed(1)+' ';prev=true;}else prev=false;});
+    return `<path d="${seg.trim()}" fill="none" stroke="${col}" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" opacity="0.9"/>`;
+  }).join('');
+  const showEvery=n<=6?1:Math.ceil(n/6);
+  const xlab=pts.map((pt,i)=>{if(i%showEvery!==0&&i!==n-1)return '';const a=i===0?'start':i===n-1?'end':'middle';return `<text x="${X(i).toFixed(1)}" y="${H-12}" text-anchor="${a}" font-size="10.5" fill="#94A3B8" font-family="Sora,sans-serif">${fmtHistDate(pt.date)}</text>`;}).join('');
+  const svg=`<svg class="hist-svg" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Histórico de precios por farmacia">${grid}${lines}${xlab}</svg>`;
+  const legend=`<div class="hist-legend">`+active.map(p=>`<span class="hist-leg"><i style="background:${(LAB_META[p]&&LAB_META[p].color)||'#888'}"></i>${SHORT[p]||p}</span>`).join('')+`</div>`;
+  return svg+legend;
+}
 function historyBlock(studies){
   if(!PRICE_HISTORY||!PRICE_HISTORY.series)return '';
+  const toggle=`<div class="hist-toggle"><button data-histmode="avg" class="${histMode==='avg'?'on':''}">Promedio</button><button data-histmode="pharm" class="${histMode==='pharm'?'on':''}">Por farmacia</button></div>`;
+  const sub=histMode==='avg'
+    ?'Precio <b>promedio</b> de cada presentación entre todas las opciones a lo largo del tiempo.'
+    :'Precio <b>por farmacia</b> de cada presentación a lo largo del tiempo: cada línea es una farmacia.';
   const blocks=studies.map(s=>{
     const pts=PRICE_HISTORY.series[s.name]||[];
     if(pts.length<2)
       return `<div class="hist-card"><div class="hist-h">&#x1F48A; ${s.name}</div><div class="hist-empty" style="margin-top:10px;">Estamos construyendo el histórico de esta presentación. Vuelve pronto para ver la tendencia.</div></div>`;
-    const first=pts[0].avg,last=pts[pts.length-1].avg,diff=last-first,pct=first?Math.round(diff/first*100):0;
-    const trend=diff>0?`<span class="hist-up">&#x25B2; ${fmtP(Math.abs(diff))} (+${pct}%)</span>`
-               :diff<0?`<span class="hist-down">&#x25BC; ${fmtP(Math.abs(diff))} (${pct}%)</span>`
-               :`<span class="hist-flat">Sin cambios</span>`;
-    return `<div class="hist-card"><div class="hist-top"><div class="hist-h">&#x1F48A; ${s.name}</div><div class="hist-trend">${trend}<span class="hist-range">${fmtHistDate(pts[0].date)} &ndash; ${fmtHistDate(pts[pts.length-1].date)}</span></div></div>${sparkChart(pts)}</div>`;
+    const rango=`<span class="hist-range">${fmtHistDate(pts[0].date)} &ndash; ${fmtHistDate(pts[pts.length-1].date)}</span>`;
+    let head, chart;
+    if(histMode==='pharm'){ head=rango; chart=multiChart(pts); }
+    else{
+      const first=pts[0].avg,last=pts[pts.length-1].avg,diff=last-first,pct=first?Math.round(diff/first*100):0;
+      const trend=diff>0?`<span class="hist-up">&#x25B2; ${fmtP(Math.abs(diff))} (+${pct}%)</span>`
+                 :diff<0?`<span class="hist-down">&#x25BC; ${fmtP(Math.abs(diff))} (${pct}%)</span>`
+                 :`<span class="hist-flat">Sin cambios</span>`;
+      head=`<div class="hist-trend">${trend}${rango}</div>`; chart=sparkChart(pts);
+    }
+    return `<div class="hist-card"><div class="hist-top"><div class="hist-h">&#x1F48A; ${s.name}</div>${head}</div>${chart}</div>`;
   }).join('');
-  return `<div class="hist-wrap"><div class="hist-title">&#x1F4C8; Histórico de precios</div><div class="hist-sub">Precio <b>promedio</b> de cada presentación entre todas las opciones a lo largo del tiempo. Se actualiza cada pocos días &mdash; el histórico crece con el tiempo.</div>${blocks}</div>`;
+  return `<div class="hist-wrap"><div class="hist-title">&#x1F4C8; Histórico de precios</div><div class="hist-sub">${sub} Se actualiza cada pocos días.</div>${toggle}${blocks}</div>`;
+}
+// Monta el histórico y conecta el toggle (Promedio / Por farmacia).
+function renderHistory(){
+  const el=$('hist-mount'); if(!el) return;
+  const studies=RAW_DATA.filter(s=>selected.includes(s.name));
+  el.innerHTML=historyBlock(studies);
+  el.querySelectorAll('[data-histmode]').forEach(b=>b.onclick=()=>{ histMode=b.dataset.histmode; renderHistory(); });
 }
 
 // ── LOS MEJORES TRATAMIENTOS (ranking en la home) ──────────────────────────
@@ -1173,7 +1220,8 @@ function renderResults(){
     `</tbody></table></div>`+
     `<div class="cmp-note"><b>&#x1F4A1; Cómo leer esta tabla:</b> el precio de <b>Clivi</b> es un plan integral (medicamento + consulta + seguimiento médico + estudios de laboratorio + plan de alimentación). Las demás columnas son el precio del medicamento solo. <b>"pendiente"</b> = aún estamos verificando ese precio en línea (no mostramos precios sin confirmar).${PRICE_META?` &middot; Precios actualizados: ${new Date(PRICE_META.generated_at).toLocaleDateString('es-MX',{day:'numeric',month:'long',year:'numeric'})}.`:''}</div>`+
     `<p class="cmp-hint">Toca un precio para ver el detalle del medicamento. Desliza la tabla &#x2194; para ver todas las farmacias.</p>`+
-    historyBlock(studies);
+    `<div id="hist-mount"></div>`;
+  renderHistory();
 
   // abrir modal al tocar un precio
   $('results-container').querySelectorAll('.cmp-clickable').forEach(td=>{

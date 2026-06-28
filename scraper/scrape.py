@@ -336,10 +336,11 @@ def update_history(prices, now):
     series = hist.setdefault("series", {})
     today = now[:10]  # YYYY-MM-DD
     for name, row in prices.items():
-        vals = [row[k] for k in HIST_PHARM if isinstance(row.get(k), (int, float))]
+        prices_pp = {k: (row[k] if isinstance(row.get(k), (int, float)) else None) for k in HIST_PHARM}
+        vals = [v for v in prices_pp.values() if v is not None]
         if len(vals) < HIST_MIN_N:
             continue
-        point = {"date": today, "avg": round(sum(vals) / len(vals)), "n": len(vals)}
+        point = {"date": today, "prices": prices_pp, "avg": round(sum(vals) / len(vals)), "n": len(vals)}
         pts = series.setdefault(name, [])
         if pts and pts[-1]["date"] == today:
             pts[-1] = point  # one point per day; replace if re-run same day
@@ -347,9 +348,10 @@ def update_history(prices, now):
             pts.append(point)
     hist["generated_at"] = now
     hist["currency"] = "MXN"
-    hist["note"] = ("Precio promedio por presentación entre todas las opciones con "
-                    "precio verificado. Solo fechas con cobertura de 3+ opciones.")
-    path.write_text(json.dumps(hist, ensure_ascii=False, indent=0), encoding="utf-8")
+    hist["pharmacies"] = HIST_PHARM
+    hist["note"] = ("Precio por presentación a lo largo del tiempo: promedio y por farmacia. "
+                    "Solo fechas con cobertura de 3+ opciones.")
+    path.write_text(json.dumps(hist, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     print(f"Updated data/price-history.json — {len(series)} products tracked.")
 
 if __name__ == "__main__":
