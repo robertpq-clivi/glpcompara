@@ -862,6 +862,7 @@ async function goResults(){
   const cv = $('hero-canvas');
   if (!cv) return;
 
+  function start(){
   // CSS-only fallback for browsers without OffscreenCanvas or Workers
   const supportsWorker = typeof Worker !== 'undefined';
   const supportsOffscreen = typeof OffscreenCanvas !== 'undefined' && typeof cv.transferControlToOffscreen === 'function';
@@ -917,6 +918,10 @@ async function goResults(){
       cv.style.height = nh + 'px';
     }, 200);
   }, { passive: true });
+  }
+  // Diferir la animación del hero hasta después del primer render: evita un reflow forzado en la ruta crítica.
+  if (document.readyState === 'complete') requestAnimationFrame(start);
+  else window.addEventListener('load', function(){ requestAnimationFrame(start); }, { once: true });
 })();
 
 // ── NAV ───────────────────────────────────────────────────────────────────
