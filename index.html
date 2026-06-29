@@ -774,8 +774,14 @@ async function loadPriceHistory(){
     PRICE_HISTORY = await r.json();
   }catch(e){ console.warn('price history:', e.message); }
 }
-const livePromise = Promise.all([loadLivePrices(), loadPriceHistory()]);
-livePromise.then(()=>{ try{ renderBestTreatments(); renderPopularOffers(); }catch(e){ console.warn('home sections:', e.message); } });
+// Cargas perezosas: ninguna bloquea la ruta crítica / el LCP del hero.
+let livePromise = null, histPromise = null;
+function ensureLive(){ return livePromise || (livePromise = loadLivePrices()); }
+function ensureHistory(){ return histPromise || (histPromise = loadPriceHistory()); }
+// Datos bajo el pliegue (precios para ranking/ofertas): tras el primer render.
+function loadBelowFold(){ ensureLive().then(()=>{ try{ renderBestTreatments(); renderPopularOffers(); }catch(e){ console.warn('home sections:', e.message); } }); }
+if('requestIdleCallback' in window) requestIdleCallback(loadBelowFold, { timeout: 2500 });
+else window.addEventListener('load', function(){ setTimeout(loadBelowFold, 200); }, { once: true });
 
 // Medicamentos GLP-1 disponibles (familias)
 const DRUGS = ['Ozempic','Mounjaro','Wegovy','Rybelsus'];
@@ -847,7 +853,7 @@ async function goResults(){
     $('results-name').textContent=lead.nombre.split(' ')[0];
     $('results-email').textContent=lead.correo;
   }
-  try{ await livePromise; }catch(e){}
+  try{ await Promise.all([ensureLive(), ensureHistory()]); }catch(e){}
   renderResults();
   // Registrar qué está comparando el usuario.
   if(selectedDrug && selected.length){
