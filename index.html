@@ -416,14 +416,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="orbit-center">GLP<span>compara</span></div>
     <div class="orbit-ring ring3"></div>
     <div class="orbit-ring ring1">
-      <div class="orbit-item" style="left:100%;top:50%;"><div class="orbit-badge"><img class="orbit-logo" src="images/farmacias/clivi-logo.png" alt="Clivi" onerror="this.parentNode.textContent='&#x1FA7A;'"></div></div>
-      <div class="orbit-item" style="left:25%;top:93.3%;"><div class="orbit-badge"><img class="orbit-logo" src="images/farmacias/ahorro-logo.png" alt="Farmacias del Ahorro" onerror="this.parentNode.textContent='&#x1F48A;'"></div></div>
-      <div class="orbit-item" style="left:25%;top:6.7%;"><div class="orbit-badge"><img class="orbit-logo" src="images/farmacias/guadalajara-logo.png" alt="Farmacias Guadalajara" onerror="this.parentNode.textContent='&#x1F3EA;'"></div></div>
+      <div class="orbit-item" style="left:100%;top:50%;"><div class="orbit-badge"><img class="orbit-logo" decoding="async" src="images/farmacias/clivi-logo.png" alt="Clivi" onerror="this.parentNode.textContent='&#x1FA7A;'"></div></div>
+      <div class="orbit-item" style="left:25%;top:93.3%;"><div class="orbit-badge"><img class="orbit-logo" decoding="async" src="images/farmacias/ahorro-logo.png" alt="Farmacias del Ahorro" onerror="this.parentNode.textContent='&#x1F48A;'"></div></div>
+      <div class="orbit-item" style="left:25%;top:6.7%;"><div class="orbit-badge"><img class="orbit-logo" decoding="async" src="images/farmacias/guadalajara-logo.png" alt="Farmacias Guadalajara" onerror="this.parentNode.textContent='&#x1F3EA;'"></div></div>
     </div>
     <div class="orbit-ring ring2">
-      <div class="orbit-item" style="left:75%;top:93.3%;"><div class="orbit-badge"><img class="orbit-logo" src="images/farmacias/benavides-logo.png" alt="Benavides" onerror="this.parentNode.textContent='&#x1F3EC;'"></div></div>
-      <div class="orbit-item" style="left:0%;top:50%;"><div class="orbit-badge"><img class="orbit-logo" src="images/farmacias/sanpablo-logo.png" alt="San Pablo" onerror="this.parentNode.textContent='&#x1F9EC;'"></div></div>
-      <div class="orbit-item" style="left:75%;top:6.7%;"><div class="orbit-badge"><img class="orbit-logo" src="images/farmacias/revert-logo.png" alt="Revert" onerror="this.parentNode.textContent='&#x2695;&#xFE0F;'"></div></div>
+      <div class="orbit-item" style="left:75%;top:93.3%;"><div class="orbit-badge"><img class="orbit-logo" decoding="async" src="images/farmacias/benavides-logo.png" alt="Benavides" onerror="this.parentNode.textContent='&#x1F3EC;'"></div></div>
+      <div class="orbit-item" style="left:0%;top:50%;"><div class="orbit-badge"><img class="orbit-logo" decoding="async" src="images/farmacias/sanpablo-logo.png" alt="San Pablo" onerror="this.parentNode.textContent='&#x1F9EC;'"></div></div>
+      <div class="orbit-item" style="left:75%;top:6.7%;"><div class="orbit-badge"><img class="orbit-logo" decoding="async" src="images/farmacias/revert-logo.png" alt="Revert" onerror="this.parentNode.textContent='&#x2695;&#xFE0F;'"></div></div>
     </div>
   </div>
 
@@ -1130,7 +1130,7 @@ function renderBestTreatments(){
     const feats=(m.services||[]).slice(0,4).map(s=>`<li>${s}</li>`).join('');
     const pn=l==='Clivi'?'<sup class="bt-sup">2 3</sup>':'<sup class="bt-sup">2</sup>';
     const banner=LOGOS[l]
-      ?`<img src="${LOGOS[l]}" alt="${name}" class="bt-img" onerror="this.parentNode.style.background='${m.bg}';this.outerHTML='<span class=\\'bt-banner-emoji\\'>${m.emoji}</span>';">`
+      ?`<img src="${LOGOS[l]}" alt="${name}" class="bt-img" loading="lazy" decoding="async" width="300" height="150" onerror="this.parentNode.style.background='${m.bg}';this.outerHTML='<span class=\\'bt-banner-emoji\\'>${m.emoji}</span>';">`
       :`<span class="bt-banner-emoji">${m.emoji}</span>`;
     return `<div class="bt-card${win?' bt-win':''}">`+
       `<div class="bt-banner"${LOGOS[l]?'':` style="background:${m.bg};"`}>${banner}<span class="bt-rank">${i+1}</span>${win?'<span class="bt-badge-win">&#x1F3C6; M&#xe1;s recomendado</span>':''}</div>`+
