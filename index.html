@@ -467,7 +467,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 
   <!-- LOS MEJORES TRATAMIENTOS -->
-  <div style="background:var(--gray-50);padding:56px 24px;">
+  <div id="sec-ranking" style="background:var(--gray-50);padding:56px 24px;">
     <div style="max-width:920px;margin:0 auto 26px;text-align:center;">
       <div class="sec-eyebrow" style="color:var(--teal-dark);">Comparativa</div>
       <h2 class="sec-title" style="color:var(--navy);">Los mejores tratamientos GLP-1</h2>
@@ -778,10 +778,19 @@ async function loadPriceHistory(){
 let livePromise = null, histPromise = null;
 function ensureLive(){ return livePromise || (livePromise = loadLivePrices()); }
 function ensureHistory(){ return histPromise || (histPromise = loadPriceHistory()); }
-// Datos bajo el pliegue (precios para ranking/ofertas): tras el primer render.
-function loadBelowFold(){ ensureLive().then(()=>{ try{ renderBestTreatments(); renderPopularOffers(); }catch(e){ console.warn('home sections:', e.message); } }); }
-if('requestIdleCallback' in window) requestIdleCallback(loadBelowFold, { timeout: 2500 });
-else window.addEventListener('load', function(){ setTimeout(loadBelowFold, 200); }, { once: true });
+// Datos bajo el pliegue (precios para ranking/ofertas): se cargan SOLO cuando la
+// sección de ranking se acerca al viewport → fuera de la ruta crítica / del LCP.
+let belowFoldLoaded = false;
+function loadBelowFold(){ if(belowFoldLoaded) return; belowFoldLoaded = true; ensureLive().then(()=>{ try{ renderBestTreatments(); renderPopularOffers(); }catch(e){ console.warn('home sections:', e.message); } }); }
+(function(){
+  const target = document.getElementById('sec-ranking');
+  if(target && 'IntersectionObserver' in window){
+    const io = new IntersectionObserver(function(es){ if(es[0].isIntersecting){ io.disconnect(); loadBelowFold(); } }, { rootMargin: '600px' });
+    io.observe(target);
+  } else {
+    window.addEventListener('load', function(){ setTimeout(loadBelowFold, 800); }, { once: true });
+  }
+})();
 
 // Medicamentos GLP-1 disponibles (familias)
 const DRUGS = ['Ozempic','Mounjaro','Wegovy','Rybelsus'];
