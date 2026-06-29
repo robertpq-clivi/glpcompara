@@ -810,8 +810,9 @@ const minP = s => { const v=LABS.map(l=>s[l]).filter(v=>v); return v.length?Math
 const stars = r => [1,2,3,4,5].map(i=>`<span style="color:${i<=Math.floor(r)?'#F59E0B':'#E2E8F0'};font-size:11px;">&#x2605;</span>`).join('');
 
 function showSec(id){ document.querySelectorAll('.section').forEach(s=>s.classList.remove('active')); $(id).classList.add('active'); window.scrollTo({top:0,behavior:'smooth'}); updateNav(); }
-// Nav: transparente solo sobre el hero oscuro arriba; navy en cualquier otra sección o al hacer scroll.
-function updateNav(){ const onHeroTop = $('sec-hero').classList.contains('active') && scrollY<=20; $('main-nav').classList.toggle('scrolled', !onHeroTop); }
+// Nav: transparente solo sobre el hero oscuro arriba; navy en cualquier otra sección.
+let navAtTop = true; // lo actualiza un IntersectionObserver (sin leer scrollY → sin reflow forzado).
+function updateNav(){ const onHeroTop = $('sec-hero').classList.contains('active') && navAtTop; $('main-nav').classList.toggle('scrolled', !onHeroTop); }
 function goHome(){ lead=null; selected=[]; selectedDrug=null; showSec('sec-hero'); }
 function goForm(){ showSec('sec-form'); }
 function goSearch(){
@@ -925,7 +926,17 @@ async function goResults(){
 })();
 
 // ── NAV ───────────────────────────────────────────────────────────────────
-window.addEventListener('scroll',updateNav,{passive:true});
+// Sentinel + IntersectionObserver para saber si estamos arriba del todo,
+// en lugar de un listener de scroll que lee scrollY (evita reflows forzados).
+(function(){
+  const s=document.createElement('div');
+  s.setAttribute('aria-hidden','true');
+  s.style.cssText='position:absolute;top:0;left:0;width:1px;height:24px;pointer-events:none;';
+  document.body.appendChild(s);
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(e){ navAtTop=e[0].isIntersecting; updateNav(); },{threshold:0}).observe(s);
+  }
+})();
 updateNav();
 $('nav-logo').onclick=goHome;
 $('nav-cta').onclick=goForm;
