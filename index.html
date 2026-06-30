@@ -619,7 +619,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- MODAL -->
-<div class="modal-ov" id="modal" role="dialog" aria-modal="true">
+<div class="modal-ov" id="modal" role="dialog" aria-modal="true" aria-label="Detalle del medicamento">
   <div class="modal-sheet">
     <div class="modal-handle"></div>
     <div class="mlab-row">
@@ -1295,6 +1295,7 @@ function openModal(study,labName,opt){
   $('m-go').dataset.medName      = study.name;
   $('m-go').dataset.price        = study[labName] || 0;
 
+  $('modal').setAttribute('aria-label', `${study.name} en ${meta.displayName||labName}`);
   $('modal').classList.add('open');
   document.body.style.overflow='hidden';
 }
