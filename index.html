@@ -200,7 +200,8 @@ nav.scrolled{background:rgba(11,31,75,.96);backdrop-filter:blur(16px);border-bot
 .modal-ov.open .modal-sheet{transform:translateY(0);}
 .modal-handle{width:40px;height:4px;background:var(--gray-200);border-radius:2px;margin:0 auto 16px;}
 .mlab-row{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
-.mlab-icon{width:46px;height:46px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:21px;flex-shrink:0;}
+.mlab-icon{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:21px;flex-shrink:0;overflow:hidden;background:#fff;box-shadow:0 1px 5px rgba(11,31,75,.12);}
+.mlab-icon img{width:76%;height:76%;object-fit:contain;}
 .mlab-name{font-family:'Sora',sans-serif;font-weight:800;font-size:17px;color:var(--navy);}
 .mclose{width:30px;height:30px;border-radius:50%;border:2px solid var(--gray-200);background:white;font-size:15px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-left:auto;}
 .msvcs{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:16px;}
@@ -272,7 +273,9 @@ footer{background:var(--navy);color:rgba(255,255,255,.65);padding:44px 24px 30px
 .cmp-corner{position:sticky;left:0;z-index:4;background:white;min-width:138px;}
 .cmp-label{position:sticky;left:0;z-index:2;background:white;text-align:left;font-family:'DM Sans',sans-serif;font-weight:600;color:var(--gray-800);font-size:13px;white-space:nowrap;border-right:1px solid var(--gray-100);min-width:138px;}
 .cmp-ph{font-family:'Sora',sans-serif;font-weight:700;color:var(--navy);font-size:12.5px;vertical-align:bottom;line-height:1.25;border-bottom:2px solid var(--gray-100);}
-.cmp-emoji{font-size:21px;display:block;margin-bottom:5px;}
+.cmp-emoji{font-size:21px;display:flex;justify-content:center;margin-bottom:5px;}
+.ph-logo{display:inline-flex;align-items:center;justify-content:center;border-radius:50%;background:#fff;overflow:hidden;box-shadow:0 1px 5px rgba(11,31,75,.12);vertical-align:middle;flex-shrink:0;}
+.ph-logo img{width:76%;height:76%;object-fit:contain;}
 .cmp-rating{font-size:10px;color:var(--gray-400);font-weight:600;display:block;margin-top:3px;}
 .cmp-tag{display:inline-block;background:var(--teal);color:white;font-size:9px;font-weight:800;font-family:'Sora',sans-serif;padding:2px 8px;border-radius:20px;margin-top:6px;letter-spacing:.03em;text-transform:uppercase;}
 .cmp-clivi{background:rgba(0,180,216,.06);}
@@ -479,12 +482,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p style="text-align:center;font-family:'Sora',sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray-400);margin-bottom:10px;">Farmacias incluidas</p>
       <p style="text-align:center;font-size:14px;color:var(--gray-600);margin-bottom:30px;">Consultamos directamente los precios en el sitio de cada farmacia.</p>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;">
-        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:rgba(0,180,216,.06);border:1.5px solid rgba(0,180,216,.3);border-radius:16px;padding:22px 14px;min-height:96px;text-align:center;"><span style="font-size:24px;">&#x1FA7A;</span><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:var(--navy);">Clivi</span><span style="font-size:10px;background:rgba(0,180,216,.15);color:#0077A8;padding:2px 8px;border-radius:10px;font-weight:700;font-family:'Sora',sans-serif;">Con seguimiento m&#xe9;dico</span></div>
-        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:16px;padding:22px 14px;min-height:96px;text-align:center;"><span style="font-size:24px;">&#x1F48A;</span><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:var(--navy);">Farmacias del Ahorro</span></div>
-        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:16px;padding:22px 14px;min-height:96px;text-align:center;"><span style="font-size:24px;">&#x1F3EA;</span><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:var(--navy);">Farmacias Guadalajara</span></div>
-        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:16px;padding:22px 14px;min-height:96px;text-align:center;"><span style="font-size:24px;">&#x1F3EC;</span><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:var(--navy);">Benavides</span></div>
-        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:16px;padding:22px 14px;min-height:96px;text-align:center;"><span style="font-size:24px;">&#x1F9EC;</span><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:var(--navy);">San Pablo</span></div>
-        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:16px;padding:22px 14px;min-height:96px;text-align:center;"><span style="font-size:24px;">&#x2695;&#xfe0f;</span><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:var(--navy);">Revert</span><span style="font-size:10px;background:rgba(14,165,160,.15);color:#0E7490;padding:2px 8px;border-radius:10px;font-weight:700;font-family:'Sora',sans-serif;">Solo Wegovy</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:rgba(0,180,216,.06);border:1.5px solid rgba(0,180,216,.3);border-radius:16px;padding:22px 14px;min-height:96px;text-align:center;"><span class="ph-logo" style="width:48px;height:48px;font-size:24px;"><img src="images/farmacias/clivi-logo.webp" alt="Clivi" width="48" height="48" loading="lazy" decoding="async" onerror="this.parentNode.textContent='&#x1FA7A;'"></span><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:var(--navy);">Clivi</span><span style="font-size:10px;background:rgba(0,180,216,.15);color:#0077A8;padding:2px 8px;border-radius:10px;font-weight:700;font-family:'Sora',sans-serif;">Con seguimiento m&#xe9;dico</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:16px;padding:22px 14px;min-height:96px;text-align:center;"><span class="ph-logo" style="width:48px;height:48px;font-size:24px;"><img src="images/farmacias/ahorro-logo.webp" alt="Farmacias del Ahorro" width="48" height="48" loading="lazy" decoding="async" onerror="this.parentNode.textContent='&#x1F48A;'"></span><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:var(--navy);">Farmacias del Ahorro</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:16px;padding:22px 14px;min-height:96px;text-align:center;"><span class="ph-logo" style="width:48px;height:48px;font-size:24px;"><img src="images/farmacias/guadalajara-logo.webp" alt="Farmacias Guadalajara" width="48" height="48" loading="lazy" decoding="async" onerror="this.parentNode.textContent='&#x1F3EA;'"></span><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:var(--navy);">Farmacias Guadalajara</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:16px;padding:22px 14px;min-height:96px;text-align:center;"><span class="ph-logo" style="width:48px;height:48px;font-size:24px;"><img src="images/farmacias/benavides-logo.webp" alt="Benavides" width="48" height="48" loading="lazy" decoding="async" onerror="this.parentNode.textContent='&#x1F3EC;'"></span><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:var(--navy);">Benavides</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:16px;padding:22px 14px;min-height:96px;text-align:center;"><span class="ph-logo" style="width:48px;height:48px;font-size:24px;"><img src="images/farmacias/sanpablo-logo.webp" alt="San Pablo" width="48" height="48" loading="lazy" decoding="async" onerror="this.parentNode.textContent='&#x1F9EC;'"></span><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:var(--navy);">San Pablo</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:16px;padding:22px 14px;min-height:96px;text-align:center;"><span class="ph-logo" style="width:48px;height:48px;font-size:24px;"><img src="images/farmacias/revert-logo.webp" alt="Revert" width="48" height="48" loading="lazy" decoding="async" onerror="this.parentNode.textContent='&#x2695;&#xfe0f;'"></span><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:var(--navy);">Revert</span><span style="font-size:10px;background:rgba(14,165,160,.15);color:#0E7490;padding:2px 8px;border-radius:10px;font-weight:700;font-family:'Sora',sans-serif;">Solo Wegovy</span></div>
       </div>
     </div>
   </div>
@@ -820,6 +823,12 @@ const fmtP = p => p ? new Intl.NumberFormat('es-MX',{style:'currency',currency:'
 const sInfo = n => { const k=Object.keys(STUDY_INFO).find(k=>k!=='default'&&n.startsWith(k)); return STUDY_INFO[k]||STUDY_INFO['default']; };
 const minP = s => { const v=LABS.map(l=>s[l]).filter(v=>v); return v.length?Math.min(...v):null; };
 const stars = r => [1,2,3,4,5].map(i=>`<span style="color:${i<=Math.floor(r)?'#F59E0B':'#E2E8F0'};font-size:11px;">&#x2605;</span>`).join('');
+// Logos de farmacia en círculo (mismo estilo que la órbita). Respaldo al emoji si falta.
+const PHARM_LOGO = { Clivi:'images/farmacias/clivi-logo.webp', Ahorro:'images/farmacias/ahorro-logo.webp', Guadalajara:'images/farmacias/guadalajara-logo.webp', Benavides:'images/farmacias/benavides-logo.webp', SanPablo:'images/farmacias/sanpablo-logo.webp', Revert:'images/farmacias/revert-logo.webp' };
+function pharmBadge(key, px){
+  const m = LAB_META[key] || {}, src = PHARM_LOGO[key];
+  return `<span class="ph-logo" style="width:${px}px;height:${px}px;font-size:${Math.round(px*0.55)}px;">${src?`<img src="${src}" alt="${m.displayName||key}" loading="lazy" decoding="async" onerror="this.parentNode.textContent='${m.emoji||''}'">`:(m.emoji||'')}</span>`;
+}
 
 function showSec(id){ document.querySelectorAll('.section').forEach(s=>s.classList.remove('active')); $(id).classList.add('active'); window.scrollTo({top:0,behavior:'smooth'}); updateNav(); }
 // Nav: transparente solo sobre el hero oscuro arriba; navy en cualquier otra sección.
@@ -1208,7 +1217,7 @@ function renderResults(){
 
   const thCells=cols.map(l=>{
     const m=LAB_META[l],isClivi=l==='Clivi';
-    return`<th class="cmp-ph${isClivi?' cmp-clivi':''}"><span class="cmp-emoji">${m.emoji}</span>${SHORT[l]||l}<span class="cmp-rating">★ ${m.rating}</span>${isClivi?'<span class="cmp-tag">Más completo</span>':''}</th>`;
+    return`<th class="cmp-ph${isClivi?' cmp-clivi':''}"><span class="cmp-emoji">${pharmBadge(l,34)}</span>${SHORT[l]||l}<span class="cmp-rating">★ ${m.rating}</span>${isClivi?'<span class="cmp-tag">Más completo</span>':''}</th>`;
   }).join('');
 
   // filas de precio (una por presentación seleccionada). Solo precios verificados;
@@ -1277,7 +1286,7 @@ $('new-search').onclick=()=>{showSec('sec-search');showDrugStep();};
 // ── MODAL ─────────────────────────────────────────────────────────────────
 function openModal(study,labName,opt){
   const meta=LAB_META[labName],info=sInfo(study.name);
-  $('m-icon').style.background=meta.bg;$('m-icon').textContent=meta.emoji;
+  $('m-icon').innerHTML = PHARM_LOGO[labName] ? `<img src="${PHARM_LOGO[labName]}" alt="${meta.displayName||labName}" decoding="async">` : meta.emoji;
   $('m-name').textContent=meta.displayName||labName;
   $('m-badges').innerHTML=(opt.rec?'<span class="brec">&#x2705; Recomendado</span>':'')+(!opt.rec&&opt.cheap?'<span class="bc">&#x1F4B0; M&#xe1;s barato</span>':'')+(!opt.rec&&opt.best?'<span class="br">&#x2B50; Mejor calificado</span>':'');
   $('m-stars').innerHTML=stars(meta.rating)+`<span style="margin-left:3px;">${meta.rating}/5 &middot; ${meta.votes.toLocaleString()} rese&ntilde;as</span>`;
