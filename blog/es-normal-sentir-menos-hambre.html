@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-52TDCCCW');</script>
-<!-- End Google Tag Manager -->
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-P034DVL01J"></script>
+<!-- Google Tag Manager + GA4 (carga diferida hasta interacción) -->
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-P034DVL01J');
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+gtag('js',new Date());gtag('config','G-P034DVL01J');
+(function(){var done=false,ev=['scroll','pointerdown','keydown','touchstart'];
+function load(){if(done)return;done=true;ev.forEach(function(e){window.removeEventListener(e,load);});
+['https://www.googletagmanager.com/gtm.js?id=GTM-52TDCCCW','https://www.googletagmanager.com/gtag/js?id=G-P034DVL01J'].forEach(function(src){var s=document.createElement('script');s.async=true;s.src=src;document.head.appendChild(s);});}
+ev.forEach(function(e){window.addEventListener(e,load,{passive:true,once:true});});setTimeout(load,3500);})();
 </script>
+<!-- End GTM + GA4 -->
+
+
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>¿Es normal sentir menos hambre con un GLP-1? | GLPcompara</title>
