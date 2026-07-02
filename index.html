@@ -384,6 +384,34 @@ th.cmp-clivi{background:linear-gradient(180deg,rgba(0,180,216,.18),rgba(0,180,21
 @keyframes orbit-spin-rev{from{transform:rotate(0)}to{transform:rotate(-360deg)}}
 @media(max-width:900px){.hero-orbit{display:none;}}
 @media(prefers-reduced-motion:reduce){.ring1,.ring2,.ring3,.ring1 .orbit-badge,.ring2 .orbit-badge{animation:none;}}
+/* ── Pop-up captura de correo ── */
+.pop-ov{position:fixed;inset:0;background:rgba(11,31,75,.55);backdrop-filter:blur(3px);z-index:1000;display:none;align-items:center;justify-content:center;padding:20px;}
+.pop-ov.open{display:flex;}
+.pop-card{background:#fff;border-radius:22px;max-width:440px;width:100%;padding:30px 28px 24px;position:relative;box-shadow:0 24px 70px rgba(11,31,75,.4);animation:pop-in .25s ease;}
+@keyframes pop-in{from{opacity:0;transform:translateY(16px) scale(.97);}to{opacity:1;transform:none;}}
+.pop-close{position:absolute;top:12px;right:14px;background:none;border:none;font-size:26px;line-height:1;color:var(--gray-400);cursor:pointer;}
+.pop-close:hover{color:var(--gray-600);}
+.pop-steps{display:flex;gap:6px;justify-content:center;margin-bottom:14px;}
+.pop-dot{width:26px;height:5px;border-radius:3px;background:var(--gray-200);transition:background .2s;}
+.pop-dot.on{background:var(--teal);}
+.pop-emoji{font-size:38px;text-align:center;margin-bottom:6px;}
+.pop-title{font-family:'Sora',sans-serif;font-weight:800;font-size:21px;color:var(--navy);text-align:center;line-height:1.25;margin-bottom:8px;}
+.pop-sub{font-size:14px;color:var(--gray-600);text-align:center;line-height:1.55;margin-bottom:18px;}
+.pop-input{width:100%;border:1.5px solid var(--gray-200);border-radius:12px;padding:13px 15px;font-family:'DM Sans',sans-serif;font-size:15px;color:var(--gray-800);margin-bottom:10px;outline:none;transition:border-color .15s;}
+.pop-input:focus{border-color:var(--teal);}
+.pop-err{color:#DC2626;font-size:12.5px;font-weight:600;min-height:16px;margin-bottom:4px;}
+.pop-btn{width:100%;background:linear-gradient(135deg,var(--teal),var(--teal-dark));color:#fff;border:none;padding:14px;border-radius:12px;font-family:'Sora',sans-serif;font-weight:700;font-size:15px;cursor:pointer;box-shadow:0 4px 18px rgba(0,180,216,.32);transition:transform .15s;}
+.pop-btn:hover{transform:translateY(-1px);}
+.pop-btn:disabled{opacity:.6;cursor:default;transform:none;}
+.pop-fine{font-size:11.5px;color:var(--gray-400);text-align:center;margin-top:12px;}
+.pop-back{width:100%;background:none;border:none;color:var(--gray-400);font-family:'Sora',sans-serif;font-weight:600;font-size:13px;cursor:pointer;margin-top:10px;}
+.pop-back:hover{color:var(--gray-600);}
+.pop-meds{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:6px;}
+.pop-med{display:flex;align-items:center;gap:8px;border:1.5px solid var(--gray-200);border-radius:12px;padding:12px 14px;font-family:'Sora',sans-serif;font-weight:700;font-size:14px;color:var(--navy);cursor:pointer;background:#fff;transition:all .15s;}
+.pop-med .pop-check{width:18px;height:18px;border-radius:50%;border:2px solid var(--gray-200);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;}
+.pop-med.on{border-color:var(--teal);background:rgba(0,180,216,.07);}
+.pop-med.on .pop-check{background:var(--teal);border-color:var(--teal);}
+@media(max-width:420px){.pop-meds{grid-template-columns:1fr;}}
 </style>
 <script>
   // Staging guard: don't index the temporary github.io URL — canonical is glpcompara.com.mx
@@ -644,6 +672,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="fasting-alert" id="m-fasting" style="display:none;"><span>&#x26A0;&#xfe0f;</span><p class="fasting-text"><strong>Requiere receta m&#xe9;dica.</strong> Este medicamento se vende &#xfa;nicamente con receta. Consulta siempre a tu m&#xe9;dico antes de iniciar el tratamiento.</p></div>
     <div class="mcta-row"><div><div class="mprice-label" id="m-price-label"></div><div class="mprice-val" id="m-price"></div></div><a href="#" id="m-go" target="_blank" rel="noopener noreferrer" class="mgo">Ir a la farmacia &#x2192;</a></div>
     <p class="mdisc">GLPcompara te redirige al sitio de la farmacia. El pago se realiza directamente con ellos. Los precios son orientativos y pueden variar.</p>
+  </div>
+</div>
+
+<!-- POPUP: captura de correo (2 pasos) -->
+<div class="pop-ov" id="lead-pop" role="dialog" aria-modal="true" aria-label="Recibe los precios de tu medicamento GLP-1">
+  <div class="pop-card">
+    <button class="pop-close" id="pop-close" aria-label="Cerrar">&#x00D7;</button>
+    <div class="pop-steps"><span class="pop-dot on" id="pop-d1"></span><span class="pop-dot" id="pop-d2"></span></div>
+
+    <div id="pop-s1">
+      <div class="pop-emoji">&#x1F4B0;</div>
+      <h3 class="pop-title">Recibe los precios de tu medicamento</h3>
+      <p class="pop-sub">D&#xe9;janos tus datos y te enviamos la comparativa de precios GLP-1 actualizada, directo a tu correo.</p>
+      <input id="pop-nombre" class="pop-input" type="text" placeholder="Tu nombre" autocomplete="name"/>
+      <input id="pop-correo" class="pop-input" type="email" placeholder="Tu correo electr&#xf3;nico" autocomplete="email"/>
+      <div class="pop-err" id="pop-err1"></div>
+      <button class="pop-btn" id="pop-next">Continuar &#x2192;</button>
+      <p class="pop-fine">&#x1F512; Sin spam. Solo precios y novedades de GLP-1.</p>
+    </div>
+
+    <div id="pop-s2" style="display:none;">
+      <div class="pop-emoji">&#x1F3AF;</div>
+      <h3 class="pop-title">&#xbf;Qu&#xe9; medicamento te interesa?</h3>
+      <p class="pop-sub">Elige uno o varios para enviarte sus precios.</p>
+      <div class="pop-meds" id="pop-meds"></div>
+      <div class="pop-err" id="pop-err2"></div>
+      <button class="pop-btn" id="pop-submit">Enviar y recibir precios</button>
+      <button class="pop-back" id="pop-back">&#x2190; Volver</button>
+    </div>
+
+    <div id="pop-ok" style="display:none;text-align:center;">
+      <div class="pop-emoji">&#x2705;</div>
+      <h3 class="pop-title">&#xa1;Listo!</h3>
+      <p class="pop-sub">Te enviaremos los precios de tu medicamento a tu correo. Revisa tu bandeja de entrada.</p>
+      <button class="pop-btn" id="pop-done">Cerrar</button>
+    </div>
   </div>
 </div>
 
@@ -1329,6 +1393,46 @@ document.getElementById('m-go').addEventListener('click', function() {
   };
   trackPharmaClick(params);
 });
+
+// ── POP-UP: captura de correo (2 pasos) → pestaña "Suscripciones" ───────────
+(function(){
+  const pop=$('lead-pop'); if(!pop) return;
+  const KEY='glp_lead_pop_v1';
+  let popMeds=[];
+  // pintar chips de medicamentos
+  $('pop-meds').innerHTML=DRUGS.map(d=>`<div class="pop-med" data-med="${d}"><span class="pop-check">&#x2713;</span>${d}</div>`).join('');
+  $('pop-meds').querySelectorAll('.pop-med').forEach(el=>el.onclick=()=>{
+    const m=el.dataset.med;
+    if(popMeds.includes(m)){ popMeds=popMeds.filter(x=>x!==m); el.classList.remove('on'); }
+    else { popMeds.push(m); el.classList.add('on'); }
+    $('pop-err2').textContent='';
+  });
+  function open(){ if(localStorage.getItem(KEY)) return; pop.classList.add('open'); try{localStorage.setItem(KEY,'1');}catch(e){} if(typeof gtag!=='undefined')gtag('event','popup_lead_shown'); }
+  function close(){ pop.classList.remove('open'); }
+  function step(n){ $('pop-s1').style.display=n===1?'block':'none'; $('pop-s2').style.display=n===2?'block':'none'; $('pop-d1').classList.toggle('on',n>=1); $('pop-d2').classList.toggle('on',n>=2); }
+  const EMAIL=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  $('pop-next').onclick=()=>{
+    const n=$('pop-nombre').value.trim(), c=$('pop-correo').value.trim();
+    if(!n){ $('pop-err1').textContent='Escribe tu nombre.'; return; }
+    if(!EMAIL.test(c)){ $('pop-err1').textContent='Ingresa un correo válido.'; return; }
+    $('pop-err1').textContent=''; step(2);
+  };
+  $('pop-back').onclick=()=>step(1);
+  $('pop-submit').onclick=function(){
+    if(!popMeds.length){ $('pop-err2').textContent='Elige al menos un medicamento.'; return; }
+    this.disabled=true; this.textContent='Enviando…';
+    sheetLog('suscripcion', { nombre:$('pop-nombre').value.trim(), correo:$('pop-correo').value.trim(), medicamentos:popMeds.join(', ') });
+    if(typeof gtag!=='undefined') gtag('event','popup_lead_submit',{medicamentos:popMeds.join(', ')});
+    $('pop-s2').style.display='none'; $('pop-ok').style.display='block'; $('pop-d1').classList.add('on'); $('pop-d2').classList.add('on');
+  };
+  $('pop-close').onclick=close; $('pop-done').onclick=close;
+  pop.onclick=e=>{ if(e.target===pop) close(); };
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&pop.classList.contains('open')) close(); });
+  // Mostrar: a los 12s o al intentar salir (exit-intent), solo en la home (hero activo)
+  function maybeOpen(){ if($('sec-hero')&&$('sec-hero').classList.contains('active')) open(); }
+  setTimeout(maybeOpen, 12000);
+  document.addEventListener('mouseout', function ei(e){ if(e.clientY<=0){ document.removeEventListener('mouseout',ei); maybeOpen(); } });
+})();
 </script>
 </main>
 </body>
