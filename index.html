@@ -1129,6 +1129,15 @@ $('compare-btn').onclick=()=>{if(selected.length)goResults();};
 // ── HISTÓRICO DE PRECIOS (gráfica) ─────────────────────────────────────────
 const MESES_ABBR=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
 function fmtHistDate(iso){const [y,m,d]=iso.split('-').map(Number);return d+' '+MESES_ABBR[m-1];}
+// Recorta la serie a los últimos 3 meses (relativo al último punto).
+function trim3m(pts){
+  if(!pts||pts.length<2) return pts||[];
+  const [y,m,d]=pts[pts.length-1].date.split('-').map(Number);
+  const cut=new Date(Date.UTC(y,m-1,d)); cut.setUTCMonth(cut.getUTCMonth()-3);
+  const cutStr=cut.toISOString().slice(0,10);
+  const f=pts.filter(p=>p.date>=cutStr);
+  return f.length>=2?f:pts.slice(-8);
+}
 function sparkChart(pts){
   const W=620,H=240,L=56,R=16,T=18,B=36,pw=W-L-R,ph=H-T-B;
   const vals=pts.map(p=>p.avg),n=pts.length;
@@ -1181,7 +1190,7 @@ function historyBlock(studies){
     ?'Precio <b>promedio</b> de cada presentación entre todas las opciones a lo largo del tiempo.'
     :'Precio <b>por farmacia</b> de cada presentación a lo largo del tiempo: cada línea es una farmacia.';
   const blocks=studies.map(s=>{
-    const pts=PRICE_HISTORY.series[s.name]||[];
+    const pts=trim3m(PRICE_HISTORY.series[s.name]||[]);
     if(pts.length<2)
       return `<div class="hist-card"><div class="hist-h">&#x1F48A; ${s.name}</div><div class="hist-empty" style="margin-top:10px;">Estamos construyendo el histórico de esta presentación. Vuelve pronto para ver la tendencia.</div></div>`;
     const rango=`<span class="hist-range">${fmtHistDate(pts[0].date)} &ndash; ${fmtHistDate(pts[pts.length-1].date)}</span>`;
