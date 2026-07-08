@@ -1064,7 +1064,7 @@ async function saveLead(l){
 // Click "Ir a la farmacia": GA4 + hoja (pestaña Clicks).
 function trackPharmaClick(p){
   if(typeof gtag!=='undefined') gtag('event','click_ir_a_la_farmacia', p);
-  sheetLog('click', { farmacia: p.pharmacy_name||'', medicamento: p.medicamento||'', precio: p.price_mxn||'' });
+  sheetLog('click', { nombre: lead?lead.nombre:'', correo: lead?lead.correo:'', farmacia: p.pharmacy_name||'', medicamento: p.medicamento||'', precio: p.price_mxn||'' });
 }
 // Ver comparativa: GA4 + hoja (pestaña Comparaciones).
 function trackCompare(medicamento, dosis){
