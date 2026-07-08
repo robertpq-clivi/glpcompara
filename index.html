@@ -1069,7 +1069,7 @@ function trackPharmaClick(p){
 // Ver comparativa: GA4 + hoja (pestaña Comparaciones).
 function trackCompare(medicamento, dosis){
   if(typeof gtag!=='undefined') gtag('event','ver_comparativa', { medicamento: medicamento, dosis: dosis });
-  sheetLog('comparacion', { medicamento: medicamento, dosis: dosis });
+  sheetLog('comparacion', { nombre: lead?lead.nombre:'', correo: lead?lead.correo:'', medicamento: medicamento, dosis: dosis });
 }
 
 // ── FORM ──────────────────────────────────────────────────────────────────
