@@ -95,17 +95,22 @@
           "title": "Mounjaro 2.5 MG 2.4 ML Solución Caja"
         },
         "Clivi": {
-          "price": 6999,
+          "price": 5499,
           "url": "https://www.clivi.com.mx/",
           "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
+        },
+        "Revert": {
+          "price": 3649,
+          "url": "https://revert.com.mx/perdida-de-peso/",
+          "title": "Precio verificado manualmente"
         }
       },
-      "Clivi": 6999,
+      "Clivi": 5499,
       "Ahorro": 6250,
       "Benavides": 5867,
       "Guadalajara": 3770,
       "SanPablo": 6295,
-      "Revert": null
+      "Revert": 3649
     },
     "Mounjaro 5 mg (1 pluma)": {
       "sources": {
@@ -133,6 +138,11 @@
           "price": 5983,
           "url": "https://www.farmaciasanpablo.com.mx/",
           "title": "Precio verificado manualmente"
+        },
+        "Revert": {
+          "price": 4849,
+          "url": "https://revert.com.mx/perdida-de-peso/",
+          "title": "Precio verificado manualmente"
         }
       },
       "Clivi": 6999,
@@ -140,7 +150,7 @@
       "Benavides": 5973,
       "Guadalajara": 4775,
       "SanPablo": 5983,
-      "Revert": null
+      "Revert": 4849
     },
     "Mounjaro 7.5 mg (1 pluma)": {
       "sources": {
@@ -165,17 +175,22 @@
           "title": "Mounjaro 7.5 MG 2.4 ML Solución Caja"
         },
         "Clivi": {
-          "price": 9999,
+          "price": 8499,
           "url": "https://www.clivi.com.mx/",
           "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
+        },
+        "Revert": {
+          "price": 6349,
+          "url": "https://revert.com.mx/perdida-de-peso/",
+          "title": "Precio verificado manualmente"
         }
       },
-      "Clivi": 9999,
+      "Clivi": 8499,
       "Ahorro": 8500,
       "Benavides": 7821,
       "Guadalajara": 6500,
       "SanPablo": 7880,
-      "Revert": null
+      "Revert": 6349
     },
     "Mounjaro 10 mg (1 pluma)": {
       "sources": {
@@ -200,17 +215,22 @@
           "title": "Mounjaro 10 MG 2.4 ML Solución Caja"
         },
         "Clivi": {
-          "price": 9999,
+          "price": 8499,
           "url": "https://www.clivi.com.mx/",
           "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
+        },
+        "Revert": {
+          "price": 6349,
+          "url": "https://revert.com.mx/perdida-de-peso/",
+          "title": "Precio verificado manualmente"
         }
       },
-      "Clivi": 9999,
+      "Clivi": 8499,
       "Ahorro": 8500,
       "Benavides": 7819,
       "Guadalajara": 6255,
       "SanPablo": 7838,
-      "Revert": null
+      "Revert": 6349
     },
     "Mounjaro 12.5 mg (1 pluma)": {
       "sources": {
@@ -233,14 +253,24 @@
           "price": 10730,
           "url": "https://www.farmaciasanpablo.com.mx/medicamentos/supervision-medica/m---n---o/mounjaro-12-5-mg-2-4-ml-solucion-caja/p/000000000070009213",
           "title": "Mounjaro 12.5 MG 2.4 ML Solución Caja"
+        },
+        "Clivi": {
+          "price": 9999,
+          "url": "https://www.clivi.com.mx/",
+          "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
+        },
+        "Revert": {
+          "price": 8499,
+          "url": "https://revert.com.mx/perdida-de-peso/",
+          "title": "Precio verificado manualmente"
         }
       },
-      "Clivi": null,
+      "Clivi": 9999,
       "Ahorro": 10500,
       "Benavides": 10445,
       "Guadalajara": 8565,
       "SanPablo": 10730,
-      "Revert": null
+      "Revert": 8499
     },
     "Mounjaro 15 mg (1 pluma)": {
       "sources": {
@@ -263,14 +293,24 @@
           "price": 8608,
           "url": "https://www.farmaciasanpablo.com.mx/",
           "title": "Precio verificado manualmente"
+        },
+        "Clivi": {
+          "price": 9999,
+          "url": "https://www.clivi.com.mx/",
+          "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
+        },
+        "Revert": {
+          "price": 9999,
+          "url": "https://revert.com.mx/perdida-de-peso/",
+          "title": "Precio verificado manualmente"
         }
       },
-      "Clivi": null,
+      "Clivi": 9999,
       "Ahorro": 10500,
       "Benavides": 10445,
       "Guadalajara": 8565,
       "SanPablo": 8608,
-      "Revert": null
+      "Revert": 9999
     },
     "Wegovy 0.25 mg (caja mensual)": {
       "sources": {
