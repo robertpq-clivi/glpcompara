@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-16T15:06:20Z",
+  "generated_at": "2026-07-19T14:25:31Z",
   "currency": "MXN",
   "prices": {
     "Ozempic 0.25/0.5 mg (1 pluma)": {
@@ -289,15 +289,15 @@
           "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/mounjaro-kwikpen-15mg-0.6ml-en-pluma-precargada-solucion-inyectable--2.4-ml.-1460757.html",
           "title": "Mounjaro KwikPen 15mg/0.6ml en Pluma Precargada Solución Inyectable, 2.4 ml."
         },
-        "SanPablo": {
-          "price": 8608,
-          "url": "https://www.farmaciasanpablo.com.mx/",
-          "title": "Precio verificado manualmente"
-        },
         "Clivi": {
           "price": 9999,
           "url": "https://www.clivi.com.mx/",
           "title": "Plan Clivi — incluye seguimiento médico, consulta, estudios de laboratorio y plan de alimentación"
+        },
+        "SanPablo": {
+          "price": 8608,
+          "url": "https://www.farmaciasanpablo.com.mx/",
+          "title": "Precio verificado manualmente"
         },
         "Revert": {
           "price": 9999,
