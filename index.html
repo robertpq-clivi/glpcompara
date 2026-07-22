@@ -924,13 +924,17 @@ function goSearch(){
   }
   showDrugStep();
 }
-function showDrugStep(){
+async function showDrugStep(){
   selectedDrug=null; selected=[];
   $('dose-step').style.display='none';
   $('drug-step').style.display='block';
   renderDrugGrid();
+  try{ await ensureLive(); }catch(e){}
+  // Si el usuario ya avanzó a elegir dosis mientras cargaban los precios reales,
+  // no pisamos esa pantalla: solo refrescamos si sigue en el paso de medicamento.
+  if(selectedDrug===null) renderDrugGrid();
 }
-function selectDrug(drug){
+async function selectDrug(drug){
   selectedDrug=drug; selected=[];
   $('drug-step').style.display='none';
   $('dose-step').style.display='block';
@@ -939,6 +943,8 @@ function selectDrug(drug){
   $('dose-sub').textContent=`${info.substance} · ${info.maker}. Selecciona una o varias presentaciones para comparar precios.`;
   renderList(); renderChips(); renderCompBtn();
   window.scrollTo({top:0,behavior:'smooth'});
+  try{ await ensureLive(); }catch(e){}
+  if(selectedDrug===drug){ renderList(); renderChips(); renderCompBtn(); }
 }
 async function goResults(){
   showSec('sec-results');
