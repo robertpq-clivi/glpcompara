@@ -1,30 +1,20 @@
 {
-  "generated_at": "2026-07-22T15:08:26Z",
+  "generated_at": "2026-07-25T14:39:22Z",
   "raw": {
     "Benavides": {
       "Ozempic": [
         {
-          "title": "1 mg Semaglutida",
-          "price": 5789,
-          "url": "https://www.benavides.com.mx/ozempic-1-mg-semaglutida-1-jeringa-prellenada"
-        },
-        {
           "title": "1.34 mg/ml Semaglutida Solución Inyectable",
           "price": 4274,
           "url": "https://www.benavides.com.mx/ozempic-134-mgml-semaglutida-solucion-inyectable-1-pluma-precargada"
+        },
+        {
+          "title": "1 mg Semaglutida",
+          "price": 5789,
+          "url": "https://www.benavides.com.mx/ozempic-1-mg-semaglutida-1-jeringa-prellenada"
         }
       ],
       "Mounjaro": [
-        {
-          "title": "5 mg Tirzepatida/0.6 ml Solución",
-          "price": 5973,
-          "url": "https://www.benavides.com.mx/mounjaro-5-mg-tirzepatida-0-6-ml-solucion-1-jeringa-prellenada"
-        },
-        {
-          "title": "12.5 mg Tirzepatida/0.6 ml Solución Inyectable",
-          "price": 10445,
-          "url": "https://www.benavides.com.mx/mounjaro-12-5-mg-tirzepatida-0-6-ml-solucion-inyectable-1-jeringa-prellenada"
-        },
         {
           "title": "10 mg Tirzepatida/0.6 ml Solución Inyectable",
           "price": 7819,
@@ -34,6 +24,16 @@
           "title": "7.5 mg Tirzepatida/0.6 ml Solución",
           "price": 7821,
           "url": "https://www.benavides.com.mx/mounjaro-7-5-mg-tirzepatida-0-6-ml-solucion-1-jeringa-prellenada"
+        },
+        {
+          "title": "5 mg Tirzepatida/0.6 ml Solución",
+          "price": 5973,
+          "url": "https://www.benavides.com.mx/mounjaro-5-mg-tirzepatida-0-6-ml-solucion-1-jeringa-prellenada"
+        },
+        {
+          "title": "12.5 mg Tirzepatida/0.6 ml Solución Inyectable",
+          "price": 10445,
+          "url": "https://www.benavides.com.mx/mounjaro-12-5-mg-tirzepatida-0-6-ml-solucion-inyectable-1-jeringa-prellenada"
         },
         {
           "title": "15 mg Tirzepatida/0.6 ml Solución Inyectable",
@@ -136,14 +136,14 @@
       ],
       "Mounjaro": [
         {
-          "title": "Mounjaro Kwikpen 10Mg/0.6Ml 3 ml",
-          "price": 8500,
-          "url": "https://www.fahorro.com/mounjaro-kwikpen-10mg-0-6ml-3-ml.html"
-        },
-        {
           "title": "Mounjaro Kwikpen 12.5Mg/0.6Ml 3 ml",
           "price": 10500,
           "url": "https://www.fahorro.com/mounjaro-kwikpen-12-5mg-0-6ml-3-ml.html"
+        },
+        {
+          "title": "Mounjaro Kwikpen 10Mg/0.6Ml 3 ml",
+          "price": 8500,
+          "url": "https://www.fahorro.com/mounjaro-kwikpen-10mg-0-6ml-3-ml.html"
         },
         {
           "title": "Mounjaro 15mg /0.6ml",
@@ -227,474 +227,16 @@
       ]
     },
     "Guadalajara": {
-      "Ozempic": [
-        {
-          "title": "Ozempic 1.34mg/ml Solución Inyectable Pluma Precargada, 3 ml.",
-          "price": 4280,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/ozempic-1.34mg-ml-solucion-inyectable-pluma-precargada--3-ml.-1341901.html"
-        },
-        {
-          "title": "Ozempic 1.34mg/ml Solución Inyectable Pluma Precargada, 1.5 ml.",
-          "price": 3149,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/ozempic-1.34mg-ml-solucion-inyectable-pluma-precargada--1.5-ml.-1340883.html"
-        },
-        {
-          "title": "Rybelsus 7 mg, 30 Tabletas.",
-          "price": 2975,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/rybelsus-7-mg--30-tabletas.-1377655.html"
-        },
-        {
-          "title": "Rybelsus 14 mg, 30 Tabletas.",
-          "price": 3335,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/rybelsus-14-mg--30-tabletas.-1388690.html"
-        },
-        {
-          "title": "Rybelsus 3 mg, 30 Tabletas.",
-          "price": 2172,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/rybelsus-3-mg--30-tabletas.-1377663.html"
-        },
-        {
-          "title": "Rybelsus 3 mg, 10 Tabletas.",
-          "price": 869,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/rybelsus-3-mg--10-tabletas.-1396021.html"
-        },
-        {
-          "title": "Wegovy 1.7mg/Dosis 2.27mg/ml Solución Inyectable, 1 Pluma Precargada.",
-          "price": 4650,
-          "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-1.7mg-dosis-2.27mg-ml-solucion-inyectable--1-pluma-precargada.-1448510.html"
-        },
-        {
-          "title": "Wegovy 1mg/dosis 1.34mg/ml Solución Inyectable, 1 Pluma Precargada.",
-          "price": 3940,
-          "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-1mg-dosis-1.34mg-ml-solucion-inyectable--1-pluma-precargada.-1447823.html"
-        },
-        {
-          "title": "Wegovy 2.4mg/Dosis 3.2mg/ml Solución Inyectable, 1 Pluma Precargada.",
-          "price": 4900,
-          "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-2.4mg-dosis-3.2mg-ml-solucion-inyectable--1-pluma-precargada.-1448528.html"
-        },
-        {
-          "title": "Wegovy 0.25 mg/Dosis 0.68mg/ml Solución Inyectable, 1 Pluma Precargada.",
-          "price": 2385,
-          "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-0.25-mg-dosis-0.68mg-ml-solucion-inyectable--1-pluma-precargada.-1447300.html"
-        },
-        {
-          "title": "Wegovy 0.5mg/dosis 1.34mg/ml Solución Inyectable, 1 Pluma Precargada.",
-          "price": 2900,
-          "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-0.5mg-dosis-1.34mg-ml-solucion-inyectable--1-pluma-precargada.-1447726.html"
-        },
-        {
-          "title": "Mounjaro KwikPen 5mg/0.6ml Solución Inyectable Pluma Precargada, 2.4 ml.",
-          "price": 4775,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/mounjaro-kwikpen-5mg-0.6ml-solucion-inyectable-pluma-precargada--2.4-ml.-1460714.html"
-        },
-        {
-          "title": "Mounjaro KwikPen 2.5mg/0.6ml Solución Inyectable Pluma Precargada, 2.4 ml.",
-          "price": 3770,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/mounjaro-kwikpen-2.5mg-0.6ml-solucion-inyectable-pluma-precargada--2.4-ml.-1460706.html"
-        },
-        {
-          "title": "Mounjaro KwikPen 7.5mg/0.6ml en Pluma Precargada Solución Inyectable, 2.4 ml.",
-          "price": 6500,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/mounjaro-kwikpen-7.5mg-0.6ml-en-pluma-precargada-solucion-inyectable--2.4-ml.-1460722.html"
-        },
-        {
-          "title": "Mounjaro KwikPen 10mg/0.6ml en Pluma Precargada Solución Inyectable, 2.4 ml.",
-          "price": 6255,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/mounjaro-kwikpen-10mg-0.6ml-en-pluma-precargada-solucion-inyectable--2.4-ml.-1460730.html"
-        }
-      ],
-      "Mounjaro": [
-        {
-          "title": "Mounjaro KwikPen 10mg/0.6ml en Pluma Precargada Solución Inyectable, 2.4 ml.",
-          "price": 6255,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/mounjaro-kwikpen-10mg-0.6ml-en-pluma-precargada-solucion-inyectable--2.4-ml.-1460730.html"
-        },
-        {
-          "title": "Mounjaro KwikPen 7.5mg/0.6ml en Pluma Precargada Solución Inyectable, 2.4 ml.",
-          "price": 6500,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/mounjaro-kwikpen-7.5mg-0.6ml-en-pluma-precargada-solucion-inyectable--2.4-ml.-1460722.html"
-        },
-        {
-          "title": "Mounjaro KwikPen 5mg/0.6ml Solución Inyectable Pluma Precargada, 2.4 ml.",
-          "price": 4775,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/mounjaro-kwikpen-5mg-0.6ml-solucion-inyectable-pluma-precargada--2.4-ml.-1460714.html"
-        },
-        {
-          "title": "Mounjaro KwikPen 2.5mg/0.6ml Solución Inyectable Pluma Precargada, 2.4 ml.",
-          "price": 3770,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/mounjaro-kwikpen-2.5mg-0.6ml-solucion-inyectable-pluma-precargada--2.4-ml.-1460706.html"
-        },
-        {
-          "title": "Mounjaro KwikPen 15mg/0.6ml en Pluma Precargada Solución Inyectable, 2.4 ml.",
-          "price": 8565,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/mounjaro-kwikpen-15mg-0.6ml-en-pluma-precargada-solucion-inyectable--2.4-ml.-1460757.html"
-        },
-        {
-          "title": "Mounjaro KwikPen 12.5mg/0.6ml en Pluma Precargada Solución Inyectable, 2.4 ml.",
-          "price": 8565,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/mounjaro-kwikpen-12.5mg-0.6ml-en-pluma-precargada-solucion-inyectable--2.4-ml.-1460749.html"
-        },
-        {
-          "title": "Rybelsus 3 mg, 30 Tabletas.",
-          "price": 2172,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/rybelsus-3-mg--30-tabletas.-1377663.html"
-        },
-        {
-          "title": "Rybelsus 3 mg, 10 Tabletas.",
-          "price": 869,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/rybelsus-3-mg--10-tabletas.-1396021.html"
-        },
-        {
-          "title": "Wegovy 1.7mg/Dosis 2.27mg/ml Solución Inyectable, 1 Pluma Precargada.",
-          "price": 4650,
-          "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-1.7mg-dosis-2.27mg-ml-solucion-inyectable--1-pluma-precargada.-1448510.html"
-        },
-        {
-          "title": "Wegovy 1mg/dosis 1.34mg/ml Solución Inyectable, 1 Pluma Precargada.",
-          "price": 3940,
-          "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-1mg-dosis-1.34mg-ml-solucion-inyectable--1-pluma-precargada.-1447823.html"
-        },
-        {
-          "title": "Wegovy 2.4mg/Dosis 3.2mg/ml Solución Inyectable, 1 Pluma Precargada.",
-          "price": 4900,
-          "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-2.4mg-dosis-3.2mg-ml-solucion-inyectable--1-pluma-precargada.-1448528.html"
-        },
-        {
-          "title": "Rybelsus 7 mg, 30 Tabletas.",
-          "price": 2975,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/rybelsus-7-mg--30-tabletas.-1377655.html"
-        },
-        {
-          "title": "Rybelsus 14 mg, 30 Tabletas.",
-          "price": 3335,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/rybelsus-14-mg--30-tabletas.-1388690.html"
-        },
-        {
-          "title": "Wegovy 0.25 mg/Dosis 0.68mg/ml Solución Inyectable, 1 Pluma Precargada.",
-          "price": 2385,
-          "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-0.25-mg-dosis-0.68mg-ml-solucion-inyectable--1-pluma-precargada.-1447300.html"
-        },
-        {
-          "title": "Wegovy 0.5mg/dosis 1.34mg/ml Solución Inyectable, 1 Pluma Precargada.",
-          "price": 2900,
-          "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-0.5mg-dosis-1.34mg-ml-solucion-inyectable--1-pluma-precargada.-1447726.html"
-        },
-        {
-          "title": "Ozempic 1.34mg/ml Solución Inyectable Pluma Precargada, 3 ml.",
-          "price": 4280,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/ozempic-1.34mg-ml-solucion-inyectable-pluma-precargada--3-ml.-1341901.html"
-        },
-        {
-          "title": "Ozempic 1.34mg/ml Solución Inyectable Pluma Precargada, 1.5 ml.",
-          "price": 3149,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/ozempic-1.34mg-ml-solucion-inyectable-pluma-precargada--1.5-ml.-1340883.html"
-        }
-      ],
-      "Wegovy": [
-        {
-          "title": "Wegovy 1mg/dosis 1.34mg/ml Solución Inyectable, 1 Pluma Precargada.",
-          "price": 3940,
-          "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-1mg-dosis-1.34mg-ml-solucion-inyectable--1-pluma-precargada.-1447823.html"
-        },
-        {
-          "title": "Wegovy 0.5mg/dosis 1.34mg/ml Solución Inyectable, 1 Pluma Precargada.",
-          "price": 2900,
-          "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-0.5mg-dosis-1.34mg-ml-solucion-inyectable--1-pluma-precargada.-1447726.html"
-        },
-        {
-          "title": "Wegovy 1.7mg/Dosis 2.27mg/ml Solución Inyectable, 1 Pluma Precargada.",
-          "price": 4650,
-          "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-1.7mg-dosis-2.27mg-ml-solucion-inyectable--1-pluma-precargada.-1448510.html"
-        },
-        {
-          "title": "Wegovy 2.4mg/Dosis 3.2mg/ml Solución Inyectable, 1 Pluma Precargada.",
-          "price": 4900,
-          "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-2.4mg-dosis-3.2mg-ml-solucion-inyectable--1-pluma-precargada.-1448528.html"
-        },
-        {
-          "title": "Wegovy 0.25 mg/Dosis 0.68mg/ml Solución Inyectable, 1 Pluma Precargada.",
-          "price": 2385,
-          "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-0.25-mg-dosis-0.68mg-ml-solucion-inyectable--1-pluma-precargada.-1447300.html"
-        },
-        {
-          "title": "Rybelsus 7 mg, 30 Tabletas.",
-          "price": 2975,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/rybelsus-7-mg--30-tabletas.-1377655.html"
-        },
-        {
-          "title": "Rybelsus 14 mg, 30 Tabletas.",
-          "price": 3335,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/rybelsus-14-mg--30-tabletas.-1388690.html"
-        },
-        {
-          "title": "Ozempic 1.34mg/ml Solución Inyectable Pluma Precargada, 3 ml.",
-          "price": 4280,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/ozempic-1.34mg-ml-solucion-inyectable-pluma-precargada--3-ml.-1341901.html"
-        },
-        {
-          "title": "Ozempic 1.34mg/ml Solución Inyectable Pluma Precargada, 1.5 ml.",
-          "price": 3149,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/ozempic-1.34mg-ml-solucion-inyectable-pluma-precargada--1.5-ml.-1340883.html"
-        },
-        {
-          "title": "Rybelsus 3 mg, 30 Tabletas.",
-          "price": 2172,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/rybelsus-3-mg--30-tabletas.-1377663.html"
-        },
-        {
-          "title": "Rybelsus 3 mg, 10 Tabletas.",
-          "price": 869,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/rybelsus-3-mg--10-tabletas.-1396021.html"
-        },
-        {
-          "title": "Mounjaro KwikPen 5mg/0.6ml Solución Inyectable Pluma Precargada, 2.4 ml.",
-          "price": 4775,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/mounjaro-kwikpen-5mg-0.6ml-solucion-inyectable-pluma-precargada--2.4-ml.-1460714.html"
-        },
-        {
-          "title": "Mounjaro KwikPen 2.5mg/0.6ml Solución Inyectable Pluma Precargada, 2.4 ml.",
-          "price": 3770,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/mounjaro-kwikpen-2.5mg-0.6ml-solucion-inyectable-pluma-precargada--2.4-ml.-1460706.html"
-        },
-        {
-          "title": "Mounjaro KwikPen 7.5mg/0.6ml en Pluma Precargada Solución Inyectable, 2.4 ml.",
-          "price": 6500,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/mounjaro-kwikpen-7.5mg-0.6ml-en-pluma-precargada-solucion-inyectable--2.4-ml.-1460722.html"
-        },
-        {
-          "title": "Mounjaro KwikPen 10mg/0.6ml en Pluma Precargada Solución Inyectable, 2.4 ml.",
-          "price": 6255,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/mounjaro-kwikpen-10mg-0.6ml-en-pluma-precargada-solucion-inyectable--2.4-ml.-1460730.html"
-        }
-      ],
-      "Rybelsus": [
-        {
-          "title": "Rybelsus 7 mg, 30 Tabletas.",
-          "price": 2975,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/rybelsus-7-mg--30-tabletas.-1377655.html"
-        },
-        {
-          "title": "Rybelsus 14 mg, 30 Tabletas.",
-          "price": 3335,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/rybelsus-14-mg--30-tabletas.-1388690.html"
-        },
-        {
-          "title": "Rybelsus 3 mg, 30 Tabletas.",
-          "price": 2172,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/rybelsus-3-mg--30-tabletas.-1377663.html"
-        },
-        {
-          "title": "Rybelsus 3 mg, 10 Tabletas.",
-          "price": 869,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/rybelsus-3-mg--10-tabletas.-1396021.html"
-        },
-        {
-          "title": "Ozempic 1.34mg/ml Solución Inyectable Pluma Precargada, 3 ml.",
-          "price": 4280,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/ozempic-1.34mg-ml-solucion-inyectable-pluma-precargada--3-ml.-1341901.html"
-        },
-        {
-          "title": "Ozempic 1.34mg/ml Solución Inyectable Pluma Precargada, 1.5 ml.",
-          "price": 3149,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/ozempic-1.34mg-ml-solucion-inyectable-pluma-precargada--1.5-ml.-1340883.html"
-        },
-        {
-          "title": "Wegovy 1.7mg/Dosis 2.27mg/ml Solución Inyectable, 1 Pluma Precargada.",
-          "price": 4650,
-          "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-1.7mg-dosis-2.27mg-ml-solucion-inyectable--1-pluma-precargada.-1448510.html"
-        },
-        {
-          "title": "Wegovy 1mg/dosis 1.34mg/ml Solución Inyectable, 1 Pluma Precargada.",
-          "price": 3940,
-          "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-1mg-dosis-1.34mg-ml-solucion-inyectable--1-pluma-precargada.-1447823.html"
-        },
-        {
-          "title": "Wegovy 2.4mg/Dosis 3.2mg/ml Solución Inyectable, 1 Pluma Precargada.",
-          "price": 4900,
-          "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-2.4mg-dosis-3.2mg-ml-solucion-inyectable--1-pluma-precargada.-1448528.html"
-        },
-        {
-          "title": "Wegovy 0.25 mg/Dosis 0.68mg/ml Solución Inyectable, 1 Pluma Precargada.",
-          "price": 2385,
-          "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-0.25-mg-dosis-0.68mg-ml-solucion-inyectable--1-pluma-precargada.-1447300.html"
-        },
-        {
-          "title": "Wegovy 0.5mg/dosis 1.34mg/ml Solución Inyectable, 1 Pluma Precargada.",
-          "price": 2900,
-          "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-0.5mg-dosis-1.34mg-ml-solucion-inyectable--1-pluma-precargada.-1447726.html"
-        },
-        {
-          "title": "Mounjaro KwikPen 5mg/0.6ml Solución Inyectable Pluma Precargada, 2.4 ml.",
-          "price": 4775,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/mounjaro-kwikpen-5mg-0.6ml-solucion-inyectable-pluma-precargada--2.4-ml.-1460714.html"
-        },
-        {
-          "title": "Mounjaro KwikPen 2.5mg/0.6ml Solución Inyectable Pluma Precargada, 2.4 ml.",
-          "price": 3770,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/mounjaro-kwikpen-2.5mg-0.6ml-solucion-inyectable-pluma-precargada--2.4-ml.-1460706.html"
-        },
-        {
-          "title": "Mounjaro KwikPen 7.5mg/0.6ml en Pluma Precargada Solución Inyectable, 2.4 ml.",
-          "price": 6500,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/mounjaro-kwikpen-7.5mg-0.6ml-en-pluma-precargada-solucion-inyectable--2.4-ml.-1460722.html"
-        },
-        {
-          "title": "Mounjaro KwikPen 10mg/0.6ml en Pluma Precargada Solución Inyectable, 2.4 ml.",
-          "price": 6255,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/mounjaro-kwikpen-10mg-0.6ml-en-pluma-precargada-solucion-inyectable--2.4-ml.-1460730.html"
-        }
-      ]
+      "Ozempic": [],
+      "Mounjaro": [],
+      "Wegovy": [],
+      "Rybelsus": []
     },
     "SanPablo": {
-      "Ozempic": [
-        {
-          "title": "Ozempic 1 Solución Pluma Prellenada",
-          "price": 4128,
-          "url": "https://www.farmaciasanpablo.com.mx/medicamentos/supervision-medica/m---n---o/ozempic-1-solucion-pluma-prellenada/p/000000000006400002"
-        },
-        {
-          "title": "Ozempic 1 Solución Pluma Prellenada",
-          "price": 5598,
-          "url": "https://www.farmaciasanpablo.com.mx/medicamentos/supervision-medica/m---n---o/ozempic-1-solucion-pluma-prellenada/p/000000000006400004"
-        },
-        {
-          "title": "Soliqua 3 Solución Caja",
-          "price": 3479,
-          "url": "https://www.farmaciasanpablo.com.mx/medicamentos/supervision-medica/s---t---u/soliqua-3-solucion-caja/p/000000000008080023"
-        },
-        {
-          "title": "Soliqua 1 Solución Caja",
-          "price": 1289,
-          "url": "https://www.farmaciasanpablo.com.mx/medicamentos/supervision-medica/s---t---u/soliqua-1-solucion-caja/p/000000000008080022"
-        },
-        {
-          "title": "Soliqua 3 Solución Caja",
-          "price": 3479,
-          "url": "https://www.farmaciasanpablo.com.mx/medicamentos/supervision-medica/s---t---u/soliqua-3-solucion-caja/p/000000000008080021"
-        },
-        {
-          "title": "Soliqua 1 Solución Caja",
-          "price": 1269,
-          "url": "https://www.farmaciasanpablo.com.mx/medicamentos/supervision-medica/s---t---u/soliqua-1-solucion-caja/p/000000000008080020"
-        }
-      ],
-      "Mounjaro": [
-        {
-          "title": "Mounjaro 5.0 MG 2.4 ML Solución Caja",
-          "price": 5983,
-          "url": "https://www.farmaciasanpablo.com.mx/medicamentos/supervision-medica/m---n---o/mounjaro-5-0-mg-2-4-ml-solucion-caja/p/000000000070009209"
-        },
-        {
-          "title": "Mounjaro 10 MG 2.4 ML Solución Caja",
-          "price": 7838,
-          "url": "https://www.farmaciasanpablo.com.mx/medicamentos/supervision-medica/m---n---o/mounjaro-10-mg-2-4-ml-solucion-caja/p/000000000070009212"
-        },
-        {
-          "title": "Mounjaro 2.5 MG 2.4 ML Solución Caja",
-          "price": 6295,
-          "url": "https://www.farmaciasanpablo.com.mx/medicamentos/supervision-medica/m---n---o/mounjaro-2-5-mg-2-4-ml-solucion-caja/p/000000000070009211"
-        },
-        {
-          "title": "Mounjaro 7.5 MG 2.4 ML Solución Caja",
-          "price": 7880,
-          "url": "https://www.farmaciasanpablo.com.mx/medicamentos/supervision-medica/m---n---o/mounjaro-7-5-mg-2-4-ml-solucion-caja/p/000000000070009210"
-        },
-        {
-          "title": "Mounjaro 15.0 MG 2.4 ML Solución Caja",
-          "price": 10730,
-          "url": "https://www.farmaciasanpablo.com.mx/medicamentos/supervision-medica/m---n---o/mounjaro-15-0-mg-2-4-ml-solucion-caja/p/000000000070009214"
-        },
-        {
-          "title": "Mounjaro 12.5 MG 2.4 ML Solución Caja",
-          "price": 10730,
-          "url": "https://www.farmaciasanpablo.com.mx/medicamentos/supervision-medica/m---n---o/mounjaro-12-5-mg-2-4-ml-solucion-caja/p/000000000070009213"
-        }
-      ],
-      "Wegovy": [
-        {
-          "title": "Wegovy 0.25 MG 1.5 ML Solución Pluma Prellenada",
-          "price": 3178,
-          "url": "https://www.farmaciasanpablo.com.mx/medicamentos/supervision-medica/v---w--x/wegovy-0-25-mg-1-5-ml-solucion-pluma-prellenada/p/000000000070008422"
-        },
-        {
-          "title": "Wegovy 1.0 MG 3 ML Solución Pluma Prellenada",
-          "price": 5244,
-          "url": "https://www.farmaciasanpablo.com.mx/medicamentos/supervision-medica/v---w--x/wegovy-1-0-mg-3-ml-solucion-pluma-prellenada/p/000000000070008424"
-        },
-        {
-          "title": "Wegovy 0.5 MG 1.5 ML Solución Pluma Prellenada",
-          "price": 3864,
-          "url": "https://www.farmaciasanpablo.com.mx/medicamentos/supervision-medica/v---w--x/wegovy-0-5-mg-1-5-ml-solucion-pluma-prellenada/p/000000000070008423"
-        },
-        {
-          "title": "Wegovy 2.4 MG 3 ML Solución Pluma Prellenada",
-          "price": 8164,
-          "url": "https://www.farmaciasanpablo.com.mx/medicamentos/supervision-medica/v---w--x/wegovy-2-4-mg-3-ml-solucion-pluma-prellenada/p/000000000070008425"
-        },
-        {
-          "title": "Wegovy 1.7 MG 3 ML Solución Pluma Prellenada",
-          "price": 6643,
-          "url": "https://www.farmaciasanpablo.com.mx/medicamentos/supervision-medica/v---w--x/wegovy-1-7-mg-3-ml-solucion-pluma-prellenada/p/000000000070008426"
-        },
-        {
-          "title": "Rybelsus 30 Tabletas Caja",
-          "price": 4198,
-          "url": "https://www.farmaciasanpablo.com.mx/medicamentos/supervision-medica/p---q---r/rybelsus-30-tabletas-caja/p/000000000070002540"
-        },
-        {
-          "title": "Rybelsus 30 Tabletas Caja",
-          "price": 3744,
-          "url": "https://www.farmaciasanpablo.com.mx/medicamentos/supervision-medica/p---q---r/rybelsus-30-tabletas-caja/p/000000000070002478"
-        }
-      ],
-      "Rybelsus": [
-        {
-          "title": "Rybelsus 30 Tabletas Caja",
-          "price": 3744,
-          "url": "https://www.farmaciasanpablo.com.mx/medicamentos/supervision-medica/p---q---r/rybelsus-30-tabletas-caja/p/000000000070002478"
-        },
-        {
-          "title": "Rybelsus 30 Tabletas Caja",
-          "price": 4198,
-          "url": "https://www.farmaciasanpablo.com.mx/medicamentos/supervision-medica/p---q---r/rybelsus-30-tabletas-caja/p/000000000070002540"
-        },
-        {
-          "title": "Rybelsus 30 Tabletas Caja",
-          "price": 2153,
-          "url": "https://www.farmaciasanpablo.com.mx/medicamentos/supervision-medica/p---q---r/rybelsus-30-tabletas-caja/p/000000000070002486"
-        },
-        {
-          "title": "Rybelsus 3 mg 10 Tabletas Caja",
-          "price": 878,
-          "url": "https://www.farmaciasanpablo.com.mx/medicamentos/supervision-medica/p---q---r/rybelsus-3-mg-10-tabletas-caja/p/000000000070003112"
-        },
-        {
-          "title": "Wegovy 1.7 MG 3 ML Solución Pluma Prellenada",
-          "price": 6643,
-          "url": "https://www.farmaciasanpablo.com.mx/medicamentos/supervision-medica/v---w--x/wegovy-1-7-mg-3-ml-solucion-pluma-prellenada/p/000000000070008426"
-        },
-        {
-          "title": "Wegovy 2.4 MG 3 ML Solución Pluma Prellenada",
-          "price": 8164,
-          "url": "https://www.farmaciasanpablo.com.mx/medicamentos/supervision-medica/v---w--x/wegovy-2-4-mg-3-ml-solucion-pluma-prellenada/p/000000000070008425"
-        },
-        {
-          "title": "Wegovy 1.0 MG 3 ML Solución Pluma Prellenada",
-          "price": 5244,
-          "url": "https://www.farmaciasanpablo.com.mx/medicamentos/supervision-medica/v---w--x/wegovy-1-0-mg-3-ml-solucion-pluma-prellenada/p/000000000070008424"
-        },
-        {
-          "title": "Wegovy 0.5 MG 1.5 ML Solución Pluma Prellenada",
-          "price": 3864,
-          "url": "https://www.farmaciasanpablo.com.mx/medicamentos/supervision-medica/v---w--x/wegovy-0-5-mg-1-5-ml-solucion-pluma-prellenada/p/000000000070008423"
-        },
-        {
-          "title": "Wegovy 0.25 MG 1.5 ML Solución Pluma Prellenada",
-          "price": 3178,
-          "url": "https://www.farmaciasanpablo.com.mx/medicamentos/supervision-medica/v---w--x/wegovy-0-25-mg-1-5-ml-solucion-pluma-prellenada/p/000000000070008422"
-        }
-      ]
+      "Ozempic": [],
+      "Mounjaro": [],
+      "Wegovy": [],
+      "Rybelsus": []
     }
   }
 }
