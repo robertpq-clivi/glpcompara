@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-28T15:24:28Z",
+  "generated_at": "2026-07-31T15:23:21Z",
   "raw": {
     "Benavides": {
       "Ozempic": [
@@ -371,11 +371,6 @@
           "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/rybelsus-14-mg--30-tabletas.-1388690.html"
         },
         {
-          "title": "Ozempic 1.34mg/ml Solución Inyectable Pluma Precargada, 3 ml.",
-          "price": 4280,
-          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/ozempic-1.34mg-ml-solucion-inyectable-pluma-precargada--3-ml.-1341901.html"
-        },
-        {
           "title": "Wegovy 0.5mg/dosis 1.34mg/ml Solución Inyectable, 1 Pluma Precargada.",
           "price": 2900,
           "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-0.5mg-dosis-1.34mg-ml-solucion-inyectable--1-pluma-precargada.-1447726.html"
@@ -384,6 +379,11 @@
           "title": "Wegovy 0.25 mg/Dosis 0.68mg/ml Solución Inyectable, 1 Pluma Precargada.",
           "price": 2385,
           "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-0.25-mg-dosis-0.68mg-ml-solucion-inyectable--1-pluma-precargada.-1447300.html"
+        },
+        {
+          "title": "Ozempic 1.34mg/ml Solución Inyectable Pluma Precargada, 3 ml.",
+          "price": 4280,
+          "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/ozempic-1.34mg-ml-solucion-inyectable-pluma-precargada--3-ml.-1341901.html"
         },
         {
           "title": "Ozempic 1.34mg/ml Solución Inyectable Pluma Precargada, 1.5 ml.",
