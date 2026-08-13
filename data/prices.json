@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T14:21:52Z",
+  "generated_at": "2026-08-13T14:23:50Z",
   "currency": "MXN",
   "prices": {
     "Ozempic 0.25/0.5 mg (1 pluma)": {
@@ -80,9 +80,9 @@
           "title": "2.5 mg Tirzepatida/0.6 ml Solución"
         },
         "Ahorro": {
-          "price": 6250,
-          "url": "https://www.fahorro.com/mounjaro-kwikpen-2-5mg-0-6ml-3-ml.html",
-          "title": "Mounjaro Kwikpen 2.5Mg/0.6Ml 3 ml"
+          "price": 1694,
+          "url": "https://www.fahorro.com/mounjaro-2-5-mg-0-5-ml.html",
+          "title": "Mounjaro 2.5 mg/0.5 ml 1 Frasco"
         },
         "Guadalajara": {
           "price": 1350,
@@ -106,7 +106,7 @@
         }
       },
       "Clivi": 5499,
-      "Ahorro": 6250,
+      "Ahorro": 1694,
       "Benavides": 5867,
       "Guadalajara": 1350,
       "SanPablo": 6295,
@@ -120,9 +120,9 @@
           "title": "5 mg Tirzepatida/0.6 ml Solución"
         },
         "Ahorro": {
-          "price": 6500,
-          "url": "https://www.fahorro.com/mounjaro-kwikpen-5mg-0-6ml-3-ml.html",
-          "title": "Mounjaro Kwikpen 5Mg/0.6Ml 3 ml"
+          "price": 1694,
+          "url": "https://www.fahorro.com/mounjaro-5-mg-0-5-ml.html",
+          "title": "Mounjaro 5 mg/0.5 ml 1 Frasco"
         },
         "Guadalajara": {
           "price": 1350,
@@ -146,7 +146,7 @@
         }
       },
       "Clivi": 6499,
-      "Ahorro": 6500,
+      "Ahorro": 1694,
       "Benavides": 5973,
       "Guadalajara": 1350,
       "SanPablo": 5983,
