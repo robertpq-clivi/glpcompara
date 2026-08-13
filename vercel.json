@@ -3,52 +3,52 @@
   "redirects": [
     {
       "source": "/pages/index.html",
-      "destination": "https://labcompara.com/",
+      "destination": "https://medcompara.com.mx/medicamentos",
       "permanent": true
     },
     {
       "source": "/blog/:slug.html",
-      "destination": "https://labcompara.com/blog/:slug",
+      "destination": "https://medcompara.com.mx/blog/:slug",
       "permanent": true
     },
     {
       "source": "/blog/index.html",
-      "destination": "https://labcompara.com/blog",
+      "destination": "https://medcompara.com.mx/blog",
       "permanent": true
     },
     {
       "source": "/blog",
-      "destination": "https://labcompara.com/blog",
+      "destination": "https://medcompara.com.mx/blog",
       "permanent": true
     },
     {
       "source": "/blog/:slug",
-      "destination": "https://labcompara.com/blog/:slug",
+      "destination": "https://medcompara.com.mx/blog/:slug",
       "permanent": true
     },
     {
       "source": "/pages/:slug.html",
-      "destination": "https://labcompara.com/:slug",
+      "destination": "https://medcompara.com.mx/:slug",
       "permanent": true
     },
     {
       "source": "/farmacias",
-      "destination": "https://labcompara.com/farmacias",
+      "destination": "https://medcompara.com.mx/farmacias",
       "permanent": true
     },
     {
       "source": "/aviso-de-privacidad",
-      "destination": "https://labcompara.com/aviso-de-privacidad",
+      "destination": "https://medcompara.com.mx/aviso-de-privacidad",
       "permanent": true
     },
     {
       "source": "/images/:file*",
-      "destination": "https://labcompara.com/images/:file*",
+      "destination": "https://medcompara.com.mx/images/:file*",
       "permanent": true
     },
     {
       "source": "/",
-      "destination": "https://labcompara.com/medicamentos",
+      "destination": "https://medcompara.com.mx/medicamentos",
       "permanent": true
     }
   ]
