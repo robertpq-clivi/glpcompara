@@ -1,10 +1,55 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "rewrites": [
-    { "source": "/farmacias", "destination": "/pages/farmacias.html" },
-    { "source": "/aviso-de-privacidad", "destination": "/pages/aviso-de-privacidad.html" }
-  ],
   "redirects": [
-    { "source": "/pages/laboratorio-cerca-de-mi.html", "destination": "/farmacias", "permanent": true }
+    {
+      "source": "/pages/index.html",
+      "destination": "https://labcompara.com/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/:slug.html",
+      "destination": "https://labcompara.com/blog/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/blog/index.html",
+      "destination": "https://labcompara.com/blog",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "https://labcompara.com/blog",
+      "permanent": true
+    },
+    {
+      "source": "/blog/:slug",
+      "destination": "https://labcompara.com/blog/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/pages/:slug.html",
+      "destination": "https://labcompara.com/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/farmacias",
+      "destination": "https://labcompara.com/farmacias",
+      "permanent": true
+    },
+    {
+      "source": "/aviso-de-privacidad",
+      "destination": "https://labcompara.com/aviso-de-privacidad",
+      "permanent": true
+    },
+    {
+      "source": "/images/:file*",
+      "destination": "https://labcompara.com/images/:file*",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "destination": "https://labcompara.com/medicamentos",
+      "permanent": true
+    }
   ]
 }

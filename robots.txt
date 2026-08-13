@@ -1,5 +1,7 @@
-# glpcompara.com.mx — robots.txt
+# glpcompara.com.mx se consolidó en labcompara.com (301 en todas las rutas).
+# Se deja Allow para que los rastreadores puedan seguir los redirects y
+# transferir la autoridad; bloquearlos impediría justamente eso.
 User-agent: *
 Allow: /
 
-Sitemap: https://glpcompara.com.mx/sitemap-index.xml
+Sitemap: https://labcompara.com/sitemap-index.xml
