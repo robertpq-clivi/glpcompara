@@ -3,17 +3,17 @@
   "redirects": [
     {
       "source": "/pages/index.html",
-      "destination": "https://medcompara.com.mx/medicamentos",
-      "permanent": true
-    },
-    {
-      "source": "/blog/:slug.html",
-      "destination": "https://medcompara.com.mx/blog/:slug",
+      "destination": "https://medcompara.com.mx/glp1",
       "permanent": true
     },
     {
       "source": "/blog/index.html",
       "destination": "https://medcompara.com.mx/blog",
+      "permanent": true
+    },
+    {
+      "source": "/blog/:slug.html",
+      "destination": "https://medcompara.com.mx/blog/:slug",
       "permanent": true
     },
     {
@@ -48,7 +48,7 @@
     },
     {
       "source": "/",
-      "destination": "https://medcompara.com.mx/medicamentos",
+      "destination": "https://medcompara.com.mx/",
       "permanent": true
     }
   ]

@@ -1,7 +1,9 @@
-# glpcompara.com.mx se consolidó en labcompara.com (301 en todas las rutas).
+# glpcompara.com.mx se consolidó en medcompara.com.mx (301 en todas las rutas).
 # Se deja Allow para que los rastreadores puedan seguir los redirects y
 # transferir la autoridad; bloquearlos impediría justamente eso.
 User-agent: *
 Allow: /
 
-Sitemap: https://labcompara.com/sitemap-index.xml
+# Apunta al sitemap PROPIO, no al del destino: lista las URLs viejas para que
+# Google las recrawlee y encuentre los 301. Las 115 terminan en 200.
+Sitemap: https://glpcompara.com.mx/sitemap-index.xml
