@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-16T13:34:38Z",
+  "generated_at": "2026-08-19T13:48:10Z",
   "raw": {
     "Benavides": {
       "Ozempic": [
@@ -27,7 +27,7 @@
         },
         {
           "title": "5 mg Tirzepatida/0.6 ml Solución",
-          "price": 5973,
+          "price": 5974,
           "url": "https://www.benavides.com.mx/mounjaro-5-mg-tirzepatida-0-6-ml-solucion-1-jeringa-prellenada"
         },
         {
@@ -210,12 +210,12 @@
       "Ozempic": [
         {
           "title": "Ozempic 1.34mg/ml Solución Inyectable Pluma Precargada, 3 ml.",
-          "price": 4280,
+          "price": 5149,
           "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/ozempic-1.34mg-ml-solucion-inyectable-pluma-precargada--3-ml.-1341901.html"
         },
         {
           "title": "Ozempic 1.34mg/ml Solución Inyectable Pluma Precargada, 1.5 ml.",
-          "price": 3149,
+          "price": 3800,
           "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/ozempic-1.34mg-ml-solucion-inyectable-pluma-precargada--1.5-ml.-1340883.html"
         },
         {
@@ -225,17 +225,17 @@
         },
         {
           "title": "Wegovy 1.7mg/Dosis 2.27mg/ml Solución Inyectable, 1 Pluma Precargada.",
-          "price": 4650,
+          "price": 6926,
           "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-1.7mg-dosis-2.27mg-ml-solucion-inyectable--1-pluma-precargada.-1448510.html"
         },
         {
           "title": "Wegovy 1mg/dosis 1.34mg/ml Solución Inyectable, 1 Pluma Precargada.",
-          "price": 3940,
+          "price": 5149,
           "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-1mg-dosis-1.34mg-ml-solucion-inyectable--1-pluma-precargada.-1447823.html"
         },
         {
           "title": "Wegovy 2.4mg/Dosis 3.2mg/ml Solución Inyectable, 1 Pluma Precargada.",
-          "price": 4900,
+          "price": 8474,
           "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-2.4mg-dosis-3.2mg-ml-solucion-inyectable--1-pluma-precargada.-1448528.html"
         },
         {
@@ -245,12 +245,12 @@
         },
         {
           "title": "Wegovy 0.25 mg/Dosis 0.68mg/ml Solución Inyectable, 1 Pluma Precargada.",
-          "price": 2385,
+          "price": 3099,
           "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-0.25-mg-dosis-0.68mg-ml-solucion-inyectable--1-pluma-precargada.-1447300.html"
         },
         {
           "title": "Wegovy 0.5mg/dosis 1.34mg/ml Solución Inyectable, 1 Pluma Precargada.",
-          "price": 2900,
+          "price": 3790,
           "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-0.5mg-dosis-1.34mg-ml-solucion-inyectable--1-pluma-precargada.-1447726.html"
         },
         {
@@ -347,12 +347,12 @@
         },
         {
           "title": "Ozempic 1.34mg/ml Solución Inyectable Pluma Precargada, 1.5 ml.",
-          "price": 3149,
+          "price": 3800,
           "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/ozempic-1.34mg-ml-solucion-inyectable-pluma-precargada--1.5-ml.-1340883.html"
         },
         {
           "title": "Ozempic 1.34mg/ml Solución Inyectable Pluma Precargada, 3 ml.",
-          "price": 4280,
+          "price": 5149,
           "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/ozempic-1.34mg-ml-solucion-inyectable-pluma-precargada--3-ml.-1341901.html"
         },
         {
@@ -377,54 +377,54 @@
         },
         {
           "title": "Wegovy 0.25 mg/Dosis 0.68mg/ml Solución Inyectable, 1 Pluma Precargada.",
-          "price": 2385,
+          "price": 3099,
           "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-0.25-mg-dosis-0.68mg-ml-solucion-inyectable--1-pluma-precargada.-1447300.html"
         },
         {
           "title": "Wegovy 0.5mg/dosis 1.34mg/ml Solución Inyectable, 1 Pluma Precargada.",
-          "price": 2900,
+          "price": 3790,
           "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-0.5mg-dosis-1.34mg-ml-solucion-inyectable--1-pluma-precargada.-1447726.html"
         },
         {
           "title": "Wegovy 1.7mg/Dosis 2.27mg/ml Solución Inyectable, 1 Pluma Precargada.",
-          "price": 4650,
+          "price": 6926,
           "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-1.7mg-dosis-2.27mg-ml-solucion-inyectable--1-pluma-precargada.-1448510.html"
         }
       ],
       "Wegovy": [
         {
           "title": "Wegovy 1mg/dosis 1.34mg/ml Solución Inyectable, 1 Pluma Precargada.",
-          "price": 3940,
+          "price": 5149,
           "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-1mg-dosis-1.34mg-ml-solucion-inyectable--1-pluma-precargada.-1447823.html"
         },
         {
           "title": "Wegovy 0.5mg/dosis 1.34mg/ml Solución Inyectable, 1 Pluma Precargada.",
-          "price": 2900,
+          "price": 3790,
           "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-0.5mg-dosis-1.34mg-ml-solucion-inyectable--1-pluma-precargada.-1447726.html"
         },
         {
           "title": "Wegovy 1.7mg/Dosis 2.27mg/ml Solución Inyectable, 1 Pluma Precargada.",
-          "price": 4650,
+          "price": 6926,
           "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-1.7mg-dosis-2.27mg-ml-solucion-inyectable--1-pluma-precargada.-1448510.html"
         },
         {
           "title": "Wegovy 2.4mg/Dosis 3.2mg/ml Solución Inyectable, 1 Pluma Precargada.",
-          "price": 4900,
+          "price": 8474,
           "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-2.4mg-dosis-3.2mg-ml-solucion-inyectable--1-pluma-precargada.-1448528.html"
         },
         {
           "title": "Wegovy 0.25 mg/Dosis 0.68mg/ml Solución Inyectable, 1 Pluma Precargada.",
-          "price": 2385,
+          "price": 3099,
           "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-0.25-mg-dosis-0.68mg-ml-solucion-inyectable--1-pluma-precargada.-1447300.html"
         },
         {
           "title": "Ozempic 1.34mg/ml Solución Inyectable Pluma Precargada, 3 ml.",
-          "price": 4280,
+          "price": 5149,
           "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/ozempic-1.34mg-ml-solucion-inyectable-pluma-precargada--3-ml.-1341901.html"
         },
         {
           "title": "Ozempic 1.34mg/ml Solución Inyectable Pluma Precargada, 1.5 ml.",
-          "price": 3149,
+          "price": 3800,
           "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/ozempic-1.34mg-ml-solucion-inyectable-pluma-precargada--1.5-ml.-1340883.html"
         },
         {
@@ -496,37 +496,37 @@
         },
         {
           "title": "Ozempic 1.34mg/ml Solución Inyectable Pluma Precargada, 3 ml.",
-          "price": 4280,
+          "price": 5149,
           "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/ozempic-1.34mg-ml-solucion-inyectable-pluma-precargada--3-ml.-1341901.html"
         },
         {
           "title": "Ozempic 1.34mg/ml Solución Inyectable Pluma Precargada, 1.5 ml.",
-          "price": 3149,
+          "price": 3800,
           "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/ozempic-1.34mg-ml-solucion-inyectable-pluma-precargada--1.5-ml.-1340883.html"
         },
         {
           "title": "Wegovy 1.7mg/Dosis 2.27mg/ml Solución Inyectable, 1 Pluma Precargada.",
-          "price": 4650,
+          "price": 6926,
           "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-1.7mg-dosis-2.27mg-ml-solucion-inyectable--1-pluma-precargada.-1448510.html"
         },
         {
           "title": "Wegovy 1mg/dosis 1.34mg/ml Solución Inyectable, 1 Pluma Precargada.",
-          "price": 3940,
+          "price": 5149,
           "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-1mg-dosis-1.34mg-ml-solucion-inyectable--1-pluma-precargada.-1447823.html"
         },
         {
           "title": "Wegovy 2.4mg/Dosis 3.2mg/ml Solución Inyectable, 1 Pluma Precargada.",
-          "price": 4900,
+          "price": 8474,
           "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-2.4mg-dosis-3.2mg-ml-solucion-inyectable--1-pluma-precargada.-1448528.html"
         },
         {
           "title": "Wegovy 0.25 mg/Dosis 0.68mg/ml Solución Inyectable, 1 Pluma Precargada.",
-          "price": 2385,
+          "price": 3099,
           "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-0.25-mg-dosis-0.68mg-ml-solucion-inyectable--1-pluma-precargada.-1447300.html"
         },
         {
           "title": "Wegovy 0.5mg/dosis 1.34mg/ml Solución Inyectable, 1 Pluma Precargada.",
-          "price": 2900,
+          "price": 3790,
           "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-0.5mg-dosis-1.34mg-ml-solucion-inyectable--1-pluma-precargada.-1447726.html"
         },
         {
