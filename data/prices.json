@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-19T13:48:10Z",
+  "generated_at": "2026-08-22T13:34:56Z",
   "currency": "MXN",
   "prices": {
     "Ozempic 0.25/0.5 mg (1 pluma)": {
@@ -15,7 +15,7 @@
           "title": "Ozempic 0.25 mg - 0.5 mg/dosis 1 Pluma con 6 Agujas"
         },
         "Guadalajara": {
-          "price": 3800,
+          "price": 3149,
           "url": "https://www.farmaciasguadalajara.com/diabetes-y-endocrinas/antidiabeticos/ozempic-1.34mg-ml-solucion-inyectable-pluma-precargada--1.5-ml.-1340883.html",
           "title": "Ozempic 1.34mg/ml Solución Inyectable Pluma Precargada, 1.5 ml."
         },
@@ -33,7 +33,7 @@
       "Clivi": 5499,
       "Ahorro": 3096,
       "Benavides": 4274,
-      "Guadalajara": 3800,
+      "Guadalajara": 3149,
       "SanPablo": 3096,
       "Revert": null
     },
@@ -325,7 +325,7 @@
           "title": "WEGOVY FlexTouch 1.5ml (0.25mg) 1 Pluma"
         },
         "Guadalajara": {
-          "price": 3099,
+          "price": 2385,
           "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-0.25-mg-dosis-0.68mg-ml-solucion-inyectable--1-pluma-precargada.-1447300.html",
           "title": "Wegovy 0.25 mg/Dosis 0.68mg/ml Solución Inyectable, 1 Pluma Precargada."
         },
@@ -348,7 +348,7 @@
       "Clivi": 4299,
       "Ahorro": 2384,
       "Benavides": 3177,
-      "Guadalajara": 3099,
+      "Guadalajara": 2385,
       "SanPablo": 3178,
       "Revert": 2299
     },
@@ -365,7 +365,7 @@
           "title": "WEGOVY FlexTouch 1.5ml (0.5mg) 1 Pluma"
         },
         "Guadalajara": {
-          "price": 3790,
+          "price": 2900,
           "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-0.5mg-dosis-1.34mg-ml-solucion-inyectable--1-pluma-precargada.-1447726.html",
           "title": "Wegovy 0.5mg/dosis 1.34mg/ml Solución Inyectable, 1 Pluma Precargada."
         },
@@ -388,7 +388,7 @@
       "Clivi": 4999,
       "Ahorro": 2900,
       "Benavides": 3864,
-      "Guadalajara": 3790,
+      "Guadalajara": 2900,
       "SanPablo": 3864,
       "Revert": 2899
     },
@@ -405,7 +405,7 @@
           "title": "WEGOVY FlexTouch 3ml (1.0mg) 1 Pluma"
         },
         "Guadalajara": {
-          "price": 5149,
+          "price": 3940,
           "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-1mg-dosis-1.34mg-ml-solucion-inyectable--1-pluma-precargada.-1447823.html",
           "title": "Wegovy 1mg/dosis 1.34mg/ml Solución Inyectable, 1 Pluma Precargada."
         },
@@ -428,7 +428,7 @@
       "Clivi": 5499,
       "Ahorro": 3934,
       "Benavides": 5244,
-      "Guadalajara": 5149,
+      "Guadalajara": 3940,
       "SanPablo": 5244,
       "Revert": 3899
     },
@@ -445,7 +445,7 @@
           "title": "WEGOVY FlexTouch 3ml (1.7mg) 1 Pluma"
         },
         "Guadalajara": {
-          "price": 6926,
+          "price": 4650,
           "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-1.7mg-dosis-2.27mg-ml-solucion-inyectable--1-pluma-precargada.-1448510.html",
           "title": "Wegovy 1.7mg/Dosis 2.27mg/ml Solución Inyectable, 1 Pluma Precargada."
         },
@@ -468,7 +468,7 @@
       "Clivi": 6999,
       "Ahorro": 4650,
       "Benavides": 6643,
-      "Guadalajara": 6926,
+      "Guadalajara": 4650,
       "SanPablo": 6643,
       "Revert": 4599
     },
@@ -485,7 +485,7 @@
           "title": "WEGOVY FlexTouch 3ml (2.4mg) 1 Pluma"
         },
         "Guadalajara": {
-          "price": 8474,
+          "price": 4900,
           "url": "https://www.farmaciasguadalajara.com/obesidad/antiobesidad/wegovy-2.4mg-dosis-3.2mg-ml-solucion-inyectable--1-pluma-precargada.-1448528.html",
           "title": "Wegovy 2.4mg/Dosis 3.2mg/ml Solución Inyectable, 1 Pluma Precargada."
         },
@@ -508,7 +508,7 @@
       "Clivi": 6999,
       "Ahorro": 4900,
       "Benavides": 8163,
-      "Guadalajara": 8474,
+      "Guadalajara": 4900,
       "SanPablo": 8164,
       "Revert": 4899
     },
