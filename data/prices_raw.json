@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-22T13:34:56Z",
+  "generated_at": "2026-08-25T13:53:49Z",
   "raw": {
     "Benavides": {
       "Ozempic": [
@@ -16,16 +16,6 @@
       ],
       "Mounjaro": [
         {
-          "title": "10 mg Tirzepatida/0.6 ml Solución Inyectable",
-          "price": 7819,
-          "url": "https://www.benavides.com.mx/mounjaro-10-mg-tirzepatida-0-6-ml-solucion-inyectable-1-jeringa-prellenada"
-        },
-        {
-          "title": "7.5 mg Tirzepatida/0.6 ml Solución",
-          "price": 7821,
-          "url": "https://www.benavides.com.mx/mounjaro-7-5-mg-tirzepatida-0-6-ml-solucion-1-jeringa-prellenada"
-        },
-        {
           "title": "5 mg Tirzepatida/0.6 ml Solución",
           "price": 5974,
           "url": "https://www.benavides.com.mx/mounjaro-5-mg-tirzepatida-0-6-ml-solucion-1-jeringa-prellenada"
@@ -34,6 +24,16 @@
           "title": "12.5 mg Tirzepatida/0.6 ml Solución Inyectable",
           "price": 9688,
           "url": "https://www.benavides.com.mx/mounjaro-12-5-mg-tirzepatida-0-6-ml-solucion-inyectable-1-jeringa-prellenada"
+        },
+        {
+          "title": "10 mg Tirzepatida/0.6 ml Solución Inyectable",
+          "price": 7819,
+          "url": "https://www.benavides.com.mx/mounjaro-10-mg-tirzepatida-0-6-ml-solucion-inyectable-1-jeringa-prellenada"
+        },
+        {
+          "title": "7.5 mg Tirzepatida/0.6 ml Solución",
+          "price": 7821,
+          "url": "https://www.benavides.com.mx/mounjaro-7-5-mg-tirzepatida-0-6-ml-solucion-1-jeringa-prellenada"
         },
         {
           "title": "15 mg Tirzepatida/0.6 ml Solución Inyectable",
@@ -592,32 +592,32 @@
       "Mounjaro": [
         {
           "title": "Mounjaro 5.0 MG 2.4 ML Solución Caja",
-          "price": 5983,
+          "price": 5964,
           "url": "https://www.farmaciasanpablo.com.mx/medicamentos/supervision-medica/m---n---o/mounjaro-5-0-mg-2-4-ml-solucion-caja/p/000000000070009209"
         },
         {
           "title": "Mounjaro 10 MG 2.4 ML Solución Caja",
-          "price": 7838,
+          "price": 7835,
           "url": "https://www.farmaciasanpablo.com.mx/medicamentos/supervision-medica/m---n---o/mounjaro-10-mg-2-4-ml-solucion-caja/p/000000000070009212"
         },
         {
           "title": "Mounjaro 7.5 MG 2.4 ML Solución Caja",
-          "price": 7880,
+          "price": 7879,
           "url": "https://www.farmaciasanpablo.com.mx/medicamentos/supervision-medica/m---n---o/mounjaro-7-5-mg-2-4-ml-solucion-caja/p/000000000070009210"
         },
         {
           "title": "Mounjaro 2.5 MG 2.4 ML Solución Caja",
-          "price": 6295,
+          "price": 5862,
           "url": "https://www.farmaciasanpablo.com.mx/medicamentos/supervision-medica/m---n---o/mounjaro-2-5-mg-2-4-ml-solucion-caja/p/000000000070009211"
         },
         {
           "title": "Mounjaro 15.0 MG 2.4 ML Solución Caja",
-          "price": 10730,
+          "price": 10417,
           "url": "https://www.farmaciasanpablo.com.mx/medicamentos/supervision-medica/m---n---o/mounjaro-15-0-mg-2-4-ml-solucion-caja/p/000000000070009214"
         },
         {
           "title": "Mounjaro 12.5 MG 2.4 ML Solución Caja",
-          "price": 10730,
+          "price": 10417,
           "url": "https://www.farmaciasanpablo.com.mx/medicamentos/supervision-medica/m---n---o/mounjaro-12-5-mg-2-4-ml-solucion-caja/p/000000000070009213"
         }
       ],
@@ -676,7 +676,7 @@
         },
         {
           "title": "Rybelsus 3 mg 10 Tabletas Caja",
-          "price": 878,
+          "price": 868,
           "url": "https://www.farmaciasanpablo.com.mx/medicamentos/supervision-medica/p---q---r/rybelsus-3-mg-10-tabletas-caja/p/000000000070003112"
         },
         {

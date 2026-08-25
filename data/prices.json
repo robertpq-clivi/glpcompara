@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-22T13:34:56Z",
+  "generated_at": "2026-08-25T13:53:49Z",
   "currency": "MXN",
   "prices": {
     "Ozempic 0.25/0.5 mg (1 pluma)": {
@@ -90,7 +90,7 @@
           "title": "Mounjaro 2.5mg/0.5ml en Frasco Ámpula Solución Inyectable, 1 Frasco de dosis única."
         },
         "SanPablo": {
-          "price": 6295,
+          "price": 5862,
           "url": "https://www.farmaciasanpablo.com.mx/medicamentos/supervision-medica/m---n---o/mounjaro-2-5-mg-2-4-ml-solucion-caja/p/000000000070009211",
           "title": "Mounjaro 2.5 MG 2.4 ML Solución Caja"
         },
@@ -109,7 +109,7 @@
       "Ahorro": 1694,
       "Benavides": 5867,
       "Guadalajara": 1350,
-      "SanPablo": 6295,
+      "SanPablo": 5862,
       "Revert": 3649
     },
     "Mounjaro 5 mg (1 pluma)": {
@@ -170,7 +170,7 @@
           "title": "Mounjaro KwikPen 7.5mg/0.6ml en Pluma Precargada Solución Inyectable, 2.4 ml."
         },
         "SanPablo": {
-          "price": 7880,
+          "price": 7879,
           "url": "https://www.farmaciasanpablo.com.mx/medicamentos/supervision-medica/m---n---o/mounjaro-7-5-mg-2-4-ml-solucion-caja/p/000000000070009210",
           "title": "Mounjaro 7.5 MG 2.4 ML Solución Caja"
         },
@@ -189,7 +189,7 @@
       "Ahorro": 8500,
       "Benavides": 7821,
       "Guadalajara": 6500,
-      "SanPablo": 7880,
+      "SanPablo": 7879,
       "Revert": 6349
     },
     "Mounjaro 10 mg (1 pluma)": {
@@ -210,7 +210,7 @@
           "title": "Mounjaro KwikPen 10mg/0.6ml en Pluma Precargada Solución Inyectable, 2.4 ml."
         },
         "SanPablo": {
-          "price": 7838,
+          "price": 7835,
           "url": "https://www.farmaciasanpablo.com.mx/medicamentos/supervision-medica/m---n---o/mounjaro-10-mg-2-4-ml-solucion-caja/p/000000000070009212",
           "title": "Mounjaro 10 MG 2.4 ML Solución Caja"
         },
@@ -229,7 +229,7 @@
       "Ahorro": 8500,
       "Benavides": 7819,
       "Guadalajara": 6255,
-      "SanPablo": 7838,
+      "SanPablo": 7835,
       "Revert": 6349
     },
     "Mounjaro 12.5 mg (1 pluma)": {
@@ -250,7 +250,7 @@
           "title": "Mounjaro KwikPen 12.5mg/0.6ml en Pluma Precargada Solución Inyectable, 2.4 ml."
         },
         "SanPablo": {
-          "price": 10730,
+          "price": 10417,
           "url": "https://www.farmaciasanpablo.com.mx/medicamentos/supervision-medica/m---n---o/mounjaro-12-5-mg-2-4-ml-solucion-caja/p/000000000070009213",
           "title": "Mounjaro 12.5 MG 2.4 ML Solución Caja"
         },
@@ -269,7 +269,7 @@
       "Ahorro": 10500,
       "Benavides": 9688,
       "Guadalajara": 7750,
-      "SanPablo": 10730,
+      "SanPablo": 10417,
       "Revert": 8499
     },
     "Mounjaro 15 mg (1 pluma)": {
