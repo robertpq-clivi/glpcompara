@@ -1,8 +1,15 @@
 name: Scrape GLP-1 prices
 
+# Apagado. Este repo ya sólo sirve los 301 a medcompara.com.mx (ver
+# vercel.json): nadie consume data/prices.json desde que la comparativa vive en
+# el repo Labcompara, que tiene su propio scan (scripts/scan-farmacias.js) con
+# las mismas seis fuentes y además Foundayz. El cron seguía corriendo cada tres
+# días y commiteando precios que ninguna página lee.
+#
+# Se deja el workflow_dispatch por si hiciera falta una corrida puntual, pero el
+# workflow está deshabilitado en Actions: reactivarlo requiere `gh workflow
+# enable scrape-prices.yml`.
 on:
-  schedule:
-    - cron: "0 13 */3 * *"   # every 3 days ~07:00 America/Mexico_City (days 1,4,7,…)
   workflow_dispatch:
     inputs:
       recon:
