@@ -212,6 +212,7 @@ SOURCE_ORDER = ["Clivi", "Ahorro", "Benavides", "Guadalajara", "SanPablo", "Reve
 def norm(s):
     s = s.lower()
     s = re.sub(r"(\d)\s*mg", r"\1 mg", s)   # "5mg" / "12.5Mg" → "5 mg" / "12.5 mg"
+    s = re.sub(r"(\d)\s*ml", r"\1 ml", s)   # "0.5ml" → "0.5 ml" (frasco ámpula vs pluma)
     return re.sub(r"\s+", " ", s)
 
 def matches(title, prod):
@@ -237,7 +238,12 @@ def pick(products, prod, source=""):
     branded = [p for p in cands if fam and fam in norm(p["title"])]
     if branded:
         cands = branded
-    elif source != "Benavides":
+    elif source == "Benavides":
+        # Brand-less titles: require the active substance ("5 mg Tirzepatida/0.6 ml"),
+        # otherwise the "mounjaro" search also returns "5.5 mg Orforglipron" (Foundayz).
+        sub = norm(CFG["families"].get(prod.get("family"), {}).get("substance", ""))
+        cands = [p for p in cands if sub and sub in norm(p["title"])]
+    else:
         return None  # brand-titled source with no brand match → don't guess
     if not cands:
         return None
@@ -272,8 +278,17 @@ def main():
     if os.environ.get("SCRAPER_RECON"):
         recon(); return
     raw = {src: {} for src in SCRAPERS}
+    rematch = bool(os.environ.get("SCRAPER_REMATCH"))
+    if rematch:
+        # Re-match the last raw dump against products.json without touching the
+        # sites (for tuning match/exclude tokens). Keeps the dump's timestamp so
+        # the history point for that day is replaced, not duplicated.
+        dump = json.loads((ROOT / "data" / "prices_raw.json").read_text(encoding="utf-8"))
+        raw = dump["raw"]
+        SCRAPERS.clear(); SCRAPERS.update({src: None for src in raw})
+        print(f"REMATCH mode: reusing data/prices_raw.json from {dump['generated_at']}")
     # scrape each source once per family, cache results
-    for src, fn in SCRAPERS.items():
+    for src, fn in ([] if rematch else SCRAPERS.items()):
         for fam, meta in CFG["families"].items():
             try:
                 items = fn(meta["query"])
@@ -284,7 +299,7 @@ def main():
                 print(f"  {src}/{fam}: ERROR {type(e).__name__}: {e}", file=sys.stderr)
             time.sleep(THROTTLE)
 
-    now = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    now = dump["generated_at"] if rematch else datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     prices = {}
     matched_count = 0
     for prod in CFG["products"]:

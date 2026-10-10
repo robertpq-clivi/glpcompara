@@ -50,6 +50,11 @@
       "source": "/",
       "destination": "https://medcompara.com.mx/",
       "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "https://medcompara.com.mx/",
+      "permanent": true
     }
   ]
 }
