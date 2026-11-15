@@ -2,6 +2,16 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "redirects": [
     {
+      "source": "/data/prices.json",
+      "destination": "https://medcompara.com.mx/data/medicamentos/prices.json",
+      "permanent": false
+    },
+    {
+      "source": "/data/price-history.json",
+      "destination": "https://medcompara.com.mx/data/medicamentos/price-history.json",
+      "permanent": false
+    },
+    {
       "source": "/pages/index.html",
       "destination": "https://medcompara.com.mx/glp1",
       "permanent": true
