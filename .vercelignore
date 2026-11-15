@@ -1,0 +1,3 @@
+# Salida cruda del scraper (apagado desde 2026-09-05). No tiene equivalente en
+# medcompara, así que no se publica: mejor un 404 que precios congelados.
+data/prices_raw.json
